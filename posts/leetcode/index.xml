@@ -19,14 +19,26 @@ Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 
     </item>
     
     <item>
-      <title>001</title>
+      <title>002</title>
       <link>https://yuvenhol.github.io/posts/leetcode/002/</link>
       <pubDate>Mon, 19 Jul 2021 11:36:06 +0800</pubDate>
       
       <guid>https://yuvenhol.github.io/posts/leetcode/002/</guid>
-      <description>题目 Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice.
-Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]
-解 这道题最优的做法时间复杂度是 O(n)。 顺序扫描数组，对每一个元素，在 map 中找能组合给定值的另一半数字，如果找到了，直接返回 2 个数字的下标即可。如果找不到，就把这个数字存入 map 中，等待扫到“另一半”数字的时候，再取出来返回结果。</description>
+      <description>题目 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself. Example:
+Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp;gt; 0 -&amp;gt; 8 Explanation: 342 + 465 = 807.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yuvenhol.github.io/posts/leetcode/003/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuvenhol.github.io/posts/leetcode/003/</guid>
+      <description>题目 在一个字符串重寻找没有重复字母的最长子串。
+Given a string, find the length of the longest substring without repeating characters. Example 1:
+Input: &amp;ldquo;abcabcbb&amp;rdquo; Output: 3 Explanation: The answer is &amp;ldquo;abc&amp;rdquo;, with the length of 3. Example 2:
+Input: &amp;ldquo;bbbbb&amp;rdquo; Output: 1 Explanation: The answer is &amp;ldquo;b&amp;rdquo;, with the length of 1. Example 3:
+Input: &amp;ldquo;pwwkew&amp;rdquo; Output: 3 Explanation: The answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
     </item>
     
   </channel>
