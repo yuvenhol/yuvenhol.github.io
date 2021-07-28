@@ -144,6 +144,62 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/interview/spring/" class="color-inherit dim link">
+            spring
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Spring Core Ioc: 依赖倒置原则： 把原本的高层建筑依赖底层建筑“倒置”过来，变成底层建筑依赖高层建筑。高层建筑决定需要什么，底层去实现这样的需求，但是高层并不用管底层是怎么实现的。这样就不会出现前面的“牵一发动全身”的情况。 例如一个高层的类需要底层的类
+Ioc(Inversion of Control) 就是依赖倒置原则的一种代码设计的思路。具体采用的方法就是所谓的依赖注入（Dependency Injection）。
+IoC 容器是 Spring ⽤来实现 IoC 的载体， IoC 容器实际上就是个Map（key，value）,Map 中存放的是各种对象
+        </div>
+          <a href="/posts/interview/spring/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/interview/java%E5%9F%BA%E7%A1%80/" class="color-inherit dim link">
+            Java基础
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
+HashMap 结构 数组+链表or红黑树
+负载因子0.75f的原因 空间和查询效率的平衡
+树化阈值8的原因 和泊松分布，连续8次hash冲突的概率极低百万分之一，空间和速度的取舍，为啥还要转为树？防止hash冲突
+ConcurrentHashMap GC GCRoot：被栈区、native栈、方法区
+GC算法 1标记-清理（CMS）：缺点内存碎片 2标记-整理：缺点全部数据移动，耗时长 3复制算法（parNew、youngGC使用算法）：缺点内存消耗大 4： 一个对象在6次gc后会转移到old区中，old区里也有大对象。
+GC清理器 G1 1：初步标记 找出root对象和对应的rootRegion 2：根据rootRegion的RSet找出CSet 3：对Cset并发标记 4：补充标记 5：并发清理，使用标记复制算法
+        </div>
+          <a href="/posts/interview/java%E5%9F%BA%E7%A1%80/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/daliy/20210726/" class="color-inherit dim link">
             2021-07-26
             </a>
@@ -162,64 +218,24 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/daliy/2021-07-20/" class="color-inherit dim link">
-            2021 07 20
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          收获与危机 今天对后端服务所用技术进行了初步选型。 mysql+gin+colly
-        </div>
-          <a href="/posts/daliy/2021-07-20/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/leetcode/003/" class="color-inherit dim link">
-            003
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          题目 在一个字符串重寻找没有重复字母的最长子串。
-Given a string, find the length of the longest substring without repeating characters. Example 1:
-Input: &ldquo;abcabcbb&rdquo; Output: 3 Explanation: The answer is &ldquo;abc&rdquo;, with the length of 3. Example 2:
-Input: &ldquo;bbbbb&rdquo; Output: 1 Explanation: The answer is &ldquo;b&rdquo;, with the length of 1. Example 3:
-Input: &ldquo;pwwkew&rdquo; Output: 3 Explanation: The answer is &ldquo;wke&rdquo;, with the length of 3. Note that the answer must be a substring, &ldquo;pwke&rdquo; is a subsequence and not a substring.
-        </div>
-          <a href="/posts/leetcode/003/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/daliy/2021-07-20/" class="link black dim">
+              2021 07 20
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/leetcode/003/" class="link black dim">
+              003
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/leetcode/001/" class="link black dim">
@@ -230,12 +246,6 @@ Input: &ldquo;pwwkew&rdquo; Output: 3 Explanation: The answer is &ldquo;wke&rdqu
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/leetcode/002/" class="link black dim">
               002
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/daliy/2021-07-19/" class="link black dim">
-              2021 07 19
             </a>
           </h2>
         
