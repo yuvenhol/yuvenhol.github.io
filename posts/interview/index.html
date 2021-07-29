@@ -117,6 +117,21 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/interview/jvm/" class="link black dim">
+        Jvm
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      TLAB 由于堆内存是线程共有的，多线程创建对象时可能会出现对象指针的碰撞。为每个线程在eden分配少量的线程独占的内存分配区，那么会极大的改善这个问题。 https://www.cnblogs.com/zhxdick/p/14371562.html
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/interview/spring/" class="link black dim">
         spring
       </a>
@@ -139,7 +154,8 @@ IoC 容器是 Spring ⽤来实现 IoC 的载体， IoC 容器实际上就是个M
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
+      反射 http://www.fanyilun.me/2015/10/29/Java%E5%8F%8D%E5%B0%84%E5%8E%9F%E7%90%86/
+集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
 HashMap 结构 数组+链表or红黑树
 负载因子0.75f的原因 空间和查询效率的平衡
 树化阈值8的原因 和泊松分布，连续8次hash冲突的概率极低百万分之一，空间和速度的取舍，为啥还要转为树？防止hash冲突

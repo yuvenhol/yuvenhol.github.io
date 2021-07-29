@@ -6,7 +6,16 @@
     <description>Recent content on yuvenholの日常</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Jul 2021 16:48:44 +0800</lastBuildDate><atom:link href="https://yuvenhol.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 18:31:14 +0800</lastBuildDate><atom:link href="https://yuvenhol.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jvm</title>
+      <link>https://yuvenhol.github.io/posts/interview/jvm/</link>
+      <pubDate>Thu, 29 Jul 2021 18:31:14 +0800</pubDate>
+      
+      <guid>https://yuvenhol.github.io/posts/interview/jvm/</guid>
+      <description>TLAB 由于堆内存是线程共有的，多线程创建对象时可能会出现对象指针的碰撞。为每个线程在eden分配少量的线程独占的内存分配区，那么会极大的改善这个问题。 https://www.cnblogs.com/zhxdick/p/14371562.html</description>
+    </item>
+    
     <item>
       <title>spring</title>
       <link>https://yuvenhol.github.io/posts/interview/spring/</link>
@@ -24,7 +33,8 @@ IoC 容器是 Spring ⽤来实现 IoC 的载体， IoC 容器实际上就是个M
       <pubDate>Wed, 28 Jul 2021 11:48:44 +0800</pubDate>
       
       <guid>https://yuvenhol.github.io/posts/interview/java%E5%9F%BA%E7%A1%80/</guid>
-      <description>集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
+      <description>反射 http://www.fanyilun.me/2015/10/29/Java%E5%8F%8D%E5%B0%84%E5%8E%9F%E7%90%86/
+集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
 HashMap 结构 数组+链表or红黑树
 负载因子0.75f的原因 空间和查询效率的平衡
 树化阈值8的原因 和泊松分布，连续8次hash冲突的概率极低百万分之一，空间和速度的取舍，为啥还要转为树？防止hash冲突
