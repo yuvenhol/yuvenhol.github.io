@@ -40,7 +40,6 @@
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="yuvenholの日常"/>
 <meta name="twitter:description" content=""/>
-<<<<<<< HEAD
 
 	
   </head>
@@ -177,132 +176,16 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-=======
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        yuvenholの日常
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/leetcode" title="leetcode page">
-              leetcode
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/daliy" title="daliy page">
-              daliy
-            </a>
-          </li>
-          
-        </ul>
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-  </div>
-</nav>
-
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          yuvenholの日常
-        </h1>
-        
-      </div>
-    </div>
-  </header>
-
-
-    <main class="pb7" role="main">
-      
-
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
-  </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="color-inherit dim link">
-            基本概念
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
->>>>>>> af1ab2eb4325ed9295ef072060db2bfc199832af
           可参考文档 https://blog.csdn.net/caizongxu/article/details/82941968
 常用算法 分治算法 定义： 在计算机科学中，分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序) 实际上就是类似于数学归纳法，找到解决本问题的求解方程公式，然后根据方程公式设计递归程序。
 1、一定是先找到最小问题规模时的求解方法
 2、然后考虑随着问题规模增大时的求解方法
 3、找到求解的递归函数式后（各种规模或因子），设计递归程序即可。
-<<<<<<< HEAD
 分治法适用的情况 分治法所能解决的问题一般具有以下几个特征：1) 该问题的规模缩小到一定的程度就可以容易地解决2) 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。3) 利用该问题分解出的子问题的解可以合并为该问题的解；4) 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。 第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；
-=======
-分治法适用的情况 分治法所能解决的问题一般具有以下几个特征： 1) 该问题的规模缩小到一定的程度就可以容易地解决 2) 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。 3) 利用该问题分解出的子问题的解可以合并为该问题的解； 4) 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。  第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；
->>>>>>> af1ab2eb4325ed9295ef072060db2bfc199832af
 第二条特征是应用分治法的前提它也是大多数问题可以满足的，此特征反映了递归思想的应用；、
 第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具备了第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。
 第四条特征涉及到分治法的效率，如果各子问题是不独立的则分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。
 分治法的基本步骤 分治法在每一层递归上都有三个步骤：
-<<<<<<< HEAD
 step1 分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题；step2 解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题step3 合并：将各个子问题的解合并为原问题的解。 它的一般的算法设计模式如下：
 Divide-and-Conquer(P)1. if |P|≤n02. then return(ADHOC(P))3. 将P分解为较小的子问题 P1 ,P2 ,...,Pk4. for i←1 to k5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi6. T ← MERGE(y1,y2,...,yk) △ 合并子问题7. return(T)其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,...,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,...,Pk的相应的解y1,y2,...,yk合并为P的解。 动态规划算法 回溯 贪心算法 分支限界 
         </div>
@@ -411,137 +294,3 @@ Divide-and-Conquer(P)1. if |P|≤n02. then return(ADHOC(P))3. 将P分解为�
 
   </body>
 </html>
-=======
-step1 分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题； step2 解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题 step3 合并：将各个子问题的解合并为原问题的解。  它的一般的算法设计模式如下：
-Divide-and-Conquer(P) 1. if |P|≤n0 2. then return(ADHOC(P)) 3. 将P分解为较小的子问题 P1 ,P2 ,...,Pk 4. for i←1 to k 5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi 6. T ← MERGE(y1,y2,...,yk) △ 合并子问题 7. return(T) 其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,...,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,...,Pk的相应的解y1,y2,...,yk合并为P的解。  动态规划算法 回溯 贪心算法 分支限界 
-        </div>
-          <a href="/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/leetcode/linkedlistinversion/" class="color-inherit dim link">
-            链表反转
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          链表反转 链表 1-&gt;2-&gt;3-&gt;4 翻转 4-&gt;3-&gt;2-&gt;1
-主要难点是防止Next被替换，下一个节点无法访问
-方式1： 使用临时变量保存Val和Next
-方式2：递归 从最末尾开始递归交换 3-4-&gt;4-3，1，2，(4，3)-&gt;1,(4,3),2
-        </div>
-          <a href="/posts/leetcode/linkedlistinversion/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/interview/jvm/" class="color-inherit dim link">
-            Jvm
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          TLAB 由于堆内存是线程共有的，多线程创建对象时可能会出现对象指针的碰撞。为每个线程在eden分配少量的线程独占的内存分配区，那么会极大的改善这个问题。 https://www.cnblogs.com/zhxdick/p/14371562.html
-        </div>
-          <a href="/posts/interview/jvm/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
-      
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/interview/spring/" class="link black dim">
-              spring
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/interview/java%E5%9F%BA%E7%A1%80/" class="link black dim">
-              Java基础
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/daliy/20210726/" class="link black dim">
-              2021-07-26
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/daliy/2021-07-20/" class="link black dim">
-              2021 07 20
-            </a>
-          </h2>
-        
-
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
-        
-        </section>
-      
-
-      </div>
-  
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yuvenhol.github.io" >
-    &copy;  yuvenholの日常 2021 
-  </a>
-    <div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-  </div>
-</footer>
-
-  </body>
-</html>
->>>>>>> af1ab2eb4325ed9295ef072060db2bfc199832af
