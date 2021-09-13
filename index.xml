@@ -151,5 +151,14 @@ Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp
 想做一个给自己用的app  主要功能是爬取数据，然后对数据聚合 前端使用flutter，后端使用go  </description>
     </item>
     
+    <item>
+      <title>首篇</title>
+      <link>https://yuvenhol.github.io/posts/childeducation/%E5%B0%8F%E4%BE%9D%E6%A2%A6%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0/</link>
+      <pubDate>Mon, 19 Jul 2021 11:13:38 +0800</pubDate>
+      
+      <guid>https://yuvenhol.github.io/posts/childeducation/%E5%B0%8F%E4%BE%9D%E6%A2%A6%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0/</guid>
+      <description>a</description>
+    </item>
+    
   </channel>
 </rss>
