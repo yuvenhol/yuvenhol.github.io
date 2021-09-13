@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+<<<<<<< HEAD
     <loc>https://yuvenhol.github.io/posts/daliy/</loc>
     <lastmod>2021-09-13T10:18:35+08:00</lastmod>
   </url><url>
@@ -15,6 +16,15 @@
     <lastmod>2021-09-13T10:18:35+08:00</lastmod>
   </url><url>
     <loc>https://yuvenhol.github.io/posts/leetcode/</loc>
+=======
+    <loc>https://yuvenhol.github.io/posts/leetcode/</loc>
+    <lastmod>2021-08-08T21:46:07+08:00</lastmod>
+  </url><url>
+    <loc>https://yuvenhol.github.io/posts/</loc>
+    <lastmod>2021-08-08T21:46:07+08:00</lastmod>
+  </url><url>
+    <loc>https://yuvenhol.github.io/</loc>
+>>>>>>> af1ab2eb4325ed9295ef072060db2bfc199832af
     <lastmod>2021-08-08T21:46:07+08:00</lastmod>
   </url><url>
     <loc>https://yuvenhol.github.io/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
