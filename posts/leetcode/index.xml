@@ -1,77 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuvenholの日常</title>
-    <link>https://yuvenhol.github.io/posts/leetcode/</link>
-    <description>Recent content on yuvenholの日常</description>
+    <title>Hugo Relearn Theme</title>
+    <link>https://example.com/posts/leetcode/</link>
+    <description>Recent content on Hugo Relearn Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 08 Aug 2021 21:46:07 +0800</lastBuildDate><atom:link href="https://yuvenhol.github.io/posts/leetcode/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>基本概念</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Sun, 08 Aug 2021 21:46:07 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
-      <description>可参考文档 https://blog.csdn.net/caizongxu/article/details/82941968
-常用算法 分治算法 定义： 在计算机科学中，分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序) 实际上就是类似于数学归纳法，找到解决本问题的求解方程公式，然后根据方程公式设计递归程序。
-1、一定是先找到最小问题规模时的求解方法
-2、然后考虑随着问题规模增大时的求解方法
-3、找到求解的递归函数式后（各种规模或因子），设计递归程序即可。
-分治法适用的情况 分治法所能解决的问题一般具有以下几个特征：1) 该问题的规模缩小到一定的程度就可以容易地解决2) 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。3) 利用该问题分解出的子问题的解可以合并为该问题的解；4) 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。 第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；
-第二条特征是应用分治法的前提它也是大多数问题可以满足的，此特征反映了递归思想的应用；、
-第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具备了第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。
-第四条特征涉及到分治法的效率，如果各子问题是不独立的则分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。
-分治法的基本步骤 分治法在每一层递归上都有三个步骤：
-step1 分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题；step2 解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题step3 合并：将各个子问题的解合并为原问题的解。 它的一般的算法设计模式如下：
-Divide-and-Conquer(P)1. if |P|≤n02. then return(ADHOC(P))3. 将P分解为较小的子问题 P1 ,P2 ,...,Pk4. for i←1 to k5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi6. T ← MERGE(y1,y2,...,yk) △ 合并子问题7. return(T)其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,...,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,...,Pk的相应的解y1,y2,...,yk合并为P的解。 动态规划算法 动态规划问题的一般形式就是求最值。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。</description>
-    </item>
-    
-    <item>
-      <title>链表反转</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/linkedlistinversion/</link>
-      <pubDate>Sun, 08 Aug 2021 21:42:40 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/linkedlistinversion/</guid>
-      <description>链表反转 链表 1-&amp;gt;2-&amp;gt;3-&amp;gt;4 翻转 4-&amp;gt;3-&amp;gt;2-&amp;gt;1
-主要难点是防止Next被替换，下一个节点无法访问
-方式1： 使用临时变量保存Val和Next
-方式2：递归 从最末尾开始递归交换 3-4-&amp;gt;4-3，1，2，(4，3)-&amp;gt;1,(4,3),2</description>
-    </item>
-    
-    <item>
-      <title>003</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/003/</link>
-      <pubDate>Mon, 19 Jul 2021 15:36:06 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/003/</guid>
-      <description>题目 在一个字符串重寻找没有重复字母的最长子串。
-Given a string, find the length of the longest substring without repeating characters. Example 1:
-Input: &amp;ldquo;abcabcbb&amp;rdquo; Output: 3 Explanation: The answer is &amp;ldquo;abc&amp;rdquo;, with the length of 3. Example 2:
-Input: &amp;ldquo;bbbbb&amp;rdquo; Output: 1 Explanation: The answer is &amp;ldquo;b&amp;rdquo;, with the length of 1. Example 3:
-Input: &amp;ldquo;pwwkew&amp;rdquo; Output: 3 Explanation: The answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
-    </item>
-    
-    <item>
-      <title>001</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/001/</link>
-      <pubDate>Mon, 19 Jul 2021 11:36:06 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/001/</guid>
-      <description>题目 Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice.
-Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]
-解 这道题最优的做法时间复杂度是 O(n)。 顺序扫描数组，对每一个元素，在 map 中找能组合给定值的另一半数字，如果找到了，直接返回 2 个数字的下标即可。如果找不到，就把这个数字存入 map 中，等待扫到“另一半”数字的时候，再取出来返回结果。</description>
-    </item>
-    
-    <item>
-      <title>002</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/002/</link>
-      <pubDate>Mon, 19 Jul 2021 11:36:06 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/002/</guid>
-      <description>题目 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself. Example:
-Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp;gt; 0 -&amp;gt; 8 Explanation: 342 + 465 = 807.</description>
-    </item>
-    
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Aug 2021 21:46:07 +0800</lastBuildDate><atom:link href="https://example.com/posts/leetcode/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

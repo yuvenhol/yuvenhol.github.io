@@ -1,71 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuvenholの日常</title>
-    <link>https://yuvenhol.github.io/posts/daliy/</link>
-    <description>Recent content on yuvenholの日常</description>
+    <title>Hugo Relearn Theme</title>
+    <link>https://example.com/posts/daliy/</link>
+    <description>Recent content on Hugo Relearn Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 26 Oct 2021 14:56:46 +0800</lastBuildDate><atom:link href="https://yuvenhol.github.io/posts/daliy/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>2021 10 26</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-10-26/</link>
-      <pubDate>Tue, 26 Oct 2021 14:56:46 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-10-26/</guid>
-      <description>1、小事优先原则挺好用的。 2、go语言在做算法题时，并不好用，因为没有泛型好多基础的功能是缺失的。 3、找到一条适合自己的提醒方式，同时及时记录</description>
-    </item>
-    
-    <item>
-      <title>2021 09 29</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-09-29/</link>
-      <pubDate>Wed, 29 Sep 2021 10:13:32 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-09-29/</guid>
-      <description>混乱 每天有太多的事情要考虑，整天浑浑噩噩。 记录下时间的流失，逐渐让自己调整的积极一点 1、早上起来刷b站看朋友圈-&amp;gt;来半小时英语 2、股票打新概览 3、开车听电台 4、上午上班 5、中午溜达+听电台睡觉 6、下午上班 7、晚上开车+听电台 8、回家看视频-&amp;gt;溜达溜达</description>
-    </item>
-    
-    <item>
-      <title>2021 09 13</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-09-13/</link>
-      <pubDate>Mon, 13 Sep 2021 10:18:35 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-09-13/</guid>
-      <description>装修的一点点感悟 水太深 经历了为期几周装修，发现装修的水实在太深！ 被坑了不少钱后得到的最重要结论：“最好不要整体外包给某个公司”。 如果整包价格会比自己找人高出30%-50%，个人推荐按照装修流程自己找人装修，不仅价格低，因为术业有专攻活也会好很多。
-流程： 设计、拆除、水电暖改造、墙体改动、门窗、地板、定制柜桌、刷漆。
-设计： 设计可以在网上找装修公司给你出方案和设计图一般都会免费，我们是在土巴兔上找的，有四次免费设计的机会。专业人士会给出合理的建议！在得到免费的设计图纸跟数据后你就可以按照流程自己安排装修了。
-买装修材料&amp;amp;找装修师傅： 我们去的是十里河“民和兴家装城“，十里河应该算是北京比较大的装修市场了，可以说是应有尽有又物美价廉，比装修公司报价低20-40%。买地板、乳胶漆、暖气都会有专业师傅，一般手艺都不错。需要注意不要被坑乱加安装费用，和老板提前说好费用，不许加收其他费用，好多师傅会找出小毛病坑你一笔。找工长什么的出地铁口到处都是，最好找南方师傅，干活靠谱细心。注意给工长钱的时候最好分三次给，最后要仔细验收以后再给尾款。</description>
-    </item>
-    
-    <item>
-      <title>2021-07-26</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-07-26/</link>
-      <pubDate>Mon, 26 Jul 2021 22:20:32 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-07-26/</guid>
-      <description>有些难过的一天 起因 果然在互联网公司如果你不忙，那么你即将遇到麻烦。要么被领导开除，要么业务线将被停掉。在晚上听到兴哥的消息说的消息后，我强忍着让自己开心起来，我开心了一下，但内心其实并不开心，虽然有高额的赔偿，但是也即将面临巨大的不确定性。
-何去何从 27岁，一切的事情都压到了身上，孩子、房子、即将失业，生活的重担压在了身上，压力让一个人瞬间成熟，得去努力拼搏让生活更好了。
-接下来要做的事情  准备一份简历 求职软件准备上，脉脉，boss 把自己的信息更新 刷题准备  </description>
-    </item>
-    
-    <item>
-      <title>2021 07 20</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-07-20/</link>
-      <pubDate>Tue, 20 Jul 2021 19:30:18 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-07-20/</guid>
-      <description>收获与危机 今天对后端服务所用技术进行了初步选型。 mysql+gin+colly</description>
-    </item>
-    
-    <item>
-      <title>2021 07 19</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-07-19/</link>
-      <pubDate>Mon, 19 Jul 2021 11:13:38 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-07-19/</guid>
-      <description>blog首日 生活中有很多喜怒哀乐，记录下来就不会忘记太多。 还有一个月我的小baby就要出生了，马上要当爸爸了，希望母子平安。
-想做一个给自己用的app  主要功能是爬取数据，然后对数据聚合 前端使用flutter，后端使用go  </description>
-    </item>
-    
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Oct 2021 14:56:46 +0800</lastBuildDate><atom:link href="https://example.com/posts/daliy/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuvenholの日常</title>
-    <link>https://yuvenhol.github.io/posts/childeducation/</link>
-    <description>Recent content on yuvenholの日常</description>
+    <title>Hugo Relearn Theme</title>
+    <link>https://example.com/posts/childeducation/</link>
+    <description>Recent content on Hugo Relearn Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://yuvenhol.github.io/posts/childeducation/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://example.com/posts/childeducation/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

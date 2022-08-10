@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring on Hugo Relearn Theme</title>
+    <link>https://example.com/posts/interview/spring/</link>
+    <description>Recent content in spring on Hugo Relearn Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Jul 2021 16:48:44 +0800</lastBuildDate><atom:link href="https://example.com/posts/interview/spring/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

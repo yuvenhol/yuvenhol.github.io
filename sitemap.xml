@@ -1,70 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://yuvenhol.github.io/posts/daliy/</loc>
-    <lastmod>2021-10-26T14:56:46+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/daliy/2021-10-26/</loc>
-    <lastmod>2021-10-26T14:56:46+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/</loc>
-    <lastmod>2021-10-26T14:56:46+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/</loc>
-    <lastmod>2021-10-26T14:56:46+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/daliy/2021-09-29/</loc>
-    <lastmod>2021-09-29T10:13:32+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/daliy/2021-09-13/</loc>
-    <lastmod>2021-09-13T10:18:35+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/leetcode/</loc>
-    <lastmod>2021-08-08T21:46:07+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2021-08-08T21:46:07+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/leetcode/linkedlistinversion/</loc>
-    <lastmod>2021-08-08T21:42:40+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/interview/</loc>
-    <lastmod>2021-07-29T18:31:14+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/interview/jvm/</loc>
-    <lastmod>2021-07-29T18:31:14+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/interview/spring/</loc>
-    <lastmod>2021-07-28T16:48:44+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/interview/java%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-07-28T11:48:44+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/daliy/2021-07-26/</loc>
-    <lastmod>2021-07-26T22:20:32+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/daliy/2021-07-20/</loc>
-    <lastmod>2021-07-20T19:30:18+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/leetcode/003/</loc>
-    <lastmod>2021-07-19T15:36:06+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/leetcode/001/</loc>
-    <lastmod>2021-07-19T11:36:06+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/leetcode/002/</loc>
-    <lastmod>2021-07-19T11:36:06+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/daliy/2021-07-19/</loc>
-    <lastmod>2021-07-19T11:13:38+08:00</lastmod>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/childeducation/</loc>
-  </url><url>
-    <loc>https://yuvenhol.github.io/posts/codelift/</loc>
-  </url><url>
-    <loc>https://yuvenhol.github.io/categories/</loc>
-  </url><url>
-    <loc>https://yuvenhol.github.io/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://example.com/en/sitemap.xml</loc>
+    
+      <lastmod>2021-10-26T14:56:46+08:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://example.com/pir/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

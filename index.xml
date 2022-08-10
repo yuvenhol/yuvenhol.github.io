@@ -1,173 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuvenholの日常</title>
-    <link>https://yuvenhol.github.io/</link>
-    <description>Recent content on yuvenholの日常</description>
+    <title>Hugo Relearn Theme</title>
+    <link>https://example.com/</link>
+    <description>Recent content on Hugo Relearn Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 26 Oct 2021 14:56:46 +0800</lastBuildDate><atom:link href="https://yuvenhol.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Oct 2021 14:56:46 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2021 10 26</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-10-26/</link>
+      <title>Basics</title>
+      <link>https://example.com/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/basics/</guid>
+      <description>Discover what this Hugo theme is all about and the core-concepts behind it.</description>
+    </item>
+    <item>
+      <title>Content</title>
+      <link>https://example.com/cont/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/cont/</guid>
+      <description>Find out how to create and organize your content quickly and intuitively.</description>
+    </item>
+    <item>
+      <title>Shortcodes</title>
+      <link>https://example.com/shortcodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/shortcodes/</guid>
+      <description>Hugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities.
+But this happens to be a bad idea. Everyone uses Markdown because it&amp;rsquo;s pure and simple to read even non-rendered. You should avoid HTML to keep it as simple as possible.
+To avoid this limitations, Hugo created shortcodes. A shortcode is a simple snippet inside a page.</description>
+    </item>
+    <item>
+      <title>Posts</title>
+      <link>https://example.com/posts/</link>
       <pubDate>Tue, 26 Oct 2021 14:56:46 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-10-26/</guid>
-      <description>1、小事优先原则挺好用的。 2、go语言在做算法题时，并不好用，因为没有泛型好多基础的功能是缺失的。 3、找到一条适合自己的提醒方式，同时及时记录</description>
+      <guid>https://example.com/posts/</guid>
+      <description></description>
     </item>
-    
-    <item>
-      <title>2021 09 29</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-09-29/</link>
-      <pubDate>Wed, 29 Sep 2021 10:13:32 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-09-29/</guid>
-      <description>混乱 每天有太多的事情要考虑，整天浑浑噩噩。 记录下时间的流失，逐渐让自己调整的积极一点 1、早上起来刷b站看朋友圈-&amp;gt;来半小时英语 2、股票打新概览 3、开车听电台 4、上午上班 5、中午溜达+听电台睡觉 6、下午上班 7、晚上开车+听电台 8、回家看视频-&amp;gt;溜达溜达</description>
-    </item>
-    
-    <item>
-      <title>2021 09 13</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-09-13/</link>
-      <pubDate>Mon, 13 Sep 2021 10:18:35 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-09-13/</guid>
-      <description>装修的一点点感悟 水太深 经历了为期几周装修，发现装修的水实在太深！ 被坑了不少钱后得到的最重要结论：“最好不要整体外包给某个公司”。 如果整包价格会比自己找人高出30%-50%，个人推荐按照装修流程自己找人装修，不仅价格低，因为术业有专攻活也会好很多。
-流程： 设计、拆除、水电暖改造、墙体改动、门窗、地板、定制柜桌、刷漆。
-设计： 设计可以在网上找装修公司给你出方案和设计图一般都会免费，我们是在土巴兔上找的，有四次免费设计的机会。专业人士会给出合理的建议！在得到免费的设计图纸跟数据后你就可以按照流程自己安排装修了。
-买装修材料&amp;amp;找装修师傅： 我们去的是十里河“民和兴家装城“，十里河应该算是北京比较大的装修市场了，可以说是应有尽有又物美价廉，比装修公司报价低20-40%。买地板、乳胶漆、暖气都会有专业师傅，一般手艺都不错。需要注意不要被坑乱加安装费用，和老板提前说好费用，不许加收其他费用，好多师傅会找出小毛病坑你一笔。找工长什么的出地铁口到处都是，最好找南方师傅，干活靠谱细心。注意给工长钱的时候最好分三次给，最后要仔细验收以后再给尾款。</description>
-    </item>
-    
-    <item>
-      <title>基本概念</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Sun, 08 Aug 2021 21:46:07 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
-      <description>可参考文档 https://blog.csdn.net/caizongxu/article/details/82941968
-常用算法 分治算法 定义： 在计算机科学中，分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序) 实际上就是类似于数学归纳法，找到解决本问题的求解方程公式，然后根据方程公式设计递归程序。
-1、一定是先找到最小问题规模时的求解方法
-2、然后考虑随着问题规模增大时的求解方法
-3、找到求解的递归函数式后（各种规模或因子），设计递归程序即可。
-分治法适用的情况 分治法所能解决的问题一般具有以下几个特征：1) 该问题的规模缩小到一定的程度就可以容易地解决2) 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。3) 利用该问题分解出的子问题的解可以合并为该问题的解；4) 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。 第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；
-第二条特征是应用分治法的前提它也是大多数问题可以满足的，此特征反映了递归思想的应用；、
-第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具备了第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。
-第四条特征涉及到分治法的效率，如果各子问题是不独立的则分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。
-分治法的基本步骤 分治法在每一层递归上都有三个步骤：
-step1 分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题；step2 解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题step3 合并：将各个子问题的解合并为原问题的解。 它的一般的算法设计模式如下：
-Divide-and-Conquer(P)1. if |P|≤n02. then return(ADHOC(P))3. 将P分解为较小的子问题 P1 ,P2 ,...,Pk4. for i←1 to k5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi6. T ← MERGE(y1,y2,...,yk) △ 合并子问题7. return(T)其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,...,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,...,Pk的相应的解y1,y2,...,yk合并为P的解。 动态规划算法 动态规划问题的一般形式就是求最值。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。</description>
-    </item>
-    
-    <item>
-      <title>链表反转</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/linkedlistinversion/</link>
-      <pubDate>Sun, 08 Aug 2021 21:42:40 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/linkedlistinversion/</guid>
-      <description>链表反转 链表 1-&amp;gt;2-&amp;gt;3-&amp;gt;4 翻转 4-&amp;gt;3-&amp;gt;2-&amp;gt;1
-主要难点是防止Next被替换，下一个节点无法访问
-方式1： 使用临时变量保存Val和Next
-方式2：递归 从最末尾开始递归交换 3-4-&amp;gt;4-3，1，2，(4，3)-&amp;gt;1,(4,3),2</description>
-    </item>
-    
-    <item>
-      <title>Jvm</title>
-      <link>https://yuvenhol.github.io/posts/interview/jvm/</link>
-      <pubDate>Thu, 29 Jul 2021 18:31:14 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/interview/jvm/</guid>
-      <description>TLAB 由于堆内存是线程共有的，多线程创建对象时可能会出现对象指针的碰撞。为每个线程在eden分配少量的线程独占的内存分配区，那么会极大的改善这个问题。 https://www.cnblogs.com/zhxdick/p/14371562.html</description>
-    </item>
-    
-    <item>
-      <title>spring</title>
-      <link>https://yuvenhol.github.io/posts/interview/spring/</link>
-      <pubDate>Wed, 28 Jul 2021 16:48:44 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/interview/spring/</guid>
-      <description>Spring Core Ioc: 依赖倒置原则： 把原本的高层建筑依赖底层建筑“倒置”过来，变成底层建筑依赖高层建筑。高层建筑决定需要什么，底层去实现这样的需求，但是高层并不用管底层是怎么实现的。这样就不会出现前面的“牵一发动全身”的情况。 例如一个高层的类需要底层的类
-Ioc(Inversion of Control) 就是依赖倒置原则的一种代码设计的思路。具体采用的方法就是所谓的依赖注入（Dependency Injection）。
-IoC 容器是 Spring ⽤来实现 IoC 的载体， IoC 容器实际上就是个Map（key，value）,Map 中存放的是各种对象</description>
-    </item>
-    
-    <item>
-      <title>Java基础</title>
-      <link>https://yuvenhol.github.io/posts/interview/java%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Wed, 28 Jul 2021 11:48:44 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/interview/java%E5%9F%BA%E7%A1%80/</guid>
-      <description>反射 http://www.fanyilun.me/2015/10/29/Java%E5%8F%8D%E5%B0%84%E5%8E%9F%E7%90%86/
-集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
-HashMap 结构 数组+链表or红黑树
-负载因子0.75f的原因 空间和查询效率的平衡
-树化阈值8的原因 和泊松分布，连续8次hash冲突的概率极低百万分之一，空间和速度的取舍，为啥还要转为树？防止hash冲突
-ConcurrentHashMap GC GCRoot：被栈区、native栈、方法区
-GC算法 1标记-清理（CMS）：缺点内存碎片 2标记-整理：缺点全部数据移动，耗时长 3复制算法（parNew、youngGC使用算法）：缺点内存消耗大 4： 一个对象在6次gc后会转移到old区中，old区里也有大对象。
-GC清理器 G1 1：初步标记 找出root对象和对应的rootRegion 2：根据rootRegion的RSet找出CSet 3：对Cset并发标记 4：补充标记 5：并发清理，使用标记复制算法</description>
-    </item>
-    
-    <item>
-      <title>2021-07-26</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-07-26/</link>
-      <pubDate>Mon, 26 Jul 2021 22:20:32 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-07-26/</guid>
-      <description>有些难过的一天 起因 果然在互联网公司如果你不忙，那么你即将遇到麻烦。要么被领导开除，要么业务线将被停掉。在晚上听到兴哥的消息说的消息后，我强忍着让自己开心起来，我开心了一下，但内心其实并不开心，虽然有高额的赔偿，但是也即将面临巨大的不确定性。
-何去何从 27岁，一切的事情都压到了身上，孩子、房子、即将失业，生活的重担压在了身上，压力让一个人瞬间成熟，得去努力拼搏让生活更好了。
-接下来要做的事情  准备一份简历 求职软件准备上，脉脉，boss 把自己的信息更新 刷题准备  </description>
-    </item>
-    
-    <item>
-      <title>2021 07 20</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-07-20/</link>
-      <pubDate>Tue, 20 Jul 2021 19:30:18 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-07-20/</guid>
-      <description>收获与危机 今天对后端服务所用技术进行了初步选型。 mysql+gin+colly</description>
-    </item>
-    
-    <item>
-      <title>003</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/003/</link>
-      <pubDate>Mon, 19 Jul 2021 15:36:06 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/003/</guid>
-      <description>题目 在一个字符串重寻找没有重复字母的最长子串。
-Given a string, find the length of the longest substring without repeating characters. Example 1:
-Input: &amp;ldquo;abcabcbb&amp;rdquo; Output: 3 Explanation: The answer is &amp;ldquo;abc&amp;rdquo;, with the length of 3. Example 2:
-Input: &amp;ldquo;bbbbb&amp;rdquo; Output: 1 Explanation: The answer is &amp;ldquo;b&amp;rdquo;, with the length of 1. Example 3:
-Input: &amp;ldquo;pwwkew&amp;rdquo; Output: 3 Explanation: The answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
-    </item>
-    
-    <item>
-      <title>001</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/001/</link>
-      <pubDate>Mon, 19 Jul 2021 11:36:06 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/001/</guid>
-      <description>题目 Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice.
-Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]
-解 这道题最优的做法时间复杂度是 O(n)。 顺序扫描数组，对每一个元素，在 map 中找能组合给定值的另一半数字，如果找到了，直接返回 2 个数字的下标即可。如果找不到，就把这个数字存入 map 中，等待扫到“另一半”数字的时候，再取出来返回结果。</description>
-    </item>
-    
-    <item>
-      <title>002</title>
-      <link>https://yuvenhol.github.io/posts/leetcode/002/</link>
-      <pubDate>Mon, 19 Jul 2021 11:36:06 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/leetcode/002/</guid>
-      <description>题目 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself. Example:
-Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp;gt; 0 -&amp;gt; 8 Explanation: 342 + 465 = 807.</description>
-    </item>
-    
-    <item>
-      <title>2021 07 19</title>
-      <link>https://yuvenhol.github.io/posts/daliy/2021-07-19/</link>
-      <pubDate>Mon, 19 Jul 2021 11:13:38 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/daliy/2021-07-19/</guid>
-      <description>blog首日 生活中有很多喜怒哀乐，记录下来就不会忘记太多。 还有一个月我的小baby就要出生了，马上要当爸爸了，希望母子平安。
-想做一个给自己用的app  主要功能是爬取数据，然后对数据聚合 前端使用flutter，后端使用go  </description>
-    </item>
-    
   </channel>
 </rss>

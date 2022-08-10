@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基本概念 on Hugo Relearn Theme</title>
+    <link>https://example.com/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+    <description>Recent content in 基本概念 on Hugo Relearn Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Aug 2021 21:46:07 +0800</lastBuildDate><atom:link href="https://example.com/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

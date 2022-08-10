@@ -1,47 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yuvenholの日常</title>
-    <link>https://yuvenhol.github.io/posts/interview/</link>
-    <description>Recent content on yuvenholの日常</description>
+    <title>Hugo Relearn Theme</title>
+    <link>https://example.com/posts/interview/</link>
+    <description>Recent content on Hugo Relearn Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 29 Jul 2021 18:31:14 +0800</lastBuildDate><atom:link href="https://yuvenhol.github.io/posts/interview/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Jvm</title>
-      <link>https://yuvenhol.github.io/posts/interview/jvm/</link>
-      <pubDate>Thu, 29 Jul 2021 18:31:14 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/interview/jvm/</guid>
-      <description>TLAB 由于堆内存是线程共有的，多线程创建对象时可能会出现对象指针的碰撞。为每个线程在eden分配少量的线程独占的内存分配区，那么会极大的改善这个问题。 https://www.cnblogs.com/zhxdick/p/14371562.html</description>
-    </item>
-    
-    <item>
-      <title>spring</title>
-      <link>https://yuvenhol.github.io/posts/interview/spring/</link>
-      <pubDate>Wed, 28 Jul 2021 16:48:44 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/interview/spring/</guid>
-      <description>Spring Core Ioc: 依赖倒置原则： 把原本的高层建筑依赖底层建筑“倒置”过来，变成底层建筑依赖高层建筑。高层建筑决定需要什么，底层去实现这样的需求，但是高层并不用管底层是怎么实现的。这样就不会出现前面的“牵一发动全身”的情况。 例如一个高层的类需要底层的类
-Ioc(Inversion of Control) 就是依赖倒置原则的一种代码设计的思路。具体采用的方法就是所谓的依赖注入（Dependency Injection）。
-IoC 容器是 Spring ⽤来实现 IoC 的载体， IoC 容器实际上就是个Map（key，value）,Map 中存放的是各种对象</description>
-    </item>
-    
-    <item>
-      <title>Java基础</title>
-      <link>https://yuvenhol.github.io/posts/interview/java%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Wed, 28 Jul 2021 11:48:44 +0800</pubDate>
-      
-      <guid>https://yuvenhol.github.io/posts/interview/java%E5%9F%BA%E7%A1%80/</guid>
-      <description>反射 http://www.fanyilun.me/2015/10/29/Java%E5%8F%8D%E5%B0%84%E5%8E%9F%E7%90%86/
-集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection
-HashMap 结构 数组+链表or红黑树
-负载因子0.75f的原因 空间和查询效率的平衡
-树化阈值8的原因 和泊松分布，连续8次hash冲突的概率极低百万分之一，空间和速度的取舍，为啥还要转为树？防止hash冲突
-ConcurrentHashMap GC GCRoot：被栈区、native栈、方法区
-GC算法 1标记-清理（CMS）：缺点内存碎片 2标记-整理：缺点全部数据移动，耗时长 3复制算法（parNew、youngGC使用算法）：缺点内存消耗大 4： 一个对象在6次gc后会转移到old区中，old区里也有大对象。
-GC清理器 G1 1：初步标记 找出root对象和对应的rootRegion 2：根据rootRegion的RSet找出CSet 3：对Cset并发标记 4：补充标记 5：并发清理，使用标记复制算法</description>
-    </item>
-    
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Jul 2021 18:31:14 +0800</lastBuildDate><atom:link href="https://example.com/posts/interview/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
