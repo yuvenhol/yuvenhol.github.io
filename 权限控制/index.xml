@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>权限控制 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/</link>
+    <description>Recent content in 权限控制 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ldap-轻量目录访问协议</title>
+      <link>https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/</guid>
+      <description>LDAP是轻量目录访问协议,英文全称是Lightweight Directory Access Protocol,一般都简称为LDAP.
+现在市场上有关LDAP的产品已有很多,各大软件公司都在他们的产品中集成了LDAP服务,如Microsoft的ActiveDirectory、Lotus的Domino Directory、IBM的WebSphere中也集成了LDAP服务.LDAP的开源实现是OpenLDAP,它比商业产品一点也不差,而且源码开放.
+OpenLDAP是最常用的目录服务之一,它是一个由开源社区及志愿者开发和管理的一个开源项目,提供了目录服务的所有功能,包括目录搜索、身份认证、安全通道、过滤器等等.大多数的Linux发行版里面都带有OpenLDAP的安装包.OpenLDAP服务默认使用非加密的TCP/IP协议来接收服务的请求,并将查询结果传回到客户端.由于大多数目录服务都是用于系统的安全认证部分比如:用户登录和身份验证,所以它也支持使用基于 SSL/TLS 的加密协议来保证数据传送的保密性和完整性.OpenLDAP是使用OpenSSL来实现SSL/TLS加密通信的.
+LDAP的信息模型是建立在”条目”(entries)的基础上.一个条目是一些属性的集合,并且具有一个全局唯一的”可区分名称”DN,一个条目可以通过DN来引用.每一个条目的属性具有一个类型和一个或者多个值.类型通常是容易记忆的名称,比如”cn”是通用名称(common name),或者”mail”是电子邮件地址.条目的值的语法取决于属性类型.比如,cn属性可能具有一个值”Babs Jensen” .一个mail属性可能包含”bbs@example.com” .一个jpegphoto属性可能包含一幅JPEG(二进制)格式的图片.
+LDAP常用关键字列表 LDAP通过属性objectClass来控制哪一个属性必须出现或允许出现在一个条目中,它的值决定了该条目必须遵守的模式规则.
+Entry 条目,也叫记录项,是LDAP中最基本的颗粒,就像字典中的词条,或者是数据库中的记录.通常对LDAP的添加、删除、更改、检索都是以条目为基本对象的.
+dn:每一个条目都有一个唯一的标识名(distinguished Name,DN),如上述中一个 dn:”uid=mac,ou=People,dc=example,dc=cn”.通过DN的层次型语法结构,可以方便地表示出条目在LDAP树中的位置,通常用于检索. rdn:一般指dn逗号最左边的部分,如cn=baby.它与RootDN不同,RootDN通常与RootPW同时出现,特指管理LDAP中信息的最高权限用户. Base DN:LDAP目录树的最顶部就是根,也就是所谓的“Base DN”,如”dc=example,dc=com”. schema 对象类(ObjectClass)、属性类型(AttributeType)、语法(Syntax)分别约定了条目、属性、值,他们之间的关系如下图所示.所以这些构成了模式(Schema)——对象类的集合.条目数据在导入时通常需要接受模式检查,它确保了目录中所有的条目数据结构都是一致的.
+schema(一般在/etc/ldap/schema/目录)在导入时要注意前后顺序.
+对于LDAP目录中保存的信息,可以使用LDIF(LDAP Interchange Format)格式来保存.这是一种标准文本文件格式,使用这种格式保存得的LDAP服务器数据库中的数据可方便读取和修改,这也是其他大多数服务配置文件所采取的格式.
+Attribute 属性(Attribute)类似于程序设计中的变量,可以被赋值.在OpenLDAP中声明了许多常用的Attribute(用户也可自己定义Attribute).
+每个条目都可以有很多属性(Attribute),比如常见的人都有姓名、地址、电话等属性.每个属性都有名称及对应的值,属性值可以有单个、多个,比如你有多个邮箱.
+属性不是随便定义的,需要符合一定的规则,而这个规则可以通过schema制定.比如,如果一个entry没有包含在 inetorgperson 这个 schema 中的objectClass: inetOrgPerson,那么就不能为它指定employeeNumber属性,因为employeeNumber是在inetOrgPerson中定义的.
+LDAP为人员组织机构中常见的对象都设计了属性(比如commonName,surname).下面有一些常用的别名:
+属性
+别名
+语法
+描述
+值（举例）
+commonName
+cn
+Directory String
+姓名
+sean
+surname
+sn
+Directory String
+姓
+Chow
+organizationalUnitName
+ou
+Directory String
+单位（部门）名称
+IT
+organization
+o
+Directory String
+组织（公司）名称
+example</description>
+    </item>
+  </channel>
+</rss>

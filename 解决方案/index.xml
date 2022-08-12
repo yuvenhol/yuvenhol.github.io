@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>解决方案 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+    <description>Recent content in 解决方案 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDD Domain-Driven Design</title>
+      <link>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/</guid>
+      <description>领域驱动设计 概念 DP：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。 Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化） DomainService:封装多对象的有状态逻辑。 Repository:抽象封装外部数据访问逻辑。 UL：统一语言，意识拉齐
+流程： 1.首先对需要处理的业务问题进行总览。 2.然后领域对象(Entity)进行划分，明确每个领域对象的包含的信息和职责边界。 并进行跨对象，多对象的逻辑组织(Domain Service) 3.接着在上层应用中根据业务描述去编排Entity和Domain Service。 4.最后再做一些下水道工作，去对下层的数据访问，RPC调用去做一些具体实现。
+DP/VO DP(Domain Primitive) 定义：在DDD里，DP是一切模型、方法、结构的基础。 它是特定领域、拥有精准定义、可以自我验证、拥有行为的对象。可以认为是领域内最小的组成部分。
+DP的三条原则： 让隐性的概念显性化（手机号的运营商） 让隐性的上下文显性化（手机号的区号编码） 封装多对象行为</description>
+    </item>
+    <item>
+      <title>类微博feed流</title>
+      <link>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/</guid>
+      <description>PUSH模式 为每个订阅的用户推消息 缺点：大V推送的用户太多
+PULL模式 用户上线以后去拉去新消息 缺点：比较复杂，而且要多次查询再排序</description>
+    </item>
+    <item>
+      <title>限流</title>
+      <link>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>微服务 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link>
+    <description>Recent content in 微服务 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>snetinel</title>
+      <link>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/</guid>
+      <description>Sentinel 是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。
+Sentinel 的坑 dashboard 没有持久化，需要自己改造</description>
+    </item>
+    <item>
+      <title>zookeeper</title>
+      <link>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/</guid>
+      <description>zookeeper 什么是zookeeper 它是一个分布式协调框架，是Apache Hadoop 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如:统一命名服务、状态同 步服务、集群管理、分布式应用配置项的管理等。
+核心概念 简单的理解Zookeeper 是一个用于存储少量数据的基于内存 的数据库，主要有如下两个核心的概念:
+文件系统数据结构 监听通知机制。 文件系统数据结构 Zookeeper维护一个类似文件系统的数据结构: 每个子目录项都被称作为 znode(目录节点)，和文件系统类似，我们能够自由的增加、删除 znode，在一个znode下增加、删除子znode。
+有四种类型的znode:
+PERSISTENT­持久化目录节点 客户端与zookeeper断开连接后，该节点依旧存在，只要不手动删除该节点，他将永远存在
+PERSISTENT_SEQUENTIAL­持久化顺序编号目录节点 客户端与zookeeper断开连接后，该节点依旧存在，只是Zookeeper给该节点名称进行顺序编号
+EPHEMERAL­临时目录节点 客户端与zookeeper断开连接后，该节点被删除(和sessionId绑定的，session断开或者超时会被删除)
+EPHEMERAL_SEQUENTIAL­临时顺序编号目录节点 客户端与zookeeper断开连接后，该节点被删除，只是Zookeeper给该节点名称进行顺序编号
+Container 节点(3.5.3 版本新增，如果Container节点下面没有子节点，则Container节点 在未来会被Zookeeper自动清除,定时任务默认60s 检查一次)
+TTL 节点( Time To Live 默认禁用，只能通过系统配置 zookeeper.extendedTypesEnabled=true 开启，不稳定)
+监听通知机制 客户端注册监听它关心的任意节点，或者目录节点及递归子目录节点
+如果注册的是对某个节点的监听，则当这个节点被删除，或者被修改时，对应的客户端将被通知 如果注册的是对某个目录的监听，则当这个目录有子节点被创建，或者有子节点被删除，对应的客户端将被通知 如果注册的是对某个目录的递归子节点进行监听，则当这个目录下面的任意子节点有目录结构 的变化(有子节点被创建，或被删除)或者根节点有数据变化时，对应的客户端将被通知。 get -w /xxx 监听只会监听当前节点，子节点修改不会被监听 注意:所有的通知都是一次性的，及无论是对节点还是对目录进行的监听，一旦触发，对应的监 听即被移除。递归子节点，监听是对所有子节点的，所以，每个子节点下面的事件同样只会被触发一次。
+应用场景 分布式配置中心 分布式注册中心 分布式锁 分布式队列 集群选举 分布式屏障 发布/订阅 节点元数据 可以通过stat命令，或者get -s cZxid:创建znode的事务ID(Zxid的值)。 mZxid:最后修改znode的事务ID。 pZxid:最后添加或删除子节点的事务ID(子节点列表发生变化才会发生改变)。 ctime:znode创建时间。 mtime:znode最近修改时间。
+dataVersion:znode的当前数据版本。 cversion:znode的子节点结果集版本(一个节点的子节点增加、删除都会影响这个版本）。 aclVersion：znode的acl版本 ephemeralOwner:znode是临时znode时，表示znode所有者的 session ID。 如果 znode不是临时znode，则该字段设置为零。 dataLength:znode数据字段的长度。 numChildren:znode的子znode的数量。</description>
+    </item>
+  </channel>
+</rss>

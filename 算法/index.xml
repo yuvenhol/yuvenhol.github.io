@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>双向链表</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</guid>
+      <description>title: &amp;ldquo;链表反转&amp;rdquo; date: 2021-08-08T21:42:40+08:00 draft: false 链表反转 链表
+1-&amp;gt;2-&amp;gt;3-&amp;gt;4
+翻转
+4-&amp;gt;3-&amp;gt;2-&amp;gt;1
+主要难点是防止Next被替换，下一个节点无法访问
+方式1： 使用临时变量保存Last和Next
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reverseList(head *ListNode) *ListNode { var lastNode,nextNode *ListNode for(head!=nil){ nextNode=head.Next head.Next=lastNode lastNode=head head=nextNode } //注意这里是返回前一个节点，因为head最后指向了nextNode是空的 return lastNode } 方式2：递归 从最末尾开始递归交换 3-4-&amp;gt;4-3，1，2，(4，3)-&amp;gt;1,(4,3),2</description>
+    </item>
+  </channel>
+</rss>

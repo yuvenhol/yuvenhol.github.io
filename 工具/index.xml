@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>arthas</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/arthas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/arthas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>git</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/git/</guid>
+      <description>命令 branch -m 重命名 git branch -m 原始名称 新名称
+rebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing
+git工作流程 git flow 配置 ignore #：注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； </description>
+    </item>
+    <item>
+      <title>iredis</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/iredis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/iredis/</guid>
+      <description>redis 命令行客户端 https://gitee.com/mirrors/iredis#using-dsn</description>
+    </item>
+    <item>
+      <title>maven</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</guid>
+      <description>功能 编译、打包、测试、依赖管理
+###POM介绍 pom basics
+&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;!-- maven 模型版本--&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;!-- 分组编号一般是公司域名--&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;!-- 分组编号一般是项目名--&amp;gt; &amp;lt;artifactId&amp;gt;my-project&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0&amp;lt;/version&amp;gt; &amp;lt;/project&amp;gt; maven 约定大于配置 好处：
+省去配置 规范开发规范 文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/
+package: package同时会执行compile
+test Test开头的类名和test开头的方法名才会被执行 如果引入junit 包，上一条就失效</description>
+    </item>
+  </channel>
+</rss>

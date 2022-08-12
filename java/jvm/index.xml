@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jvm on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/java/jvm/</link>
+    <description>Recent content in jvm on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/java/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gc日志分析</title>
+      <link>https://yuvenhol.github.io/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/</guid>
+      <description>开启GC日志 打开gc日志：-XX:+PrintGCDetails 指定输入位置：-Xloggc:$LOGS_DIR/gc.log
+分析日志 GC (Allocation Failure)造成的young gc。
+gc日志头 解释 GC (Allocation Failure) Allocation Failure表示向young generation(eden)给新对象申请空间，但是young generation(eden)剩余的合适空间不够所需的大小导致的minor gc。 Full GC (Ergonomics) 默认使用 UseParallelGC 垃圾回收器，该垃圾回收器默认启动了 AdaptiveSizePolicy。 </description>
+    </item>
+    <item>
+      <title>jvm内存分析：</title>
+      <link>https://yuvenhol.github.io/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</guid>
+      <description>查看程序中对象数量 jmap -histo pid |head -20</description>
+    </item>
+    <item>
+      <title>TLAB &amp; 栈上分配</title>
+      <link>https://yuvenhol.github.io/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</guid>
+      <description>栈上分配 为什么需要栈上分配
+在我们的应用程序中，其实有很多的对象的作用域都不会逃逸出方法外，也就是说该对象的生命周期会随着方法的调用开始而开始，方法的调用结束而结束，对于这种对象，是不是该考虑将对象不在分配在堆空间中呢？ 我们通过JVM内存分配可以知道JAVA中的对象都是在堆上进行分配，当对象没有被引用的时候，需要依靠GC进行回收内存，如果对象数量较多的时候，会给GC带来较大压力，也间接影响了应用的性能。
+什么是栈上分配
+所以,栈上分配是JVM提出的一种调优方案,JVM通过逃逸分析确定该对象不会被外部访问,如果不会逃逸可以将该对象在栈上分配内存，每个方法或者说每个线程都有属于自己独立的栈帧,随着方法的调用结束,这样该对象所占用的内存空间就可以随栈帧出栈而销毁，就减轻了垃圾回收的压力。
+对象逃逸分析：就是分析对象动态作用域，当一个对象在方法中被定义后，它可能被外部方法所引用，例如作为调用参数传递到其他地方中。
+分析如下案例:
+public User test1(){ User user = new User(); user.setId(1); user.setName(&amp;ldquo;1&amp;rdquo;); return user; }
+public void test2(){ User user = new User(); user.setId(1); user.setName(&amp;ldquo;1&amp;rdquo;);
+//保存数据库 //userMapper.save(user); } 很显然test1方法中的user对象被返回了，这个对象的作用域范围不确定，test2方法中的user对象我们可以确定当方法结束这个对象就可以认为是无效对象了，对于这样的对象我们其实可以将其分配在栈内存里，让其在方法结束时跟随栈内存一起被回收掉。
+JVM对于这种情况可以通过开启逃逸分析参数(-XX:+DoEscapeAnalysis)来优化对象内存分配位置，使其通过标量替换优先分配在栈上(栈上分配)，JDK7之后默认开启逃逸分析，如果要关闭使用参数(-XX:-DoEscapeAnalysis)
+标量替换：通过逃逸分析确定该对象不会被外部访问，并且对象可以被进一步分解时，JVM不会创建该对象，而是将该对象成员变量分解若干个被这个方法使用的成员变量所代替，这些代替的成员变量在栈帧或寄存器上分配空间，这样就不会因为没有一大块连续空间导致对象内存不够分配。开启标量替换参数(-XX:+EliminateAllocations)，JDK7之后默认开启。
+栈上分配的优点:
+1.可以在方法调用结束后自行销毁对象,无需垃圾回收器的介入,有效减小JVM的GC压力 2.栈上分配速度很快,有效提高程序性能
+栈上分配的缺点:
+1.栈的空间是有限的,栈空间存放不了大对象,遇到大对象的创建则还是会存放在堆空间中
+TLAB 可能很多人会有疑惑，已经提供了栈上分配，为什么还要有什么TLAB，甚至混淆了两者之间的差别，包括我自己，之前也存在很多疑惑，下面为大家揭开原因 全名: 本地线程分配缓冲(Thread Local Allocation Buffer,TLAB)，这是一个线程专用的内存分配区域。
+为什么需要TLAB
+在线程初始化时，同时也会申请一块指定大小的内存，只给当前线程使用，这样每个线程都单独拥有一个空间，如果需要分配内存，就在自己的空间上分配，这样就不存在竞争的情况，可以大大提升分配效率。
+如何开启TLAB
+JVM默认开启了TLAB功能，也可以使用-XX: +UseTLAB 显示开启
+如何观察TLAB使用情况
+JVM提供了-XX:+PrintTLAB 参数打开跟踪TLAB的使用情况
+如何调整TLAB默认大小 -XX:TLABSize 通过该参数指定分配给每一个线程的TLAB空间的大小
+简单理解
+为了避免多线程情况下抢占空间,每个线程会提前在EDEN区中,额外划分一块内存区域,指定对象直接进入区域使用, jdk8默认开启
+TLAB的缺点:
+1.TLAB空间一般不会很大(占用了Eden区),所以大对象也无法在TLAB上进行分配,遇到大对象最终也只能分配到堆空间中
+如下图:对象分配流程图
+最后栈上分配和TLAB的对比
+名称	针对点	处于对象分配流程的位置 栈上分配	减少GC的负担	1 TLAB	加速堆上对象分配速度	2</description>
+    </item>
+  </channel>
+</rss>

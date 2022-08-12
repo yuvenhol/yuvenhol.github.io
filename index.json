@@ -1,522 +1,297 @@
 [
   {
-    "content": "Discover what this Hugo theme is all about and the core-concepts behind it.\n",
+    "content": "@Configuration+@Bean\n@Configuration public class AppConfig{ @Bean public JDBCTempalte t1(){ } @Bean public TranslationManager transactionManager(){ } @Bean public DataSource dataSource(){ xxx } } @Bean 修饰方法后，方法名作为beanname 加入叫spring容器 被Configuration修饰以后，该对象将变成代理对象，在获取bean修饰的方法时，如果spring容器有bean则会直接返回，没有会执行并生成bean\n",
     "description": "",
     "tags": null,
-    "title": "Basics",
-    "uri": "/basics/"
-  },
-  {
-    "content": "This is a plain demo child page.\n",
-    "description": "This is a plain page test, and the beginning of a YAML multiline description...\n",
-    "tags": null,
-    "title": "page X",
-    "uri": "/shortcodes/children/test/"
-  },
-  {
-    "content": "In Hugo, pages are the core of your site. Once it is configured, pages are definitely the added value to your documentation site.\nFolders Organize your site like any other Hugo project. Typically, you will have a content folder with all your pages.\ncontent ├── level-one │ ├── level-two │ │ ├── level-three │ │ │ ├── level-four │ │ │ │ ├── _index.md \u003c-- /level-one/level-two/level-three/level-four │ │ │ │ ├── page-4-a.md \u003c-- /level-one/level-two/level-three/level-four/page-4-a │ │ │ │ ├── page-4-b.md \u003c-- /level-one/level-two/level-three/level-four/page-4-b │ │ │ │ └── page-4-c.md \u003c-- /level-one/level-two/level-three/level-four/page-4-c │ │ │ ├── _index.md \u003c-- /level-one/level-two/level-three │ │ │ ├── page-3-a.md \u003c-- /level-one/level-two/level-three/page-3-a │ │ │ ├── page-3-b.md \u003c-- /level-one/level-two/level-three/page-3-b │ │ │ └── page-3-c.md \u003c-- /level-one/level-two/level-three/page-3-c │ │ ├── _index.md \u003c-- /level-one/level-two │ │ ├── page-2-a.md \u003c-- /level-one/level-two/page-2-a │ │ ├── page-2-b.md \u003c-- /level-one/level-two/page-2-b │ │ └── page-2-c.md \u003c-- /level-one/level-two/page-2-c │ ├── _index.md \u003c-- /level-one │ ├── page-1-a.md \u003c-- /level-one/page-1-a │ ├── page-1-b.md \u003c-- /level-one/page-1-b │ └── page-1-c.md \u003c-- /level-one/page-1-c ├── _index.md \u003c-- / └── page-top.md \u003c-- /page-top Note _index.md is required in each folder, it’s your “folder home page”\nCreate your project The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following great documentation for beginners.\nHugo provides a new command to create a new website.\nhugo new site \u003cnew_project\u003e The Relearn theme provides archetypes to help you create this kind of pages.\nFrontmatter Configuration Each Hugo page has to define a frontmatter in toml, yaml or json. This site will use toml in all cases.\nThe Relearn theme uses the following parameters on top of Hugo ones:\n+++ # Table of contents (toc) is enabled by default. Set this parameter to true to disable it. # Note: Toc is always disabled for chapter pages disableToc = false # If set, this will be used for the page's menu entry (instead of the `title` attribute) menuTitle = \"\" # If set, this will explicitly override common rules for the expand state of a page's menu entry alwaysopen = true # If set, this will explicitly override common rules for the sorting order of a page's submenu entries ordersectionsby = \"title\" # The title of the page heading will be prefixed by this HTML content headingPre = \"\" # The title of the page heading will be postfixed by this HTML content headingPost = \"\" # The title of the page in menu will be prefixed by this HTML content menuPre = \"\" # The title of the page in menu will be postfixed by this HTML content menuPost = \"\" # Hide a menu entry by setting this to true hidden = false # Display name of this page modifier. If set, it will be displayed in the footer. LastModifierDisplayName = \"\" # Email of this page modifier. If set with LastModifierDisplayName, it will be displayed in the footer LastModifierEmail = \"\" +++ Add icon to a menu entry In the page frontmatter, add a menuPre param to insert any HTML code before the menu label. The example below uses the GitHub icon.\n+++ title = \"GitHub repo\" menuPre = \"\u003ci class='fab fa-github'\u003e\u003c/i\u003e \" +++ Ordering sibling menu/page entries Hugo provides a flexible way to handle order for your pages.\nThe simplest way is to set weight parameter to a number.\n+++ title = \"My page\" weight = 5 +++ Using a custom title for menu entries By default, the Relearn theme will use a page’s title attribute for the menu item (or linkTitle if defined).\nBut a page’s title has to be descriptive on its own while the menu is a hierarchy. We’ve added the menuTitle parameter for that purpose:\nFor example (for a page named content/install/linux.md):\n+++ title = \"Install on Linux\" menuTitle = \"Linux\" +++ Override expand state rules for menu entries You can change how the theme expands menu entries on the side of the content with the alwaysopen setting on a per page basis. If alwaysopen=false for any given entry, its children will not be shown in the menu as long as it is not necessary for the sake of navigation.\nThe theme generates the menu based on the following rules:\nall parent entries of the active page including their siblings are shown regardless of any settings immediate children entries of the active page are shown regardless of any settings if not overridden, all other first level entries behave like they would have been given alwaysopen=false if not overridden, all other entries of levels besides the first behave like they would have been given alwaysopen=true all visible entries show their immediate children entries if alwaysopen=true; this proceeds recursivley all remaining entries are not shown You can see this feature in action on the example page for children shortcode and its children pages.\n",
-    "description": "",
-    "tags": null,
-    "title": "Pages organization",
-    "uri": "/cont/pages/"
-  },
-  {
-    "content": "Using the command: hugo new [relative new content path], you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more: archetypes. These are preconfigured skeleton pages with default frontmatter.\nThe Relearn theme defines some few archetypes of pages but you are free to define new ones to your liking. All can be used at any level of the documentation, the only difference being the layout of the content.\nPredefined Archetypes Home A Home page is the starting page of your project. It’s best to have only one page of this kind in your project.\nTo create a home page, run the following command\nhugo new --kind home _index.md This leads to a file with the following content\n+++ archetype = \"home\" title = \"{{ replace .Name \"-\" \" \" | title }}\" +++ Lorem Ipsum. Chapter A Chapter displays a page meant to be used as introduction for a set of child pages. Commonly, it contains a simple title and a catch line to define content that can be found below it.\nTo create a chapter page, run the following command\nhugo new --kind chapter \u003cname\u003e/_index.md This leads to a file with the following content\n+++ archetype = \"chapter\" title = \"{{ replace .Name \"-\" \" \" | title }}\" weight = X +++ Lorem Ipsum. Replace the X with a number. Because this number will be used to generate the subtitle of the chapter page, set the number to a consecutive value starting at 1 for each new chapter level.\nDefault A Default page is any other content page. If you set an unknown archetype in your frontmatter, this archetype will be used to generate the page.\nTo create a default page, run either one of the following commands\nhugo new \u003cchapter\u003e/\u003cname\u003e/_index.md or\nhugo new \u003cchapter\u003e/\u003cname\u003e.md This leads to a file with the following content\n+++ title = \"{{ replace .Name \"-\" \" \" | title }}\" weight = X +++ Lorem Ipsum. Replace the X with a number or delete the whole weight parameter entirly.\nSelfdefined Archetypes If you are in need of further archetypes you can define your own or even redefine existing ones.\nTemplate Define a template file in your project at archetypes/\u003ckind\u003e.md and make sure it has at least the frontmatter parameter for that archetype like\n+++ archetype = \"\u003ckind\u003e\" +++ Afterwards you can generate new content files of that kind with the follwing command\nhugo new --kind \u003ckind\u003e \u003cname\u003e/_index.md Partials To define how your archetypes are rendered, define corresponding partial files in your projects directory layouts/partials/archetypes/\u003ckind\u003e.\nIf you use an unknown archetype in your frontmatter, the default archetype will be used to generate the page.\nRelated to each archetype, several hook partial files in the form of \u003chook\u003e.html can be given inside each archetype directory. If a partial for a specific hook is missing, no output is generated for this hook.\nThe following hooks are used:\nName Notes styleclass Defines a set of CSS classes to be added to the HTML’s \u003cmain\u003e element. You can use these classes to define own CSS rules in your custom-header.html article Defines the HTML how to render your content Take a look at the existing archetypes of this theme to get an idea how to utilize it.\nOutput formats Each hook file can be overridden of a specific output format. Eg. if you define a new output format PLAINTEXT in your config.toml, you can add a file layouts/partials/archetypes/default.plaintext.html to change the way how normal content is written for that output format.\n",
-    "description": "",
-    "tags": null,
-    "title": "Archetypes",
-    "uri": "/cont/archetypes/"
-  },
-  {
-    "content": "Find out how to create and organize your content quickly and intuitively.\n",
-    "description": "",
-    "tags": null,
-    "title": "Content",
-    "uri": "/cont/"
-  },
-  {
-    "content": "This document shows you what’s new in the latest release. For a detailed list of changes, see the history page.\nBreaking: A change that requires action by you after upgrading to assure the site is still functional.\nChange: A change in default behavior. This may requires action by you / may or may not be revertable by configuration.\nNew: Marks new behavior you might find interesting or comes configurable.\n5.2.0 Change: If you’ve set collapsibleMenu = true in your config.toml, the menu will be expanded if a search term is found in a collapsed submenu. The menu will return to its initial collapse state once the search term does not match any submenus. 5.1.0 Change: Because the print preview URLs were non deterministic for normal pages in comparison to page bundles, this is now changed. Each print preview is now accessible by adding a index.print.html to the default URL.\nYou can revert this behavior by overwriting the PRINT output format setting in your config.tomlto:\n[outputFormats] [outputFormats.PRINT] name= \"PRINT\" baseName = \"index\" path = \"_print\" isHTML = true mediaType = 'text/html' permalinkable = false 5.0.0 Breaking: The theme changed how JavaScript and CSS dependencies are loaded to provide a better performance. In case you’ve added own JavaScript code that depends on the themes jQuery implementation, you have to put it into a separate *.js file (if not already) and add the defer keyword to the script element. Eg.\n\u003cscript defer src=\"myscript.js\"\u003e\u003c/script\u003e Change: The way archetypes are used to generate output has changed. The new systems allows you, to redefine existing archetypes or even generate your own ones.\nYour existing markdown files will still work like before and therefore you don’t need to change anything after the upgrade. Nevertheless, it is recommended to adapt your existing markdown files to the new way as follows:\nfor your home page, add the frontmatter parameter archetype = \"home\" and remove the leading heading\nfor all files containing the deprecated frontmatter parameter chapter = true, replace it with archetype = \"chapter\" and remove the leading headings\nChange: The frontmatter options pre / post were renamed to menuPre / menuPost. The old options will still be used if the new options aren’t set. Therefore you don’t need to change anything after the upgrade.\nNew: Adding new partials heading-pre.html / heading-post.html and according frontmatter options headingPre / headingPost to modifiy the way your page`s main heading gets styled.\nNew: The new shortcode math is available to add beautiful math and chemical formulae. See the documentation for available features. This feature will not work with Internet Explorer 11.\n4.2.0 Breaking: The second parameter for the include shortcode was switched in meaning and was renamed from showfirstheading to hidefirstheading. If you haven’t used this parameter in your shortcode, the default behavior hasn’t changed and you don’t need to change anything.\nIf you’ve used the second boolean parameter, you have to rename it and invert its value to achive the same behavior.\nChange: Previously, if the tabs shortcode could not find a tab item because, the tabs ended up empty. Now the first tab is selected instead.\nChange: The landingPageURL was removed from config.toml. You can savely remove this aswell from your configuration as it is not used anymore. The theme will detect the landing page URL automatically.\nNew: All shortcodes can now be also called from your partials. Examples for this are added to the documentation of each shortcode.\n4.1.0 New: While fixing issues with the search functionality for non latin languages, you can now configure to have multiple languages on a single page. 4.0.0 Breaking: The custom_css config parameter was removed from the configuration. If used in an existing installation, it can be achieved by overriding the custom-header.html template in a much more generic manner.\nBreaking: Because anchor hover color was not configurable without introducing more complexitity to the variant stylesheets, we decided to remove --MAIN-ANCHOR-color instead. You don’t need to change anything in your custom color stylesheet as the anchors now get their colors from --MAIN-LINK-color and --MAIN-ANCHOR-HOVER-color respectivley.\nNew: All shortcodes now support named parameter. The positional parameter are still supported but will not be enhanced with new features, so you don’t need to change anything in your installation.\nThis applies to expand, include, notice and siteparam.\nNew: The button shortcode received some love and now has a parameter for the color style similar to other shortcodes.\nNew: New colors --PRIMARY-color and --SECONDARY-color were added to provide easier modification of your custom style. Shortcodes with a color style can now have primary or secondary as additional values.\nThese two colors are the default for other, more specific color variables. You don’t need to change anything in your existing custom color stylesheets as those variables get reasonable default values.\nNew: The documentation for all shortcodes were revised.\n3.4.0 Breaking: If you had previously overwritten the custom-footer.html partial to add visual elements below the content of your page, you have to move this content to the new partial content-footer.html. custom-footer.html was never meant to contain HTML other than additional styles and JavaScript.\nNew: If you prefer expandable/collapsible menu items, you can now set collapsibleMenu=true in your config.toml. This will add arrows to all menu items that contain sub menus. The menu will expand/collapse without navigation if you click on an arrow.\nNew: You can activate print support in your config.toml to add the capability to print whole chapters or even the complete site.\nNew: Translation for Traditional Chinese.\n3.3.0 New: Introduction of new CSS variables to set the font. The theme distinguishs between --MAIN-font for all content text and --CODE-font for inline or block code. There are additional overrides for all headings. See the theme variant generator of the exampleSite for all available variables.\nNew: The new shortcode swagger is available to include a UI for REST OpenAPI Specifications. See the documentation for available features. This feature will not work with Internet Explorer 11.\n3.2.0 Change: In this release the Mermaid JavaScript library will only be loaded on demand if the page contains a Mermaid shortcode or is using Mermaid codefences. This changes the behavior of disableMermaid config option as follows: If a Mermaid shortcode or codefence is found, the option will be ignored and Mermaid will be loaded regardlessly.\nThe option is still useful in case you are using scripting to set up your graph. In this case no shortcode or codefence is involved and the library is not loaded by default. In this case you can set disableMermaid=false in your frontmatter to force the library to be loaded. See the theme variant generator of the exampleSite for an example.\nThis change requires at least Hugo 0.93.0 to be used. The minimum requirement will be reported during build on the console if not met.\nNew: Additional color variant variable --MERMAID-theme to set the variant’s Mermaid theme. This causes the Mermaid theme to switch with the color variant if it defers from the setting of the formerly selected color variant.\n3.1.0 New: attachment and notice shortcodes have a new parameter to override the default icon. Allowed values are all Font Awesome 5 Free icons. 3.0.0 Breaking: We made changes to the menu footer. If you have your menu-footer.html partial overridden, you may have to review the styling (eg. margins/paddings) in your partial. For a reference take a look into the menu-footer.html partial that is coming with the exampleSite.\nThis change was made to allow your own menu footer to be placed right after the so called prefooter that comes with the theme (containing the language switch and Clear history functionality).\nBreaking: We have changed the default colors from the original Learn theme (the purple menu header) to the Relearn defaults (the light green menu header) as used in the official documentation.\nThis change will only affect your installation if you’ve not set the themeVariant parameter in your config.toml. If you still want to use the Learn color variant, you have to explicitly set themeVariant=\"learn\" in your config.toml.\nNote, that this will also affect your site if viewed with Internet Explorer 11 but in this case it can not be reconfigured as Internet Explorer does not support CSS variables.\nChange: Due to a bug, that we couldn’t fix in a general manner for color variants, we decided to remove --MENU-SEARCH-BOX-ICONS-color and introduced --MENU-SEARCH-color instead. You don’t need to change anything in your custom color stylesheet as the old name will be used as a fallback.\nChange: For consistency reasons, we renamed --MENU-SEARCH-BOX-color to --MENU-SEARCH-BORDER-color. You don’t need to change anything in your custom color stylesheet as the old name will be used as a fallback.\nNew: With this release you are now capable to define your own dark mode variants.\nTo make this possible, we have introduced a lot more color variables you can use in your color variants. Your old variants will still work and don’t need to be changed as apropriate fallback values are used by the theme. Nevertheless, the new colors allow for much more customization.\nTo see what’s now possible, see the new variants relearn-dark and neon that are coming with this release.\nNew: To make the creation of new variants easier for you, we’ve added a new interactive theme variant generator. This feature will not work with Internet Explorer 11.\nNew: You can now configure multiple color variants in your config.toml. In this case, the first variant is the default chosen on first view and a variant switch will be shown in the menu footer. See the documentation for configuration.\nNote, that the new variant switch will not work with Internet Explorer 11 as it does not support CSS variables. Therefore, the variant switcher will not be displayed with Internet Explorer 11.\n2.9.0 Breaking: This release removes the themes implementation of ref/relref in favor for Hugos standard implementation. This is because of inconsistencies with the themes implementation. In advantage, your project becomes standard complient and exchanging this theme in your project to some other theme will be effortless.\nIn a standard complient form you must not link to the *.md file but to its logical name. You’ll see, referencing other pages becomes much easier. All three types result in the same reference:\nType Non-Standard Standard Branch bundle basics/configuration/_index.md basics/configuration Leaf bundle basics/configuration/index.md basics/configuration Page basics/configuration.md basics/configuration If you’ve linked from a page of one language to a page of another language, conversion is a bit more difficult but Hugo got you covered as well.\nAlso, the old themes implementation allowed refs to non-existing content. This will cause Hugos implementation to show the error below and abort the generation. If your project relies on this old behavior, you can reconfigure the error handling of Hugos implementation.\nIn the best case your usage of the old implementation is already standard complient and you don’t need to change anything. You’ll notice this very easily once you’ve started hugo server after an upgrade and no errors are written to the console.\nYou may see errors on the console after the update in the form:\nERROR 2021/11/19 22:29:10 [en] REF_NOT_FOUND: Ref \"basics/configuration/_index.md\": \"hugo-theme-relearn\\exampleSite\\content\\_index.en.md:19:22\": page not found In this case, you must apply one of two options:\nCopy the old implementation files theme/hugo-theme-relearn/layouts/shortcode/ref.html and theme/hugo-theme-relearn/layouts/shortcode/relref.html to your own projects layouts/shortcode/ref.html and layouts/shortcode/relref.html respectively. This is not recommended as your project will still rely on non-standard behavior afterwards.\nStart up a text editor with regular expression support for search and replace. Apply the following conversions in the given order on all *.md files. This is the recommended choice.\nType Search Replace by Branch bundle (ref\\s+\"[^\"]*)/_index\\.md\" $1\" Leaf bundle (ref\\s+\"[^\"]*)/index\\.md\" $1\" Page (ref\\s+\"[^\"]*)\\.md\" $1\" 2.8.0 Change: Although never officially documented, this release removes the font Novacento/Novecento. If you use it in an overwritten CSS please replace it with Work Sans. This change was necessary as Novacento did not provide all Latin special characters and lead to mixed styled character text eg. for czech.\nNew: The theme now supports favicons served from static/images/ named as favicon or logo in SVG, PNG or ICO format out of the box. An overridden partial layouts/partials/favicon.html may not be necessary anymore in most cases.\nNew: You can hide the table of contents menu for the whole site by setting the disableToc option in your config.toml. For an example see the example configuration.\n2.7.0 New: Optional second parameter for notice shortcode to set title in box header. 2.6.0 New: Your site can now be served from a subfolder if you set baseURL and canonifyURLs=true in your config.toml. See the documentation for a detailed example. 2.5.0 Change: New colors --CODE-BLOCK-color and --CODE-BLOCK-BG-color were added to provide a fallback for Hugos syntax highlightning in case guessSyntax=true is set. Ideally the colors are set to the same values as the ones from your chosen chroma style. 2.4.0 Change: Creation of customized stylesheets was simplified down to only contain the CSS variables. Everything else can and should be deleted from your custom stylesheet to assure everything works fine. For the predefined stylesheet variants, this change is already included.\nNew: Hidden pages are displayed by default in their according tags page. You can now turn off this behavior by setting disableTagHiddenPages=true in your config.toml.\nNew: You can define the expansion state of your menus for the whole site by setting the alwaysopen option in your config.toml. Please see further documentation for possible values and default behavior.\nNew: New frontmatter ordersectionsby option to change immediate children sorting in menu and children shortcode. Possible values are title or weight.\nNew: Alternate content of a page is now advertised in the HTML meta tags. See Hugo documentation.\n2.3.0 New: Showcase multilanguage features by provding a documentation translation “fer us pirrrates”. There will be no other translations besides the original English one and the Pirates one due to maintenance constraints. 2.2.0 New: Hidden pages are displayed by default in the sitemap generated by Hugo and are therefore visible for search engine indexing. You can now turn off this behavior by setting disableSeoHiddenPages=true in your config.toml. 2.1.0 Change: In case the site’s structure contains addional *.md files not part of the site (eg files that are meant to be included by site pages - see CHANGELOG.md in the exampleSite), they will now be ignored by the search.\nNew: Hidden pages are indexed for the site search by default. You can now turn off this behavior by setting disableSearchHiddenPages=true in your config.toml.\nNew: If a search term is found in an expand shortcode, the expand will be opened.\nNew: The menu will scroll the active item into view on load.\n2.0.0 Change: Syntaxhighlightning was switched to the built in Hugo mechanism. You may need to configure a new stylesheet or decide to roll you own as described on in the Hugo documentation\nChange: In the predefined stylesheets there was a typo and --MENU-HOME-LINK-HOVERED-color must be changed to --MENU-HOME-LINK-HOVER-color. You don’t need to change anything in your custom color stylesheet as the old name will be used as a fallback.\nChange: --MENU-HOME-LINK-color and --MENU-HOME-LINK-HOVER-color were missing in the documentation. You should add them to your custom stylesheets if you want to override the defaults.\nChange: Arrow navigation and children shortcode were ignoring setting for ordersectionsby. This is now changed and may result in different sorting order of your sub pages.\nChange: If hidden pages are accessed directly by typing their URL, they will be exposed in the menu.\nChange: A page without a title will be treated as hidden=true.\nNew: You can define the expansion state of your menus in the frontmatter. Please see further documentation for possible values and default behavior.\nNew: New partials for defining pre/post content for menu items and the content. See documentation for further reading.\nNew: Shortcode children with new parameter containerstyle.\nNew: New shortcode include to include arbitrary file content into a page.\n1.2.0 New: Shortcode expand with new parameter to open on page load. 1.1.0 New: Mermaid config options can be set in config.toml. 1.0.0 New: Initial fork of the Learn theme based on Learn 2.5.0 on 2021-07-01. This introduces no new features besides a global rename to Relearn and a new logo. For the reasons behind forking the Learn theme, see this comment in the Learn issues. ",
-    "description": "",
-    "tags": null,
-    "title": "What's new",
-    "uri": "/basics/migration/"
-  },
-  {
-    "content": "Let’s face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.\nMarkdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it.\nSome of the key benefits are:\nMarkdown is simple to learn, with minimal extra characters so it’s also quicker to write content. Less chance of errors when writing in Markdown. Produces valid XHTML output. Keeps the content and the visual display separate, so you cannot mess up the look of your site. Write in any text editor or Markdown application you like. Markdown is a joy to use! John Gruber, the author of Markdown, puts it like this:\nThe overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email. John Gruber\nWithout further delay, let us go over the main elements of Markdown and what the resulting HTML looks like:\nInfo Bookmark this page and the official Commonmark reference for easy future reference!\nHeadings Headings from h1 through h6 are constructed with a # for each level:\n# h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading Renders to:\nh1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading HTML:\n\u003ch1\u003eh1 Heading\u003c/h1\u003e \u003ch2\u003eh2 Heading\u003c/h2\u003e \u003ch3\u003eh3 Heading\u003c/h3\u003e \u003ch4\u003eh4 Heading\u003c/h4\u003e \u003ch5\u003eh5 Heading\u003c/h5\u003e \u003ch6\u003eh6 Heading\u003c/h6\u003e Comments Comments should be HTML compatible\n\u003c!-- This is a comment --\u003e Comment below should NOT be seen:\nHorizontal Rules The HTML \u003chr\u003e element is for creating a “thematic break” between paragraph-level elements. In Markdown, you can create a \u003chr\u003e with --- - three consecutive dashes\nrenders to:\nParagraphs Any text not starting with a special sign is written as normal, plain text and will be wrapped within \u003cp\u003e\u003c/p\u003e tags in the rendered HTML.\nSo this body copy:\nLorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad. renders to this HTML:\n\u003cp\u003eLorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.\u003c/p\u003e Text Markers Bold For emphasizing a snippet of text with a heavier font-weight.\nThe following snippet of text is rendered as bold text.\n**rendered as bold text** renders to:\nrendered as bold text\nand this HTML\n\u003cstrong\u003erendered as bold text\u003c/strong\u003e Italics For emphasizing a snippet of text with italics.\nThe following snippet of text is rendered as italicized text.\n_rendered as italicized text_ renders to:\nrendered as italicized text\nand this HTML:\n\u003cem\u003erendered as italicized text\u003c/em\u003e Strikethrough In GFM (GitHub flavored Markdown) you can do strikethroughs.\n~~Strike through this text.~~ Which renders to:\nStrike through this text.\nHTML:\n\u003cdel\u003eStrike through this text.\u003c/del\u003e Blockquotes For quoting blocks of content from another source within your document.\nAdd \u003e before any text you want to quote.\n\u003e **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined. Renders to:\nFusion Drive combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.\nand this HTML:\n\u003cblockquote\u003e \u003cp\u003e\u003cstrong\u003eFusion Drive\u003c/strong\u003e combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.\u003c/p\u003e \u003c/blockquote\u003e Blockquotes can also be nested:\n\u003e Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. \u003e \u003e \u003e Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam. \u003e \u003e Mauris sit amet ligula egestas, feugiat metus tincidunt, luctus libero. Donec congue finibus tempor. Vestibulum aliquet sollicitudin erat, ut aliquet purus posuere luctus. Renders to:\nDonec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.\nSed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.\nMauris sit amet ligula egestas, feugiat metus tincidunt, luctus libero. Donec congue finibus tempor. Vestibulum aliquet sollicitudin erat, ut aliquet purus posuere luctus.\nLists Unordered A list of items in which the order of the items does not explicitly matter.\nYou may use any of the following symbols to denote bullets for each list item:\n* valid bullet - valid bullet + valid bullet For example\n+ Lorem ipsum dolor sit amet + Consectetur adipiscing elit + Integer molestie lorem at massa + Facilisis in pretium nisl aliquet + Nulla volutpat aliquam velit - Phasellus iaculis neque - Purus sodales ultricies - Vestibulum laoreet porttitor sem - Ac tristique libero volutpat at + Faucibus porta lacus fringilla vel + Aenean sit amet erat nunc + Eget porttitor lorem Renders to:\nLorem ipsum dolor sit amet Consectetur adipiscing elit Integer molestie lorem at massa Facilisis in pretium nisl aliquet Nulla volutpat aliquam velit Phasellus iaculis neque Purus sodales ultricies Vestibulum laoreet porttitor sem Ac tristique libero volutpat at Faucibus porta lacus fringilla vel Aenean sit amet erat nunc Eget porttitor lorem And this HTML\n\u003cul\u003e \u003cli\u003eLorem ipsum dolor sit amet\u003c/li\u003e \u003cli\u003eConsectetur adipiscing elit\u003c/li\u003e \u003cli\u003eInteger molestie lorem at massa\u003c/li\u003e \u003cli\u003eFacilisis in pretium nisl aliquet\u003c/li\u003e \u003cli\u003eNulla volutpat aliquam velit \u003cul\u003e \u003cli\u003ePhasellus iaculis neque\u003c/li\u003e \u003cli\u003ePurus sodales ultricies\u003c/li\u003e \u003cli\u003eVestibulum laoreet porttitor sem\u003c/li\u003e \u003cli\u003eAc tristique libero volutpat at\u003c/li\u003e \u003c/ul\u003e \u003c/li\u003e \u003cli\u003eFaucibus porta lacus fringilla vel\u003c/li\u003e \u003cli\u003eAenean sit amet erat nunc\u003c/li\u003e \u003cli\u003eEget porttitor lorem\u003c/li\u003e \u003c/ul\u003e Ordered A list of items in which the order of items does explicitly matter.\n1. Lorem ipsum dolor sit amet 4. Consectetur adipiscing elit 2. Integer molestie lorem at massa 8. Facilisis in pretium nisl aliquet 4. Nulla volutpat aliquam velit 99. Faucibus porta lacus fringilla vel 21. Aenean sit amet erat nunc 6. Eget porttitor lorem Renders to:\nLorem ipsum dolor sit amet Consectetur adipiscing elit Integer molestie lorem at massa Facilisis in pretium nisl aliquet Nulla volutpat aliquam velit Faucibus porta lacus fringilla vel Aenean sit amet erat nunc Eget porttitor lorem And this HTML:\n\u003col\u003e \u003cli\u003eLorem ipsum dolor sit amet\u003c/li\u003e \u003cli\u003eConsectetur adipiscing elit\u003c/li\u003e \u003cli\u003eInteger molestie lorem at massa\u003c/li\u003e \u003cli\u003eFacilisis in pretium nisl aliquet\u003c/li\u003e \u003cli\u003eNulla volutpat aliquam velit\u003c/li\u003e \u003cli\u003eFaucibus porta lacus fringilla vel\u003c/li\u003e \u003cli\u003eAenean sit amet erat nunc\u003c/li\u003e \u003cli\u003eEget porttitor lorem\u003c/li\u003e \u003c/ol\u003e Tip If you just use 1. for each number, Markdown will automatically number each item. For example:\n1. Lorem ipsum dolor sit amet 1. Consectetur adipiscing elit 1. Integer molestie lorem at massa 1. Facilisis in pretium nisl aliquet 1. Nulla volutpat aliquam velit 1. Faucibus porta lacus fringilla vel 1. Aenean sit amet erat nunc 1. Eget porttitor lorem Renders to:\nLorem ipsum dolor sit amet Consectetur adipiscing elit Integer molestie lorem at massa Facilisis in pretium nisl aliquet Nulla volutpat aliquam velit Faucibus porta lacus fringilla vel Aenean sit amet erat nunc Eget porttitor lorem Code Inline code Wrap inline snippets of code with `.\nIn this example, `\u003cdiv\u003e\u003c/div\u003e` should be wrapped as **code**. Renders to:\nIn this example, \u003cdiv\u003e\u003c/div\u003e should be wrapped as code.\nHTML:\n\u003cp\u003eIn this example, \u003ccode\u003e\u0026lt;div\u0026gt;\u0026lt;/div\u0026gt;\u003c/code\u003e should be wrapped as \u003cstrong\u003ecode\u003c/strong\u003e.\u003c/p\u003e Indented code Or indent several lines of code by at least two spaces, as in:\n// Some comments line 1 of code line 2 of code line 3 of code Renders to:\n// Some comments line 1 of code line 2 of code line 3 of code HTML:\n\u003cpre\u003e \u003ccode\u003e // Some comments line 1 of code line 2 of code line 3 of code \u003c/code\u003e \u003c/pre\u003e Block code “fences” Use “fences” ``` to block in multiple lines of code.\n``` Sample text here... ``` HTML:\n\u003cpre\u003e \u003ccode\u003eSample text here...\u003c/code\u003e \u003c/pre\u003e Syntax highlighting GFM, or “GitHub Flavored Markdown” also supports syntax highlighting. To activate it, usually you simply add the file extension of the language you want to use directly after the first code “fence”, ```js, and syntax highlighting will automatically be applied in the rendered HTML.\nSee Code Highlighting for additional documentation.\nFor example, to apply syntax highlighting to JavaScript code:\n```js grunt.initConfig({ assemble: { options: { assets: 'docs/assets', data: 'src/data/*.{json,yml}', helpers: 'src/custom-helpers.js', partials: ['src/partials/**/*.{hbs,md}'] }, pages: { options: { layout: 'default.hbs' }, files: { './': ['src/templates/pages/index.hbs'] } } } }; ``` Renders to:\ngrunt.initConfig({ assemble: { options: { assets: 'docs/assets', data: 'src/data/*.{json,yml}', helpers: 'src/custom-helpers.js', partials: ['src/partials/**/*.{hbs,md}'] }, pages: { options: { layout: 'default.hbs' }, files: { './': ['src/templates/pages/index.hbs'] } } } }; Tables Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.\n| Option | Description | | ------ | ----------- | | data | path to data files to supply the data that will be passed into templates. | | engine | engine to be used for processing templates. Handlebars is the default. | | ext | extension to be used for dest files. | Renders to:\nOption Description data path to data files to supply the data that will be passed into templates. engine engine to be used for processing templates. Handlebars is the default. ext extension to be used for dest files. And this HTML:\n\u003ctable\u003e \u003ctr\u003e \u003cth\u003eOption\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003edata\u003c/td\u003e \u003ctd\u003epath to data files to supply the data that will be passed into templates.\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003eengine\u003c/td\u003e \u003ctd\u003eengine to be used for processing templates. Handlebars is the default.\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003eext\u003c/td\u003e \u003ctd\u003eextension to be used for dest files.\u003c/td\u003e \u003c/tr\u003e \u003c/table\u003e Right aligned text Adding a colon on the right side of the dashes below any heading will right align text for that column.\n| Option | Description | | ------:| -----------:| | data | path to data files to supply the data that will be passed into templates. | | engine | engine to be used for processing templates. Handlebars is the default. | | ext | extension to be used for dest files. | Option Description data path to data files to supply the data that will be passed into templates. engine engine to be used for processing templates. Handlebars is the default. ext extension to be used for dest files. Two tables adjacent Option Description ext extension to be used for dest files. Option Description ext extension to be used for dest files. Links Basic link [Assemble](http://assemble.io) Renders to (hover over the link, there is no tooltip):\nAssemble\nHTML:\n\u003ca href=\"http://assemble.io\"\u003eAssemble\u003c/a\u003e Add a tooltip [Upstage](https://github.com/upstage/ \"Visit Upstage!\") Renders to (hover over the link, there should be a tooltip):\nUpstage\nHTML:\n\u003ca href=\"https://github.com/upstage/\" title=\"Visit Upstage!\"\u003eUpstage\u003c/a\u003e Named Anchors Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:\n# Table of Contents - [Chapter 1](#chapter-1) - [Chapter 2](#chapter-2) - [Chapter 3](#chapter-3) will jump to these sections:\n## Chapter 1 \u003ca id=\"chapter-1\"\u003e\u003c/a\u003e Content for chapter one. ## Chapter 2 \u003ca id=\"chapter-2\"\u003e\u003c/a\u003e Content for chapter one. ## Chapter 3 \u003ca id=\"chapter-3\"\u003e\u003c/a\u003e Content for chapter one. NOTE that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.\nImages Images have a similar syntax to links but include a preceding exclamation point.\n![Minion](https://octodex.github.com/images/minion.png) or\n![Alt text](https://octodex.github.com/images/stormtroopocat.jpg \"The Stormtroopocat\") Like links, Images also have a footnote style syntax\nAlternative usage : note images ![Alt text][id] With a reference later in the document defining the URL location:\n[id]: https://octodex.github.com/images/dojocat.jpg \"The Dojocat\" Further image formatting The Hugo Markdown parser supports additional non-standard functionality.\nResizing image Add HTTP parameters width and/or height to the link image to resize the image. Values are CSS values (default is auto).\n![Minion](https://octodex.github.com/images/minion.png?width=20pc) ![Minion](https://octodex.github.com/images/minion.png?height=50px) ![Minion](https://octodex.github.com/images/minion.png?height=50px\u0026width=300px) Add CSS classes Add a HTTP classes parameter to the link image to add CSS classes. shadowand border are available but you could define other ones.\n![stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg?classes=shadow) ![stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg?classes=border) ![stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg?classes=border,shadow) Lightbox Add a HTTP featherlight parameter to the link image to disable lightbox. By default lightbox is enabled using the featherlight.js plugin. You can disable this by defining featherlight to false.\n![Minion](https://octodex.github.com/images/minion.png?featherlight=false) ",
-    "description": "",
-    "tags": null,
-    "title": "Markdown syntax",
-    "uri": "/cont/markdown/"
-  },
-  {
-    "content": "Hugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities.\nBut this happens to be a bad idea. Everyone uses Markdown because it’s pure and simple to read even non-rendered. You should avoid HTML to keep it as simple as possible.\nTo avoid this limitations, Hugo created shortcodes. A shortcode is a simple snippet inside a page.\nThe Relearn theme provides multiple shortcodes on top of existing ones.\nAttachments List of files attached to a page\nButton Clickable buttons\nChildren List the child pages of a page\nExpand Expandable/collapsible sections of text\nInclude Displays content from other files\nMath Beautiful math and chemical formulae\nMermaid Generate diagrams and flowcharts from text\nNotice Disclaimers to help you structure your page\nSite param Get value of site params\nSwagger UI for your Swagger / OpenAPI Specifications\nTabbed views Show content in tabbed views\n",
-    "description": "",
-    "tags": null,
-    "title": "Shortcodes",
-    "uri": "/shortcodes/"
-  },
-  {
-    "content": "The Relearn theme uses Hugo’s built-in syntax highlighting for code.\nMarkdown syntax Wrap the code block with three backticks and the name of the language. Highlight will try to auto detect the language if one is not provided.\n```json [ { \"title\": \"apples\", \"count\": [12000, 20000], \"description\": {\"text\": \"...\", \"sensitive\": false} }, { \"title\": \"oranges\", \"count\": [17500, null], \"description\": {\"text\": \"...\", \"sensitive\": false} } ] ``` Renders to:\n[ { \"title\": \"apples\", \"count\": [12000, 20000], \"description\": {\"text\": \"...\", \"sensitive\": false} }, { \"title\": \"oranges\", \"count\": [17500, null], \"description\": {\"text\": \"...\", \"sensitive\": false} } ] Supported languages Hugo comes with a remarkable list of supported languages.\nRecommended configuration You can choose a color theme from the list of supported themes and add it in your config.toml\n[markup] [markup.highlight] # if set to `guessSyntax = true`, there will be no unstyled code even if no language # was given BUT mermaid code fences will not work anymore! So this is a mandatory # setting for your site guessSyntax = false # choose a color theme or create your own style = \"base16-snazzy\" ",
-    "description": "",
-    "tags": null,
-    "title": "Code highlighting",
-    "uri": "/cont/syntaxhighlight/"
-  },
-  {
-    "content": "Some pages for internal testing of differnt styles\nChapters Start your success story. Now!\nCode Some testing for different styles used in syntax highlightning and preformatted blocks\nImages Some testing for different styles of image links\nWidth Test dynamic width resizing of content if scrollbar is present\n",
-    "description": "",
-    "tags": null,
-    "title": "Tests",
-    "uri": "/tests/"
-  },
-  {
-    "content": "You can define additional menu entries or shortcuts in the navigation menu without any link to content.\nBasic configuration Edit the website configuration config.toml and add a [[menu.shortcuts]] entry for each link your want to add.\nExample from the current website:\n[[menu.shortcuts]] name = \"\u003ci class='fab fa-fw fa-github'\u003e\u003c/i\u003e GitHub repo\" identifier = \"ds\" url = \"https://github.com/McShelby/hugo-theme-relearn\" weight = 10 [[menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-camera'\u003e\u003c/i\u003e Showcases\" url = \"more/showcase/\" weight = 11 [[menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-bookmark'\u003e\u003c/i\u003e Hugo Documentation\" identifier = \"hugodoc\" url = \"https://gohugo.io/\" weight = 20 [[menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-bullhorn'\u003e\u003c/i\u003e Credits\" url = \"more/credits/\" weight = 30 [[menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-tags'\u003e\u003c/i\u003e Tags\" url = \"tags/\" weight = 40 By default, shortcuts are preceded by a title. This title can be disabled by setting disableShortcutsTitle=true. However, if you want to keep the title but change its value, it can be overriden by changing your local i18n translation string configuration.\nFor example, in your local i18n/en.toml file, add the following content\n[Shortcuts-Title] other = \"\u003cYour value\u003e\" Read more about hugo menu and hugo i18n translation strings\nConfiguration for Multilingual mode When using a multilingual website, you can set different menus for each language. In the config.toml file, prefix your menu configuration by Languages.\u003clanguage-id\u003e.\nExample from the current website:\n[Languages] [Languages.en] title = \"Hugo Relearn Theme\" weight = 1 languageName = \"English\" landingPageURL = \"/\" landingPageName = \"\u003ci class='fas fa-home'\u003e\u003c/i\u003e Home\" [[Languages.en.menu.shortcuts]] name = \"\u003ci class='fab fa-fw fa-github'\u003e\u003c/i\u003e GitHub repo\" identifier = \"ds\" url = \"https://github.com/McShelby/hugo-theme-relearn\" weight = 10 [[Languages.en.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-camera'\u003e\u003c/i\u003e Showcases\" url = \"more/showcase/\" weight = 11 [[Languages.en.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-bookmark'\u003e\u003c/i\u003e Hugo Documentation\" identifier = \"hugodoc\" url = \"https://gohugo.io/\" weight = 20 [[Languages.en.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-bullhorn'\u003e\u003c/i\u003e Credits\" url = \"more/credits/\" weight = 30 [[Languages.en.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-tags'\u003e\u003c/i\u003e Tags\" url = \"tags/\" weight = 40 [Languages.pir] title = \"Cap'n Hugo Relearrrn Theme\" weight = 1 languageName = \"Arrr! Pirrrates\" landingPageURL = \"/pir/\" landingPageName = \"\u003ci class='fas fa-home'\u003e\u003c/i\u003e Arrr! Home\" [[Languages.pir.menu.shortcuts]] name = \"\u003ci class='fab fa-fw fa-github'\u003e\u003c/i\u003e GitHub repo\" identifier = \"ds\" url = \"https://github.com/McShelby/hugo-theme-relearn\" weight = 10 [[Languages.pir.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-camera'\u003e\u003c/i\u003e Showcases\" url = \"more/showcase/\" weight = 11 [[Languages.pir.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-bookmark'\u003e\u003c/i\u003e Cap'n Hugo Documentat'n\" identifier = \"hugodoc\" url = \"https://gohugo.io/\" weight = 20 [[Languages.pir.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-bullhorn'\u003e\u003c/i\u003e Crrredits\" url = \"more/credits/\" weight = 30 [[Languages.pir.menu.shortcuts]] name = \"\u003ci class='fas fa-fw fa-tags'\u003e\u003c/i\u003e Arrr! Tags\" url = \"tags/\" weight = 40 Read more about hugo menu and hugo multilingual menus\n",
-    "description": "",
-    "tags": null,
-    "title": "Menu extra shortcuts",
-    "uri": "/cont/menushortcuts/"
-  },
-  {
-    "content": "The Relearn theme for Hugo loads the Font Awesome library, allowing you to easily display any icon or logo available in the Font Awesome free collection.\nFinding an icon Browse through the available icons in the Font Awesome Gallery. Notice that the free filter is enabled, as only the free icons are available by default.\nOnce on the Font Awesome page for a specific icon, for example the page for the heart, copy the HTML reference and paste into the Markdown content.\nThe HTML to include the heart icon is:\n\u003ci class=\"fas fa-heart\"\u003e\u003c/i\u003e Including in markdown Paste the \u003ci\u003e HTML into markup and Font Awesome will load the relevant icon.\nBuilt with \u003ci class=\"fas fa-heart\"\u003e\u003c/i\u003e by Relearn and Hugo Which appears as\nBuilt with by Relearn and Hugo\nCustomising icons Font Awesome provides many ways to modify the icon\nChange color (by default the icon will inherit the parent color) Increase or decrease size Rotate Combine with other icons Check the full documentation on web fonts with CSS for more.\n",
-    "description": "",
-    "tags": null,
-    "title": "Icons and logos",
-    "uri": "/cont/icons/"
-  },
-  {
-    "content": "The Relearn theme is fully compatible with Hugo multilingual mode.\nIt provides:\nTranslation strings for default values (English, Piratized English, Arabic, Simplified Chinese, Traditional Chinesse, Dutch, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish, Vietnamese). Feel free to contribute! Automatic menu generation from multilingual content In-browser language switching Basic configuration After learning how Hugo handle multilingual websites, define your languages in your config.toml file.\nFor example with current English and Piratized English website.\n# English is the default language defaultContentLanguage = \"en\" [Languages] [Languages.en] title = \"Hugo Relearn Theme\" weight = 1 languageName = \"English\" [Languages.pir] title = \"Cap'n Hugo Relearrrn Theme\" weight = 2 languageName = \"Arrr! Pirrrates\" Then, for each new page, append the id of the language to the file.\nSingle file my-page.md is split in two files: in English: my-page.md in Piratized English: my-page.pir.md Single file _index.md is split in two files: in English: _index.md in Piratized English: _index.pir.md Info Be aware that only translated pages are displayed in menu. It’s not replaced with default language content.\nTip Use slug frontmatter parameter to translate urls too.\nSearch In case each page’s content is written in one single language only, the above configuration will already configure the site’s search functionality correctly.\nWarning Although the theme supports a wide variety of supported languages, the site’s search does not. You’ll see error reports in your browsers console log for each unsupported language. Currently unsupported are:\nIndonesian Korean Polish Search with mixed language support In case your page’s content contains text in multiple languages (e.g. you are writing a russian documentation for your english API), you can add those languages to your config.toml to broaden search.\n[params] additionalContentLanguage = [ \"en\" ] As this is an array, you can add multiple additional languages.\nNote Keep in mind that the language code required here, is the base language code. E.g. if you have additonal content in zh-CN, you have to add just zh to this parameter.\nOverwrite translation strings Translations strings are used for common default values used in the theme (Edit button, Search placeholder and so on). Translations are available in English and Piratized English but you may use another language or want to override default values.\nTo override these values, create a new file in your local i18n folder i18n/\u003cidlanguage\u003e.toml and inspire yourself from the theme themes/hugo-theme-relearn/i18n/en.toml\nDisable language switching Switching the language in the browser is a great feature, but for some reasons you may want to disable it.\nJust set disableLanguageSwitchingButton=true in your config.toml\n[params] # When using mulitlingual website, disable the switch language button. disableLanguageSwitchingButton = true ",
-    "description": "",
-    "tags": null,
-    "title": "Multilingual and i18n",
-    "uri": "/cont/i18n/"
-  },
-  {
-    "content": "The Relearn theme supports one default taxonomy of Hugo: the tag feature.\nConfiguration Just add tags to any page:\n+++ tags = [\"tutorial\", \"theme\"] title = \"Theme tutorial\" weight = 15 +++ Behavior The tags are displayed at the top of the page, in their insertion order.\nEach tag is a link to a Taxonomy page displaying all the articles with the given tag.\nList all the tags In the config.toml file you can add a shortcut to display all the tags\n[[menu.shortcuts]] name = \"\u003ci class='fas fa-tags'\u003e\u003c/i\u003e Tags\" url = \"/tags\" weight = 30 ",
-    "description": "",
-    "tags": [
-      "documentation",
-      "tutorial"
-    ],
-    "title": "Tags",
-    "uri": "/cont/tags/"
-  },
-  {
-    "content": "This is a demo child page.\nSubpages of this page page 1-1 ",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 1",
-    "uri": "/shortcodes/children/children-1/"
-  },
-  {
-    "content": "Thanks to the simplicity of Hugo, this page is as empty as this theme needs requirements.\nJust download latest version of Hugo binary for your OS (Windows, Linux, Mac) : it’s that simple.\n",
-    "description": "",
-    "tags": null,
-    "title": "Requirements",
-    "uri": "/basics/requirements/"
-  },
-  {
-    "content": "The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you learn more about it by following this great documentation for beginners.\nCreate your project Hugo provides a new command to create a new website.\nhugo new site \u003cnew_project\u003e Install the theme Install the Relearn theme by following this documentation\nThis theme’s repository is: https://github.com/McShelby/hugo-theme-relearn.git\nAlternatively, you can download the theme as .zip file and extract it in the themes directory\nBasic configuration When building the website, you can set a theme by using --theme option. However, we suggest you modify the configuration file (config.toml) and set the theme as the default. You can also add the [outputs] section to enable the search functionality.\n# Change the default theme to be use when building the site with Hugo theme = \"hugo-theme-relearn\" # For search functionality [outputs] home = [ \"HTML\", \"RSS\", \"JSON\"] Create your first chapter page Chapters are pages that contain other child pages. It has a special layout style and usually just contains a chapter name, the title and a brief abstract of the section.\n### Chapter 1 # Basics Discover what this Hugo theme is all about and the core concepts behind it. renders as\nThe Relearn theme provides archetypes to create skeletons for your website. Begin by creating your first chapter page with the following command\nhugo new --kind chapter basics/_index.md By opening the given file, you should see the property chapter=true on top, meaning this page is a chapter.\nBy default all chapters and pages are created as a draft. If you want to render these pages, remove the property draft: true from the metadata.\nCreate your first content pages Then, create content pages inside the previously created chapter. Here are two ways to create content in the chapter:\nhugo new basics/first-content.md hugo new basics/second-content/_index.md Feel free to edit those files by adding some sample content and replacing the title value in the beginning of the files.\nLaunching the website locally Launch by using the following command:\nhugo serve Go to http://localhost:1313\nYou should notice three things:\nYou have a left-side Basics menu, containing two submenus with names equal to the title properties in the previously created files. The home page explains how to customize it by following the instructions. When you run hugo serve, when the contents of the files change, the page automatically refreshes with the changes. Neat! Build the website When your site is ready to deploy, run the following command:\nhugo A public folder will be generated, containing all static content and assets for your website. It can now be deployed on any web server.\nNote This website can be automatically published and hosted with Netlify (Read more about Automated HUGO deployments with Netlify). Alternatively, you can use GitHub pages\n",
-    "description": "",
-    "tags": null,
-    "title": "Installation",
-    "uri": "/basics/installation/"
-  },
-  {
-    "content": "Global site parameters On top of Hugo global configuration, the Relearn theme lets you define the following parameters in your config.toml (here, values are default).\nNote that some of these parameters are explained in details in other sections of this documentation.\n[params] # This controls whether submenus will be expanded (true), or collapsed (false) in the # menu; if no setting is given, the first menu level is set to false, all others to true; # this can be overridden in the pages frontmatter alwaysopen = true # Prefix URL to edit current page. Will display an \"Edit\" button on top right hand corner of every page. # Useful to give opportunity to people to create merge request for your doc. # See the config.toml file from this documentation site to have an example. editURL = \"\" # Author of the site, will be used in meta information author = \"\" # Description of the site, will be used in meta information description = \"\" # Shows a checkmark for visited pages on the menu showVisitedLinks = false # Disable search function. It will hide search bar disableSearch = false # Disable search in hidden pages, otherwise they will be shown in search box disableSearchHiddenPages = false # Disables hidden pages from showing up in the sitemap and on Google (et all), otherwise they may be indexed by search engines disableSeoHiddenPages = false # Disables hidden pages from showing up on the tags page although the tag term will be displayed even if all pages are hidden disableTagHiddenPages = false # Javascript and CSS cache are automatically busted when new version of site is generated. # Set this to true to disable this behavior (some proxies don't handle well this optimization) disableAssetsBusting = false # Set this to true to disable copy-to-clipboard button for inline code. disableInlineCopyToClipBoard = false # A title for shortcuts in menu is set by default. Set this to true to disable it. disableShortcutsTitle = false # If set to false, a Home button will appear below the search bar on the menu. # It is redirecting to the landing page of the current language if specified. (Default is \"/\") disableLandingPageButton = true # When using mulitlingual website, disable the switch language button. disableLanguageSwitchingButton = false # Hide breadcrumbs in the header and only show the current page title disableBreadcrumb = true # If set to true, hide table of contents menu in the header of all pages disableToc = false # If set to false, load the MathJax module on every page regardless if a MathJax shortcode is present disableMathJax = false # Specifies the remote location of the MathJax js customMathJaxURL = \"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\" # Initialization parameter for MathJax, see MathJax documentation mathJaxInitialize = \"{}\" # If set to false, load the Mermaid module on every page regardless if a Mermaid shortcode or Mermaid codefence is present disableMermaid = false # Specifies the remote location of the Mermaid js customMermaidURL = \"https://unpkg.com/mermaid/dist/mermaid.min.js\" # Initialization parameter for Mermaid, see Mermaid documentation mermaidInitialize = \"{ \\\"theme\\\": \\\"default\\\" }\" # If set to false, load the Swagger module on every page regardless if a Swagger shortcode is present disableSwagger = false # Specifies the remote location of the RapiDoc js customSwaggerURL = \"https://unpkg.com/rapidoc/dist/rapidoc-min.js\" # Initialization parameter for Swagger, see RapiDoc documentation swaggerInitialize = \"{ \\\"theme\\\": \\\"light\\\" }\" # Hide Next and Previous page buttons normally displayed full height beside content disableNextPrev = true # Order sections in menu by \"weight\" or \"title\". Default to \"weight\"; # this can be overridden in the pages frontmatter ordersectionsby = \"weight\" # Change default color scheme with a variant one. Eg. can be \"red\", \"blue\", \"green\" or an array like [ \"blue\", \"green\" ]. themeVariant = \"relearn-light\" # Change the title separator. Default to \"::\". titleSeparator = \"-\" # If set to true, the menu in the sidebar will be displayed in a collapsible tree view. collapsibleMenu = false # If a single page can contain content in multiple languages, add those here additionalContentLanguage = [ \"en\" ] A word on running your site in a subfolder The theme runs best if your site is installed in the root of your webserver. If your site is served from a subfolder, eg. https://example.com/mysite/, you have to set the following lines to your config.toml\nbaseURL = \"https://example.com/mysite/\" canonifyURLs = true Without canonifyURLs=true URLs in sublemental pages (like sitemap.xml, rss.xml) will be generated falsly while your HTML files will still work. See https://github.com/gohugoio/hugo/issues/5226.\nActivate search If not already present, add the follow lines in the same config.toml file.\n[outputs] home = [\"HTML\", \"RSS\", \"JSON\"] Relearn theme uses the last improvement available in hugo version 20+ to generate a json index file ready to be consumed by lunr.js javascript search engine.\nHugo generate lunrjs index.json at the root of public folder. When you build the site with hugo server, hugo generates it internally and of course it doesn’t show up in the filesystem\nActivate print support You can activate print support to add the capability to print whole chapters or even the complete site. Just add the PRINT output format to your home, section and page in your config.toml as seen below:\n[outputs] home = [\"HTML\", \"RSS\", \"PRINT\", \"JSON\"] section = [\"HTML\", \"RSS\", \"PRINT\"] page = [\"HTML\", \"RSS\", \"PRINT\"] This will add a little printer icon in the top bar. It will switch the page to print preview when clicked. You can then send this page to the printer by using your browser’s usual print functionality.\nNote While colors of your chosen color variant are reset to the theme’s light standard values for printing, this does not apply for Mermaid diagrams and Swagger/OpenAPI Specification. Those will still use the colors of your chosen color variant which may cause a non coherent look on paper.\nMathJax The MathJax configuration parameters can also be set on a specific page. In this case, the global parameter would be overwritten by the local one. See Math for additional documentation.\nExample MathJax is globally disabled. By default it won’t be loaded by any page.\nOn page “Physics” you coded some JavaScript for a dynamic formulae. You can set the MathJax parameters locally to load mathJax on this page.\nYou also can disable MathJax for specific pages while globally enabled.\nMermaid The Mermaid configuration parameters can also be set on a specific page. In this case, the global parameter would be overwritten by the local one. See Mermaid for additional documentation.\nExample Mermaid is globally disabled. By default it won’t be loaded by any page.\nOn page “Architecture” you coded some JavaScript to dynamically generate a class diagram. You can set the Mermaid parameters locally to load mermaid on this page.\nYou also can disable Mermaid for specific pages while globally enabled.\nHome Button Configuration If the disableLandingPageButton option is set to false, a Home button will appear on the left menu. It is an alternative for clicking on the logo. To edit the appearance, you will have to configure two parameters for the defined languages:\n[Languages] [Languages.en] ... landingPageName = \"\u003ci class='fas fa-home'\u003e\u003c/i\u003e Home\" ... [Languages.pir] ... landingPageName = \"\u003ci class='fas fa-home'\u003e\u003c/i\u003e Arrr! Homme\" ... If those params are not configured for a specific language, they will get their default values:\nlandingPageName = \"\u003ci class='fas fa-home'\u003e\u003c/i\u003e Home\" The home button is going to look like this:\n",
-    "description": "",
-    "tags": null,
-    "title": "Configuration",
-    "uri": "/basics/configuration/"
-  },
-  {
-    "content": "This is a demo child page with no description.\nSo its content is used as description.\n",
-    "description": "",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 2",
-    "uri": "/shortcodes/children/children-2/"
-  },
-  {
-    "content": "The Relearn theme has been built to be as configurable as possible by defining multiple partials\nIn themes/hugo-theme-relearn/layouts/partials/, you will find all the partials defined for this theme. If you need to overwrite something, don’t change the code directly. Instead follow this page. You’d create a new partial in the layouts/partials folder of your local project. This partial will have the priority.\nThis theme defines the following partials :\nheader.html: the header of the page. See output-formats footer.html: the footer of the page. See output-formats body.html: the body of the page. The body may contain of one or many articles. See output-formats article.html: the output for a single article, can contain elements around your content. See output-formats menu.html: left menu. Not meant to be overwritten search.html: search box. Not meant to be overwritten custom-header.html: custom headers in page. Meant to be overwritten when adding CSS imports. Don’t forget to include style HTML tag directive in your file. custom-footer.html: custom footer in page. Meant to be overwritten when adding Javacript. Don’t forget to include javascript HTML tag directive in your file. favicon.html: the favicon heading-pre.html: side-wide configuration to prepend to pages title headings. If you override this, it is your responsiblity to take the page’s headingPre setting into account. heading-post.html: side-wide configuration to append to pages title headings. If you override this, it is your responsiblity to take the page’s headingPost setting into account. logo.html: the logo, on top left hand corner meta.html: HTML meta tags, if you want to change default behavior menu-pre.html: side-wide configuration to prepend to menu items. If you override this, it is your responsiblity to take the page’s menuPre setting into account. menu-post.html: side-wide configuration to append to menu items. If you override this, it is your responsiblity to take the page’s menuPost setting into account. menu-footer.html: footer of the the left menu toc.html: table of contents content.html: the content page itself. This can be overridden if you wan’t to display page’s meta data above or below the content. content-footer: footer below the content, has a default implementation but you can overwrite it if you don’t like it. Change the logo Create a new file in layouts/partials/ named logo.html. Then write any HTML you want. You could use an img HTML tag and reference an image created under the static folder, or you could paste a SVG definition!\nNote The size of the logo will adapt automatically\nChange the favicon If your favicon is a SVG, PNG or ICO, just drop off your image in your local static/images/ folder and name it favicon.svg, favicon.png or favicon.ico respectivly.\nIf no favicon file is found, the theme will lookup the alternative filename logo in the same location and will repeat the search for the list of supported file types.\nIf you need to change this default behavior, create a new file in layouts/partials/ named favicon.html. Then write something like this:\n\u003clink rel=\"icon\" href=\"/images/favicon.bmp\" type=\"image/bmp\" /\u003e Change the colors The Relearn theme lets you choose between some predefined color variants in light or dark mode, but feel free to add one yourself!\nYou can preview the shipped variants by changing them in the variant selector at the bottom of the menu.\nSingle variant Set the themeVariant value with the name of your theme file. That’s it!\n[params] themeVariant = \"relearn-light\" In the above exaple your theme file has to be named theme-relearn-light.css\nMultiple variants You can also set multiple variants. In this case, the first variant is the default choosen on first view and a variant switch will be shown in the menu footer.\n[params] # Change default color scheme with a variant one. themeVariant = [ \"relearn-light\", \"relearn-dark\" ] Tip If you want to switch the syntax highlightning theme together with your color variant, generate a syntax highlighting stylesheet and configure your installation according to Hugo’s documentation, and @import this stylesheet in your color variant stylesheet. For an example, take a look into theme-relearn-light.css and config.toml of the exampleSite.\nRoll your own If you are not happy with the shipped variants you can either copy one of the shipped files, edit them in a text editor and configure the themeVariant parameter in your config.toml or just use the interactive variant generator.\nOutput formats Certain parts of the theme can be changed for support of your own output formats. Eg. if you define a new output format PLAINTEXT in your config.toml, you can add a file layouts/partials/header.plaintext.html to change the way, the page header should look like for that output format.\n",
-    "description": "",
-    "tags": null,
-    "title": "Customization",
-    "uri": "/basics/customization/"
-  },
-  {
-    "content": "This interactive tool may help you to generate your own color variant stylesheet.\nTo get started, first select a color variant from the variant switch that fits you best as a starting point.\nThe graph is interactive and reflect the current colors. You can click on any of the colored boxes to adjust the respective color. The graph and the page will update accordingly.\nThe arrowed lines reflects how colors are inherited thru different parts of the theme if the descendent isn’t overwritten. If you want to delete a color and let it inherit from its parent, just delete the value from the input field.\nTo better understand this select the neon variant and modify the differnet heading colors. There, colors for the heading h2, h3 and h4 are explicitly set. h5 is not set and inherits its value from h4. h6 is also not set and inherits its value from h5.\nOnce you’ve changed a color, the variant switch will show a “My custom variant” entry and your changes are stored in the browser. You can change pages and even close the browser without losing your changes.\nOnce you are satisfied, you can download the new variants file and install it in your site.\nNote This only works in modern browsers.\nVariant generator Download variant Reset variant Graph Download variant Reset variant ",
-    "description": "",
-    "tags": null,
-    "title": "Stylesheet generator",
-    "uri": "/basics/generator/"
-  },
-  {
-    "content": " Changelog 5.2.1 (2022-08-05) Enhancements [feature] i18n: improve japanese translation #318 Fixes [bug] nav: prev/next ignores ordersectionby #320 Maintenance [task] task: bump Hugo minimum requirement to 0.95 #319 5.2.0 (2022-08-03) Enhancements [feature][change] menu: expand collapsed menus if search term is found in submenus #312 Fixes [bug] print: switch mermaid and swagger style before print #316 [bug] theme: fix chapter margins on big screens #315 5.1.2 (2022-07-18) Fixes [bug] print: reset mermaid theme to light #313 [bug] mermaid: header is showing up in FF #311 5.1.1 (2022-07-15) Fixes [bug] tags: don’t count tags if page is hidden #310 5.1.0 (2022-07-15) Enhancements [feature][change] print: make print url deterministic #309 [feature] theme: allow overriding partials for output formats #308 5.0.3 (2022-07-07) Fixes [bug] ie11: no styles after rework of archetypes #306 5.0.2 (2022-07-07) Fixes [bug] theme: load CSS if JS is disabled #305 5.0.1 (2022-07-07) Enhancements [feature][breaking] theme: optimize loading of js and css #303 5.0.0 (2022-07-05) Enhancements [feature][change] archetypes: modularize rendering #300 [feature] history: don’t reload page when history gets cleared #299 [feature] menu: replace expander by fontawesome chevrons #296 [feature] theme: align content with topbar icon limits #290 [feature] button: allow for empty href #288 [feature] i18n: make simplified chinese the standard language for the zn code #287 [feature] clipboard: move head styles to stylesheet #286 [feature] math: add mathjax rendering #235 [feature] theme: allow for page heading modification #139 Fixes [bug] favicon: fix URL if site resides in subfolder #302 [bug] code: show copy-to-clipboard marker for blocklevel code #298 [bug] menu: make active expander visible on hover #297 [bug] print: disable arrow navigation #294 [bug] print: add missing page break after index or section #292 [bug] theme: use more space on wide screens #291 [bug] theme: fix size of chapter heading #289 Maintenance [task] chore: update RapiDoc 9.3.3 #301 [task] chore: update Mermaid 9.1.3 #293 4.2.5 (2022-06-23) Fixes [bug] swagger: javascript code does not load in documentation #285 [bug] children: descriptions not working #284 [bug] print: fix empty page for shortcut links #283 4.2.4 (2022-06-23) Fixes [bug] theme: fix url for logo and home button #282 4.2.3 (2022-06-23) Fixes [bug][breaking] include: second parameter is ignored #281 4.2.2 (2022-06-23) No changelog for this release.\n4.2.1 (2022-06-23) No changelog for this release.\n4.2.0 (2022-06-23) Enhancements [feature][change] tabs: don’t change tab selection if panel does not contain item #279 [feature] shortcodes: convert to partials #277 Fixes [bug] swagger: avoid builtin syntax-highlightning #280 [bug] search: fix console message for missing lunr translations #278 [bug] tabs: fix wrapping when having many tabs #272 4.1.1 (2022-06-18) Fixes [bug] notice: fix layout when content starts with heading #275 4.1.0 (2022-06-12) Enhancements [feature] i18n: support multilang content #271 4.0.5 (2022-06-12) Fixes [bug] i18n: vietnamese language with wrong lang code #270 [bug] i18n: fix search for non western languages #269 4.0.4 (2022-06-07) Enhancements [feature] theme: improve keyboard navigation for scrolling #268 Fixes [bug] swagger: adjust font-size for method buttons #267 [bug] menu: hide expander when only hidden subpages #264 [bug] theme: make compatible with Hugo 0.100.0 #263 Maintenance [task] swagger: update rapidoc to 9.3.2 #266 [task] mermaid: update to 9.1.1 #265 4.0.3 (2022-06-05) Enhancements [feature] toc: add scrollbar #262 4.0.2 (2022-06-05) Fixes [bug] theme: let browser scroll page on CTRL+f #242 4.0.1 (2022-06-05) No changelog for this release.\n4.0.0 (2022-06-05) Enhancements [feature] shortcodes: add named parameter if missing #260 [feature][breaking] theme: remove –MAIN-ANCHOR-color from stylesheet #256 [feature] i18n: add italian translation #254 [feature] attachments: support for brand colors #252 [feature] notice: support for brand colors #251 [feature][breaking] config: remove custom_css #248 [feature] theme: use proper file extension for page-meta.go #246 [feature] variant: add support for brand color variables #239 [feature] i18n: add polish translation #237 Fixes [bug] shortcodes: accept boolean parameters if given as string #261 [bug] print: adjust button and tab size #259 [bug] print: show Mermaid if requested in frontmatter #255 [bug] theme: adjust thin scrollbar slider #244 [bug] mobile: fix broken scrollbar #243 [bug] theme: fix display of tooltip for heading anchor #241 3.4.1 (2022-04-03) Fixes [bug] theme: fix IE11 incompatiblities #234 3.4.0 (2022-04-03) Enhancements [feature] i18n: add traditional chinese translation #233 [feature] menu: expand/collapse menu items without navigation #231 [feature] print: add option to print whole chapter #230 [feature][breaking] theme: apply user supplied content footer below content #229 Fixes [bug] theme: scroll to heading on initial load #232 3.3.0 (2022-03-28) Enhancements [feature] theme: add CSS font variables #227 [feature] swagger: add support for oas/swagger documentation #226 Fixes [bug] variant: make variant switch work on slow networks #228 3.2.1 (2022-03-25) Fixes [bug] print: fix minor inconsistencies #225 [bug] print: show more than just the title page #224 [bug] theme: align content scrollbar to the right on big screens #223 3.2.0 (2022-03-19) Enhancements [feature][change] mermaid: support differing themes for color variant switch #219 [feature] mermaid: load javascript on demand #218 Maintenance [task] mermaid: update to 8.14.0 #220 3.1.1 (2022-03-16) Enhancements [feature] i18n: add korean translation #217 3.1.0 (2022-03-15) Enhancements [feature] notice: add icon parameter #212 [feature] mobile: remove breadcrumb ellipsis #211 Fixes [bug] theme: make storage of multiple Hugo sites on same server distinct #214 [bug] variant: switch breadcrumb color in Chrome #213 [bug] mobile: improve behavior of sidebar menu #210 3.0.4 (2022-02-24) Enhancements [feature] theme: improve font loading #201 [feature][change] variant: fix inconsistent color variable naming #200 Fixes [bug] variant: fix occasional fail when resetting generator #208 [bug] docs: don’t move header on logo hover in IE11 #207 [bug] variant: avoid flash of menu header when non default variant is active #206 [bug] theme: fix wrong HTML closing tag order in chapters #205 [bug] theme: adjust breadcrumb and title for empty home page titles #202 3.0.3 (2022-02-23) Enhancements [feature] tags: show tag count in taxonomy list #195 Fixes [bug] theme: remove Hugo build warning if page is not file based #197 [bug] tags: adhere to titleSeparator #196 [bug] theme: hide footer divider and variant selector in IE11 #194 3.0.2 (2022-02-23) Enhancements [feature] tags: sort by name #193 3.0.1 (2022-02-23) Enhancements [feature] children: set containerstyle automatically according to style #192 Fixes [bug] theme: revert fontawsome to version 5 for IE11 compat #191 3.0.0 (2022-02-22) Enhancements [feature] variant: build a variant generator #188 [feature] nav: only show toc if the page has headings #182 [feature][breaking] theme: change default colors to Relearn defaults #181 [feature] variant: add a variant selector #178 [feature][breaking] menu: rework footer UX #177 [feature] theme: support for dark mode #175 [feature] docs: use light syntax highlightning theme #174 [feature] notice: tweak dull colors #173 [feature] theme: rework header UX #151 Fixes [bug] search: remove additional X in filled out search box in IE11 #190 [bug] clipboard: localize tooltips #186 [bug] print: hide sidebar on Mac #183 [bug] menu: fix scrollbar height #180 [bug][change] search: fix color change for icons on hover #176 2.9.6 (2022-02-07) Fixes [bug] menu: remove debug output #171 2.9.5 (2022-02-07) Fixes [bug] menu: let arrow navigation respect ordersectionsby configuration #170 2.9.4 (2022-02-06) Fixes [bug] exampleSite: fix links in official documentation #168 2.9.3 (2022-02-06) Fixes [bug] menu: invalid URL when the shortcut is an internal link #163 2.9.2 (2021-11-26) Enhancements [feature] theme: add theme version info to head #158 Fixes [bug] theme: fix selection of *.ico files as favicons #160 2.9.1 (2021-11-22) Fixes [bug] menu: fix significantly low performance for collecting of meta info #157 2.9.0 (2021-11-19) Fixes [bug][breaking] relref: fix inconsistent behavior #156 [bug] search: make dropdown stick to search field when scrolling #155 [bug] menu: align long text properly #154 [bug] copyToClipBoard: add missing right border for inline code if disableInlineCopyToClipBoard=true #153 [bug] menu: show hidden sibling pages reliably #152 [bug] menu: bring active item in sight for large menus #149 2.8.3 (2021-11-09) Fixes [bug] mermaid: let zoom reset to initial size #145 [bug] mermaid: remove whitespace from big graphs #143 2.8.2 (2021-11-08) Fixes [bug] mermaid: always load javascript to avoid break if code fences are used #142 2.8.1 (2021-11-04) Fixes [bug] search: don’t break JS in multilang setup if search is disabled #140 2.8.0 (2021-11-03) Enhancements [feature] toc: make disableTOC globally available via config.toml #133 [feature] mermaid: only load javascript if necessary #95 [feature][change] theme: switch font #83 [feature] theme: make favicon configurable #2 Fixes [bug] mermaid: assert that window.mermaid is actually mermaid #136 [bug] menu: remove usage of Hugos UniqueID #131 [bug] theme: reduce margin for children shortcode #130 [bug] theme: left-align h3 in chapters #129 [bug] theme: align copy link to clipboard #128 2.7.0 (2021-10-24) Enhancements [feature] notice: support custom titles #124 2.6.0 (2021-10-21) Fixes [bug] theme: generate correct links if theme served from subdirectory #120 2.5.1 (2021-10-12) Fixes [bug] security: fix XSS for malicioius image URLs #117 2.5.0 (2021-10-08) Enhancements [feature][change] syntax highlight: provide default colors for unknown languages #113 Fixes [bug] security: fix XSS for malicioius URLs #114 [bug] menu: write correct local shortcut links #112 2.4.1 (2021-10-07) Fixes [bug] theme: remove runtime styles from print #111 2.4.0 (2021-10-07) Enhancements [feature] lang: add vietnamese translation #109 [feature][change] theme: simplify stylesheet for color variants #107 [feature] hidden pages: remove from RSS feed, JSON, taxonomy etc #102 [feature] theme: announce alternative content in header #101 [feature] menu: frontmatter option to change sort predicate #98 [feature] menu: add default setting for menu expansion #97 [feature] theme: improve print style #93 [feature] theme: improve style #92 Fixes [bug] include: don’t generate additional HTML if file should be displayed “as is” #110 [bug] attachments: fix broken links if multilang config is used #105 [bug] theme: fix sticky header to remove horizontal scrollbar #82 Maintenance [task] chore: update fontawesome #94 2.3.2 (2021-09-20) Fixes [bug] docs: rename history pirate translation #91 2.3.1 (2021-09-20) Fixes [bug] docs: rename english pirate translation to avoid crash on rendering #90 2.3.0 (2021-09-13) Fixes [bug] theme: fix usage of section element #88 Maintenance [task] theme: ensure IE11 compatiblity #89 [task] docs: Arrr! showcase multilang featurrre #87 2.2.0 (2021-09-09) Enhancements [feature] sitemap: hide hidden pages from sitemap and SEO indexing #85 Fixes [bug] theme: fix showVisitedLinks in case Hugo is configured to modify relative URLs #86 Maintenance [task] theme: switch from data-vocabulary to schema #84 2.1.0 (2021-09-07) Enhancements [feature] search: open expand if it contains search term #80 [feature] menu: scroll active item into view #79 [feature] search: disable search in hidden pages #76 [feature] search: improve readablility of index.json #75 [feature] search: increase performance #74 [feature] search: improve search context preview #73 Fixes [bug][change] search: hide non-site content #81 [bug] menu: always hide hidden sub pages #77 2.0.0 (2021-08-28) Enhancements [feature] tabs: enhance styling #65 [feature] theme: improve readability #64 [feature] menu: show hidden pages if accessed directly #60 [feature][change] theme: treat pages without title as hidden #59 [feature] search: show search results if field gains focus #58 [feature] theme: add partial templates for pre/post menu entries #56 [feature] theme: make chapter archetype more readable #55 [feature] children: add parameter for container style #53 [feature] theme: make content a template #50 [feature] menu: control menu expansion with alwaysopen parameter #49 [feature] include: new shortcode to include other files #43 [feature] theme: adjust print styles #35 [feature][change] code highligher: switch to standard hugo highlighter #32 Fixes [bug][change] arrow-nav: default sorting ignores ordersectionsby #63 [bug][change] children: default sorting ignores ordersectionsby #62 [bug][change] arrow-nav: fix broken links on (and below) hidden pages #61 [bug] theme: remove superflous singular taxonomy from taxonomy title #46 [bug][change] theme: missing –MENU-HOME-LINK-HOVER-color in documentation #45 [bug] theme: fix home link when base URL has some path #44 Maintenance [task] docs: include changelog in exampleSite #33 1.2.0 (2021-07-26) Enhancements [feature] theme: adjust copy-to-clipboard #29 [feature] attachments: adjust style between notice boxes and attachments #28 [feature] theme: adjust blockquote contrast #27 [feature] expand: add option to open on page load #25 [feature] expand: rework styling #24 [feature] attachments: sort output #23 [feature] notice: make restyling of notice boxes more robust #20 [feature] notice: fix contrast issues #19 [feature] notice: align box colors to common standards #18 [feature] notice: use distinct icons for notice box type #17 Fixes [bug] attachments: support i18n for attachment size #21 [bug] notice: support i18n for box labels #16 [bug] notice: support multiple blocks in one box #15 Maintenance [task] dependency: upgrade jquery to 3.6.0 #30 1.1.1 (2021-07-04) Maintenance [task] theme: prepare for new hugo theme registration #13 1.1.0 (2021-07-02) Enhancements [feature] mermaid: expose options in config.toml #4 Fixes [bug] mermaid: config option for CDN url not used #12 [bug] mermaid: only highlight text in HTML elements #10 [bug] mermaid: support pan \u0026 zoom for graphs #9 [bug] mermaid: code fences not always rendered #6 [bug] mermaid: search term on load may bomb chart #5 Maintenance [task] mermaid: update to 8.10.2 #7 1.0.1 (2021-07-01) Maintenance [task] Prepare for hugo showcase #3 1.0.0 (2021-07-01) Maintenance [task] Fork project #1 ",
-    "description": "",
-    "tags": null,
-    "title": "History",
-    "uri": "/basics/history/"
-  },
-  {
-    "content": "This is a demo child page.\nSubpages of this page page 3-1 ",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 3",
-    "uri": "/shortcodes/children/children-3/"
-  },
-  {
-    "content": "This is a hidden demo child page. This page and all its children are hidden in the menu, arrow navigation and children shortcode as long as you aren’t viewing this page or its children directly.\n",
-    "description": "This is a hidden demo child page",
-    "tags": [
-      "children",
-      "hidden"
-    ],
-    "title": "page 4 (hidden)",
-    "uri": "/shortcodes/children/children-4/"
-  },
-  {
-    "content": "1、小事优先原则挺好用的。 2、go语言在做算法题时，并不好用，因为没有泛型好多基础的功能是缺失的。 3、找到一条适合自己的提醒方式，同时及时记录\n",
-    "description": "",
-    "tags": null,
-    "title": "2021 10 26",
-    "uri": "/posts/daliy/2021-10-26/"
-  },
-  {
-    "content": "The Relearn theme is a theme for Hugo, a static website generator written in Go. Where Hugo is often used for blogs, this theme is designed with documentation in mind.\nInfo The theme is a fork of the great Learn theme with the aim of fixing long outstanding bugs and adepting to latest Hugo features. As far as possible this theme tries to be a drop-in replacement for the Learn theme.\nMain features Tip See what’s new within the latest update.\nUsable offline, no external dependencies Support for Internet Explorer 11 Responsive design Configurable hidden pages Automatic next/prev buttons to navigate through menu entries Automatic Search Print whole chapters or even the complete site Multilingual mode for English, Arabic, Simplified Chinese, Traditional Chinesse, Dutch, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish, Vietnamese Unrestricted menu configuration relating to amount of items and level of nesting Font Awesome icons Tagging support Image resizing, shadow… Syntax highlighting Attachments files List child pages Math and chemical formulae using the MathJax library Mermaid diagrams for flowcharts, sequences, gantts, pie, etc. Swagger UI for OpenAPI Specifications Customizable look and feel Predefined (light, dark) and customizable color variants Buttons Tip/Note/Info/Warning boxes Expand Tabs File inclusion Getting support To get support, feel free to open a new discussion topic or issue in the official repository on GitHub.\nBecome a contributor Feel free to update this documentation by just clicking the Edit link displayed on top right of each page. Your changes will be deployed automatically once they were reviewed.\nYou are most welcome to contribute bugfixes or even new features to the source code by making pull requests to the official repository via GitHub. Please visit the contribution guidelines first.\nLicense This theme is licensed under the MIT License.\nCredits This theme would not be possible without the work of many others. See the credits for a detailed list.\n",
-    "description": "",
-    "tags": null,
-    "title": "Hugo Relearn Theme",
-    "uri": "/"
+    "title": "@Configuration",
+    "uri": "/spring/configuration/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "Posts",
-    "uri": "/posts/"
+    "title": "arthas",
+    "uri": "/%E5%B7%A5%E5%85%B7/arthas/"
   },
   {
-    "content": "混乱 每天有太多的事情要考虑，整天浑浑噩噩。 记录下时间的流失，逐渐让自己调整的积极一点 1、早上起来刷b站看朋友圈-\u003e来半小时英语 2、股票打新概览 3、开车听电台 4、上午上班 5、中午溜达+听电台睡觉 6、下午上班 7、晚上开车+听电台 8、回家看视频-\u003e溜达溜达\n",
+    "content": "操作字节码生成代理类\nClass UserServiceProxy extends UserService{ public void test(){ //切面逻辑 super.test() } //切面逻辑 }\n",
     "description": "",
     "tags": null,
-    "title": "2021 09 29",
-    "uri": "/posts/daliy/2021-09-29/"
+    "title": "cglib",
+    "uri": "/java/cglib/"
   },
   {
-    "content": "装修的一点点感悟 水太深 经历了为期几周装修，发现装修的水实在太深！ 被坑了不少钱后得到的最重要结论：“最好不要整体外包给某个公司”。 如果整包价格会比自己找人高出30%-50%，个人推荐按照装修流程自己找人装修，不仅价格低，因为术业有专攻活也会好很多。\n流程： 设计、拆除、水电暖改造、墙体改动、门窗、地板、定制柜桌、刷漆。\n设计： 设计可以在网上找装修公司给你出方案和设计图一般都会免费，我们是在土巴兔上找的，有四次免费设计的机会。专业人士会给出合理的建议！在得到免费的设计图纸跟数据后你就可以按照流程自己安排装修了。\n买装修材料\u0026找装修师傅： 我们去的是十里河“民和兴家装城“，十里河应该算是北京比较大的装修市场了，可以说是应有尽有又物美价廉，比装修公司报价低20-40%。买地板、乳胶漆、暖气都会有专业师傅，一般手艺都不错。需要注意不要被坑乱加安装费用，和老板提前说好费用，不许加收其他费用，好多师傅会找出小毛病坑你一笔。找工长什么的出地铁口到处都是，最好找南方师傅，干活靠谱细心。注意给工长钱的时候最好分三次给，最后要仔细验收以后再给尾款。\n",
+    "content": "领域驱动设计 概念 DP：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。 Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化） DomainService:封装多对象的有状态逻辑。 Repository:抽象封装外部数据访问逻辑。 UL：统一语言，意识拉齐\n流程： 1.首先对需要处理的业务问题进行总览。 2.然后领域对象(Entity)进行划分，明确每个领域对象的包含的信息和职责边界。 并进行跨对象，多对象的逻辑组织(Domain Service) 3.接着在上层应用中根据业务描述去编排Entity和Domain Service。 4.最后再做一些下水道工作，去对下层的数据访问，RPC调用去做一些具体实现。\nDP/VO DP(Domain Primitive) 定义：在DDD里，DP是一切模型、方法、结构的基础。 它是特定领域、拥有精准定义、可以自我验证、拥有行为的对象。可以认为是领域内最小的组成部分。\nDP的三条原则： 让隐性的概念显性化（手机号的运营商） 让隐性的上下文显性化（手机号的区号编码） 封装多对象行为\n",
     "description": "",
     "tags": null,
-    "title": "2021 09 13",
-    "uri": "/posts/daliy/2021-09-13/"
+    "title": "DDD Domain-Driven Design",
+    "uri": "/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/"
   },
   {
-    "content": "可参考文档 https://blog.csdn.net/caizongxu/article/details/82941968\n常用算法 分治算法 定义： 在计算机科学中，分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序) 实际上就是类似于数学归纳法，找到解决本问题的求解方程公式，然后根据方程公式设计递归程序。\n1、一定是先找到最小问题规模时的求解方法\n2、然后考虑随着问题规模增大时的求解方法\n3、找到求解的递归函数式后（各种规模或因子），设计递归程序即可。\n分治法适用的情况 分治法所能解决的问题一般具有以下几个特征： 1) 该问题的规模缩小到一定的程度就可以容易地解决 2) 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。 3) 利用该问题分解出的子问题的解可以合并为该问题的解； 4) 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题。 第一条特征是绝大多数问题都可以满足的，因为问题的计算复杂性一般是随着问题规模的增加而增加；\n第二条特征是应用分治法的前提它也是大多数问题可以满足的，此特征反映了递归思想的应用；、\n第三条特征是关键，能否利用分治法完全取决于问题是否具有第三条特征，如果具备了第一条和第二条特征，而不具备第三条特征，则可以考虑用贪心法或动态规划法。\n第四条特征涉及到分治法的效率，如果各子问题是不独立的则分治法要做许多不必要的工作，重复地解公共的子问题，此时虽然可用分治法，但一般用动态规划法较好。\n分治法的基本步骤 分治法在每一层递归上都有三个步骤：\nstep1 分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题； step2 解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题 step3 合并：将各个子问题的解合并为原问题的解。 它的一般的算法设计模式如下：\nDivide-and-Conquer(P) 1. if |P|≤n0 2. then return(ADHOC(P)) 3. 将P分解为较小的子问题 P1 ,P2 ,...,Pk 4. for i←1 to k 5. do yi ← Divide-and-Conquer(Pi) △ 递归解决Pi 6. T ← MERGE(y1,y2,...,yk) △ 合并子问题 7. return(T) 其中|P|表示问题P的规模；n0为一阈值，表示当问题P的规模不超过n0时，问题已容易直接解出，不必再继续分解。ADHOC(P)是该分治法中的基本子算法，用于直接解小规模的问题P。因此，当P的规模不超过n0时直接用算法ADHOC(P)求解。算法MERGE(y1,y2,...,yk)是该分治法中的合并子算法，用于将P的子问题P1 ,P2 ,...,Pk的相应的解y1,y2,...,yk合并为P的解。 动态规划算法 动态规划问题的一般形式就是求最值。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。\n既然是要求最值，核心问题是什么呢？求解动态规划的核心问题是穷举。因为要求最值，肯定要把所有可行的答案穷举出来，然后在其中找最值呗。\n动态规划这么简单，就是穷举就完事了？我看到的动态规划问题都很难啊！\n首先，动态规划的穷举有点特别，因为这类问题存在「重叠子问题」，如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免不必要的计算。\n而且，动态规划问题一定会具备「最优子结构」，才能通过子问题的最值得到原问题的最值。\n另外，虽然动态规划的核心思想就是穷举求最值，但是问题可以千变万化，穷举所有可行解其实并不是一件容易的事，只有列出正确的「状态转移方程」，才能正确地穷举。\n以上提到的重叠子问题、最优子结构、状态转移方程就是动态规划三要素。具体什么意思等会会举例详解，但是在实际的算法问题中，写出状态转移方程是最困难的，这也就是为什么很多朋友觉得动态规划问题困难的原因，我来提供我研究出来的一个思维框架，辅助你思考状态转移方程：\n明确 base case -\u003e 明确「状态」-\u003e 明确「选择」 -\u003e 定义 dp 数组/函数的含义。\n按上面的套路走，最后的结果就可以套这个框架：\n初始化 base case dp[0][0][…] = base\n进行状态转移 for 状态1 in 状态1的所有取值： for 状态2 in 状态2的所有取值： for … dp[状态1][状态2][…] = 求最值(选择1，选择2…)\n回溯 回溯（backtrack），一般用于求所有可能解，需要遍历所有数据。 解决一个回溯问题，实际上就是一个决策树的遍历过程。你只需要思考 3 个问题：\n1、路径：也就是已经做出的选择。\n2、选择列表：也就是你当前可以做的选择。\n3、结束条件：也就是到达决策树底层，无法再做选择的条件。\nresult = [] def backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return\nfor 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 BFS 在一幅「图」中找到从起点 start 到终点 target 的最近距离。\nint minDepth(TreeNode root) { if (root == null) return 0; Queue q = new LinkedList\u003c\u003e(); q.offer(root); // root 本身就是一层，depth 初始化为 1 int depth = 1;\nwhile (!q.isEmpty()) { int sz = q.size(); /* 将当前队列中的所有节点向四周扩散 */ for (int i = 0; i \u003c sz; i++) { TreeNode cur = q.poll(); /* 判断是否到达终点 */ if (cur.left == null \u0026\u0026 cur.right == null) return depth; /* 将 cur 的相邻节点加入队列 */ if (cur.left != null) q.offer(cur.left); if (cur.right != null) q.offer(cur.right); } /* 这里增加步数 */ depth++; } return depth; } 1、为什么 BFS 可以找到最短距离，DFS 不行吗？\n首先，你看 BFS 的逻辑，depth 每增加一次，队列中的所有节点都向前迈一步，这保证了第一次到达终点的时候，走的步数是最少的。\nDFS 不能找最短路径吗？其实也是可以的，但是时间复杂度相对高很多。你想啊，DFS 实际上是靠递归的堆栈记录走过的路径，你要找到最短路径，肯定得把二叉树中所有树杈都探索完才能对比出最短的路径有多长对不对？而 BFS 借助队列做到一次一步「齐头并进」，是可以在不遍历完整棵树的条件下找到最短距离的。\n形象点说，DFS 是线，BFS 是面；DFS 是单打独斗，BFS 是集体行动。这个应该比较容易理解吧。\n2、既然 BFS 那么好，为啥 DFS 还要存在？\nBFS 可以找到最短距离，但是空间复杂度高，而 DFS 的空间复杂度较低。\n还是拿刚才我们处理二叉树问题的例子，假设给你的这个二叉树是满二叉树，节点数为 N，对于 DFS 算法来说，空间复杂度无非就是递归堆栈，最坏情况下顶多就是树的高度，也就是 O(logN)。\n但是你想想 BFS 算法，队列中每次都会储存着二叉树一层的节点，这样的话最坏情况下空间复杂度应该是树的最底层节点的数量，也就是 N/2，用 Big O 表示的话也就是 O(N)。\n由此观之，BFS 还是有代价的，一般来说在找最短路径的时候使用 BFS，其他时候还是 DFS 使用得多一些（主要是递归代码好写）。\n好了，现在你对 BFS 了解得足够多了，下面来一道难一点的题目，深化一下框架的理解吧。\n贪心算法 分支限界 ",
+    "content": "简介 docker compose用于更加方便的管理docker容器，采用yml文件配置的方式代替，敲入docker命令，配置时更加清晰，也更适合多个节点配置。\nhub.docker.com\n配置文件编写 docker compose 详解\n",
     "description": "",
     "tags": null,
-    "title": "基本概念",
-    "uri": "/posts/leetcode/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+    "title": "docker compose",
+    "uri": "/dockerk8s/docker-compose/"
   },
   {
-    "content": "链表反转 链表 1-\u003e2-\u003e3-\u003e4 翻转 4-\u003e3-\u003e2-\u003e1\n主要难点是防止Next被替换，下一个节点无法访问\n方式1： 使用临时变量保存Val和Next\n方式2：递归 从最末尾开始递归交换 3-4-\u003e4-3，1，2，(4，3)-\u003e1,(4,3),2\n",
+    "content": "统计字符出现个数 =LEN(G13)-LEN(SUBSTITUTE(G13,\"、\",\"\"))+1\n",
     "description": "",
     "tags": null,
-    "title": "链表反转",
-    "uri": "/posts/leetcode/linkedlistinversion/"
+    "title": "excel公式",
+    "uri": "/office/excel%E5%85%AC%E5%BC%8F/"
   },
   {
-    "content": "TLAB 由于堆内存是线程共有的，多线程创建对象时可能会出现对象指针的碰撞。为每个线程在eden分配少量的线程独占的内存分配区，那么会极大的改善这个问题。 https://www.cnblogs.com/zhxdick/p/14371562.html\n",
+    "content": "开启GC日志 打开gc日志：-XX:+PrintGCDetails 指定输入位置：-Xloggc:$LOGS_DIR/gc.log\n分析日志 GC (Allocation Failure)造成的young gc。\ngc日志头 解释 GC (Allocation Failure) Allocation Failure表示向young generation(eden)给新对象申请空间，但是young generation(eden)剩余的合适空间不够所需的大小导致的minor gc。 Full GC (Ergonomics) 默认使用 UseParallelGC 垃圾回收器，该垃圾回收器默认启动了 AdaptiveSizePolicy。 ",
     "description": "",
     "tags": null,
-    "title": "Jvm",
-    "uri": "/posts/interview/jvm/"
+    "title": "gc日志分析",
+    "uri": "/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"
   },
   {
-    "content": "Spring Core Ioc: 依赖倒置原则： 把原本的高层建筑依赖底层建筑“倒置”过来，变成底层建筑依赖高层建筑。高层建筑决定需要什么，底层去实现这样的需求，但是高层并不用管底层是怎么实现的。这样就不会出现前面的“牵一发动全身”的情况。 例如一个高层的类需要底层的类\nIoc(Inversion of Control) 就是依赖倒置原则的一种代码设计的思路。具体采用的方法就是所谓的依赖注入（Dependency Injection）。\nIoC 容器是 Spring ⽤来实现 IoC 的载体， IoC 容器实际上就是个Map（key，value）,Map 中存放的是各种对象\n",
+    "content": "命令 branch -m 重命名 git branch -m 原始名称 新名称\nrebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing\ngit工作流程 git flow 配置 ignore #：注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； ",
     "description": "",
     "tags": null,
-    "title": "spring",
-    "uri": "/posts/interview/spring/"
+    "title": "git",
+    "uri": "/%E5%B7%A5%E5%85%B7/git/"
   },
   {
-    "content": "反射 http://www.fanyilun.me/2015/10/29/Java%E5%8F%8D%E5%B0%84%E5%8E%9F%E7%90%86/\n集合框架 主要是对三个接口的实现，Set、Map、List。其中Set、List又实现了Collection\nHashMap 结构 数组+链表or红黑树\n负载因子0.75f的原因 空间和查询效率的平衡\n树化阈值8的原因 和泊松分布，连续8次hash冲突的概率极低百万分之一，空间和速度的取舍，为啥还要转为树？防止hash冲突\nConcurrentHashMap GC GCRoot：被栈区、native栈、方法区\nGC算法 1标记-清理（CMS）：缺点内存碎片 2标记-整理：缺点全部数据移动，耗时长 3复制算法（parNew、youngGC使用算法）：缺点内存消耗大 4： 一个对象在6次gc后会转移到old区中，old区里也有大对象。\nGC清理器 G1 1：初步标记 找出root对象和对应的rootRegion 2：根据rootRegion的RSet找出CSet 3：对Cset并发标记 4：补充标记 5：并发清理，使用标记复制算法\n",
+    "content": "Cookie \u0026 Session cookie的属性 HttpOnly: 如果您在cookie中设置了HttpOnly属性，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击 path：对应url的作用域，默认是当前路径 ex：/a/b 默认是/a max-age：指定的是从文档被访问后的存活时间，这个时间是个相对值(比如:3600s),相对的是文档第一次被请求时服务器记录的Request_time(请求时间) Expires：指定的时间可以是相对文件的最后访问时间(Atime)或者修改时间(MTime),而max-age相对对的是文档的请求时间(Atime)\n删除cookie 把cookie的过期时间设为0或者过去\n",
     "description": "",
     "tags": null,
-    "title": "Java基础",
-    "uri": "/posts/interview/java%E5%9F%BA%E7%A1%80/"
+    "title": "HTTP",
+    "uri": "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/"
   },
   {
-    "content": "有些难过的一天 起因 果然在互联网公司如果你不忙，那么你即将遇到麻烦。要么被领导开除，要么业务线将被停掉。在晚上听到兴哥的消息说的消息后，我强忍着让自己开心起来，我开心了一下，但内心其实并不开心，虽然有高额的赔偿，但是也即将面临巨大的不确定性。\n何去何从 27岁，一切的事情都压到了身上，孩子、房子、即将失业，生活的重担压在了身上，压力让一个人瞬间成熟，得去努力拼搏让生活更好了。\n接下来要做的事情 准备一份简历 求职软件准备上，脉脉，boss 把自己的信息更新 刷题准备 ",
+    "content": "linux IO TCP网络通信整体流程 服务端准备连接流程 SOCKET函数 为了执行网络I/O，我们要做的第一件事情就是调用socket函数，指定期望的协议类型。该函数会创建一个通信的端点，并返回引用该端点的文件描述符，该文件描述符也称为套接字描述符(socket descriptor)，简称sockfd。\nBIND()函数 bind()函数把一个本地协议地址赋予一个套接字。\n如果一个TCP客户端或者服务器没有调用bind绑定端口，或者指定IP地址，那么内核就会为该套接字选择一个临时端口号。\nLISTEN()函数 通过socket()函数创建了套接字之后，再执行listen()函数，会把套接字转换为一个被动套接字，指示内核应该接收指向该套接字的连接请求，并导致套接字从CLOSED状态转换到LISTEN状态。\n在客户端请求服务器之后，服务器内核会把请求套接字放入到未完成队列中： 如下图：\n服务器接收到客户端SYN请求后，于是请求套接字进入未完成连接队列，等到服务端响应了ACK和SYN完成三次握手后，于是，套接字进入已完成连接队列。已完成连接队列中的套接字可以被服务器进程执行accept函数获取到。\nACCEPT()函数 服务器一旦执行了socket()、bind()、listen()函数之后，就表示已经初始化好了监听套接字，并且把自己变为了被动套接字，等待客户端的请求。这个时候，我们需要继续调用accept()函数，让服务器进入阻塞等待获取客户端的已连接套接字。\n当进程调用accept()时，已完成连接队列中的队头将返回给进程，或者如果队列为空，那么进程将被投入睡眠，直到TCP在该队列中放入一项才唤醒它。\n在调用accept()之后，阻塞等待客户连接到达，然后获取一个已连接套接字：\n关于监听套接字和已连接套接字\n注意，这里要区分好服务端的监听套接字和已连接套接字，服务端调用socket()返回的是监听套接字，bind()和listen()函数入参也是监听套接字。\n一旦有客户端请求过来了于是产生了一个已连接套接字，后续和客户端的交互是通过这个已连接套接字进行的。监听套接字只负责监听客户端请求并获取和客户端的已连接套接字。\n客户端发起连接流程 CONNECT()函数 connect()函数由客户端调用，请求与服务端建立连接，这个函数会触发三次握手。大致流程如下：\n客户端： connect调用是的当前套接字从CLOSED状态进入SYN_SENT状态，如果节而受到了服务器的SYN+ACK响应，则转移到ESTABLISHED状态； 如果connect失败，则表示套接字不在可用，必须关闭，不能再次尝试调用connect函数； 服务端： 每当接收到SYN时，TCP在未完成连接队列中创建一个新的条目，然后响应TCP三次握手的第二个分节； 每当收到三次握手的第三个分节的时候，就把条目从未完成队列移到已完成连接队列的队尾。此时，服务端accept调用将被唤醒并得到一个已连接套接字。 注意：客户在调用connect函数之前，不是一定要调用bind函数，这个时候内核会确定源IP地址，并选择一个临时端口号作为源端口号。\n所以大家在监控TCP连接的时候，可以发现请求客户端的端口都是没有什么规律的。因为这个端口号是临时端口号。\n当服务器队列满了，有新的客户端connect请求的SYN到达时怎么办？\n这个时候，TCP会忽略这个SYN分节，也不会向客户端发送RST，好让客户TCP有机会重发SYN，以便在不久之后可以在这些队列中找到可用的空间。\n如果直接响应RST，客户的connect()调用会立刻返回错误，导致应用进程必须要处理这种情况。\n因为从服务端的角度来看，经理一个RTT之后，TCP条目就会从未完成队列移动到已完成连接队列。所以，未完成连接队列中的任何一项的存留时间是一个RTT。\n一旦connect()成功之后，客户端和服务器就可以通过数据交换相关函数进行数据交换了。\n整体流程 概念说明 1. 内核态（内核空间）和用户态（用户空间）的区别和联系？ 用户空间是用户进程所在的内存区域，系统空间是操作系统所在的内存区域。 为了保证内核的安全，处于用户态的程序只能访问用户空间，而处于内核态的程序可以访问用户空间和内核空间。 2. 文件描述符fd Linux将所有设备都当做文件来处理，文件描述符来标识每个文件对象。 当程序打开一个现有文件或者创建一个新文件时，内核向进程返回一个文件描述符。 3. 缓存IO Linux的缓存IO机制中，操作系统会将IO的数据缓存在文件系统的页缓存中，也就是说，数据会先被拷贝到操作系统内核的缓冲区，然后才会从操作系统内核的缓冲区拷贝到应用程序的地址空间。\n涉及系统调用 recvfrom： 从socket读取数据\nselect： select() allow a program to monitor multiple file descriptors, waiting until one or more of the file descriptors become “ready” for some class of I/O operation select 监控多个io操作的文件描述符，直到一个或者多个文件描述符编程ready状态\npoll： 与select类似，链表实现的，没有上限限制\nepoll： epoll就是event poll ，基于事件驱动 主要用到三个函数调用： epoll_create：创建epoll对象 epoll_ctl：把文件描述符交给epoll对象监控 epoll_wait: waits for I/O events, blocking the calling thread if no events are currently available.\nIO模型 一般而言，一个输入操作，一般会经历如下处理过程：等待数据准备好，从内核复制到进程。这里的数据复制，一般是应用进程调用了某个IO方法之后，陷入系统调用，在内核态完成的。\nlinux系统产生了下面五种网络模式的方案：\n阻塞式I/O模型 如上图，在应用进程调用 recvfrom()之后，陷入内核态，直到数据报到达并且复制到应用进程缓冲区之后才返回到用户态。\n或者在系统调用期间发生错误，也会立刻返回。\n这种I/O称为阻塞I/O。\n非阻塞式I/O模型 如上图，当我们把套接字设置为非阻塞模式的时候，内核会这样处理I/O操作：当请求的I/O操作非得把本进程投入睡眠才能完成时，就不要投入睡眠，而是返回一个错误，在上面的例子中，调用recvfrom()之后，因为数据没有准备好，所以内核直接返回一个EWOULDBLOCK错误，直到数据准备好了，才复制数据到进程空间，并返回系统调用继续处理进程逻辑。\n而应用进程会不断循环调用recvfrom()函数，这种处理方式我们称为polling(轮训)，持续到轮训内核，查看数据是否准备好。这种方式的缺点是会消耗大量的CPU时间。\n注意：当recvfrom发起系统调用发现数据准备好了，将数据从内核复制到用户空间的时候，应用进程还是会被阻塞，只不过不会阻塞在等待数据准备好这个流程，从而减少了阻塞时间。\n这种轮训对于单进程或者单线程的程序特别有用。\nI/O复用模型 I/O复用(I/O multiplexing)，指的是通过一个支持同时感知多个描述符的函数系统调用，阻塞在这个系统调用上，等待某一个或者几个描述符准备就绪，就返回可读条件。常见的如select，poll，epoll系统调用可以实现此类功能功能。这种模型不用阻塞在真正的I/O系统调用上。\n工作原理如下图所示：\n如上图，这种模型与非阻塞式I/O相比，把轮训判断数据是否准备好的处理方式替换为了通过select()系统调用的方式来实现。\n**select()是实现I/O多路复用的经典系统调用函数。**select()可以同时等待多个套接字的变为可读，只要有任意一个套接字可读，那么就会立刻返回，处理已经准备好的套接字了。\n在多线中使用阻塞I/O，即每个文件描述符一个线程，与I/O复用模型很类似，每个线程可以自由调用阻塞式I/O系统调用。\n信号驱动式I/O模型 所谓信号驱动式I/O(signal-driven I/O)，就是指在描述符准备就绪的时候，让内核发送一个SIGIO信号通知应用进程进行后续的数据读取等处理。工作原理如下图所示：\n注册了SIGIO信号处理函数，开启了信号驱动式IO之后，就可以继续执行程序了，等到数据报准备好之后，内核会发送一个SIGIO信号给应用进程，然后应用进程在信号处理函数中调用recvfrom读取数据报。\n这种模型在内核等待数据报达到期间进程不会被阻塞，可以继续执行。\n异步I/O模型 可以发现，上面所有的I/O模型都会在某一个执行点阻塞，并不是真正的异步的。接下来我们就介绍下真正的异步I/O模型(asynchronous I/O)。如下图：\n通过异步处理函数如aio_read告知内核启动某个动作，并且让内核在整个操作完成之后再通知应用进程，内核会在把数据复制到用户空间缓冲区之后再进行通知。整个IO过程应用进程都不会被阻塞。\n五种I/O模型对比 下面我们通过一个表格来总结下这五种I/O模型 下面是执行流程的对比图：\n可以很清晰的看到各种I/O模型的不同表现。\n",
     "description": "",
     "tags": null,
-    "title": "2021-07-26",
-    "uri": "/posts/daliy/2021-07-26/"
+    "title": "IO相关",
+    "uri": "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/"
   },
   {
-    "content": "收获与危机 今天对后端服务所用技术进行了初步选型。 mysql+gin+colly\n",
+    "content": "redis 命令行客户端 https://gitee.com/mirrors/iredis#using-dsn\n",
     "description": "",
     "tags": null,
-    "title": "2021 07 20",
-    "uri": "/posts/daliy/2021-07-20/"
+    "title": "iredis",
+    "uri": "/%E5%B7%A5%E5%85%B7/iredis/"
   },
   {
-    "content": "题目 在一个字符串重寻找没有重复字母的最长子串。\nGiven a string, find the length of the longest substring without repeating characters. Example 1:\nInput: “abcabcbb” Output: 3 Explanation: The answer is “abc”, with the length of 3. Example 2:\nInput: “bbbbb” Output: 1 Explanation: The answer is “b”, with the length of 1. Example 3:\nInput: “pwwkew” Output: 3 Explanation: The answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.\n题解 // 解法三 滑动窗口-哈希桶 func lengthOfLongestSubstring2(s string) int { right, left, res := 0, 0, 0 indeices := make(map[byte]int, len(s)) for right \u003c len(s) { if i, ok := indeices[s[right]]; ok \u0026\u0026 i \u003e= left { left = i + 1 } indeices[s[right]] = right right++ res = max(res, right-left) } return res }\nfunc max(a int, b int) int { if a \u003e b { return a } return b }\n",
+    "content": "日志发展史 上古时代 jdk1.3之前 System.out.println(\"\") 问题： 没有日志级别，上线以后会有很多无关的日志，而且只能在控制台看，不方便定位。\n发展流程 log4j-\u003ejul-\u003ejcl-\u003eslf4j-\u003elog4j2-\u003elogback\nlog4j 作者ceki\n从控制台写到文件 日志信息按天和文件大小划分 划分日志等级，按日志等级记录文件 高等级日志发送邮件 异步io 格式控制\nlog4j发布以后，活的很好的反响，作者想让sun公司被纳入jdk，sun公司不接受，最后被apatch收纳。\njul jdk官方日志库 jul （java.util.logging） log4j火了以后，jdk官方自己开发了一个库jul，但是并没有被所有人 认可\nJCL 日志门面 jakarta（jdk内部的一个开发小组）Commons Logging jcl不实现日志功能，但是整合整合日志库\n依靠类加载器寻找日志库\nslf4j ceki发现JCL不好用，apache也不着急开发日志门面，自己出去单独搞了slf4j\n桥接器：slf4j 和日志框架直接 连接的工具 适配器：多个模块使用不同的日志门面和日志框架，可以别的日志框架转换到slf4j上\nlog4j2 apache 重写log4j，性能升级\nlogback ceki 也知道log4j性能问题，开发了替代log4j的高性能产品\n",
     "description": "",
     "tags": null,
-    "title": "003",
-    "uri": "/posts/leetcode/003/"
+    "title": "java日志",
+    "uri": "/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/"
   },
   {
-    "content": "题目 Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice.\nExample: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1]\n解 这道题最优的做法时间复杂度是 O(n)。 顺序扫描数组，对每一个元素，在 map 中找能组合给定值的另一半数字，如果找到了，直接返回 2 个数字的下标即可。如果找不到，就把这个数字存入 map 中，等待扫到“另一半”数字的时候，再取出来返回结果。\n解题思路 遍历一遍，不匹配就把旧数据存map\n",
+    "content": "强引用(FinalReference)： 普通引用 JVM停止运行时终止 软引用(SoftReference)： 在类似于浏览器访问页面缓存的场景，比如点击回退，如果缓存了页面就直接展示，缓存被清除了再加载也没事。 内存不足时终止 弱引用(WeakReference)： gc运行后终止 ThreadLocalMap的key，为了减少内存泄漏，在对象只有虚引用的时候，gc了就被清除了。 虚引用(PhantomReference)： 任何时候都可能\n",
     "description": "",
     "tags": null,
-    "title": "001",
-    "uri": "/posts/leetcode/001/"
+    "title": "java的引用类型",
+    "uri": "/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/"
   },
   {
-    "content": "题目 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself. Example:\nInput: (2 -\u003e 4 -\u003e 3) + (5 -\u003e 6 -\u003e 4) Output: 7 -\u003e 0 -\u003e 8 Explanation: 342 + 465 = 807.题目大意 # 2 个逆序的链表，要求从低位开始相加，得出结果也逆序输出，返回值是逆序结果链表的头结点。\n解题思路 需要注意的是各种进位问题。 极端情况，例如\nInput: (9 -\u003e 9 -\u003e 9 -\u003e 9 -\u003e 9) + (1 -\u003e ) Output: 0 -\u003e 0 -\u003e 0 -\u003e 0 -\u003e 0 -\u003e 1\n为了处理方法统一，可以先建立一个虚拟头结点，这个虚拟头结点的 Next 指向真正的 head，这样 head 不需要单独处理，直接 while 循环即可。另外判断循环终止的条件不用是 p.Next ！= nil，这样最后一位还需要额外计算，循环终止条件应该是 p != nil。\n",
+    "content": "查看程序中对象数量 jmap -histo pid |head -20\n",
     "description": "",
     "tags": null,
-    "title": "002",
-    "uri": "/posts/leetcode/002/"
+    "title": "jvm内存分析：",
+    "uri": "/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/"
   },
   {
-    "content": "blog首日 生活中有很多喜怒哀乐，记录下来就不会忘记太多。 还有一个月我的小baby就要出生了，马上要当爸爸了，希望母子平安。\n想做一个给自己用的app 主要功能是爬取数据，然后对数据聚合 前端使用flutter，后端使用go ",
+    "content": "![][https://note.youdao.com/yws/public/resource/e5863162eca29c2b31e8b59c9707817d/xmlnote/317C13052E514DA9B6229368DD48EDB5/105252]\nKafka核心总控制器Controller 在Kafka集群中会有一个或者多个broker，其中有一个broker会被选举为控制器(Kafka Controller)，它负责管理整个 集群中所有分区和副本的状态。\n当某个分区的leader副本出现故障时，由控制器负责为该分区选举新的leader副本。 当检测到某个分区的ISR集合发生变化时，由控制器负责通知所有broker更新其元数据信息。 当使用kafka-topics.sh脚本为某个topic增加分区数量时，同样还是由控制器负责让新分区被其他节点感知到。 Controller选举机制 在kafka集群启动的时候，会自动选举一台broker作为controller来管理整个集群，选举的过程是集群中每个broker都会 尝试在zookeeper上创建一个 /controller 临时节点，zookeeper会保证有且仅有一个broker能创建成功，这个broker就会成为集群的总控器controller。\n当这个controller角色的broker宕机了，此时zookeeper临时节点会消失，集群里其他broker会一直订阅这个临时节点，发现临时节点消失了，就竞争再次创建临时节点，就是我们上面说的选举机制，zookeeper又会保证有一个broker 成为新的controller。\n具备控制器身份的broker需要比其他普通的broker多一份职责，具体细节如下:\n监听broker相关的变化。为Zookeeper中的/brokers/ids/节点添加BrokerChangeListener，用来处理broker 增减的变化。\n监听topic相关的变化。为Zookeeper中的/brokers/topics节点添加TopicChangeListener，用来处理topic增减 的变化;为Zookeeper中的/admin/delete_topics节点添加TopicDeletionListener，用来处理删除topic的动作。\n从Zookeeper中读取获取当前所有与topic、partition以及broker有关的信息并进行相应的管理。对于所有topic 所对应的Zookeeper中的/brokers/topics/topic节点添加PartitionModificationsListener，用来监听topic中的 分区分配变化。\n更新集群的元数据信息，同步到其他普通的broker节点中。\nPartition副本选举Leader机制 controller感知到分区leader所在的broker挂了(controller监听了很多zk节点可以感知到broker存活)，controller会从 ISR列表(参数unclean.leader.election.enable=false的前提下)里挑第一个broker作为leader(第一个broker最先放进ISR 列表，可能是同步数据最多的副本)，如果参数unclean.leader.election.enable为true，代表在ISR列表里所有副本都挂 了的时候可以在ISR列表以外的副本中选leader，这种设置，可以提高可用性，但是选出的新leader有可能数据少很多。 副本进入ISR列表有两个条件:\n副本节点不能产生分区，必须能与zookeeper保持会话以及跟leader副本网络连通 副本能复制leader上的所有写操作，并且不能落后太多。(与leader副本同步滞后的副本，是由 replica.lag.time.max.ms 配置决定的，超过这个时间都没有跟leader同步过的一次的副本会被移出ISR列表) 消费者消费消息的offset记录机制 每个consumer会定期将自己消费分区的offset提交给kafka内部topic:__consumer_offsets，提交过去的时候，key是 consumerGroupId+topic+分区号，value就是当前offset的值，kafka会定期清理topic里的消息，最后就保留最新的 那条数据\n因为__consumer_offsets可能会接收高并发的请求，kafka默认给其分配50个分区(可以通过 offsets.topic.num.partitions设置)，这样可以通过加机器的方式抗大并发。\n消费者Rebalance机制 rebalance就是说如果消费组里的消费者数量有变化或消费的分区数有变化，kafka会重新分配消费者消费分区的关系。 比如consumer group中某个消费者挂了，此时会自动把分配给他的分区交给其他的消费者，如果他又重启了，那么又会 把一些分区重新交还给他。 注意:rebalance只针对subscribe这种不指定分区消费的情况，如果通过assign这种消费方式指定了分区，kafka不会进 行rebanlance。\n如下情况可能会触发消费者rebalance\n消费组里的consumer增加或减少了 2. 动态给topic增加了分区 消费组订阅了更多的topic rebalance过程中，消费者无法从kafka消费消息，这对kafka的TPS会有影响，如果kafka集群内节点较多，比如数百 个，那重平衡可能会耗时极多，所以应尽量避免在系统高峰期的重平衡发生。\nkafka在redis中存的内容 ",
     "description": "",
     "tags": null,
-    "title": "2021 07 19",
-    "uri": "/posts/daliy/2021-07-19/"
+    "title": "kafka",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/"
+  },
+  {
+    "content": "LDAP是轻量目录访问协议,英文全称是Lightweight Directory Access Protocol,一般都简称为LDAP.\n现在市场上有关LDAP的产品已有很多,各大软件公司都在他们的产品中集成了LDAP服务,如Microsoft的ActiveDirectory、Lotus的Domino Directory、IBM的WebSphere中也集成了LDAP服务.LDAP的开源实现是OpenLDAP,它比商业产品一点也不差,而且源码开放.\nOpenLDAP是最常用的目录服务之一,它是一个由开源社区及志愿者开发和管理的一个开源项目,提供了目录服务的所有功能,包括目录搜索、身份认证、安全通道、过滤器等等.大多数的Linux发行版里面都带有OpenLDAP的安装包.OpenLDAP服务默认使用非加密的TCP/IP协议来接收服务的请求,并将查询结果传回到客户端.由于大多数目录服务都是用于系统的安全认证部分比如:用户登录和身份验证,所以它也支持使用基于 SSL/TLS 的加密协议来保证数据传送的保密性和完整性.OpenLDAP是使用OpenSSL来实现SSL/TLS加密通信的.\nLDAP的信息模型是建立在”条目”(entries)的基础上.一个条目是一些属性的集合,并且具有一个全局唯一的”可区分名称”DN,一个条目可以通过DN来引用.每一个条目的属性具有一个类型和一个或者多个值.类型通常是容易记忆的名称,比如”cn”是通用名称(common name),或者”mail”是电子邮件地址.条目的值的语法取决于属性类型.比如,cn属性可能具有一个值”Babs Jensen” .一个mail属性可能包含”bbs@example.com” .一个jpegphoto属性可能包含一幅JPEG(二进制)格式的图片.\nLDAP常用关键字列表 LDAP通过属性objectClass来控制哪一个属性必须出现或允许出现在一个条目中,它的值决定了该条目必须遵守的模式规则.\nEntry 条目,也叫记录项,是LDAP中最基本的颗粒,就像字典中的词条,或者是数据库中的记录.通常对LDAP的添加、删除、更改、检索都是以条目为基本对象的.\ndn:每一个条目都有一个唯一的标识名(distinguished Name,DN),如上述中一个 dn:”uid=mac,ou=People,dc=example,dc=cn”.通过DN的层次型语法结构,可以方便地表示出条目在LDAP树中的位置,通常用于检索. rdn:一般指dn逗号最左边的部分,如cn=baby.它与RootDN不同,RootDN通常与RootPW同时出现,特指管理LDAP中信息的最高权限用户. Base DN:LDAP目录树的最顶部就是根,也就是所谓的“Base DN”,如”dc=example,dc=com”. schema 对象类(ObjectClass)、属性类型(AttributeType)、语法(Syntax)分别约定了条目、属性、值,他们之间的关系如下图所示.所以这些构成了模式(Schema)——对象类的集合.条目数据在导入时通常需要接受模式检查,它确保了目录中所有的条目数据结构都是一致的.\nschema(一般在/etc/ldap/schema/目录)在导入时要注意前后顺序.\n对于LDAP目录中保存的信息,可以使用LDIF(LDAP Interchange Format)格式来保存.这是一种标准文本文件格式,使用这种格式保存得的LDAP服务器数据库中的数据可方便读取和修改,这也是其他大多数服务配置文件所采取的格式.\nAttribute 属性(Attribute)类似于程序设计中的变量,可以被赋值.在OpenLDAP中声明了许多常用的Attribute(用户也可自己定义Attribute).\n每个条目都可以有很多属性(Attribute),比如常见的人都有姓名、地址、电话等属性.每个属性都有名称及对应的值,属性值可以有单个、多个,比如你有多个邮箱.\n属性不是随便定义的,需要符合一定的规则,而这个规则可以通过schema制定.比如,如果一个entry没有包含在 inetorgperson 这个 schema 中的objectClass: inetOrgPerson,那么就不能为它指定employeeNumber属性,因为employeeNumber是在inetOrgPerson中定义的.\nLDAP为人员组织机构中常见的对象都设计了属性(比如commonName,surname).下面有一些常用的别名:\n属性\n别名\n语法\n描述\n值（举例）\ncommonName\ncn\nDirectory String\n姓名\nsean\nsurname\nsn\nDirectory String\n姓\nChow\norganizationalUnitName\nou\nDirectory String\n单位（部门）名称\nIT\norganization\no\nDirectory String\n组织（公司）名称\nexample\ntelephoneNumber\nTelephone Number\n电话号码\n110\nobjectClass\n内置熟悉\ntop\n常见的Attribute含义如下:\nc:国家. cn:common name,指一个对象的名字.如果指人,需要使用其全名. dc:domain Component,常用来指一个域名的一部分. givenName:指一个人的名字,不能用来指姓. l:指一个地名,如一个城市或者其他地理区域的名字. mail:电子信箱地址. o:organizationName,指一个组织的名字. ou:organizationalUnitName,指一个组织单元的名字. sn:surname,指一个人的姓. telephoneNumber:电话号码,应该带有所在的国家的代码. uid:userid,通常指某个用户的登录名,与Linux系统中用户的uid不同. 作者：华阳_3bcf\n链接：https://www.jianshu.com/p/3716b84c4c1d\n来源：简书\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\nhttps://zhuanlan.zhihu.com/p/74512921\n在 LDAP 里， 一切都是等级化的，或者称之为层级化（hiearchical）。\n一棵树有树干，树枝和树叶；树叶长在树枝上，树枝依附于树干。这就是一个简单的层级结构。LDAP 的结构同一棵树类似。假设 LDAP 里存储的是公司的信息，那么可以把公司（company）本身理解为树干，公司里面的各个部门，比如组（group），理解为树干，把用户（user）理解为树叶。这样的结构称之为目录信息树（DIrectory Information Tree，DIT）。\n",
+    "description": "",
+    "tags": null,
+    "title": "ldap-轻量目录访问协议",
+    "uri": "/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/"
+  },
+  {
+    "content": "top 定义：display sorted information about processes ![[截屏2022-01-02 下午10.58.24.png]]\nload avg: 系统处于可运行状态和不可中断状态的平均活跃进程数。在多核CPU下，如果负载数大于逻辑cpu数量，代表有进程处于等待状态。\niotop 磁盘情况查看 lsof lsof - list open files 在linux下一切皆文件，一个网络连接也是一个文件。 lsof -i 查看网络连接的文件 在mac系统下netstat是简化版的，用lsof 替代\nnetstat netstat -an\nexport 环境变量相关操作 Linux export 命令用于设置或显示环境变量。\n在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作，如果在配置文件中添加可以持续有效。 export [-fnp][变量名称]=[变量设置值]\n-f 代表[变量名称]中为函数名称。 -n 删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。 -p 列出所有的shell赋予程序的环境变量。 例子 在.zprofile 里面 export WS=/Users/yuwenhao/Programs/work-space\ntouch 修改文件的创建和修改时间，现在常用于创建一个文件。\nfind find path -name “支持 * ？” [-delete]\nalias alias[别名]=[指令名称] 删除unlias 别名\nln ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。\n",
+    "description": "",
+    "tags": null,
+    "title": "linux命令",
+    "uri": "/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/"
+  },
+  {
+    "content": " 目录 解释 /bin bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。 /sbin s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。 /etc 存放系统管理和配置文件 /opt 额外安装的可选应用程序包所放置的位置。 /proc 虚拟文件系统目录，是系统内存的映射，可以查看正在运行程序的状态。 /boot 这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。 /root 该目录为系统管理员，也称作超级权限者的用户主目录。 /dev dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。 /lost+found 这个目录平时是空的，系统非正常关机而留下“无家可归”的文件（windows下叫什么.chk）就在这里 /var 用于存放运行时需要改变数据的文件，也是某些大文件的溢出区 /tmp 用于存放各种临时文件，是公用的临时文件存储点。 /mnt 临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。 /media linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。 /home 存放所有用户文件的根目录，是用户主目录的基点 /usr 用于存放系统应用程序，比较重要的目录。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。 /usr/local 本地系统管理员软件安装目录（安装系统级的应用） /usr/doc linux文档 /usr/man 帮助文档 /usr/lib 常用的动态链接库和软件包的配置文件 /usr/sbin 超级用户的一些管理程序 /usr/include linux下开发和编译应用程序所需要的头文件 /usr/src 源代码，linux内核的源代码就放在/usr/src/linux里 usr/local/bin 本地增加的命令 /usr/local/lib 本地增加的库 ",
+    "description": "",
+    "tags": null,
+    "title": "linux目录",
+    "uri": "/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E7%9B%AE%E5%BD%95/"
+  },
+  {
+    "content": "这次的史诗级漏洞是怎么回事呢？ 主角就是log4j2，黑客已经利用 Log4j 漏洞来接管受害者的计算机，以执行从加密货币挖矿、发送垃圾邮件、到通过大型僵尸网络发起分布式拒绝服务(DDoS)攻击的任何事情。\nlog4j2的强大之处在于，除了可以输出程序中的变量，它还提供了一个叫Lookup的东西，lookup相当于是一个接口，可以用来输出更多内容，lookup，顾名思义就是查找、搜索的意思，那在log4j2中，就是允许在输出日志的时候，通过某种方式去查找要输出的内容。\n假如某一个Java程序中，将浏览器的类型记录到了日志中：\nlogger.info(userAgent); User-Agent就属于外界输入的信息，而不是自己程序里定义出来的。只要是外界输入的，就有可能存在恶意的内容，假如有人发来了一个HTTP请求，他的User-Agent是这样一个字符串：\n${jndi:ldap://127.0.0.1/exploit}\n接下来，log4j2将会对这行要输出的字符串进行解析，它发现了字符串中有 ${，要单独处理，发现是JNDI扩展内容_（什么是JNDI？简单粗暴的理解下，它的作用类似于JDBC，JDBC（Java Data Base Connectivity,java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问，JDBC为工具/数据库开发人员提供了一个标准的API，据此可以构建更高级的工具和接口，使数据库开发人员能够用纯 Java API 编写数据库应用程序。JNDI(Java Naming and Directory Interface)是一个应用程序设计的API，为开发人员提供了查找和访问各种命名和目录服务的通用、统一的接口，类似JDBC都是构建在抽象层上。）如图：_\n再对JNDI进一步解析，发现了是LDAP协议_（LDAP即Lightweight Directory Access Protocol（轻量级目录访问协议），目录是一个为查询、浏览和搜索而优化的专业分布式数据库，这个东西用在统一身份认证领域比较多，**简单理解就是：**一个类似于字典的数据源，你可以通过LDAP协议，传一个name进去，就能获取到数据。）_LDAP服务器在127.0.0.1，要查找的key是exploit，然后调用具体负责LDAP的模块去请求对应的数据。问题来了！JNDI支持一个叫命名引用的方式，也就是JNDI可以远程下载class文件来构建对象！！！下载后加载起来构建对象，咱就是一整个震惊住的那么一个大动作啊，如果远程下载的URL指向的是一个黑客的服务器，并且下载的class文件里面藏有恶意代码，那歇逼了，什么样的后果都可能出现，这是JNDI注入。\n这次“核弹”漏洞造成的影响 log4j2的使用面很广泛，现在Java技术栈在Web、后端开发、大数据等领域应用非常广泛，国内除了阿里巴巴、京东、美团等一大片以Java为主要技术栈的公司外，还有多如牛毛的中小企业选择Java。除此之外还有像kafka、elasticsearch、flink这样的大量中间件都是用Java语言开发的。它们大量使用了log4j2作为日志输出。如果输出的日志有外部输入混进来，那直接就是远程代码执行RCE，灭顶之灾！好吧这些是大佬们的遭遇和分析，至少目前为止对很多人，至少我这种菜鸟没有产生什么大的影响…\n有关解决和修复 方式一：禁用lookup或JNDI服务\n罪魁祸首就是lookup和JNDI，那么直接修改配置文件log4j2.formatMsgNoLookups=True或禁用JNDI服务，不过一般产生问题的服务都是线上已经在跑的服务，禁用的时候要注意评估一下是否允许。\n方式二：升级新版本\n新版的log4j2已经修复了这个问题，升级即可解决。修复后的log4j2在JNDI lookup中增加了很多的限制：\n1.默认不再支持二次跳转（也就是命名引用）的方式获取对象\n2.只有在log4j2.allowedLdapClasses列表中指定的class才能获取。\n3.只有远程地址是本地地址或者在log4j2.allowedLdapHosts列表中指定的地址才能获取\n这样处理等于是去掉了通过打印日志去远程加载class的方式。\n",
+    "description": "",
+    "tags": null,
+    "title": "log4j漏洞",
+    "uri": "/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/"
+  },
+  {
+    "content": "功能 编译、打包、测试、依赖管理\n###POM介绍 pom basics\n\u003cproject xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\u003e \u003c!-- maven 模型版本--\u003e \u003cmodelVersion\u003e4.0.0\u003c/modelVersion\u003e \u003c!-- 分组编号一般是公司域名--\u003e \u003cgroupId\u003eorg.codehaus.mojo\u003c/groupId\u003e \u003c!-- 分组编号一般是项目名--\u003e \u003cartifactId\u003emy-project\u003c/artifactId\u003e \u003cversion\u003e1.0\u003c/version\u003e \u003c/project\u003e maven 约定大于配置 好处：\n省去配置 规范开发规范 文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/\npackage: package同时会执行compile\ntest Test开头的类名和test开头的方法名才会被执行 如果引入junit 包，上一条就失效\n",
+    "description": "",
+    "tags": null,
+    "title": "maven",
+    "uri": "/%E5%B7%A5%E5%85%B7/maven/"
+  },
+  {
+    "content": "META-INFO ",
+    "description": "",
+    "tags": null,
+    "title": "META-INF和WEB-INFO",
+    "uri": "/java/meta-inf%E5%92%8Cweb-info/"
+  },
+  {
+    "content": "mysql 逻辑框架图 ",
+    "description": "",
+    "tags": null,
+    "title": "mysql",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/"
+  },
+  {
+    "content": "官网命令介绍 https://redis.io/commands/\n数据结构 字符串 常用命令： SET GET MSET（json的key） MGET SETNX（分布式锁） INCR（原子操作） INCRYBY （批量） GET\nhash结构 Hash常用操作 HSET key field value //存储一个哈希表key的键值 HSETNX key field value //存储一个不存在的哈希表key的键值 HMSET key field value [field value …] //在一个哈希表key中存储多个键值对 HGET key field //获取哈希表key对应的field键值 HMGET key field [field …] //批量获取哈希表key中多个field键值 HDEL key field [field …] //删除哈希表key中的field键值 HLEN key //返回哈希表key中field的数量 HGETALL key //返回哈希表key中所有的键值 HINCRBY key field increment //为哈希表key中field键的值加上增量increment\n相比较String 优点 同类数据归类整合储存，方便数据管理 相比string操作消耗内存与cpu更小 相比string储存更节省空间 缺点 过期功能不能使用在field上，只能用在key上 Redis集群架构下不适合大规模使用。大key容易造成数据分布不均匀 List结构 队列结构，最大2^32-1个元素，主要用于头尾添加访问元素。 LPUSH RPUSH LPOP RPOP LRANGE 返回获取 BLPOP Block LPOP，会阻塞 BRPOP\n应用 stack=LPUSH+LPOP queue=LPUSH+RPOP blocking queue=LPUSH+BRPOP\nSET结构 基础命令 SADD SREM 删除元素 SMEMBERS 查看全部元素 SRANDMEMBER key count 随机从key中抽取count个元素 SPOP 随机从key中抽取count个元素，并排除 pop·· SISMEMBER 是否包含 SCARD获取总数\n集合命令 SINTER 求交集 SUNION 并集 SDIFF 查集（第一个集合，在后续集合中不存在的元素）\n应用 抽奖 关注模型\n共同关注的人 SINTER 我关注的人也关注了他 SISMEMBER 可能喜欢 SDIFF ZSET 有序集合 常用操作： ZADD key score ZRANGE key start stop 排序 ZREVRANGE 倒序 ZUNIONSTORE 并集并放入一个key\n应用： 排行榜\nredis注意事项 redis最应该避免大key，不要一个key里面存太多数据。\n常见面试问题 Redis的单线程和高性能 Redis是单线程吗? Redis 的单线程主要是指 Redis 的网络 IO 和键值对读写是由一个线程来完成的，这也是 Redis 对外 提供键值存储服务的主要流程。但 Redis 的其他功能，比如持久化、异步删除、集群数据同步等，其实是由额外的线程执行的。\nRedis 单线程为什么还能这么快? 因为它所有的数据都在内存中，所有的运算都是内存级别的运算，而且单线程避免了多线程的切换性 能损耗问题。正因为 Redis 是单线程，所以要小心使用 Redis 指令，对于那些耗时的指令(比如 keys)，一定要谨慎使用，一不小心就可能会导致 Redis 卡顿。\nRedis 单线程如何处理那么多的并发客户端连接? Redis的IO多路复用:redis利用epoll来实现IO多路复用，将连接信息和事件放到队列中，依次放到 文件事件分派器，事件分派器将事件分发给事件处理器。 redis 一个命令过来大体分四步 1、建立连接 2、读取数据 3、执行命令 4、应答 连接建立优化先入队列，数据接收完成以后，传给事件处理器，不过需要注意命令的执行仍然会按照入队的顺序执行，只不过优化减少了IO时间。\n",
+    "description": "",
+    "tags": null,
+    "title": "redis",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/"
+  },
+  {
+    "content": "bash有几种不同的运行模式，login shell与non-login shell,.interactive shell.与non-interactive shell(比如执行shel脚本)。这两种 分类方法是交叉的，也就是说一个login shell7可能是一个interactive shell,也可能是个non-interactive shell。. 在下列情况下，我们可以获得一个login shell: 1.登录系统时获得的J顶层shell,无论是通过本地终端登录，还是通过网络ssh登录。这种情况下获得的login shell是一个交互式shell。. 2.在终端下使用-login选项调用bash,可以获得一个交互式login shell。. 3.在脚本中使用-login选项调用bash(比如在shell脚本第一行做如下指定：#！/bin/bash–login),此时得到一个非交互式的login shell。 4.使用\"su-“切换到指定用户时，获得此用户的login shell。如果不使用”.\"，则获得non-login shell。 login shell与non-login shell的主要区别在于它们启动时会读取不同的配置文件，从而导致环境不一样。 login shell的行为： login shell,启动时首先读取/etc/profile:全局配置，然后依次查找~/.bash_profile、~/.bash_login、~/.profile三个配置文件，并且 读取第一个找到的并且可读的文件。login shell退出时读取并执行~/.bash_logout中的命令。 non-login shell的行为： 交互式的non-login shell)启动时读取~.bashrc资源文件。非交互式的non–login shell不读取上述所有配置文件，而是查找环境变量 BASH ENV,读取并执行BASH ENV指向的文件中的命令。 如果使用命令\"sh\"调用bash,bash会尽可能保持向后兼容。作为login shellF启动时，bash依次读取/etc/profile和~l.profile配置文件。作为 non-login shell/启动时，bash读取环境变量ENV指向的文件。 通常我们要定制一些配置时，将配置写在.bashrc中，然后在/.bash_profile中读取~/.bashrc,这样可以保证login shell和交互式non-login shell得到相同的配置。至于/etc/profile就不要轻易去改啦，毕竟会影响系统全局的配置。\n",
+    "description": "",
+    "tags": null,
+    "title": "shell 的login shell与non-login shell",
+    "uri": "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/shell-%E7%9A%84login-shell%E4%B8%8Enon-login-shell/"
+  },
+  {
+    "content": "几篇还不错的文章： SLF4J和Logback和Log4j和Logging的区别与联系\njava日志体系\n",
+    "description": "",
+    "tags": null,
+    "title": "slf4j",
+    "uri": "/%E6%9D%82%E9%A1%B9/slf4j/"
+  },
+  {
+    "content": "Sentinel 是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。\nSentinel 的坑 dashboard 没有持久化，需要自己改造\n",
+    "description": "",
+    "tags": null,
+    "title": "snetinel",
+    "uri": "/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/"
+  },
+  {
+    "content": "spring mvc原理\n",
+    "description": "",
+    "tags": null,
+    "title": "spring mvc",
+    "uri": "/spring/spring-mvc/"
+  },
+  {
+    "content": "为啥是去中心化的： 阿帕网当初设计的时候为了防止苏联人攻击损坏一个节点，其他节点不可用，所以做成了去中心化的。 IEEE和ISO\nOSI 七层模型是ISO提供的，都是学者相对学术 IEEE是 五工程师协会提出的，更加实际可实现\nIP地址和MAC地址的区别\nIP地址可以变动、mac地址是不变的，相同子网内寻址使用MAC地址，不同网络使用IP地址\nSYN(synchronous建立联机) ACK(acknowledgement 确认) PSH(push传送) FIN(finish结束) RST(reset重置) URG(urgent紧急)\nSequence number(顺序号码)\n",
+    "description": "",
+    "tags": null,
+    "title": "TCP IP协议",
+    "uri": "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/tcp-ip%E5%8D%8F%E8%AE%AE/"
+  },
+  {
+    "content": "栈上分配 为什么需要栈上分配\n在我们的应用程序中，其实有很多的对象的作用域都不会逃逸出方法外，也就是说该对象的生命周期会随着方法的调用开始而开始，方法的调用结束而结束，对于这种对象，是不是该考虑将对象不在分配在堆空间中呢？ 我们通过JVM内存分配可以知道JAVA中的对象都是在堆上进行分配，当对象没有被引用的时候，需要依靠GC进行回收内存，如果对象数量较多的时候，会给GC带来较大压力，也间接影响了应用的性能。\n什么是栈上分配\n所以,栈上分配是JVM提出的一种调优方案,JVM通过逃逸分析确定该对象不会被外部访问,如果不会逃逸可以将该对象在栈上分配内存，每个方法或者说每个线程都有属于自己独立的栈帧,随着方法的调用结束,这样该对象所占用的内存空间就可以随栈帧出栈而销毁，就减轻了垃圾回收的压力。\n对象逃逸分析：就是分析对象动态作用域，当一个对象在方法中被定义后，它可能被外部方法所引用，例如作为调用参数传递到其他地方中。\n分析如下案例:\npublic User test1(){ User user = new User(); user.setId(1); user.setName(“1”); return user; }\npublic void test2(){ User user = new User(); user.setId(1); user.setName(“1”);\n//保存数据库 //userMapper.save(user); } 很显然test1方法中的user对象被返回了，这个对象的作用域范围不确定，test2方法中的user对象我们可以确定当方法结束这个对象就可以认为是无效对象了，对于这样的对象我们其实可以将其分配在栈内存里，让其在方法结束时跟随栈内存一起被回收掉。\nJVM对于这种情况可以通过开启逃逸分析参数(-XX:+DoEscapeAnalysis)来优化对象内存分配位置，使其通过标量替换优先分配在栈上(栈上分配)，JDK7之后默认开启逃逸分析，如果要关闭使用参数(-XX:-DoEscapeAnalysis)\n标量替换：通过逃逸分析确定该对象不会被外部访问，并且对象可以被进一步分解时，JVM不会创建该对象，而是将该对象成员变量分解若干个被这个方法使用的成员变量所代替，这些代替的成员变量在栈帧或寄存器上分配空间，这样就不会因为没有一大块连续空间导致对象内存不够分配。开启标量替换参数(-XX:+EliminateAllocations)，JDK7之后默认开启。\n栈上分配的优点:\n1.可以在方法调用结束后自行销毁对象,无需垃圾回收器的介入,有效减小JVM的GC压力 2.栈上分配速度很快,有效提高程序性能\n栈上分配的缺点:\n1.栈的空间是有限的,栈空间存放不了大对象,遇到大对象的创建则还是会存放在堆空间中\nTLAB 可能很多人会有疑惑，已经提供了栈上分配，为什么还要有什么TLAB，甚至混淆了两者之间的差别，包括我自己，之前也存在很多疑惑，下面为大家揭开原因 全名: 本地线程分配缓冲(Thread Local Allocation Buffer,TLAB)，这是一个线程专用的内存分配区域。\n为什么需要TLAB\n在线程初始化时，同时也会申请一块指定大小的内存，只给当前线程使用，这样每个线程都单独拥有一个空间，如果需要分配内存，就在自己的空间上分配，这样就不存在竞争的情况，可以大大提升分配效率。\n如何开启TLAB\nJVM默认开启了TLAB功能，也可以使用-XX: +UseTLAB 显示开启\n如何观察TLAB使用情况\nJVM提供了-XX:+PrintTLAB 参数打开跟踪TLAB的使用情况\n如何调整TLAB默认大小 -XX:TLABSize 通过该参数指定分配给每一个线程的TLAB空间的大小\n简单理解\n为了避免多线程情况下抢占空间,每个线程会提前在EDEN区中,额外划分一块内存区域,指定对象直接进入区域使用, jdk8默认开启\nTLAB的缺点:\n1.TLAB空间一般不会很大(占用了Eden区),所以大对象也无法在TLAB上进行分配,遇到大对象最终也只能分配到堆空间中\n如下图:对象分配流程图\n最后栈上分配和TLAB的对比\n名称\t针对点\t处于对象分配流程的位置 栈上分配\t减少GC的负担\t1 TLAB\t加速堆上对象分配速度\t2\n",
+    "description": "",
+    "tags": null,
+    "title": "TLAB \u0026 栈上分配",
+    "uri": "/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/"
+  },
+  {
+    "content": "zookeeper 什么是zookeeper 它是一个分布式协调框架，是Apache Hadoop 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如:统一命名服务、状态同 步服务、集群管理、分布式应用配置项的管理等。\n核心概念 简单的理解Zookeeper 是一个用于存储少量数据的基于内存 的数据库，主要有如下两个核心的概念:\n文件系统数据结构 监听通知机制。 文件系统数据结构 Zookeeper维护一个类似文件系统的数据结构: 每个子目录项都被称作为 znode(目录节点)，和文件系统类似，我们能够自由的增加、删除 znode，在一个znode下增加、删除子znode。\n有四种类型的znode:\nPERSISTENT­持久化目录节点 客户端与zookeeper断开连接后，该节点依旧存在，只要不手动删除该节点，他将永远存在\nPERSISTENT_SEQUENTIAL­持久化顺序编号目录节点 客户端与zookeeper断开连接后，该节点依旧存在，只是Zookeeper给该节点名称进行顺序编号\nEPHEMERAL­临时目录节点 客户端与zookeeper断开连接后，该节点被删除(和sessionId绑定的，session断开或者超时会被删除)\nEPHEMERAL_SEQUENTIAL­临时顺序编号目录节点 客户端与zookeeper断开连接后，该节点被删除，只是Zookeeper给该节点名称进行顺序编号\nContainer 节点(3.5.3 版本新增，如果Container节点下面没有子节点，则Container节点 在未来会被Zookeeper自动清除,定时任务默认60s 检查一次)\nTTL 节点( Time To Live 默认禁用，只能通过系统配置 zookeeper.extendedTypesEnabled=true 开启，不稳定)\n监听通知机制 客户端注册监听它关心的任意节点，或者目录节点及递归子目录节点\n如果注册的是对某个节点的监听，则当这个节点被删除，或者被修改时，对应的客户端将被通知 如果注册的是对某个目录的监听，则当这个目录有子节点被创建，或者有子节点被删除，对应的客户端将被通知 如果注册的是对某个目录的递归子节点进行监听，则当这个目录下面的任意子节点有目录结构 的变化(有子节点被创建，或被删除)或者根节点有数据变化时，对应的客户端将被通知。 get -w /xxx 监听只会监听当前节点，子节点修改不会被监听 注意:所有的通知都是一次性的，及无论是对节点还是对目录进行的监听，一旦触发，对应的监 听即被移除。递归子节点，监听是对所有子节点的，所以，每个子节点下面的事件同样只会被触发一次。\n应用场景 分布式配置中心 分布式注册中心 分布式锁 分布式队列 集群选举 分布式屏障 发布/订阅 节点元数据 可以通过stat命令，或者get -s cZxid:创建znode的事务ID(Zxid的值)。 mZxid:最后修改znode的事务ID。 pZxid:最后添加或删除子节点的事务ID(子节点列表发生变化才会发生改变)。 ctime:znode创建时间。 mtime:znode最近修改时间。\ndataVersion:znode的当前数据版本。 cversion:znode的子节点结果集版本(一个节点的子节点增加、删除都会影响这个版本）。 aclVersion：znode的acl版本 ephemeralOwner:znode是临时znode时，表示znode所有者的 session ID。 如果 znode不是临时znode，则该字段设置为零。 dataLength:znode数据字段的长度。 numChildren:znode的子znode的数量。\nACL 权限控制( Access Control List ) Zookeeper 的ACL 权限控制,可以控制节点的读写操作,保证数据的安全性，Zookeeper ACL 权 限设置分为 3 部分组成，分别是:权限模式(Scheme)、授权对象(ID)、权限信息 (Permission)。最终组成一条例如“scheme:id:permission”格式的 ACL 请求信息。\nScheme(权限模式):用来设置 ZooKeeper 服务器进行权限验证的方式。ZooKeeper 的权限 验证方式大体分为两种类型:\n一种是范围验证。所谓的范围验证就是说 ZooKeeper 可以针对一个 IP 或者一段 IP 地址授予某 种权限。比如我们可以让一个 IP 地址为“ip:192.168.0.110”的机器对服务器上的某个数据节 点具有写入的权限。或者也可以通过“ip:192.168.0.1/24”给一段 IP 地址的机器赋权。\n另一种权限模式就是口令验证，也可以理解为用户名密码的方式。在 ZooKeeper 中这种验证方 式是 Digest 认证，而 Digest 这种认证方式首先在客户端传送“username:password”这种形 式的权限表示符后，ZooKeeper 服务端会对密码 部分使用 SHA-1 和 BASE64 算法进行加密， 以保证安全性。\n还有一种Super权限模式, Super可以认为是一种特殊的 Digest 认证。具有 Super 权限的客户端 可以对 ZooKeeper 上的任意数据节点进行任意操作。\n授权对象(ID)\n授权对象就是说我们要把权限赋予谁，而对应于 4 种不同的权限模式来说，如果我们选择采用 IP 方式，使用的授权对象可以是一个 IP 地址或 IP 地址段;而如果使用 Digest 或 Super 方式，则 对应于一个用户名。如果是 World 模式，是授权系统中所有的用户。\n权限信息(Permission)\n权限就是指我们可以在数据节点上执行的操作种类，如下所示:在 ZooKeeper 中已经定义好的 权限有 5 种:\n数据节点(c: create)创建权限，授予权限的对象可以在数据节点下创建子节点; 数据节点(w: wirte)更新权限，授予权限的对象可以更新该数据节点;\n数据节点(r: read)读取权限，授予权限的对象可以读取该节点的内容以及子节点的列表信息; 数据节点(d: delete)删除权限，授予权限的对象可以删除该数据节点的子节点; 数据节点(a: admin)管理者权限，授予权限的对象可以对该数据节点体进行 ACL 权限设置。\n命令:\ngetAcl:获取某个节点的acl权限信息\nsetAcl:设置某个节点的acl权限信息\naddauth: 输入认证授权信息，相当于注册用户信息，注册时输入明文密码，zk将以密文的形式存 储\n可以通过系统参数zookeeper.skipACL=yes进行配置，默认是no,可以配置为true, 则配置过的 ACL将不再进行权限检测 ex： setAcl /test auth:yuvenhol:pwd:rwcd create /test xxdataxx ip:192.168.109.130:rw\n数据结构 //DataNode 是Zookeeper存储节点数据的最小单位 public class DataNode implements Record{ byte data[]; Long acl; public StatPersisted stat; private Set\u003cString\u003e children = null; } // public class DataTree{ private final ConcurrentHashMap\u003cString, DataNode\u003e nodes = new ConcurrentHashMap\u003cString, DataNode\u003e(); private final WatchManager dataWatches = new WatchManager(); private final WatchManager childWatches = new WatchManager(); } 事务日志\u0026数据快照 格式化后效果 事务日志： 针对每一次客户端的事务操作，Zookeeper都会将他们记录到事务日志中，当然，Zookeeper也 会将数据变更应用到内存数据库中。我们可以在zookeeper的主配置文件zoo.cfg 中配置内存中 的数据持久化目录，也就是事务日志的存储路径 dataLogDir. 如果没有配置dataLogDir(非必 填), 事务日志将存储到dataDir (必填项)目录 数据快照： 用于记录Zookeeper服务器上某一时刻的全量数据，并将其写入到指定的磁盘文件中。 可以通过配置snapCount配置每间隔事务请求个数，生成快照，数据存储在dataDir 指定的目录中\n事务日志文件名为: log.\u003c当时最大事务ID\u003e，应为日志文件时顺序写入的，所以这个最大事务 ID也将是整个事务日志文件中，最小的事务ID，日志满了即进行下一次事务日志文件的创建\n快照事务日志文件名为: snapshot.\u003c当时最大事务ID\u003e，日志满了即进行下一次事务日志文件的 创建\n",
+    "description": "",
+    "tags": null,
+    "title": "zookeeper",
+    "uri": "/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/"
+  },
+  {
+    "content": "中间件是为应用提供通用服务和功能的软件。数据管理、应用服务、消息传递、身份验证和 API 管理通常都要通过中间件。\n中间件可以帮助开发人员更有效地构建应用。它就如同是应用、数据与用户之间的纽带。\n对于具有多云和容器化环境的企业而言，中间件可以助您大规模、经济高效地开发和运行应用。 一般而言中间件和框架的区别是，中间件是独立运行的用于处理某项专门业务的CS程序，会有配套的客户端和服务端，框架虽然也是处理某个专门业务的但是它不是独立程序，是寄宿在宿主程序进程内的一套类库。 作者：阿里巴巴淘系技术\n链接：https://www.zhihu.com/question/19730582/answer/1663627873\n来源：知乎\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n常用基础中间件 路由与web服务器：处理和转发其他服务器通信数据的服务器。 如被业界广泛使用的阿里基于 Nginx 研发的 Tengine、阿里内部的集中式路由服务 VipServer\nRPC框架：微服务时代的远程服务调用框架。如grpc, Thrift, 阿里的 HSF, Dubbo, SOFA-RPC\n消息中间件：支持在分布式系统之间发送和接收消息的软件。 如 Apache kafka, Apache RabbitMQ, NSQ, 阿里孵化开源的 Apache RocketMQ\n缓存服务: 分布式的高速数据存储层，一般是内存存储。如 阿里 Tair，业界的 Redis, Memcached, Ehcache\n配置中心：用来统一管理各个项目中所有配置的系统。如 阿里 Nacos、携程 Apollo、百度 Disconf\n分布式事务：事务的参与者、支持事务的服务器、资源服务器以及事务管理器分别位于不同的分布式系统的不同节点之上。 如 阿里 seata、腾讯 DTF\n任务调度：分布式环境下提供定时、任务编排、分布式跑批等功能的系统。如 阿里 SchedulerX、业界 xxl-job、当当 elastic-job、有赞 TSP\n数据库层 用于支持弹性扩容和分库分表的 TDDL，数据库连接池 Driud, Binlog 同步的 Canal 等。\n",
+    "description": "",
+    "tags": null,
+    "title": "中间件的定义",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/"
+  },
+  {
+    "content": "逻辑划分：\nHot spot 实现\n虚拟机栈：\n每个方法被执行事会生成一个栈桢（Stack Frame）用于存储局部变量表，操作数栈、动态链接、方法出口等\n本地方法栈：\n与虚拟机栈功能相似，服务于native方法。Hot-spot把本地方法栈与虚拟机栈合二为一。\n堆：\n对象存储的地方，有些对象存储在栈上，依靠内存逃逸。\n方法区：\n存放类的信息，常量、静态变量、及时编译后的代码缓存。\n运行时常量池：\nJava程序要运行时，需要编译器先将源代码文件编译成字节码（.class)文件，然后在由JVM解释执行。\nclass文件中除了有类的版本、字段、方法、接口等描述信息外,还有一项信息是常量池(Constant pool table)，用于存放编译期生成的各种字面量和符号引用，这部分内容将在类加载后进入运行时常量池中存放。\n静态常量池就是上面说的class文件中的常量池。class常量池是在编译时每个class文件中都存在。不同的符号信息放置在不同标志的常量表中。\n",
+    "description": "",
+    "tags": null,
+    "title": "内存结构",
+    "uri": "/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/"
+  },
+  {
+    "content": " title: “链表反转” date: 2021-08-08T21:42:40+08:00 draft: false 链表反转 链表\n1-\u003e2-\u003e3-\u003e4\n翻转\n4-\u003e3-\u003e2-\u003e1\n主要难点是防止Next被替换，下一个节点无法访问\n方式1： 使用临时变量保存Last和Next\n/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reverseList(head *ListNode) *ListNode { var lastNode,nextNode *ListNode for(head!=nil){ nextNode=head.Next head.Next=lastNode lastNode=head head=nextNode } //注意这里是返回前一个节点，因为head最后指向了nextNode是空的 return lastNode } 方式2：递归 从最末尾开始递归交换 3-4-\u003e4-3，1，2，(4，3)-\u003e1,(4,3),2\n",
+    "description": "",
+    "tags": null,
+    "title": "双向链表",
+    "uri": "/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
+  },
+  {
+    "content": "0day漏洞： 漏洞已被发现还没有发布解决补丁。\n桥接： 简单的说就是通过网桥可以把两个不同的物理局域网连接起来，是一种在链路层实现局域网互连的存储转发设备。网桥从一个局域网接收MAC帧，拆封、校对、校验之后 ，按另一个局域网的格式重新组装,发往它的物理层，通俗的说就是通过一台设备（可能不止一个）把几个网络串起来形成的连接，比如图中就是一种通过桥接来实现无路由双机上网的连接方案。 虚拟机中的网络模式 VMware 桥接模式 VMware桥接模式，也就是将虚拟机的虚拟网络适配器与主机的物理网络适配器进行交接，虚拟机中的虚拟网络适配器可通过主机中的物理网络适配器直接访问到外部网络(例如图中所示的局域网和Internet，下同)。简而言之，这就好像在上图所示的局域网中添加了一台新的、独立的计算机一样。因此，虚拟机也会占用局域网中的一个IP地址，并且可以和其他终端进行相互访问。桥接模式网络连接支持有线和无线主机网络适配器。如果你想把虚拟机当做一台完全独立的计算机看待，并且允许它和其他终端一样的进行网络通信，那么桥接模式通常是虚拟机访问网络的最简单途径。\nVMware NAT模式 NAT，是Network Address Translation的缩写，意即网络地址转换。NAT模式也是VMware创建虚拟机的默认网络连接模式。使用NAT模式网络连接时，VMware会在主机上建立单独的专用网络，用以在主机和虚拟机之间相互通信。虚拟机向外部网络发送的请求数据\"包裹\"，都会交由NAT网络适配器加上\"特殊标记\"并以主机的名义转发出去，外部网络返回的响应数据\"包裹\"，也是先由主机接收，然后交由NAT网络适配器根据\"特殊标记\"进行识别并转发给对应的虚拟机，因此，虚拟机在外部网络中不必具有自己的IP地址。从外部网络来看，虚拟机和主机在共享一个IP地址，默认情况下，外部网络终端也无法访问到虚拟机。\n",
+    "description": "",
+    "tags": null,
+    "title": "奇怪的小知识",
+    "uri": "/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"
+  },
+  {
+    "content": "在线流程图 https://mermaid.live/\n正则可视化 https://tooltt.com/regulex/\npython官方学习文档 docs.python.org\n",
+    "description": "",
+    "tags": null,
+    "title": "好用的网站",
+    "uri": "/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/"
+  },
+  {
+    "content": "\n",
+    "description": "",
+    "tags": null,
+    "title": "微信授权登录",
+    "uri": "/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/"
+  },
+  {
+    "content": "https://www.yuque.com/books/share/227872c0-1f19-4c83-960e-5e13e39343c8/fi6mb2\n为了防止出现内存地址碰撞，操作系统引入了虚拟内存，进程持有的虚拟地址会通过 CPU 芯片中的内存管理单元（MMU）的映射关系，来转换变成物理地址，然后再通过物理地址访问内存。\n互斥与同步： 互斥：不能同时执行 同步：要求按照顺序执行\n系统调用： http://c.biancheng.net/view/1195.html\n",
+    "description": "",
+    "tags": null,
+    "title": "操作系统",
+    "uri": "/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
+  },
+  {
+    "content": "Z\nRequestContextListener\nRequestContextListener监听器用于监听http请求，每当web应用接收到Http请求，该监听器就会调用初始化方法，将该请求保存在当前线程的ThreadLocalMap容器中。\nAbstractAnnotationConfigDispatcherServletInitializer 初始化器 会\n",
+    "description": "",
+    "tags": null,
+    "title": "未命名",
+    "uri": "/spring/mvc/%E6%9C%AA%E5%91%BD%E5%90%8D/"
+  },
+  {
+    "content": "个人信息 于文浩/男/1994\n本科/泰山学院自动化专业\n籍贯：山东\n住址：朝阳-酒仙桥\n工作年限：5年\n求职方向：java服务端开发\n手机：18612836421\nEmail: yuvenhol@email.cn\n技能清单 后端框架：Spring Boot +Spring Cloud\n开发环境：Linux、Windows、MacOS\n消息队列：Kafka\n数据库：MySQL/ES/MongoDB/Redis\n版本管理：Svn/Git\n其他语言：Python、GO\n个人优点 有着良好的团队精神，积极参与需求讨论，能从用户角度考虑问题，并给予技术实现方案。\n能够主动承担任务，有较强执行力，及时为运营解决问题，与产品探讨优化方案，保证又快又好上线。\n工作经历 完美世界控股集团有限公司 （ 2018年8月 ~ 至今 ） 全未来项目（2020.3~至今） 所用技术： SpringCloud、MySQL、ElasticSearch、Kafka、Redis\n项目介绍： 全未来项目是一个为用户提供安排未来生活的资讯平台，包括剧本杀、密室逃脱等活动的组团约玩，演唱会、脱口秀、漫展、特殊影厅等活动门票售卖，以及线上线下的抽奖活动。基于SpringCloud，分为客户端主服务、社区服务、商城主服务、商城后台、运营后台、以及第三方服务等几个微服务系统。主要业务数据存储于MySQL中，复杂查询、基于位置信息查询、大文本的数据从MySQL中抽取聚合再刷到ES中，使用Redis做缓存和分布式锁，Kafka做消息队列对复杂处理削峰。\n工作内容： 主要负责app、小程序和中台接口的开发，第三方接口对接，以及工作任务的安排。\napp\u0026小程序:首页、附近页、详情页、客户端内容生产、发帖与评论相关接口。\n内容生成平台：主体内容生产、机器审核、人工审核，权限校验，个人信息与社区内容的审核。\n内容管理平台：运营工具、数据分发标签，地区、场所、商圈、品牌等基础数据管理，后台用户权限管理。\n商城后台：商品管理、订单管理、商家管理、用户权限管理。\n收获： 在这个项目中，我提升了视野，学会了从团队的角度思考问题。通过对业务的深度参与得到了更深的理解，这有助于对更精准的抽象数据结构和写出贴合实际的业务代码，减少与产品反复沟通，提高整体团队效率。我因此受益匪浅，也赢得了产品和领导们的一致好评。\n全历史项目（2018.8~2020~3） 所用技术： SpringCloud、MySQL、MongoDB、ElasticSearch、Kafka、Redis\n项目介绍： 全历史是一个为历史爱好者学习交流分享的平台，包含关系图谱、疆域变迁、历史规律、各种专业史、以及艺术作品等。项目基于SpringCloud，大文本和爬虫数据存住在MongoDB中，业务数据主要存住在MySQL，有复杂查询需求会同步数据到ES中，频繁访问以及处理时间较长的数据使用Redis做缓存，使用Kafka做消息队列对复杂处理削峰。\n工作内容： 我主要负责app和中台接口的开发，以及数据的爬取和清洗。项目的数据由运营人员编写和网络抓取数据组成。在爬虫开发资源不够的时候，我负责了网络数据爬取解析存储。后来开发了科技史、战争史、美术史等专业史的内容生产平台、外包审核系统、app端接口，以及一些文字转语音、音视频拼接、地理位置信息查询等第三方服务的对接。项目起初是单体服务，随着业务的发展逐渐显得过于臃肿对开发调试部署都带来了不便，我接手以后率先进行了微服务改造，梳理可拆分业务，旧服务代码剥离，切换到新服务。\n收获： 上手掌握了SpringCloud相关技术栈，养成了较良好的开发习惯，与各端开发人员、产品运营形成了默契的配合。\n北京康健德科技有限公司 （ 2018年4月 ~ 2018年8月 ） 健康评估项目 所用技术： SpringCloud、MySQL、Redis\n项目介绍： 与各大体检机构合作，对用户历年体检数据进行比对得到结合专业医师对用户身体发展状况进行评估，根据评估结果推送相关产品。项目是基于SpringBoot单体应用，使用mysql作为数据库，redis做缓存。\n工作内容： 数据评估工具开发，计算身体状况得分，推荐对应商品。\n浩鸿达科技发展股份公司 （ 2016年7月 ~ 2018年3月 ） 电子会计档案系统： 项目介绍： 开发专业具有收集归档、档案管理、保管、检索利⽤、鉴定销毁、统计、系统管理等模块 在内的功能完善的会计档案系统。并针不同财务系统开发数据抽取接口，对数据进行ETL，整理到档案系统⽣成PDF⽂件，加盖数字签章。\n工作内容： 针对各财务系统对接接口开发，数据库设计，⽂档维护，数据进行ETL，生成PDF文件加盖数字签章。\n— 致谢 感谢您花时间阅读我的简历，期待能有机会和您共事。\n",
+    "description": "",
+    "tags": null,
+    "title": "简历",
+    "uri": "/%E9%9D%A2%E8%AF%95/%E7%AE%80%E5%8E%86/"
+  },
+  {
+    "content": "PUSH模式 为每个订阅的用户推消息 缺点：大V推送的用户太多\nPULL模式 用户上线以后去拉去新消息 缺点：比较复杂，而且要多次查询再排序\n",
+    "description": "",
+    "tags": null,
+    "title": "类微博feed流",
+    "uri": "/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "1",
-    "uri": "/tests/chapters/1/"
+    "title": "限流",
+    "uri": "/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/"
   },
   {
-    "content": "",
+    "content": "Redis 缓存雪崩、缓存击穿、缓存穿透的概念和解决方案 缓存雪崩： 描述： 大量缓存集中失效，查询数据量很大，引起数据库压力过大。 解决方案：\n缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。 设置热点数据永远不过期。 缓存击穿： 描述: 缓存击穿是指缓存中没有但数据库中有的数据（一般是缓存时间到期），这时由于并发用户特别多，同时读缓存没读到数据，又同时去数据库去取数据，引起数据库压力瞬间增大，造成过大压力 解决方案：\n设置热点数据永远不过期。 加互斥锁，解锁后重入。 缓存穿透： 描述 大量访问数据库中不存在缓存中也不存在的数据，导致数据库压力过大，也是攻击的一种手段。 解决方案：\n接口层增加校验，如用户鉴权校验，id做基础校验，id\u003c=0的直接拦截； 从缓存取不到的数据，在数据库中也没有取到，这时也可以将key-value对写为key-null，缓存有效时间可以设置短点，如30秒（设置太长会导致正常情况也没法使用）。这样可以防止攻击用户反复用同一个id暴力攻击 如何实现接口幂等 token方式 先下发token，完成之后再清除token\n乐观锁 基于乐观锁来控制版本\n分布式事务 1、2pc\n",
     "description": "",
     "tags": null,
-    "title": "10",
-    "uri": "/tests/chapters/10/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "11",
-    "uri": "/tests/chapters/11.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "12",
-    "uri": "/tests/chapters/12.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "13",
-    "uri": "/tests/chapters/13.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "14",
-    "uri": "/tests/chapters/14.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "15",
-    "uri": "/tests/chapters/15.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "16",
-    "uri": "/tests/chapters/16.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "17",
-    "uri": "/tests/chapters/17.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "18",
-    "uri": "/tests/chapters/18.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "19",
-    "uri": "/tests/chapters/19.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "2",
-    "uri": "/tests/chapters/2/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "20",
-    "uri": "/tests/chapters/20.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "21",
-    "uri": "/tests/chapters/21.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "22",
-    "uri": "/tests/chapters/22.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "23",
-    "uri": "/tests/chapters/23.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "24",
-    "uri": "/tests/chapters/24.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "25",
-    "uri": "/tests/chapters/25.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "26",
-    "uri": "/tests/chapters/26.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "27",
-    "uri": "/tests/chapters/27.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "28",
-    "uri": "/tests/chapters/28.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "29",
-    "uri": "/tests/chapters/29.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "3",
-    "uri": "/tests/chapters/3/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "30",
-    "uri": "/tests/chapters/30.de/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "4",
-    "uri": "/tests/chapters/4/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "5",
-    "uri": "/tests/chapters/5/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "6",
-    "uri": "/tests/chapters/6/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "7",
-    "uri": "/tests/chapters/7/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "8",
-    "uri": "/tests/chapters/8/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "9",
-    "uri": "/tests/chapters/9/"
-  },
-  {
-    "content": "The attachments shortcode displays a list of files attached to a page with adjustable color, title and icon.\nAttachments adivorciarsetoca00cape.pdf (361 KB) BachGavotteShort.mp3 (357 KB) Carroll_AliceAuPaysDesMerveilles.pdf (175 KB) hugo.png (17 KB) hugo.txt (20 B) movieselectricsheep-flock-244-32500-2.mp4 (340 KB) Usage While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.\nshortcode partial {{% attachments sort=\"asc\" /%}} {{ partial \"shortcodes/attachments.html\" (dict \"context\" . \"sort\" \"asc\" )}} The shortcurt lists files found in a specific folder.\nCurrently, it supports two implementations for pages\nIf your page is a Markdown file, attachements must be placed in a folder named like your page and ending with .files.\ncontent _index.md page.files attachment.pdf page.md If your page is a folder, attachements must be placed in a nested files folder.\ncontent _index.md page index.md files attachment.pdf Be aware that if you use a multilingual website, you will need to have as many folders as languages.\nParameter Name Default Notes style transparent The color scheme used to highlight the box content.- by severity: info, note, tip, warning\u003cnd color: primary, secondary- by color: blue, green, grey, orange, red- by special color: default,t` title see notes Arbitray text for the box title. Depending on the style there may be a default title. Any given value will overwault.- for severity styles: the matching title for the severity- for all other colors: AttachmentsIf you wa you have to set this parameter to \" \" (a non empty string filled with spaces) icon see notes Font Awesome icon name set to the left of the title. Depending le** there may be a default icon. Any given value will overwrite the default.- for severity styles: a nice matching iseverity- for all other colors: paperclipIf you want no icon, you have to set this parameter to \" \" (a non empty d with spaces) sort asc Sorting the output in ascending or descending order. pattern .* A regular expressions, used to filter the attachments by file name. For example:- to match a file suffix of ‘jpg’, use .*jpg (not *.jpg)- to match file names ending in jpg or png, use .*(jpg|png) Examples Custom Title, List of Attachments Ending in pdf or mp4 {{% attachments title=\"Related files\" pattern=\".*(pdf|mp4)\" /%}} Related files adivorciarsetoca00cape.pdf (361 KB) Carroll_AliceAuPaysDesMerveilles.pdf (175 KB) movieselectricsheep-flock-244-32500-2.mp4 (340 KB) Info Styled Box, Descending Sort Order {{% attachments style=\"info\" sort=\"desc\" /%}} Info movieselectricsheep-flock-244-32500-2.mp4 (340 KB) hugo.txt (20 B) hugo.png (17 KB) Carroll_AliceAuPaysDesMerveilles.pdf (175 KB) BachGavotteShort.mp3 (357 KB) adivorciarsetoca00cape.pdf (361 KB) Style and Icons For further examples for style, title and icon, see the notice shortcode documentation. The parameter are working the same way for both shortcodes, besides having different defaults.\n",
-    "description": "List of files attached to a page",
-    "tags": null,
-    "title": "Attachments",
-    "uri": "/shortcodes/attachments/"
-  },
-  {
-    "content": "The button shortcode displays a clickable button with adjustable color, title and icon.\nGet Hugo Get Hugo Usage While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.\nshortcode partial {{% button href=\"https://gohugo.io/\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"warning\" icon=\"dragon\" %}}Get Hugo{{% /button %}} {{ partial \"shortcodes/button.html\" (dict \"context\" . \"href\" \"https://gohugo.io/\" \"content\" \"Get Hugo\" )}} {{ partial \"shortcodes/button.html\" (dict \"context\" . \"href\" \"https://gohugo.io/\" \"style\" \"warning\" \"icon\" \"dragon\" \"content\" \"Get Hugo\" )}} Once the button is clicked, it opens another browser tab for the given URL.\nParameter Name Default Notes href \u003cempty\u003e The destination URL for the button. If this parameter is not set, the button will do nothing but is still displayed as clickable. style transparent The color scheme used to paint the button.- by severity: info, note, tip, warning- by brand color: primary, secondary- by color: blue, green, grey, orange, red- by special color: default, transparent icon see notes Font Awesome icon name set to the left of the title. Depending on the style there may be a default icon. Any given value will overwrite the default.- for severity styles: a nice matching icon for the severity- for all other colors: \u003cempty\u003eIf you want no icon for a severity style, you have to set this parameter to \" \" (a non empty string filled with spaces) iconposition left Places the icon to the left or right of the title. \u003ccontent\u003e see notes Arbitray text for the button title. Depending on the style there may be a default title. Any given value will overwrite the default.- for severity styles: the matching title for the severity- for all other colors: \u003cempty\u003eIf you want no title for a severity style, you have to set this parameter to \" \" (a non empty string filled with spaces) Examples Style By Severity {{% button href=\"https://gohugo.io/\" style=\"info\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"note\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"tip\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"warning\" %}}Get Hugo{{% /button %}} Get Hugo Get Hugo Get Hugo Get Hugo By Brand Colors {{% button href=\"https://gohugo.io/\" style=\"primary\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"secondary\" %}}Get Hugo{{% /button %}} Get Hugo Get Hugo By Color {{% button href=\"https://gohugo.io/\" style=\"blue\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"green\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"grey\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"orange\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"red\" %}}Get Hugo{{% /button %}} Get Hugo Get Hugo Get Hugo Get Hugo Get Hugo By Special Color {{% button href=\"https://gohugo.io/\" style=\"default\" %}}Get Hugo{{% /button %}} {{% button href=\"https://gohugo.io/\" style=\"transparent\" %}}Get Hugo{{% /button %}} Get Hugo Get Hugo Icon To the Left {{% button href=\"https://gohugo.io/\" icon=\"download\" %}}Get Hugo{{% /button %}} Get Hugo To the Right {{% button href=\"https://gohugo.io/\" icon=\"download\" iconposition=\"right\" %}}Get Hugo{{% /button %}} Get Hugo Override for Severity {{% button href=\"https://gohugo.io/\" icon=\"dragon\" style=\"warning\" %}}Get Hugo{{% /button %}} Get Hugo Other Severity Style with all Defaults {{% button href=\"https://gohugo.io/\" style=\"tip\" %}}{{% /button %}} Tip ",
-    "description": "Clickable buttons",
-    "tags": null,
-    "title": "Button",
-    "uri": "/shortcodes/button/"
+    "title": "面试题整理",
+    "uri": "/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"
   },
   {
     "content": "",
@@ -526,230 +301,60 @@
     "uri": "/categories/"
   },
   {
-    "content": "Start your success story. Now!\n",
+    "content": "",
     "description": "",
     "tags": null,
-    "title": "Chapters",
-    "uri": "/tests/chapters/"
+    "title": "content",
+    "uri": "/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "children",
-    "uri": "/tags/children/"
-  },
-  {
-    "content": "The children shortcode lists the child pages of a page and its descendants .\npage X page 1 page 2 page 3 Usage While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.\nshortcode partial {{% children sort=\"weight\" %}} {{ partial \"shortcodes/children.html\" (dict \"context\" . \"sort\" \"weight\" )}} Parameter Name Default Notes page \u003ccurrent\u003e Specify the page name (section name) to display children for. containerstyle ul Choose the style used to group all children. It could be any HTML tag name. style li Choose the style used to display each descendant. It could be any HTML tag name. showhidden false When true, child pages hidden from the menu will be displayed aswell. description false When true shows a short text under each page in the list. When no description or summary exists for the page, the first 70 words of the content is taken - read more info about summaries on gohugo.io. depth 1 The depth of descendants to display. For example, if the value is 2, the shortcode will display two levels of child pages. To get all descendants, set this value to a high number eg. 999. sort see notes The sort order of the displayed list.If not set it is sorted by the ordersectionsby setting of the site and the pages frontmatter- weight: to sort on menu order- title: to sort alphabetically on menu label. Examples All Default {{% children %}} page X page 1 page 2 page 3 With Description {{% children description=\"true\" %}} page X This is a plain page test, and the beginning of a YAML multiline description... page 1 This is a demo child page\npage 2 This is a demo child page with no description. So its content is used as description.\npage 3 This is a demo child page\nInfinte Depth and Hidden Pages {{% children depth=\"999\" showhidden=\"true\" %}} page X page 1 page 1-1 page 1-1-1 (hidden) page 1-1-1-1 page 1-1-1-1-1 (hidden) page 1-1-1-1-1-1 page 1-1-2 page 1-1-2-1 page 1-1-2-2 page 1-1-3 page 2 page 3 page 3-1 page 4 (hidden) Heading Styles for Container and Elements {{% children containerstyle=\"div\" style=\"h2\" depth=\"3\" description=\"true\" %}} page X This is a plain page test, and the beginning of a YAML multiline description... page 1 This is a demo child page\npage 1-1 This is a demo child page\npage 1-1-2 This is a demo child page\npage 1-1-3 This is a demo child page\npage 2 This is a demo child page with no description. So its content is used as description.\npage 3 This is a demo child page\npage 3-1 This is a plain page test nested in a parent\nDivs for Group and Element Styles {{% children containerstyle=\"div\" style=\"div\" depth=\"3\" %}} page X page 1 page 1-1 page 1-1-2 page 1-1-3 page 2 page 3 page 3-1 ",
-    "description": "List the child pages of a page",
-    "tags": null,
-    "title": "Children",
-    "uri": "/shortcodes/children/"
-  },
-  {
-    "content": "Some testing for different styles used in syntax highlightning and preformatted blocks.\nInline Code This is some very long inline code. Where does it wrap?\nWhat about wrapping short inline code if multiple sections are written side by side?\nWhat about wrapping short inline code if multiple sections are written side/by/side?\nWhat about wrapping long inline code if multiple sections are written side567 by34567 side567?\nWhat about wrapping long inline code if multiple sections are written side567/by34567/side567?\nCan we just use a simple HTML element ?\nBlock Code Code fences without any selected language { \"well\": \"some JSON in codefences in here\" } { \"well\": \"some JSON in HTML elements here\" } { \"well\": \"Code fences with unexisting language\" } Block Preformatted Some preformatted stuff with markdown indention Some preformatted stuff in HTML elements ",
-    "description": "Some testing for different styles used in syntax highlightning and preformatted blocks",
-    "tags": null,
-    "title": "Code",
-    "uri": "/tests/code/"
-  },
-  {
-    "content": "Contributors Special thanks to everyone who has contributed to this project.\nMany thanks to Mathieu Cornic for his work on porting the Learn theme to Hugo.\nMany thanks to Andy Miller for initially creating the Learn theme for Grav.\nPackages and libraries autoComplete - A lightweight and powerful vanilla JavaScript completion suggester clipboard.js - A modern approach to copy text to clipboard Featherlight - A lightweight jQuery lightbox plugin Font Awesome - The internet’s icon library and toolkit jQuery - The “Write less, do more” JavaScript library jquery-svg-zoom-pan - A jQuery plugin to enable pan and zoom in SVG images Lunr - Enables a great search experience without the need for external, server-side, search services MathJax - Beautiful math and chemical formulae in all browsers Mermaid - Generation of diagram and flowchart from text in a similar manner as markdown Perfect Scrollbar - A minimalistic but perfect custom scrollbar plugin RapiDoc - Create beautiful, customizable, interactive API documentation from OpenAPI Specifications WorkSans - Work Sans is a 9 weight typeface family based loosely on early Grotesques Tooling GitHub - Continuous deployement, testing and hosting of this project’s sources and its documentation gren - A releasenotes generator for GitHub Hugo - The static site generator of your choice ",
-    "description": "",
-    "tags": null,
-    "title": "Credits",
-    "uri": "/more/credits/"
+    "title": "docker\u0026k8s",
+    "uri": "/dockerk8s/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "documentation",
-    "uri": "/tags/documentation/"
-  },
-  {
-    "content": "The expand shortcode displays an expandable/collapsible section of text.\nExpand me... Thank you! Usage While the examples are using shortcodes with named parameter you are free to use positional aswell or also call this shortcode from your own partials.\nshortcode shortcode (positional) partial {{% expand title=\"Expand me...\" %}}Thank you!{{% /expand %}} {{% expand \"Expand me...\" %}}Thank you!{{% /expand %}} {{ partial \"shortcodes/expand.html\" (dict \"context\" . \"title\" \"Expand me...\" \"content\" \"Thank you!\" )}} Parameter Name Position Default Notes title 1 \"Expand me...\" Arbitray text to appear next to the expand/collapse icon. open 2 false When true the content text will be initially shown as expanded. \u003ccontent\u003e \u003cempty\u003e Arbitray text to be displayed on expand. Examples All Defaults {{% expand %}}Yes, you did it!{{% /expand %}} Expand me... Yes, you did it! Initially Expanded {{% expand title=\"Expand me...\" open=\"true\" %}}No need to press you!{{% /expand %}} Expand me... No need to press you! Arbitrary Text {{% expand title=\"Show me almost endless possibilities\" %}} You can add standard markdown syntax: - multiple paragraphs - bullet point lists - _emphasized_, **bold** and even **_bold emphasized_** text - [links](https://example.com) - etc. ```plaintext ...and even source code ``` \u003e the possiblities are endless (almost - including other shortcodes may or may not work) {{% /expand %}} Show me almost endless possibilities You can add standard markdown syntax:\nmultiple paragraphs bullet point lists emphasized, bold and even bold emphasized text links etc. ...and even source code the possiblities are endless (almost - including other shortcodes may or may not work)\n",
-    "description": "Expandable/collapsible sections of text",
-    "tags": null,
-    "title": "Expand",
-    "uri": "/shortcodes/expand/"
+    "title": "java",
+    "uri": "/java/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "hidden",
-    "uri": "/tags/hidden/"
-  },
-  {
-    "content": "Some testing for different styles of image links.\nMarkdown Relative to page Relative to page up level Static External fully qualified External without scheme External without scheme and scheme separator HTML Relative to page Relative to page up level Static External fully qualified External without scheme External without scheme and scheme separator ",
-    "description": "Some testing for different styles of image links",
-    "tags": null,
-    "title": "Images",
-    "uri": "/tests/images/"
-  },
-  {
-    "content": "The include shortcode includes other files from your project inside of the current page.\nUsage While the examples are using shortcodes with named parameter you are free to use positional aswell or also call this shortcode from your own partials.\nshortcode shortcode (positional) partial {{% include file=\"shortcodes/INCLUDE_ME.md\" %}} {{% include \"shortcodes/INCLUDE_ME.md\" %}} {{ partial \"shortcodes/include .html\" (dict \"context\" . \"file\" \"shortcodes/INCLUDE_ME.md\" )}} The included files can even contain Markdown and will be taken into account when generating the table of contents.\nParameter Name Position Default Notes file 1 \u003cempty\u003e The path to the file to be included. Path resolution adheres to Hugo’s build-in readFile function hidefirstheading 2 false When true and the included file contains headings, the first heading will be hidden. This comes in handy, eg. if you include otherwise standalone Markdown files. Examples Arbitray Content {{% include \"shortcodes/INCLUDE_ME.md\" %}} You can add standard markdown syntax:\nmultiple paragraphs bullet point lists emphasized, bold and even bold emphasized text links etc. ...and even source code the possiblities are endless (almost - including other shortcodes may or may not work) (almost - including other shortcodes may or may not work)\n",
-    "description": "Displays content from other files",
-    "tags": null,
-    "title": "Include",
-    "uri": "/shortcodes/include/"
-  },
-  {
-    "content": "The math shortcode generates beautiful formatted math and chemical formulae using the MathJax library.\n$$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ Note This only works in modern browsers.\nUsage While the examples are using shortcodes with named parameter it is recommended to use codefences instead. This is because more and more other software supports Mermaid codefences (eg. GitHub) and so your markdown becomes more portable.\nYou are free to also call this shortcode from your own partials.\nNote To use codefence syntax you have to turn off guessSyntax for the markup.highlight setting (see the configuration section).\ncodefence shortcode partial ```math $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ ``` {{\u003c math \u003e}} $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ {{\u003c /math \u003e}} {{ partial \"shortcodes/math.html\" (dict \"context\" . \"content\" \"$$left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$\" )}} Parameter Parameter are only supported when using shortcode or partial syntax. Defaults are used when using codefence syntax.\nName Default Notes align center Allowed values are left, center or right. \u003ccontent\u003e \u003cempty\u003e Your formuale. Configuration MathJax is configured with default settings. You can customize MathJax’s default settings for all of your files thru a JSON object in your config.toml or override these settings per page thru your pages frontmatter.\nThe JSON object of your config.toml / frontmatter is forwarded into MathJax’s configuration object.\nSee MathJax documentation for all allowed settings.\nNote To use codefence syntax you have to turn off guessSyntax for the markup.highlight setting.\nGlobal Configuration File [params] mathJaxInitialize = \"{ \\\"chtml\\\": { \\\"displayAlign\\\": \\\"left\\\" } }\" [markup] [markup.highlight] # if `guessSyntax = true`, there will be no unstyled code even if no language # was given BUT mermaid and math codefences will not work anymore! So this is a # mandatory setting for your site if you want to use math codefences guessSyntax = false Page’s Frontmatter +++ mathJaxInitialize = \"{ \\\"chtml\\\": { \\\"displayAlign\\\": \\\"left\\\" } }\" +++ Examples Inline Math Inline math is generated if you use a single `$` as a delimiter around your formulae: {{\u003c math \u003e}}$\\sqrt{3}${{\u003c /math \u003e}} Inline math is generated if you use a single $ as a delimiter around your formulae: $\\sqrt{3}$\nBlocklevel Math with Left Alignment If you delimit your formulae by two consecutive `$$` it generates a new block. {{\u003c math align=\"left\" \u003e}} $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ {{\u003c /math \u003e}} If you delimit your formulae by two consecutive $$ it generates a new block.\n$$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ Codefence You can also use codefences but without further parameter.\n```math $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ ``` $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$Chemical Formulae {{\u003c math \u003e}} $$\\ce{Hg^2+ -\u003e[I-] HgI2 -\u003e[I-] [Hg^{II}I4]^2-}$$ {{\u003c /math \u003e}} $$\\ce{Hg^2+ -\u003e[I-] HgI2 -\u003e[I-] [Hg^{II}I4]^2-}$$ ",
-    "description": "Beautiful math and chemical formulae",
-    "tags": null,
-    "title": "Math",
-    "uri": "/shortcodes/math/"
-  },
-  {
-    "content": "The mermaid shortcode generates diagrams and flowcharts from text, in a similar manner as Markdown using the Mermaid library.\ngraph LR; If --\u003e Then Then --\u003e Else Note This only works in modern browsers.\nWarning Due to limitations with Mermaid, it is currently not possible to use Mermaid code fences in an initially collapsed expand shortcode. This is a know issue and can’t be fixed by this theme.\nUsage While the examples are using shortcodes with named parameter it is recommended to use codefences instead. This is because more and more other software supports Mermaid codefences (eg. GitHub) and so your markdown becomes more portable.\nYou are free to also call this shortcode from your own partials.\nNote To use codefence syntax you have to turn off guessSyntax for the markup.highlight setting (see the configuration section).\ncodefence shortcode partial ```mermaid graph LR; If --\u003e Then Then --\u003e Else ``` {{\u003c mermaid \u003e}} graph LR; If --\u003e Then Then --\u003e Else {{\u003c /mermaid \u003e}} {{ partial \"shortcodes/mermaid.html\" (dict \"context\" . \"content\" \"graph LR;\\nIf --\u003e Then\\nThen --\u003e Else\" )}} The generated graphs can be be panned by dragging them and zoomed by using the mousewheel. On mobile devices you can use finger gestures.\nParameter Parameter are only supported when using shortcode or partial syntax. Defaults are used when using codefence syntax.\nName Default Notes align center Allowed values are left, center or right. \u003ccontent\u003e \u003cempty\u003e Your mermaid graph. Configuration Mermaid is configured with default settings. You can customize Mermaid’s default settings for all of your files thru a JSON object in your config.toml, override these settings per page thru your pages frontmatter or override these setting per diagramm thru diagram directives.\nThe JSON object of your config.toml / frontmatter is forwarded into Mermaid’s mermaid.initialize() function.\nSee Mermaid documentation for all allowed settings.\nThe theme setting can also be set by your used color variant. This will be the sitewide default and can - again - be overridden by your settings in config.toml, frontmatter or diagram directives.\nNote To use codefence syntax you have to turn off guessSyntax for the markup.highlight setting.\nGlobal Configuration File [params] mermaidInitialize = \"{ \\\"theme\\\": \\\"dark\\\" }\" [markup] [markup.highlight] # if `guessSyntax = true`, there will be no unstyled code even if no language # was given BUT mermaid and math codefences will not work anymore! So this is a # mandatory setting for your site if you want to use mermaid codefences guessSyntax = false Page’s Frontmatter +++ mermaidInitialize = \"{ \\\"theme\\\": \\\"dark\\\" }\" +++ Examples Flowchart with Non-Default Mermaid Theme {{\u003c mermaid align=\"left\" \u003e}} %%{init:{\"theme\":\"forest\"}}%% graph LR; A[Hard edge] --\u003e|Link text| B(Round edge) B --\u003e C{\u003cstrong\u003eDecision\u003c/strong\u003e} C --\u003e|One| D[Result one] C --\u003e|Two| E[Result two] {{\u003c /mermaid \u003e}} %%{init:{\"theme\":\"forest\"}}%% graph LR; A[Hard edge] --\u003e|Link text| B(Round edge) B --\u003e C{Decision} C --\u003e|One| D[Result one] C --\u003e|Two| E[Result two] Sequence {{\u003c mermaid \u003e}} sequenceDiagram participant Alice participant Bob Alice-\u003e\u003eJohn: Hello John, how are you? loop Healthcheck John-\u003eJohn: Fight against hypochondria end Note right of John: Rational thoughts \u003cbr/\u003eprevail... John--\u003eAlice: Great! John-\u003eBob: How about you? Bob--\u003eJohn: Jolly good! {{\u003c /mermaid \u003e}} sequenceDiagram participant Alice participant Bob Alice-\u003e\u003eJohn: Hello John, how are you? loop Healthcheck John-\u003eJohn: Fight against hypochondria end Note right of John: Rational thoughts prevail... John--\u003eAlice: Great! John-\u003eBob: How about you? Bob--\u003eJohn: Jolly good! GANTT {{\u003c mermaid \u003e}} gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to Mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to Mermaid :1d {{\u003c /mermaid \u003e}} gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to Mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to Mermaid :1d Class {{\u003c mermaid \u003e}} classDiagram Class01 \u003c|-- AveryLongClass : Cool Class03 *-- Class04 Class05 o-- Class06 Class07 .. Class08 Class09 --\u003e C2 : Where am i? Class09 --* C3 Class09 --|\u003e Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla Class08 \u003c--\u003e C2: Cool label {{\u003c /mermaid \u003e}} classDiagram Class01 \u003c|-- AveryLongClass : Cool Class03 *-- Class04 Class05 o-- Class06 Class07 .. Class08 Class09 --\u003e C2 : Where am i? Class09 --* C3 Class09 --|\u003e Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla Class08 \u003c--\u003e C2: Cool label State Diagram with Codefence Syntax ```mermaid stateDiagram-v2 open: Open Door closed: Closed Door locked: Locked Door open --\u003e closed: Close closed --\u003e locked: Lock locked --\u003e closed: Unlock closed --\u003e open: Open ``` stateDiagram-v2 open: Open Door closed: Closed Door locked: Locked Door open --\u003e closed: Close closed --\u003e locked: Lock locked --\u003e closed: Unlock closed --\u003e open: Open",
-    "description": "Generate diagrams and flowcharts from text",
-    "tags": null,
-    "title": "Mermaid",
-    "uri": "/shortcodes/mermaid/"
+    "title": "jvm",
+    "uri": "/java/jvm/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "non-hidden",
-    "uri": "/tags/non-hidden/"
+    "title": "mvc",
+    "uri": "/spring/mvc/"
   },
   {
-    "content": "The notice shortcode shows various types of disclaimers with adjustable color, title and icon to help you structure your page.\nThere may be pirates It is all about the boxes.\nUsage While the examples are using shortcodes with named parameter you are free to use positional aswell or also call this shortcode from your own partials.\nshortcode shortcode (positional) partial {{% notice style=\"primary\" title=\"There may be pirates\" icon=\"skull-crossbones\" %}} It is all about the boxes. {{% /notice %}} {{% notice primary \"There may be pirates\" \"skull-crossbones\" %}} It is all about the boxes. {{% /notice %}} {{ partial \"shortcodes/notice.html\" (dict \"context\" . \"style\" \"primary\" \"title\" \"There may be pirates\" \"icon\" \"skull-crossbones\" \"content\" \"It is all about the boxes.\" )}} Parameter Name Position Default Notes style 1 default The color scheme used to highlight the box content.- by severity: info, note, tip, warning- by brand color: primary, secondary- by color: blue, green, grey, orange, red- by special color: default, transparent title 2 see notes Arbitray text for the box title. Depending on the style there may be a default title. Any given value will overwrite the default.- for severity styles: the matching title for the severity- for all other colors: \u003cempty\u003eIf you want no title for a severity style, you have to set this parameter to \" \" (a non empty string filled with spaces) icon 3 see notes Font Awesome icon name set to the left of the title. Depending on the style there may be a default icon. Any given value will overwrite the default.- for severity styles: a nice matching icon for the severity- for all other colors: \u003cempty\u003eIf you want no icon for a severity style, you have to set this parameter to \" \" (a non empty string filled with spaces) \u003ccontent\u003e \u003cempty\u003e Arbitray text to be displayed in box. Examples By Severity Info with markup {{% notice style=\"info\" %}} An **information** disclaimer You can add standard markdown syntax: - multiple paragraphs - bullet point lists - _emphasized_, **bold** and even ***bold emphasized*** text - [links](https://example.com) - etc. ```plaintext ...and even source code ``` \u003e the possiblities are endless (almost - including other shortcodes may or may not work) {{% /notice %}} Info An information disclaimer\nYou can add standard markdown syntax:\nmultiple paragraphs bullet point lists emphasized, bold and even bold emphasized text links etc. ...and even source code the possiblities are endless (almost - including other shortcodes may or may not work)\nNote {{% notice style=\"note\" %}} A **notice** disclaimer {{% /notice %}} Note A notice disclaimer\nTip {{% notice style=\"tip\" %}} A **tip** disclaimer Tip A tip disclaimer\nWarning {{% notice style=\"warning\" %}} A **warning** disclaimer {{% /notice %}} Warning A warning disclaimer\nWarning with Non-Default Title and Icon {{% notice style=\"warning\" title=\"Here are dragons\" icon=\"dragon\" %}} A **warning** disclaimer {{% /notice %}} Here are dragons A warning disclaimer\nWarning without a Title and Icon {{% notice style=\"warning\" title=\" \" icon=\" \" %}} A **warning** disclaimer {{% /notice %}} A warning disclaimer\nBy Brand Colors Primary with Title only {{% notice style=\"primary\" title=\"Primary\" %}} A **primary** disclaimer {{% /notice %}} Primary A primary disclaimer\nSecondary with Icon only {{% notice style=\"secondary\" icon=\"stopwatch\" %}} A **secondary** disclaimer {{% /notice %}} A secondary disclaimer\nBy Color Blue without a Title and Icon {{% notice style=\"blue\" %}} A **blue** disclaimer {{% /notice %}} A blue disclaimer\nGreen with Title only {{% notice style=\"green\" title=\"Green\" %}} A **green** disclaimer {{% /notice %}} Green A green disclaimer\nGrey with Icon only {{% notice style=\"grey\" icon=\"bug\" %}} A **grey** disclaimer {{% /notice %}} A grey disclaimer\nOrange with Title and Icon {{% notice style=\"orange\" title=\"Orange\" icon=\"bug\" %}} A **orange** disclaimer {{% /notice %}} Orange A orange disclaimer\nRed {{% notice style=\"red\" %}} A **red** disclaimer {{% /notice %}} A red disclaimer\nBy Special Color Default with Title and Icon {{% notice style=\"default\" title\"Pay Attention to this Note!\" icon=\"skull-crossbones\" %}} Some serious information. {{% /notice %}} Pay Attention to this Note! Some serious information.\nTransparent with Title and Icon {{% notice style=\"transparent\" title\"Pay Attention to this Note!\" icon=\"skull-crossbones\" %}} Some serious information. {{% /notice %}} Pay Attention to this Note! Some serious information.\n",
-    "description": "Disclaimers to help you structure your page",
-    "tags": null,
-    "title": "Notice",
-    "uri": "/shortcodes/notice/"
-  },
-  {
-    "content": "This is a demo child page with a hidden child. You can still access the hidden child directly or via the search.\nSubpages of this page page 1-1-1 (hidden) page 1-1-2 page 1-1-3 ",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 1-1",
-    "uri": "/shortcodes/children/children-1/children-1-1/"
-  },
-  {
-    "content": "This is a hidden demo child page. This page and all its children are hidden in the menu, arrow navigation and children shortcode as long as you aren’t viewing this page or its children directly.\nSubpages of this page page 1-1-1-1 ",
-    "description": "This is a hidden demo child page",
-    "tags": [
-      "children",
-      "hidden"
-    ],
-    "title": "page 1-1-1 (hidden)",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/"
-  },
-  {
-    "content": "This is a non-hidden demo child page of a hidden parent page with a hidden child. You can still access the hidden child directly or via the search.\nSubpages of this page page 1-1-1-1-1 (hidden) ",
-    "description": "This is a non-hidden demo child page of a hidden parent page",
-    "tags": [
-      "children",
-      "hidden"
-    ],
-    "title": "page 1-1-1-1",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/"
-  },
-  {
-    "content": "This is a hidden demo child page. This page and all its children are hidden in the menu, arrow navigation and children shortcode as long as you aren’t viewing this page or its children directly.\nSubpages of this page page 1-1-1-1-1-1 ",
-    "description": "This is a hidden demo child page",
-    "tags": [
-      "children",
-      "hidden"
-    ],
-    "title": "page 1-1-1-1-1 (hidden)",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/"
-  },
-  {
-    "content": "This is a non-hidden demo child page of a hidden parent page.\n",
-    "description": "This is a non-hidden demo child page of a hidden parent page",
-    "tags": [
-      "children",
-      "hidden"
-    ],
-    "title": "page 1-1-1-1-1-1",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/children-1-1-1-1-1-1/"
-  },
-  {
-    "content": "This is a plain demo child page.\nSubpages of this page page 1-1-2-1 page 1-1-2-2 ",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 1-1-2",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-2/"
-  },
-  {
-    "content": "This is a plain demo child page.\n",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 1-1-2-1",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-2/children-1-1-2-1/"
-  },
-  {
-    "content": "This is a plain demo child page.\n",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 1-1-2-2",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-2/children-1-1-2-2/"
-  },
-  {
-    "content": "This is a plain demo child page.\n",
-    "description": "This is a demo child page",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 1-1-3",
-    "uri": "/shortcodes/children/children-1/children-1-1/children-1-1-3/"
-  },
-  {
-    "content": "This is a plain demo child page.\n",
-    "description": "This is a plain page test nested in a parent",
-    "tags": [
-      "children",
-      "non-hidden"
-    ],
-    "title": "page 3-1",
-    "uri": "/shortcodes/children/children-3/test3/"
-  },
-  {
-    "content": "GoboLinux Wiki by NEONsys.org BITS by Dr. Lutz Gollan Pamasol Electrics by Pamasol – Swiss Aerosol Solutions ",
+    "content": "",
     "description": "",
     "tags": null,
-    "title": "Showcase",
-    "uri": "/more/showcase/"
+    "title": "office",
+    "uri": "/office/"
   },
   {
-    "content": "The siteparam shortcode prints values of site params.\nUsage While the examples are using shortcodes with named parameter you are free to use positional aswell or call this shortcode from your own partials.\nshortcode shortcode (positional) partial {{% siteparam name=\"editURL\" %}} {{% siteparam \"editURL\" %}} {{ partial \"shortcodes/siteparam.html\" (dict \"context\" . \"name\" \"editURL\" )}} Parameter Name Position Default Notes name 1 \u003cempty\u003e The name of the site param to be displayed. Examples editURL from config.toml `editURL` value: {{% siteparam name=\"editURL\" %}} editURL value: https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/\n",
-    "description": "Get value of site params",
+    "content": "",
+    "description": "",
     "tags": null,
-    "title": "Site param",
-    "uri": "/shortcodes/siteparam/"
+    "title": "spring",
+    "uri": "/spring/"
   },
   {
-    "content": "This shortcode uses the RapiDoc library to display your Swagger / OpenAPI Specifications.\nNote This only works in modern browsers.\nUsage While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.\nshortcode partial {{\u003c swagger src=\"https://petstore3.swagger.io/api/v3/openapi.json\" \u003e}} {{ partial \"shortcodes/swagger.html\" (dict \"context\" . \"src\" \"https://petstore3.swagger.io/api/v3/openapi.json\" )}} Parameter Name Default Notes src \u003cempty\u003e The URL to the OpenAPI Specification file. This can be relative to the URL of your page if it is a leaf or branch bundle. Configuration Swagger is configured with default settings. You can customize Swagger’s default settings for all of your files thru a JSON object in your config.toml or override these settings per page thru your pages frontmatter.\nThe JSON object of your config.toml / frontmatter is forwarded into Swagger’s initialization. At the moment, only the theme setting is supported.\nThe theme setting can also be set by your used color variant. This will be the sitewide default and can - again - be overridden by your settings in config.toml or frontmatter.\nGlobal Configuration File [params] swaggerInitialize = \"{ \\\"theme\\\": \\\"dark\\\" }\" Example Using Local File {{\u003c swagger src=\"petstore.json\" \u003e}} ",
-    "description": "UI for your Swagger / OpenAPI Specifications",
+    "content": "",
+    "description": "",
     "tags": null,
-    "title": "Swagger",
-    "uri": "/shortcodes/swagger/"
-  },
-  {
-    "content": "The tabs shortcode displays arbitrary content in unlimited number of tabs. This comes in handy eg. for providing code snippets for multiple languages or providing configuration in different formats.\npython bash print(\"Hello World!\") echo \"Hello World!\" Usage While the examples are using shortcodes with named parameter you are free to also call this shortcode from your own partials.\nshortcode partial {{\u003c tabs \u003e}} {{% tab name=\"python\" %}} ```python print(\"Hello World!\") ``` {{% /tab %}} {{% tab name=\"bash\" %}} ```bash echo \"Hello World!\" ``` {{% /tab %}} {{\u003c /tabs \u003e}} {{ partial \"shortcodes/tabs.html\" (dict \"context\" . \"tabs\" (slice (dict \"name\" \"python\" \"content\" (\"```python\\nprint(\\\"Hello World!\\\")\\n```\" | markdownify) ) (dict \"name\" \"bash\" \"content\" (\"```bash\\necho \\\"Hello World!\\\"\\n```\" | markdownify) ) ) )}} Parameter Name Default Notes groupid default Arbitrary name of the group the tab view belongs to.Tab views with the same groupid sychronize their selected tab. This sychronization applies to the whole site! \u003ccontent\u003e \u003cempty\u003e Arbitrary number of tabs defined with the tab sub-shortcode. Note When using tab views with different content sets, make sure to use a common groupid for equal sets of tabs but distinct groupid for different sets.\nThe tab selection is restored automatically based on the groupid and if it cannot find a tab item because it came from the 'default' group on a different page then the first tab is selected instead.\nExamples Distinct groupid {{\u003c tabs groupid=\"config\" \u003e}} {{% tab name=\"json\" %}} ```json { \"Hello\": \"World\" } ``` {{% /tab %}} {{% tab name=\"XML\" %}} ```xml \u003cHello\u003eWorld\u003c/Hello\u003e ``` {{% /tab %}} {{% tab name=\"properties\" %}} ```properties Hello = World ``` {{% /tab %}} {{\u003c /tabs \u003e}} json XML properties { \"Hello\": \"World\" } \u003cHello\u003eWorld\u003c/Hello\u003e Hello = World Non-Distinct groupid See what happens to this tab view if you select properties tab from the previous example.\n{{\u003c tabs groupid=\"config\" \u003e}} {{% tab name=\"json\" %}} ```json { \"Hello\": \"World\" } ``` {{% /tab %}} {{% tab name=\"XML\" %}} ```xml \u003cHello\u003eWorld\u003c/Hello\u003e ``` {{% /tab %}} {{\u003c /tabs \u003e}} json XML { \"Hello\": \"World\" } \u003cHello\u003eWorld\u003c/Hello\u003e ",
-    "description": "Show content in tabbed views",
-    "tags": null,
-    "title": "Tabbed views",
-    "uri": "/shortcodes/tabs/"
+    "title": "springboot",
+    "uri": "/spring/springboot/"
   },
   {
     "content": "",
@@ -759,24 +364,73 @@
     "uri": "/tags/"
   },
   {
-    "content": "Placeholder…\n",
+    "content": "",
     "description": "",
     "tags": null,
-    "title": "The one and only hidden child",
-    "uri": "/tests/chapters/children-1/"
+    "title": "中间件",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/"
   },
   {
     "content": "",
     "description": "",
     "tags": null,
-    "title": "tutorial",
-    "uri": "/tags/tutorial/"
+    "title": "工具",
+    "uri": "/%E5%B7%A5%E5%85%B7/"
   },
   {
-    "content": " Make a visible block\nAnd another one\n",
-    "description": "Test dynamic width resizing of content if scrollbar is present",
+    "content": "",
+    "description": "",
     "tags": null,
-    "title": "Width",
-    "uri": "/tests/width/"
+    "title": "微服务",
+    "uri": "/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "操作系统",
+    "uri": "/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "杂项",
+    "uri": "/%E6%9D%82%E9%A1%B9/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "权限控制",
+    "uri": "/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "算法",
+    "uri": "/%E7%AE%97%E6%B3%95/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "解决方案",
+    "uri": "/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "计算机基础",
+    "uri": "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "面试",
+    "uri": "/%E9%9D%A2%E8%AF%95/"
   }
 ]

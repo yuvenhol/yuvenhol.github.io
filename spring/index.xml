@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/spring/</link>
+    <description>Recent content in spring on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mvc</title>
+      <link>https://yuvenhol.github.io/spring/mvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/mvc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>springboot</title>
+      <link>https://yuvenhol.github.io/spring/springboot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/springboot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>@Configuration</title>
+      <link>https://yuvenhol.github.io/spring/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/configuration/</guid>
+      <description>@Configuration+@Bean
+@Configuration public class AppConfig{ @Bean public JDBCTempalte t1(){ } @Bean public TranslationManager transactionManager(){ } @Bean public DataSource dataSource(){ xxx } } @Bean 修饰方法后，方法名作为beanname 加入叫spring容器 被Configuration修饰以后，该对象将变成代理对象，在获取bean修饰的方法时，如果spring容器有bean则会直接返回，没有会执行并生成bean</description>
+    </item>
+    <item>
+      <title>spring mvc</title>
+      <link>https://yuvenhol.github.io/spring/spring-mvc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/spring-mvc/</guid>
+      <description>spring mvc原理</description>
+    </item>
+  </channel>
+</rss>

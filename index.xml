@@ -1,40 +1,107 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Relearn Theme</title>
-    <link>https://example.com/</link>
-    <description>Recent content on Hugo Relearn Theme</description>
+    <title>content on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/</link>
+    <description>Recent content in content on yuvenhol的技术苦旅</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 26 Oct 2021 14:56:46 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://yuvenhol.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Basics</title>
-      <link>https://example.com/basics/</link>
+      <title>docker&amp;k8s</title>
+      <link>https://yuvenhol.github.io/dockerk8s/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.com/basics/</guid>
-      <description>Discover what this Hugo theme is all about and the core-concepts behind it.</description>
+      <guid>https://yuvenhol.github.io/dockerk8s/</guid>
+      <description></description>
     </item>
     <item>
-      <title>Content</title>
-      <link>https://example.com/cont/</link>
+      <title>java</title>
+      <link>https://yuvenhol.github.io/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.com/cont/</guid>
-      <description>Find out how to create and organize your content quickly and intuitively.</description>
+      <guid>https://yuvenhol.github.io/java/</guid>
+      <description></description>
     </item>
     <item>
-      <title>Shortcodes</title>
-      <link>https://example.com/shortcodes/</link>
+      <title>office</title>
+      <link>https://yuvenhol.github.io/office/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.com/shortcodes/</guid>
-      <description>Hugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities.
-But this happens to be a bad idea. Everyone uses Markdown because it&amp;rsquo;s pure and simple to read even non-rendered. You should avoid HTML to keep it as simple as possible.
-To avoid this limitations, Hugo created shortcodes. A shortcode is a simple snippet inside a page.</description>
+      <guid>https://yuvenhol.github.io/office/</guid>
+      <description></description>
     </item>
     <item>
-      <title>Posts</title>
-      <link>https://example.com/posts/</link>
-      <pubDate>Tue, 26 Oct 2021 14:56:46 +0800</pubDate>
-      <guid>https://example.com/posts/</guid>
+      <title>spring</title>
+      <link>https://yuvenhol.github.io/spring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>中间件</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>工具</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>微服务</title>
+      <link>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>操作系统</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>杂项</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>权限控制</title>
+      <link>https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>算法</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>解决方案</title>
+      <link>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>计算机基础</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>面试</title>
+      <link>https://yuvenhol.github.io/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E9%9D%A2%E8%AF%95/</guid>
       <description></description>
     </item>
   </channel>

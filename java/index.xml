@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/java/</link>
+    <description>Recent content in java on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jvm</title>
+      <link>https://yuvenhol.github.io/java/jvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cglib</title>
+      <link>https://yuvenhol.github.io/java/cglib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/cglib/</guid>
+      <description>操作字节码生成代理类
+Class UserServiceProxy extends UserService{ public void test(){ //切面逻辑 super.test() } //切面逻辑 }</description>
+    </item>
+    <item>
+      <title>java的引用类型</title>
+      <link>https://yuvenhol.github.io/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</guid>
+      <description>强引用(FinalReference)： 普通引用 JVM停止运行时终止 软引用(SoftReference)： 在类似于浏览器访问页面缓存的场景，比如点击回退，如果缓存了页面就直接展示，缓存被清除了再加载也没事。 内存不足时终止 弱引用(WeakReference)： gc运行后终止 ThreadLocalMap的key，为了减少内存泄漏，在对象只有虚引用的时候，gc了就被清除了。 虚引用(PhantomReference)： 任何时候都可能</description>
+    </item>
+    <item>
+      <title>META-INF和WEB-INFO</title>
+      <link>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</guid>
+      <description>META-INFO </description>
+    </item>
+    <item>
+      <title>内存结构</title>
+      <link>https://yuvenhol.github.io/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</guid>
+      <description>逻辑划分：
+Hot spot 实现
+虚拟机栈：
+每个方法被执行事会生成一个栈桢（Stack Frame）用于存储局部变量表，操作数栈、动态链接、方法出口等
+本地方法栈：
+与虚拟机栈功能相似，服务于native方法。Hot-spot把本地方法栈与虚拟机栈合二为一。
+堆：
+对象存储的地方，有些对象存储在栈上，依靠内存逃逸。
+方法区：
+存放类的信息，常量、静态变量、及时编译后的代码缓存。
+运行时常量池：
+Java程序要运行时，需要编译器先将源代码文件编译成字节码（.class)文件，然后在由JVM解释执行。
+class文件中除了有类的版本、字段、方法、接口等描述信息外,还有一项信息是常量池(Constant pool table)，用于存放编译期生成的各种字面量和符号引用，这部分内容将在类加载后进入运行时常量池中存放。
+静态常量池就是上面说的class文件中的常量池。class常量池是在编译时每个class文件中都存在。不同的符号信息放置在不同标志的常量表中。</description>
+    </item>
+  </channel>
+</rss>

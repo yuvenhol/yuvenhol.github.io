@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机基础 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in 计算机基础 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/</guid>
+      <description>Cookie &amp;amp; Session cookie的属性 HttpOnly: 如果您在cookie中设置了HttpOnly属性，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击 path：对应url的作用域，默认是当前路径 ex：/a/b 默认是/a max-age：指定的是从文档被访问后的存活时间，这个时间是个相对值(比如:3600s),相对的是文档第一次被请求时服务器记录的Request_time(请求时间) Expires：指定的时间可以是相对文件的最后访问时间(Atime)或者修改时间(MTime),而max-age相对对的是文档的请求时间(Atime)
+删除cookie 把cookie的过期时间设为0或者过去</description>
+    </item>
+    <item>
+      <title>IO相关</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/</guid>
+      <description>linux IO TCP网络通信整体流程 服务端准备连接流程 SOCKET函数 为了执行网络I/O，我们要做的第一件事情就是调用socket函数，指定期望的协议类型。该函数会创建一个通信的端点，并返回引用该端点的文件描述符，该文件描述符也称为套接字描述符(socket descriptor)，简称sockfd。
+BIND()函数 bind()函数把一个本地协议地址赋予一个套接字。
+如果一个TCP客户端或者服务器没有调用bind绑定端口，或者指定IP地址，那么内核就会为该套接字选择一个临时端口号。
+LISTEN()函数 通过socket()函数创建了套接字之后，再执行listen()函数，会把套接字转换为一个被动套接字，指示内核应该接收指向该套接字的连接请求，并导致套接字从CLOSED状态转换到LISTEN状态。
+在客户端请求服务器之后，服务器内核会把请求套接字放入到未完成队列中： 如下图：
+服务器接收到客户端SYN请求后，于是请求套接字进入未完成连接队列，等到服务端响应了ACK和SYN完成三次握手后，于是，套接字进入已完成连接队列。已完成连接队列中的套接字可以被服务器进程执行accept函数获取到。
+ACCEPT()函数 服务器一旦执行了socket()、bind()、listen()函数之后，就表示已经初始化好了监听套接字，并且把自己变为了被动套接字，等待客户端的请求。这个时候，我们需要继续调用accept()函数，让服务器进入阻塞等待获取客户端的已连接套接字。
+当进程调用accept()时，已完成连接队列中的队头将返回给进程，或者如果队列为空，那么进程将被投入睡眠，直到TCP在该队列中放入一项才唤醒它。
+在调用accept()之后，阻塞等待客户连接到达，然后获取一个已连接套接字：
+关于监听套接字和已连接套接字
+注意，这里要区分好服务端的监听套接字和已连接套接字，服务端调用socket()返回的是监听套接字，bind()和listen()函数入参也是监听套接字。
+一旦有客户端请求过来了于是产生了一个已连接套接字，后续和客户端的交互是通过这个已连接套接字进行的。监听套接字只负责监听客户端请求并获取和客户端的已连接套接字。
+客户端发起连接流程 CONNECT()函数 connect()函数由客户端调用，请求与服务端建立连接，这个函数会触发三次握手。大致流程如下：
+客户端： connect调用是的当前套接字从CLOSED状态进入SYN_SENT状态，如果节而受到了服务器的SYN+ACK响应，则转移到ESTABLISHED状态； 如果connect失败，则表示套接字不在可用，必须关闭，不能再次尝试调用connect函数； 服务端： 每当接收到SYN时，TCP在未完成连接队列中创建一个新的条目，然后响应TCP三次握手的第二个分节； 每当收到三次握手的第三个分节的时候，就把条目从未完成队列移到已完成连接队列的队尾。此时，服务端accept调用将被唤醒并得到一个已连接套接字。 注意：客户在调用connect函数之前，不是一定要调用bind函数，这个时候内核会确定源IP地址，并选择一个临时端口号作为源端口号。
+所以大家在监控TCP连接的时候，可以发现请求客户端的端口都是没有什么规律的。因为这个端口号是临时端口号。
+当服务器队列满了，有新的客户端connect请求的SYN到达时怎么办？
+这个时候，TCP会忽略这个SYN分节，也不会向客户端发送RST，好让客户TCP有机会重发SYN，以便在不久之后可以在这些队列中找到可用的空间。
+如果直接响应RST，客户的connect()调用会立刻返回错误，导致应用进程必须要处理这种情况。
+因为从服务端的角度来看，经理一个RTT之后，TCP条目就会从未完成队列移动到已完成连接队列。所以，未完成连接队列中的任何一项的存留时间是一个RTT。
+一旦connect()成功之后，客户端和服务器就可以通过数据交换相关函数进行数据交换了。
+整体流程 概念说明 1. 内核态（内核空间）和用户态（用户空间）的区别和联系？ 用户空间是用户进程所在的内存区域，系统空间是操作系统所在的内存区域。 为了保证内核的安全，处于用户态的程序只能访问用户空间，而处于内核态的程序可以访问用户空间和内核空间。 2. 文件描述符fd Linux将所有设备都当做文件来处理，文件描述符来标识每个文件对象。 当程序打开一个现有文件或者创建一个新文件时，内核向进程返回一个文件描述符。 3. 缓存IO Linux的缓存IO机制中，操作系统会将IO的数据缓存在文件系统的页缓存中，也就是说，数据会先被拷贝到操作系统内核的缓冲区，然后才会从操作系统内核的缓冲区拷贝到应用程序的地址空间。
+涉及系统调用 recvfrom： 从socket读取数据
+select： select() allow a program to monitor multiple file descriptors, waiting until one or more of the file descriptors become &amp;ldquo;ready&amp;rdquo; for some class of I/O operation select 监控多个io操作的文件描述符，直到一个或者多个文件描述符编程ready状态</description>
+    </item>
+    <item>
+      <title>shell 的login shell与non-login shell</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/shell-%E7%9A%84login-shell%E4%B8%8Enon-login-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/shell-%E7%9A%84login-shell%E4%B8%8Enon-login-shell/</guid>
+      <description>bash有几种不同的运行模式，login shell与non-login shell,.interactive shell.与non-interactive shell(比如执行shel脚本)。这两种 分类方法是交叉的，也就是说一个login shell7可能是一个interactive shell,也可能是个non-interactive shell。. 在下列情况下，我们可以获得一个login shell: 1.登录系统时获得的J顶层shell,无论是通过本地终端登录，还是通过网络ssh登录。这种情况下获得的login shell是一个交互式shell。. 2.在终端下使用-login选项调用bash,可以获得一个交互式login shell。. 3.在脚本中使用-login选项调用bash(比如在shell脚本第一行做如下指定：#！/bin/bash&amp;ndash;login),此时得到一个非交互式的login shell。 4.使用&amp;quot;su-“切换到指定用户时，获得此用户的login shell。如果不使用”.&amp;quot;，则获得non-login shell。 login shell与non-login shell的主要区别在于它们启动时会读取不同的配置文件，从而导致环境不一样。 login shell的行为： login shell,启动时首先读取/etc/profile:全局配置，然后依次查找~/.bash_profile、~/.bash_login、~/.profile三个配置文件，并且 读取第一个找到的并且可读的文件。login shell退出时读取并执行~/.bash_logout中的命令。 non-login shell的行为： 交互式的non-login shell)启动时读取~.bashrc资源文件。非交互式的non&amp;ndash;login shell不读取上述所有配置文件，而是查找环境变量 BASH ENV,读取并执行BASH ENV指向的文件中的命令。 如果使用命令&amp;quot;sh&amp;quot;调用bash,bash会尽可能保持向后兼容。作为login shellF启动时，bash依次读取/etc/profile和~l.profile配置文件。作为 non-login shell/启动时，bash读取环境变量ENV指向的文件。 通常我们要定制一些配置时，将配置写在.bashrc中，然后在/.bash_profile中读取~/.bashrc,这样可以保证login shell和交互式non-login shell得到相同的配置。至于/etc/profile就不要轻易去改啦，毕竟会影响系统全局的配置。</description>
+    </item>
+    <item>
+      <title>TCP IP协议</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/tcp-ip%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/tcp-ip%E5%8D%8F%E8%AE%AE/</guid>
+      <description>为啥是去中心化的： 阿帕网当初设计的时候为了防止苏联人攻击损坏一个节点，其他节点不可用，所以做成了去中心化的。 IEEE和ISO
+OSI 七层模型是ISO提供的，都是学者相对学术 IEEE是 五工程师协会提出的，更加实际可实现
+IP地址和MAC地址的区别
+IP地址可以变动、mac地址是不变的，相同子网内寻址使用MAC地址，不同网络使用IP地址
+SYN(synchronous建立联机) ACK(acknowledgement 确认) PSH(push传送) FIN(finish结束) RST(reset重置) URG(urgent紧急)
+Sequence number(顺序号码)</description>
+    </item>
+  </channel>
+</rss>

