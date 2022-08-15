@@ -39,10 +39,16 @@ git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、s
 功能 编译、打包、测试、依赖管理等
 仓库 通常情况下企业内仓储依赖是
 graph LR 本地仓库A &amp; 本地仓库B &amp; 本地仓库C --&gt; 企业私服Nexus--&gt;阿里云Nexus--&gt;中央仓库 其中repository Manager 企业内会用nexus等
-文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/ web：src/main/webapp 包含/WEB-INF/web.xml pom 增加
+文件规范 java 源文件：src/main/java
+测试用例目录：src/test/java
+输出文件： target/
+配置文件： src/main/resources/
+web：src/main/webapp
+包含/WEB-INF/web.xml
+pom 增加
 &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; settings文件 settings文件有两处配置，总配置和用户
 The Maven install: ${maven.home}/conf/settings.xml A user&amp;rsquo;s install: ${user.home}/.m2/settings.xml Servers 配置账号密码 sshkey等
-1. `&amp;lt;servers&amp;gt;` 2. `&amp;lt;server&amp;gt;` 3. `&amp;lt;id&amp;gt;server001&amp;lt;/id&amp;gt;` 4. `&amp;lt;username&amp;gt;my_login&amp;lt;/username&amp;gt;` 5. `&amp;lt;password&amp;gt;my_password&amp;lt;/password&amp;gt;` 6. `&amp;lt;privateKey&amp;gt;${user.home}/.ssh/id_dsa&amp;lt;/privateKey&amp;gt;` 7. `&amp;lt;passphrase&amp;gt;some_passphrase&amp;lt;/passphrase&amp;gt;` 8. `&amp;lt;filePermissions&amp;gt;664&amp;lt;/filePermissions&amp;gt;` 9. `&amp;lt;directoryPermissions&amp;gt;775&amp;lt;/directoryPermissions&amp;gt;` 10. `&amp;lt;configuration&amp;gt;&amp;lt;/configuration&amp;gt;` 11. `&amp;lt;/server&amp;gt;` 12. `&amp;lt;/servers&amp;gt;` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。 虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.</description>
+1. `&amp;lt;servers&amp;gt;` 2. `&amp;lt;server&amp;gt;` 3. `&amp;lt;id&amp;gt;server001&amp;lt;/id&amp;gt;` 4. `&amp;lt;username&amp;gt;my_login&amp;lt;/username&amp;gt;` 5. `&amp;lt;password&amp;gt;my_password&amp;lt;/password&amp;gt;` 6. `&amp;lt;privateKey&amp;gt;${user.home}/.ssh/id_dsa&amp;lt;/privateKey&amp;gt;` 7. `&amp;lt;passphrase&amp;gt;some_passphrase&amp;lt;/passphrase&amp;gt;` 8. `&amp;lt;filePermissions&amp;gt;664&amp;lt;/filePermissions&amp;gt;` 9. `&amp;lt;directoryPermissions&amp;gt;775&amp;lt;/directoryPermissions&amp;gt;` 10. `&amp;lt;configuration&amp;gt;&amp;lt;/configuration&amp;gt;` 11. `&amp;lt;/server&amp;gt;` 12. `&amp;lt;/servers&amp;gt;` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。</description>
     </item>
   </channel>
 </rss>

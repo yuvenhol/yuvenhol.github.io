@@ -10,21 +10,21 @@
     <title>content - yuvenhol的技术苦旅</title>
     <link href="/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1660536550" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1660537531" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660536550" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660536550" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1660536550" rel="stylesheet">
-    <link href="/css/nucleus.css?1660536550" rel="stylesheet">
-    <link href="/css/fonts.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660536550" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1660536550" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1660536550" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1660536550" rel="stylesheet">
-    <link href="/css/variant.css?1660536550" rel="stylesheet">
-    <link href="/css/print.css?1660536550" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1660536550" rel="stylesheet">
-    <script src="/js/variant.js?1660536550"></script>
+    <link href="/css/fontawesome-all.min.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660537531" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660537531" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660537531" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1660537531" rel="stylesheet">
+    <link href="/css/nucleus.css?1660537531" rel="stylesheet">
+    <link href="/css/fonts.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660537531" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1660537531" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1660537531" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1660537531" rel="stylesheet">
+    <link href="/css/variant.css?1660537531" rel="stylesheet">
+    <link href="/css/print.css?1660537531" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1660537531" rel="stylesheet">
+    <script src="/js/variant.js?1660537531"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1660536550" defer></script>
+    <script src="/js/jquery.min.js?1660537531" defer></script>
   </head>
   <body class="mobile-support print" data-url="/">
     <div id="body" class="default-animation">
@@ -702,12 +702,12 @@ rebase相当于在fetch之后，重新提交数据。
 本地仓库A & 本地仓库B & 本地仓库C --> 企业私服Nexus-->阿里云Nexus-->中央仓库</div><p><img src="https://maven.apache.org/repository/maven-repositories.png" alt="依赖图">
 其中repository Manager 企业内会用nexus等</p>
 <h2 id="文件规范">文件规范</h2>
-<p>java 源文件：src/main/java
-测试用例目录：src/test/java
-输出文件： target/
-配置文件： src/main/resources/
-web：src/main/webapp
-包含/WEB-INF/web.xml
+<p>java 源文件：src/main/java<br>
+测试用例目录：src/test/java<br>
+输出文件： target/<br>
+配置文件： src/main/resources/<br>
+web：src/main/webapp<br>
+包含/WEB-INF/web.xml<br>
 pom 增加</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;packaging&gt;</span>war<span class="nt">&lt;/packaging&gt;</span>
 </span></span></code></pre></div><h2 id="settings文件">settings文件</h2>
@@ -731,7 +731,7 @@ pom 增加</p>
 </span></span><span class="line"><span class="cl">11.  `<span class="nt">&lt;/server&gt;</span>`
 </span></span><span class="line"><span class="cl">12.  `<span class="nt">&lt;/servers&gt;</span>`
 </span></span></code></pre></div><h3 id="mirrors">Mirrors</h3>
-<p>镜像：对repository的代理，默认的repository的id:<strong>central</strong>，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。
+<p>镜像：对repository的代理，默认的repository的id:<strong>central</strong>，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。<br>
 虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.jar在第一个 mirror 中不存在的时候，maven会去第二个 mirror 中查询下载，但是maven不会这样做！</p>
 <pre tabindex="0"><code>1.  `&lt;mirrors&gt;`
 2.  `&lt;mirror&gt;`
@@ -762,19 +762,10 @@ pom 增加</p>
 <li>省去配置</li>
 <li>规范开发规范</li>
 </ol>
-<h2 id="文件规范-1">文件规范</h2>
-<p>java 源文件：src/main/java
-测试用例目录：src/test/java
-输出文件： target/
-配置文件： src/main/resources/
-web：src/main/webapp
-包含/WEB-INF/web.xml
-pom 增加</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;packaging&gt;</span>war<span class="nt">&lt;/packaging&gt;</span>
-</span></span></code></pre></div><h3 id="package">package:</h3>
+<h3 id="package">package:</h3>
 <p>package同时会执行compile</p>
 <h3 id="test">test</h3>
-<p>Test开头的类名和test开头的方法名才会被执行
+<p>Test开头的类名和test开头的方法名才会被执行<br>
 如果引入junit 包，上一条就失效</p>
 <h2 id="项目依赖">项目依赖</h2>
 <p>项目依赖是指maven通过以来传播、依赖优先、可选依赖、排除依赖、依赖范围等特性来管理项目ClassPath。
@@ -1965,12 +1956,12 @@ URG(urgent紧急)</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1660536550" defer></script>
-        <script src="/js/lunr.min.js?1660536550" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1660536550" defer></script>
-        <script src="/js/lunr.multi.min.js?1660536550" defer></script>
-        <script src="/js/lunr.en.min.js?1660536550" defer></script>
-        <script src="/js/search.js?1660536550" defer></script>
+        <script src="/js/auto-complete.js?1660537531" defer></script>
+        <script src="/js/lunr.min.js?1660537531" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1660537531" defer></script>
+        <script src="/js/lunr.multi.min.js?1660537531" defer></script>
+        <script src="/js/lunr.en.min.js?1660537531" defer></script>
+        <script src="/js/search.js?1660537531" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -2099,18 +2090,18 @@ URG(urgent紧急)</p>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1660536550"></script>
+          <script async src="/js/buttons.js?1660537531"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1660536550" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1660536550" defer></script>
-    <script src="/js/featherlight.min.js?1660536550" defer></script>
-    <script src="/js/jquery.svg.pan.zoom.js?1660536550" defer></script>
-    <script src="/js/mermaid.min.js?1660536550" defer></script>
+    <script src="/js/clipboard.min.js?1660537531" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1660537531" defer></script>
+    <script src="/js/featherlight.min.js?1660537531" defer></script>
+    <script src="/js/jquery.svg.pan.zoom.js?1660537531" defer></script>
+    <script src="/js/mermaid.min.js?1660537531" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"securityLevel\": \"loose\" }");
     </script>
-    <script src="/js/theme.js?1660536550" defer></script>
+    <script src="/js/theme.js?1660537531" defer></script>
   </body>
 </html>
