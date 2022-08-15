@@ -10,20 +10,20 @@
     <title>maven - yuvenhol的技术苦旅</title>
     <link href="/%E5%B7%A5%E5%85%B7/maven/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
     <link href="/%E5%B7%A5%E5%85%B7/maven/index.print.html" rel="alternate" type="text/html" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1660273321" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1660536550" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1660273321" rel="stylesheet">
-    <link href="/css/nucleus.css?1660273321" rel="stylesheet">
-    <link href="/css/fonts.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1660273321" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1660273321" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1660273321" rel="stylesheet">
-    <link href="/css/variant.css?1660273321" rel="stylesheet">
-    <link href="/css/print.css?1660273321" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1660273321"></script>
+    <link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1660536550" rel="stylesheet">
+    <link href="/css/nucleus.css?1660536550" rel="stylesheet">
+    <link href="/css/fonts.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1660536550" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1660536550" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1660536550" rel="stylesheet">
+    <link href="/css/variant.css?1660536550" rel="stylesheet">
+    <link href="/css/print.css?1660536550" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1660536550"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1660273321" defer></script>
+    <script src="/js/jquery.min.js?1660536550" defer></script>
   </head>
   <body class="mobile-support html" data-url="/%E5%B7%A5%E5%85%B7/maven/">
     <div id="body" class="default-animation">
@@ -79,10 +79,35 @@
             <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#功能">功能</a>
+    <li><a href="#资料">资料</a></li>
+    <li><a href="#功能">功能</a></li>
+    <li><a href="#仓库">仓库</a></li>
+    <li><a href="#文件规范">文件规范</a></li>
+    <li><a href="#settings文件">settings文件</a>
+      <ul>
+        <li><a href="#servers">Servers</a></li>
+        <li><a href="#mirrors">Mirrors</a></li>
+      </ul>
+    </li>
+    <li><a href="#pom文件">POM文件</a>
+      <ul>
+        <li><a href="#pom介绍">POM介绍</a></li>
+        <li><a href="#基础例子">基础例子</a></li>
+      </ul>
+    </li>
+    <li><a href="#文件规范-1">文件规范</a>
       <ul>
         <li><a href="#package">package:</a></li>
         <li><a href="#test">test</a></li>
+      </ul>
+    </li>
+    <li><a href="#项目依赖">项目依赖</a>
+      <ul>
+        <li><a href="#依赖传播">依赖传播</a></li>
+        <li><a href="#依赖优先">依赖优先</a></li>
+        <li><a href="#可选依赖">可选依赖</a></li>
+        <li><a href="#排除依赖">排除依赖</a></li>
+        <li><a href="#依赖范围">依赖范围</a></li>
       </ul>
     </li>
   </ul>
@@ -98,19 +123,70 @@
           <article class="default">
 <h1>maven</h1>
 
+<h2 id="资料">资料</h2>
+<p>官网 ：https://maven.apache.org/
+官方仓库浏览：https://mvnrepository.com/</p>
 <h2 id="功能">功能</h2>
-<p>编译、打包、测试、依赖管理</p>
-<p>###POM介绍
-pom
-basics</p>
+<p>编译、打包、测试、依赖管理等</p>
+<h2 id="仓库">仓库</h2>
+<p>通常情况下企业内仓储依赖是</p>
+
+<div class="mermaid" align="center">graph LR
+本地仓库A & 本地仓库B & 本地仓库C --> 企业私服Nexus-->阿里云Nexus-->中央仓库</div><p><img src="https://maven.apache.org/repository/maven-repositories.png" alt="依赖图">
+其中repository Manager 企业内会用nexus等</p>
+<h2 id="文件规范">文件规范</h2>
+<p>java 源文件：src/main/java
+测试用例目录：src/test/java
+输出文件： target/
+配置文件： src/main/resources/
+web：src/main/webapp
+包含/WEB-INF/web.xml
+pom 增加</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;packaging&gt;</span>war<span class="nt">&lt;/packaging&gt;</span>
+</span></span></code></pre></div><h2 id="settings文件">settings文件</h2>
+<p>settings文件有两处配置，总配置和用户</p>
+<ul>
+<li>The Maven install: <code>${maven.home}/conf/settings.xml</code></li>
+<li>A user&rsquo;s install: <code>${user.home}/.m2/settings.xml</code></li>
+</ul>
+<h3 id="servers">Servers</h3>
+<p>配置账号密码 sshkey等</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">1.  `<span class="nt">&lt;servers&gt;</span>`
+</span></span><span class="line"><span class="cl">2.  `<span class="nt">&lt;server&gt;</span>`
+</span></span><span class="line"><span class="cl">3.  `<span class="nt">&lt;id&gt;</span>server001<span class="nt">&lt;/id&gt;</span>`
+</span></span><span class="line"><span class="cl">4.  `<span class="nt">&lt;username&gt;</span>my_login<span class="nt">&lt;/username&gt;</span>`
+</span></span><span class="line"><span class="cl">5.  `<span class="nt">&lt;password&gt;</span>my_password<span class="nt">&lt;/password&gt;</span>`
+</span></span><span class="line"><span class="cl">6.  `<span class="nt">&lt;privateKey&gt;</span>${user.home}/.ssh/id_dsa<span class="nt">&lt;/privateKey&gt;</span>`
+</span></span><span class="line"><span class="cl">7.  `<span class="nt">&lt;passphrase&gt;</span>some_passphrase<span class="nt">&lt;/passphrase&gt;</span>`
+</span></span><span class="line"><span class="cl">8.  `<span class="nt">&lt;filePermissions&gt;</span>664<span class="nt">&lt;/filePermissions&gt;</span>`
+</span></span><span class="line"><span class="cl">9.  `<span class="nt">&lt;directoryPermissions&gt;</span>775<span class="nt">&lt;/directoryPermissions&gt;</span>`
+</span></span><span class="line"><span class="cl">10.  `<span class="nt">&lt;configuration&gt;&lt;/configuration&gt;</span>`
+</span></span><span class="line"><span class="cl">11.  `<span class="nt">&lt;/server&gt;</span>`
+</span></span><span class="line"><span class="cl">12.  `<span class="nt">&lt;/servers&gt;</span>`
+</span></span></code></pre></div><h3 id="mirrors">Mirrors</h3>
+<p>镜像：对repository的代理，默认的repository的id:<strong>central</strong>，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。
+虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.jar在第一个 mirror 中不存在的时候，maven会去第二个 mirror 中查询下载，但是maven不会这样做！</p>
+<pre tabindex="0"><code>1.  `&lt;mirrors&gt;`
+2.  `&lt;mirror&gt;`
+3.  `&lt;id&gt;planetmirror.com&lt;/id&gt;`
+4.  `&lt;name&gt;PlanetMirror Australia&lt;/name&gt;`
+5.  `&lt;url&gt;http://downloads.planetmirror.com/pub/maven2&lt;/url&gt;`
+6.  `&lt;mirrorOf&gt;central&lt;/mirrorOf&gt;`
+7.  `&lt;/mirror&gt;`
+8.  `&lt;/mirrors&gt;`
+</code></pre><h2 id="pom文件">POM文件</h2>
+<h3 id="pom介绍">POM介绍</h3>
+<p>pom project object model
+完整官方文档：https://maven.apache.org/pom.html</p>
+<h3 id="基础例子">基础例子</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">  <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- maven 模型版本--&gt;</span>
 </span></span><span class="line"><span class="cl"> <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 分组编号一般是公司域名--&gt;</span>
 </span></span><span class="line"><span class="cl"> <span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="c">&lt;!-- 分组编号一般是项目名--&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>my-project<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="c">&lt;!-- 工件编号一般是项目模块--&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>my-project.xxx<span class="nt">&lt;/artifactId&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
 </span></span><span class="line"><span class="cl"> <span class="nt">&lt;/project&gt;</span>
 </span></span></code></pre></div><p>maven 约定大于配置
@@ -119,16 +195,52 @@ basics</p>
 <li>省去配置</li>
 <li>规范开发规范</li>
 </ol>
-<p>文件规范
-java 源文件：src/main/java
+<h2 id="文件规范-1">文件规范</h2>
+<p>java 源文件：src/main/java
 测试用例目录：src/test/java
 输出文件： target/
-配置文件： src/main/resources/</p>
-<h3 id="package">package:</h3>
+配置文件： src/main/resources/
+web：src/main/webapp
+包含/WEB-INF/web.xml
+pom 增加</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;packaging&gt;</span>war<span class="nt">&lt;/packaging&gt;</span>
+</span></span></code></pre></div><h3 id="package">package:</h3>
 <p>package同时会执行compile</p>
 <h3 id="test">test</h3>
 <p>Test开头的类名和test开头的方法名才会被执行
 如果引入junit 包，上一条就失效</p>
+<h2 id="项目依赖">项目依赖</h2>
+<p>项目依赖是指maven通过以来传播、依赖优先、可选依赖、排除依赖、依赖范围等特性来管理项目ClassPath。
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220813224337.png" alt=""></p>
+<h3 id="依赖传播">依赖传播</h3>
+<p>我们的项目通常会依赖第三方组件，第三方组建又会依赖其他组件遇到这种情况Maven会将依赖网络中的所有节点都会加入ClassPath。</p>
+<h3 id="依赖优先">依赖优先</h3>
+<ol>
+<li>就近原则,链路短的优先</li>
+</ol>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220813230537.png" alt=""></p>
+<ol start="2">
+<li>相同路径下配置在前的优先<br>但是一个pom文件下，后门的优先（并不规范，一个pom文件里不应该写两个一样的依赖）</li>
+</ol>
+<h3 id="可选依赖">可选依赖</h3>
+<p>如果不希望依赖的包传递引用包，可以打断依赖传递</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+</span></span></code></pre></div><h3 id="排除依赖">排除依赖</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;exclusion&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 排除依赖 --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/exclusion&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/exclustions&gt;</span>
+</span></span></code></pre></div><h3 id="依赖范围">依赖范围</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;scope&gt;&lt;/scope&gt;</span>
+</span></span></code></pre></div><p>可选的范围</p>
+<ol>
+<li>complie（默认），编译和打包都会依赖</li>
+<li>provided：编译时依赖，打包不会依赖。ex: servlet-api.jar(tomcat 存在),lombok</li>
+<li>runtime:运行时范围，打包时依赖，编译时不依赖。mysql-connector-java.jar<br>官方解释：this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath.</li>
+<li>test:测试类依赖</li>
+<li>system:类似provided，可指定本地位置</li>
+</ol>
 
             <footer class="footline">
             </footer>
@@ -207,12 +319,12 @@ java 源文件：src/main/java
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1660273321" defer></script>
-        <script src="/js/lunr.min.js?1660273321" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1660273321" defer></script>
-        <script src="/js/lunr.multi.min.js?1660273321" defer></script>
-        <script src="/js/lunr.en.min.js?1660273321" defer></script>
-        <script src="/js/search.js?1660273321" defer></script>
+        <script src="/js/auto-complete.js?1660536550" defer></script>
+        <script src="/js/lunr.min.js?1660536550" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1660536550" defer></script>
+        <script src="/js/lunr.multi.min.js?1660536550" defer></script>
+        <script src="/js/lunr.en.min.js?1660536550" defer></script>
+        <script src="/js/search.js?1660536550" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -246,6 +358,7 @@ java 源文件：src/main/java
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item active"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="微服务" class="dd-item"><input type="checkbox" id="section-c5cf093a799706f4738943a8e2e9bb1c" class="toggle"/><label for="section-c5cf093a799706f4738943a8e2e9bb1c" ></label><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/" title="dubbo" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/">dubbo<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/" title="snetinel" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/">snetinel<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/" title="zookeeper" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/">zookeeper<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle"/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
@@ -340,13 +453,18 @@ java 源文件：src/main/java
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1660273321"></script>
+          <script async src="/js/buttons.js?1660536550"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1660273321" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1660273321" defer></script>
-    <script src="/js/featherlight.min.js?1660273321" defer></script>
-    <script src="/js/theme.js?1660273321" defer></script>
+    <script src="/js/clipboard.min.js?1660536550" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1660536550" defer></script>
+    <script src="/js/featherlight.min.js?1660536550" defer></script>
+    <script src="/js/jquery.svg.pan.zoom.js?1660536550" defer></script>
+    <script src="/js/mermaid.min.js?1660536550" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"securityLevel\": \"loose\" }");
+    </script>
+    <script src="/js/theme.js?1660536550" defer></script>
   </body>
 </html>

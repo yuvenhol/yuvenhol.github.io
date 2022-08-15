@@ -18,9 +18,10 @@
       <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/git/</guid>
-      <description>命令 branch -m 重命名 git branch -m 原始名称 新名称
+      <description>命令 checkout 快速切换上一个分支（两个分支来回切换） git checkout -
+branch -m 重命名 git branch -m 原始名称 新名称
 rebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing
-git工作流程 git flow 配置 ignore #：注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； </description>
+git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； </description>
     </item>
     <item>
       <title>iredis</title>
@@ -34,12 +35,14 @@ git工作流程 git flow 配置 ignore #：注视 folder 同名的 folder 目录
       <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</guid>
-      <description>功能 编译、打包、测试、依赖管理
-###POM介绍 pom basics
-&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;!-- maven 模型版本--&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;!-- 分组编号一般是公司域名--&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;!-- 分组编号一般是项目名--&amp;gt; &amp;lt;artifactId&amp;gt;my-project&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0&amp;lt;/version&amp;gt; &amp;lt;/project&amp;gt; maven 约定大于配置 好处：
-省去配置 规范开发规范 文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/
-package: package同时会执行compile
-test Test开头的类名和test开头的方法名才会被执行 如果引入junit 包，上一条就失效</description>
+      <description>资料 官网 ：https://maven.apache.org/ 官方仓库浏览：https://mvnrepository.com/
+功能 编译、打包、测试、依赖管理等
+仓库 通常情况下企业内仓储依赖是
+graph LR 本地仓库A &amp; 本地仓库B &amp; 本地仓库C --&gt; 企业私服Nexus--&gt;阿里云Nexus--&gt;中央仓库 其中repository Manager 企业内会用nexus等
+文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/ web：src/main/webapp 包含/WEB-INF/web.xml pom 增加
+&amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; settings文件 settings文件有两处配置，总配置和用户
+The Maven install: ${maven.home}/conf/settings.xml A user&amp;rsquo;s install: ${user.home}/.m2/settings.xml Servers 配置账号密码 sshkey等
+1. `&amp;lt;servers&amp;gt;` 2. `&amp;lt;server&amp;gt;` 3. `&amp;lt;id&amp;gt;server001&amp;lt;/id&amp;gt;` 4. `&amp;lt;username&amp;gt;my_login&amp;lt;/username&amp;gt;` 5. `&amp;lt;password&amp;gt;my_password&amp;lt;/password&amp;gt;` 6. `&amp;lt;privateKey&amp;gt;${user.home}/.ssh/id_dsa&amp;lt;/privateKey&amp;gt;` 7. `&amp;lt;passphrase&amp;gt;some_passphrase&amp;lt;/passphrase&amp;gt;` 8. `&amp;lt;filePermissions&amp;gt;664&amp;lt;/filePermissions&amp;gt;` 9. `&amp;lt;directoryPermissions&amp;gt;775&amp;lt;/directoryPermissions&amp;gt;` 10. `&amp;lt;configuration&amp;gt;&amp;lt;/configuration&amp;gt;` 11. `&amp;lt;/server&amp;gt;` 12. `&amp;lt;/servers&amp;gt;` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。 虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.</description>
     </item>
   </channel>
 </rss>

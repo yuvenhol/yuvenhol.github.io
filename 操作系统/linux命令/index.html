@@ -10,20 +10,20 @@
     <title>linux命令 - yuvenhol的技术苦旅</title>
     <link href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
     <link href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/index.print.html" rel="alternate" type="text/html" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1660273321" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1660536550" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1660273321" rel="stylesheet">
-    <link href="/css/nucleus.css?1660273321" rel="stylesheet">
-    <link href="/css/fonts.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1660273321" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1660273321" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1660273321" rel="stylesheet">
-    <link href="/css/variant.css?1660273321" rel="stylesheet">
-    <link href="/css/print.css?1660273321" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1660273321"></script>
+    <link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1660536550" rel="stylesheet">
+    <link href="/css/nucleus.css?1660536550" rel="stylesheet">
+    <link href="/css/fonts.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1660536550" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1660536550" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1660536550" rel="stylesheet">
+    <link href="/css/variant.css?1660536550" rel="stylesheet">
+    <link href="/css/print.css?1660536550" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1660536550"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1660273321" defer></script>
+    <script src="/js/jquery.min.js?1660536550" defer></script>
   </head>
   <body class="mobile-support html" data-url="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/">
     <div id="body" class="default-animation">
@@ -79,11 +79,7 @@
             <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#top">top</a>
-      <ul>
-        <li><a href="#load-avg">load avg:</a></li>
-      </ul>
-    </li>
+    <li><a href="#top">top</a></li>
     <li><a href="#iotop-磁盘情况查看">iotop 磁盘情况查看</a></li>
     <li><a href="#lsof">lsof</a></li>
     <li><a href="#netstat">netstat</a></li>
@@ -94,6 +90,7 @@
     </li>
     <li><a href="#touch">touch</a></li>
     <li><a href="#find">find</a></li>
+    <li><a href="#grep">grep</a></li>
     <li><a href="#alias">alias</a></li>
     <li><a href="#ln">ln</a></li>
   </ul>
@@ -110,10 +107,53 @@
 <h1>linux命令</h1>
 
 <h2 id="top">top</h2>
-<p>定义：display sorted information about processes
-![[截屏2022-01-02 下午10.58.24.png]]</p>
-<h3 id="load-avg">load avg:</h3>
-<p>系统处于可运行状态和不可中断状态的平均活跃进程数。在多核CPU下，如果负载数大于逻辑cpu数量，代表有进程处于等待状态。</p>
+<p>定义：display sorted information about processes</p>
+<table>
+<thead>
+<tr>
+<th>展示项目</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Percentage of processor usage, broken into user, system, and idle components.  The time period for which these percentages are calculated depends on the event counting mode.</td>
+</tr>
+<tr>
+<td>Disks</td>
+<td>Number and total size of disk reads and writes.</td>
+</tr>
+<tr>
+<td>LoadAvg</td>
+<td>Load average over 1, 5, and 15 minutes.  The load average is the average number of jobs in the run queue.</td>
+</tr>
+<tr>
+<td>MemRegions</td>
+<td>Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components.</td>
+</tr>
+<tr>
+<td>Networks</td>
+<td>Number and total size of input and output network packets</td>
+</tr>
+<tr>
+<td>PhysMem</td>
+<td>Physical memory usage, broken into wired, active, inactive, used, and free components.</td>
+</tr>
+<tr>
+<td>Procs</td>
+<td>Total number of processes and number of processes in each process state.</td>
+</tr>
+<tr>
+<td>SharedLibs</td>
+<td>Resident sizes of code and data segments, and link editor memory usage.</td>
+</tr>
+<tr>
+<td>Threads</td>
+<td>Number of threads.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="iotop-磁盘情况查看">iotop 磁盘情况查看</h2>
 <h2 id="lsof">lsof</h2>
 <p>lsof - list open files
@@ -138,6 +178,7 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
 <p>修改文件的创建和修改时间，现在常用于创建一个文件。</p>
 <h2 id="find">find</h2>
 <p>find path -name &ldquo;支持 * ？&rdquo; [-delete]</p>
+<h2 id="grep">grep</h2>
 <h2 id="alias">alias</h2>
 <p>alias[别名]=[指令名称]
 删除unlias 别名</p>
@@ -221,12 +262,12 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1660273321" defer></script>
-        <script src="/js/lunr.min.js?1660273321" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1660273321" defer></script>
-        <script src="/js/lunr.multi.min.js?1660273321" defer></script>
-        <script src="/js/lunr.en.min.js?1660273321" defer></script>
-        <script src="/js/search.js?1660273321" defer></script>
+        <script src="/js/auto-complete.js?1660536550" defer></script>
+        <script src="/js/lunr.min.js?1660536550" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1660536550" defer></script>
+        <script src="/js/lunr.multi.min.js?1660536550" defer></script>
+        <script src="/js/lunr.en.min.js?1660536550" defer></script>
+        <script src="/js/search.js?1660536550" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -260,6 +301,7 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="微服务" class="dd-item"><input type="checkbox" id="section-c5cf093a799706f4738943a8e2e9bb1c" class="toggle"/><label for="section-c5cf093a799706f4738943a8e2e9bb1c" ></label><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/" title="dubbo" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/">dubbo<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/" title="snetinel" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/">snetinel<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/" title="zookeeper" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/">zookeeper<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item parent"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle" checked/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
@@ -354,13 +396,13 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1660273321"></script>
+          <script async src="/js/buttons.js?1660536550"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1660273321" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1660273321" defer></script>
-    <script src="/js/featherlight.min.js?1660273321" defer></script>
-    <script src="/js/theme.js?1660273321" defer></script>
+    <script src="/js/clipboard.min.js?1660536550" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1660536550" defer></script>
+    <script src="/js/featherlight.min.js?1660536550" defer></script>
+    <script src="/js/theme.js?1660536550" defer></script>
   </body>
 </html>

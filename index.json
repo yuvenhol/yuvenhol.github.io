@@ -35,6 +35,13 @@
     "uri": "/dockerk8s/docker-compose/"
   },
   {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "dubbo",
+    "uri": "/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/"
+  },
+  {
     "content": "统计字符出现个数 =LEN(G13)-LEN(SUBSTITUTE(G13,\"、\",\"\"))+1\n",
     "description": "",
     "tags": null,
@@ -49,7 +56,7 @@
     "uri": "/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"
   },
   {
-    "content": "命令 branch -m 重命名 git branch -m 原始名称 新名称\nrebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing\ngit工作流程 git flow 配置 ignore #：注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； ",
+    "content": "命令 checkout 快速切换上一个分支（两个分支来回切换） git checkout -\nbranch -m 重命名 git branch -m 原始名称 新名称\nrebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing\ngit工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； ",
     "description": "",
     "tags": null,
     "title": "git",
@@ -112,7 +119,7 @@
     "uri": "/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/"
   },
   {
-    "content": "top 定义：display sorted information about processes ![[截屏2022-01-02 下午10.58.24.png]]\nload avg: 系统处于可运行状态和不可中断状态的平均活跃进程数。在多核CPU下，如果负载数大于逻辑cpu数量，代表有进程处于等待状态。\niotop 磁盘情况查看 lsof lsof - list open files 在linux下一切皆文件，一个网络连接也是一个文件。 lsof -i 查看网络连接的文件 在mac系统下netstat是简化版的，用lsof 替代\nnetstat netstat -an\nexport 环境变量相关操作 Linux export 命令用于设置或显示环境变量。\n在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作，如果在配置文件中添加可以持续有效。 export [-fnp][变量名称]=[变量设置值]\n-f 代表[变量名称]中为函数名称。 -n 删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。 -p 列出所有的shell赋予程序的环境变量。 例子 在.zprofile 里面 export WS=/Users/yuwenhao/Programs/work-space\ntouch 修改文件的创建和修改时间，现在常用于创建一个文件。\nfind find path -name “支持 * ？” [-delete]\nalias alias[别名]=[指令名称] 删除unlias 别名\nln ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。\n",
+    "content": "top 定义：display sorted information about processes\n展示项目 描述 CPU Percentage of processor usage, broken into user, system, and idle components. The time period for which these percentages are calculated depends on the event counting mode. Disks Number and total size of disk reads and writes. LoadAvg Load average over 1, 5, and 15 minutes. The load average is the average number of jobs in the run queue. MemRegions Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components. Networks Number and total size of input and output network packets PhysMem Physical memory usage, broken into wired, active, inactive, used, and free components. Procs Total number of processes and number of processes in each process state. SharedLibs Resident sizes of code and data segments, and link editor memory usage. Threads Number of threads. iotop 磁盘情况查看 lsof lsof - list open files 在linux下一切皆文件，一个网络连接也是一个文件。 lsof -i 查看网络连接的文件 在mac系统下netstat是简化版的，用lsof 替代\nnetstat netstat -an\nexport 环境变量相关操作 Linux export 命令用于设置或显示环境变量。\n在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作，如果在配置文件中添加可以持续有效。 export [-fnp][变量名称]=[变量设置值]\n-f 代表[变量名称]中为函数名称。 -n 删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。 -p 列出所有的shell赋予程序的环境变量。 例子 在.zprofile 里面 export WS=/Users/yuwenhao/Programs/work-space\ntouch 修改文件的创建和修改时间，现在常用于创建一个文件。\nfind find path -name “支持 * ？” [-delete]\ngrep alias alias[别名]=[指令名称] 删除unlias 别名\nln ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。\n",
     "description": "",
     "tags": null,
     "title": "linux命令",
@@ -133,14 +140,14 @@
     "uri": "/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/"
   },
   {
-    "content": "功能 编译、打包、测试、依赖管理\n###POM介绍 pom basics\n\u003cproject xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\u003e \u003c!-- maven 模型版本--\u003e \u003cmodelVersion\u003e4.0.0\u003c/modelVersion\u003e \u003c!-- 分组编号一般是公司域名--\u003e \u003cgroupId\u003eorg.codehaus.mojo\u003c/groupId\u003e \u003c!-- 分组编号一般是项目名--\u003e \u003cartifactId\u003emy-project\u003c/artifactId\u003e \u003cversion\u003e1.0\u003c/version\u003e \u003c/project\u003e maven 约定大于配置 好处：\n省去配置 规范开发规范 文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/\npackage: package同时会执行compile\ntest Test开头的类名和test开头的方法名才会被执行 如果引入junit 包，上一条就失效\n",
+    "content": "资料 官网 ：https://maven.apache.org/ 官方仓库浏览：https://mvnrepository.com/\n功能 编译、打包、测试、依赖管理等\n仓库 通常情况下企业内仓储依赖是\ngraph LR 本地仓库A \u0026 本地仓库B \u0026 本地仓库C --\u003e 企业私服Nexus--\u003e阿里云Nexus--\u003e中央仓库 其中repository Manager 企业内会用nexus等\n文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/ web：src/main/webapp 包含/WEB-INF/web.xml pom 增加\n\u003cpackaging\u003ewar\u003c/packaging\u003e settings文件 settings文件有两处配置，总配置和用户\nThe Maven install: ${maven.home}/conf/settings.xml A user’s install: ${user.home}/.m2/settings.xml Servers 配置账号密码 sshkey等\n1. `\u003cservers\u003e` 2. `\u003cserver\u003e` 3. `\u003cid\u003eserver001\u003c/id\u003e` 4. `\u003cusername\u003emy_login\u003c/username\u003e` 5. `\u003cpassword\u003emy_password\u003c/password\u003e` 6. `\u003cprivateKey\u003e${user.home}/.ssh/id_dsa\u003c/privateKey\u003e` 7. `\u003cpassphrase\u003esome_passphrase\u003c/passphrase\u003e` 8. `\u003cfilePermissions\u003e664\u003c/filePermissions\u003e` 9. `\u003cdirectoryPermissions\u003e775\u003c/directoryPermissions\u003e` 10. `\u003cconfiguration\u003e\u003c/configuration\u003e` 11. `\u003c/server\u003e` 12. `\u003c/servers\u003e` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。 虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.jar在第一个 mirror 中不存在的时候，maven会去第二个 mirror 中查询下载，但是maven不会这样做！\n1. `\u003cmirrors\u003e` 2. `\u003cmirror\u003e` 3. `\u003cid\u003eplanetmirror.com\u003c/id\u003e` 4. `\u003cname\u003ePlanetMirror Australia\u003c/name\u003e` 5. `\u003curl\u003ehttp://downloads.planetmirror.com/pub/maven2\u003c/url\u003e` 6. `\u003cmirrorOf\u003ecentral\u003c/mirrorOf\u003e` 7. `\u003c/mirror\u003e` 8. `\u003c/mirrors\u003e` POM文件 POM介绍 pom project object model 完整官方文档：https://maven.apache.org/pom.html\n基础例子 \u003cproject xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\u003e \u003c!-- maven 模型版本--\u003e \u003cmodelVersion\u003e4.0.0\u003c/modelVersion\u003e \u003c!-- 分组编号一般是公司域名--\u003e \u003cgroupId\u003eorg.codehaus.mojo\u003c/groupId\u003e \u003c!-- 工件编号一般是项目模块--\u003e \u003cartifactId\u003emy-project.xxx\u003c/artifactId\u003e \u003cversion\u003e1.0\u003c/version\u003e \u003c/project\u003e maven 约定大于配置 好处：\n省去配置 规范开发规范 文件规范 java 源文件：src/main/java 测试用例目录：src/test/java 输出文件： target/ 配置文件： src/main/resources/ web：src/main/webapp 包含/WEB-INF/web.xml pom 增加\n\u003cpackaging\u003ewar\u003c/packaging\u003e package: package同时会执行compile\ntest Test开头的类名和test开头的方法名才会被执行 如果引入junit 包，上一条就失效\n项目依赖 项目依赖是指maven通过以来传播、依赖优先、可选依赖、排除依赖、依赖范围等特性来管理项目ClassPath。 依赖传播 我们的项目通常会依赖第三方组件，第三方组建又会依赖其他组件遇到这种情况Maven会将依赖网络中的所有节点都会加入ClassPath。\n依赖优先 就近原则,链路短的优先 相同路径下配置在前的优先\n但是一个pom文件下，后门的优先（并不规范，一个pom文件里不应该写两个一样的依赖） 可选依赖 如果不希望依赖的包传递引用包，可以打断依赖传递\n\u003coptional\u003etrue\u003c/optional\u003e 排除依赖 \u003cexclusions\u003e \u003cexclusion\u003e \u003c!-- 排除依赖 --\u003e \u003c/exclusion\u003e \u003c/exclustions\u003e 依赖范围 \u003cscope\u003e\u003c/scope\u003e 可选的范围\ncomplie（默认），编译和打包都会依赖 provided：编译时依赖，打包不会依赖。ex: servlet-api.jar(tomcat 存在),lombok runtime:运行时范围，打包时依赖，编译时不依赖。mysql-connector-java.jar\n官方解释：this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath. test:测试类依赖 system:类似provided，可指定本地位置 ",
     "description": "",
     "tags": null,
     "title": "maven",
     "uri": "/%E5%B7%A5%E5%85%B7/maven/"
   },
   {
-    "content": "META-INFO ",
+    "content": "META-INFO WEB-INFO ",
     "description": "",
     "tags": null,
     "title": "META-INF和WEB-INFO",
@@ -259,7 +266,7 @@
     "uri": "/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
   },
   {
-    "content": "Z\nRequestContextListener\nRequestContextListener监听器用于监听http请求，每当web应用接收到Http请求，该监听器就会调用初始化方法，将该请求保存在当前线程的ThreadLocalMap容器中。\nAbstractAnnotationConfigDispatcherServletInitializer 初始化器 会\n",
+    "content": "RequestContextListener\nRequestContextListener监听器用于监听http请求，每当web应用接收到Http请求，该监听器就会调用初始化方法，将该请求保存在当前线程的ThreadLocalMap容器中。\nAbstractAnnotationConfigDispatcherServletInitializer 初始化器 会\n",
     "description": "",
     "tags": null,
     "title": "未命名",

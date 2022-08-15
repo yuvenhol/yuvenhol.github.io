@@ -33,7 +33,7 @@ Class UserServiceProxy extends UserService{ public void test(){ //切面逻辑 s
       <link>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</guid>
-      <description>META-INFO </description>
+      <description>META-INFO WEB-INFO </description>
     </item>
     <item>
       <title>内存结构</title>

@@ -11,8 +11,7 @@
       <link>https://yuvenhol.github.io/spring/mvc/%E6%9C%AA%E5%91%BD%E5%90%8D/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/mvc/%E6%9C%AA%E5%91%BD%E5%90%8D/</guid>
-      <description>Z
-RequestContextListener
+      <description>RequestContextListener
 RequestContextListener监听器用于监听http请求，每当web应用接收到Http请求，该监听器就会调用初始化方法，将该请求保存在当前线程的ThreadLocalMap容器中。
 AbstractAnnotationConfigDispatcherServletInitializer 初始化器 会</description>
     </item>

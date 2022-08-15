@@ -10,20 +10,20 @@
     <title>git - yuvenhol的技术苦旅</title>
     <link href="/%E5%B7%A5%E5%85%B7/git/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
     <link href="/%E5%B7%A5%E5%85%B7/git/index.print.html" rel="alternate" type="text/html" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1660273321" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1660536550" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1660273321" rel="stylesheet">
-    <link href="/css/nucleus.css?1660273321" rel="stylesheet">
-    <link href="/css/fonts.css?1660273321" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660273321" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1660273321" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1660273321" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1660273321" rel="stylesheet">
-    <link href="/css/variant.css?1660273321" rel="stylesheet">
-    <link href="/css/print.css?1660273321" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1660273321"></script>
+    <link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1660536550" rel="stylesheet">
+    <link href="/css/nucleus.css?1660536550" rel="stylesheet">
+    <link href="/css/fonts.css?1660536550" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660536550" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1660536550" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1660536550" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1660536550" rel="stylesheet">
+    <link href="/css/variant.css?1660536550" rel="stylesheet">
+    <link href="/css/print.css?1660536550" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1660536550"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1660273321" defer></script>
+    <script src="/js/jquery.min.js?1660536550" defer></script>
   </head>
   <body class="mobile-support html" data-url="/%E5%B7%A5%E5%85%B7/git/">
     <div id="body" class="default-animation">
@@ -79,6 +79,11 @@
             <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#checkout">checkout</a>
+      <ul>
+        <li><a href="#快速切换上一个分支两个分支来回切换">快速切换上一个分支（两个分支来回切换）</a></li>
+      </ul>
+    </li>
     <li><a href="#branch">branch</a></li>
     <li><a href="#rebase">rebase</a></li>
   </ul>
@@ -103,6 +108,9 @@
 <h1>git</h1>
 
 <h1 id="命令">命令</h1>
+<h2 id="checkout">checkout</h2>
+<h3 id="快速切换上一个分支两个分支来回切换">快速切换上一个分支（两个分支来回切换）</h3>
+<p>git checkout -</p>
 <h2 id="branch">branch</h2>
 <p>-m 重命名  git branch -m 原始名称 新名称</p>
 <h2 id="rebase">rebase</h2>
@@ -118,7 +126,7 @@ rebase相当于在fetch之后，重新提交数据。
 <h1 id="配置">配置</h1>
 <h2 id="ignore">ignore</h2>
 <ol>
-<li>#：注视</li>
+<li>注视</li>
 <li>folder   同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。</li>
 <li>folder/ 只忽略文件夹</li>
 <li>!  表示取反，不忽略xxx</li>
@@ -206,12 +214,12 @@ rebase相当于在fetch之后，重新提交数据。
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1660273321" defer></script>
-        <script src="/js/lunr.min.js?1660273321" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1660273321" defer></script>
-        <script src="/js/lunr.multi.min.js?1660273321" defer></script>
-        <script src="/js/lunr.en.min.js?1660273321" defer></script>
-        <script src="/js/search.js?1660273321" defer></script>
+        <script src="/js/auto-complete.js?1660536550" defer></script>
+        <script src="/js/lunr.min.js?1660536550" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1660536550" defer></script>
+        <script src="/js/lunr.multi.min.js?1660536550" defer></script>
+        <script src="/js/lunr.en.min.js?1660536550" defer></script>
+        <script src="/js/search.js?1660536550" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -245,6 +253,7 @@ rebase相当于在fetch之后，重新提交数据。
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="微服务" class="dd-item"><input type="checkbox" id="section-c5cf093a799706f4738943a8e2e9bb1c" class="toggle"/><label for="section-c5cf093a799706f4738943a8e2e9bb1c" ></label><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/" title="dubbo" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/">dubbo<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/" title="snetinel" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/">snetinel<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/" title="zookeeper" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/">zookeeper<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle"/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
@@ -339,13 +348,13 @@ rebase相当于在fetch之后，重新提交数据。
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1660273321"></script>
+          <script async src="/js/buttons.js?1660536550"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1660273321" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1660273321" defer></script>
-    <script src="/js/featherlight.min.js?1660273321" defer></script>
-    <script src="/js/theme.js?1660273321" defer></script>
+    <script src="/js/clipboard.min.js?1660536550" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1660536550" defer></script>
+    <script src="/js/featherlight.min.js?1660536550" defer></script>
+    <script src="/js/theme.js?1660536550" defer></script>
   </body>
 </html>

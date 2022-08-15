@@ -11,17 +11,8 @@
       <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/</guid>
-      <description>top 定义：display sorted information about processes ![[截屏2022-01-02 下午10.58.24.png]]
-load avg: 系统处于可运行状态和不可中断状态的平均活跃进程数。在多核CPU下，如果负载数大于逻辑cpu数量，代表有进程处于等待状态。
-iotop 磁盘情况查看 lsof lsof - list open files 在linux下一切皆文件，一个网络连接也是一个文件。 lsof -i 查看网络连接的文件 在mac系统下netstat是简化版的，用lsof 替代
-netstat netstat -an
-export 环境变量相关操作 Linux export 命令用于设置或显示环境变量。
-在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作，如果在配置文件中添加可以持续有效。 export [-fnp][变量名称]=[变量设置值]
--f 代表[变量名称]中为函数名称。 -n 删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。 -p 列出所有的shell赋予程序的环境变量。 例子 在.zprofile 里面 export WS=/Users/yuwenhao/Programs/work-space
-touch 修改文件的创建和修改时间，现在常用于创建一个文件。
-find find path -name &amp;ldquo;支持 * ？&amp;rdquo; [-delete]
-alias alias[别名]=[指令名称] 删除unlias 别名
-ln ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。</description>
+      <description>top 定义：display sorted information about processes
+展示项目 描述 CPU Percentage of processor usage, broken into user, system, and idle components. The time period for which these percentages are calculated depends on the event counting mode. Disks Number and total size of disk reads and writes. LoadAvg Load average over 1, 5, and 15 minutes. The load average is the average number of jobs in the run queue. MemRegions Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components.</description>
     </item>
     <item>
       <title>linux目录</title>
