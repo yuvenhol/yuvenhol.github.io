@@ -10,20 +10,20 @@
     <title>缓存雪崩、缓存击穿、缓存穿透 - yuvenhol的技术苦旅</title>
     <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
     <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/index.print.html" rel="alternate" type="text/html" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1660820005" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1660864393" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1660820005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660820005" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1660820005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660820005" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1660820005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660820005" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1660820005" rel="stylesheet">
-    <link href="/css/nucleus.css?1660820005" rel="stylesheet">
-    <link href="/css/fonts.css?1660820005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660820005" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1660820005" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1660820005" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1660820005" rel="stylesheet">
-    <link href="/css/variant.css?1660820005" rel="stylesheet">
-    <link href="/css/print.css?1660820005" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1660820005"></script>
+    <link href="/css/fontawesome-all.min.css?1660864393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660864393" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1660864393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660864393" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1660864393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660864393" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1660864393" rel="stylesheet">
+    <link href="/css/nucleus.css?1660864393" rel="stylesheet">
+    <link href="/css/fonts.css?1660864393" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660864393" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1660864393" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1660864393" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1660864393" rel="stylesheet">
+    <link href="/css/variant.css?1660864393" rel="stylesheet">
+    <link href="/css/print.css?1660864393" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1660864393"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1660820005" defer></script>
+    <script src="/js/jquery.min.js?1660864393" defer></script>
   </head>
   <body class="mobile-support html" data-url="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/">
     <div id="body" class="default-animation">
@@ -97,25 +97,25 @@
 <h1>缓存雪崩、缓存击穿、缓存穿透</h1>
 
 <h2 id="缓存雪崩">缓存雪崩</h2>
-<p>原因：<br>
-大量缓存数据同时失效，导致某一瞬间之后，相当于没有缓存。
-解决：</p>
+<p>原因：</p>
+<p>大量缓存数据同时失效，导致某一瞬间之后，相当于没有缓存。</p>
+<p>解决：</p>
 <ol>
 <li>缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。</li>
 <li>设置热点数据永远不过期。</li>
 </ol>
 <h2 id="缓存击穿">缓存击穿</h2>
-<p>原因：
-从击穿这个字眼上来看，是有瞬间大量的请求过来，访问同一资源。这时候会有大量请求直接访问db。
-解决：</p>
+<p>原因：</p>
+<p>从击穿这个字眼上来看，是有瞬间大量的请求过来，访问同一资源。这时候会有大量请求直接访问db。</p>
+<p>解决：</p>
 <ol>
 <li>设置热点数据永远不过期。</li>
 <li>加互斥锁。</li>
 </ol>
 <h2 id="缓存穿透">缓存穿透</h2>
-<p>原因：
-大量请求绕过缓存访问db里面不存在的数据，例如访问id=-1的数据，这时候也会给db造成较大压力。
-解决：</p>
+<p>原因：</p>
+<p>大量请求绕过缓存访问db里面不存在的数据，例如访问id=-1的数据，这时候也会给db造成较大压力。</p>
+<p>解决：</p>
 <ol>
 <li>接口对参数进行基本的校验id&gt;0</li>
 <li>短时间缓存null值数据</li>
@@ -198,12 +198,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1660820005" defer></script>
-        <script src="/js/lunr.min.js?1660820005" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1660820005" defer></script>
-        <script src="/js/lunr.multi.min.js?1660820005" defer></script>
-        <script src="/js/lunr.en.min.js?1660820005" defer></script>
-        <script src="/js/search.js?1660820005" defer></script>
+        <script src="/js/auto-complete.js?1660864393" defer></script>
+        <script src="/js/lunr.min.js?1660864393" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1660864393" defer></script>
+        <script src="/js/lunr.multi.min.js?1660864393" defer></script>
+        <script src="/js/lunr.en.min.js?1660864393" defer></script>
+        <script src="/js/search.js?1660864393" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -339,13 +339,13 @@
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1660820005"></script>
+          <script async src="/js/buttons.js?1660864393"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1660820005" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1660820005" defer></script>
-    <script src="/js/featherlight.min.js?1660820005" defer></script>
-    <script src="/js/theme.js?1660820005" defer></script>
+    <script src="/js/clipboard.min.js?1660864393" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1660864393" defer></script>
+    <script src="/js/featherlight.min.js?1660864393" defer></script>
+    <script src="/js/theme.js?1660864393" defer></script>
   </body>
 </html>
