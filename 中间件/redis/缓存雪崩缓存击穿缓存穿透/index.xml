@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>缓存雪崩、缓存击穿、缓存穿透 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/</link>
+    <description>Recent content in 缓存雪崩、缓存击穿、缓存穿透 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

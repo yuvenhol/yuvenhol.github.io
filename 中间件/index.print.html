@@ -10,21 +10,21 @@
     <title>中间件 - yuvenhol的技术苦旅</title>
     <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1660537531" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1660819953" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660537531" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660537531" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660537531" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1660537531" rel="stylesheet">
-    <link href="/css/nucleus.css?1660537531" rel="stylesheet">
-    <link href="/css/fonts.css?1660537531" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660537531" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1660537531" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1660537531" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1660537531" rel="stylesheet">
-    <link href="/css/variant.css?1660537531" rel="stylesheet">
-    <link href="/css/print.css?1660537531" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1660537531" rel="stylesheet">
-    <script src="/js/variant.js?1660537531"></script>
+    <link href="/css/fontawesome-all.min.css?1660819953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1660819953" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1660819953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1660819953" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1660819953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1660819953" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1660819953" rel="stylesheet">
+    <link href="/css/nucleus.css?1660819953" rel="stylesheet">
+    <link href="/css/fonts.css?1660819953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1660819953" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1660819953" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1660819953" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1660819953" rel="stylesheet">
+    <link href="/css/variant.css?1660819953" rel="stylesheet">
+    <link href="/css/print.css?1660819953" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1660819953" rel="stylesheet">
+    <script src="/js/variant.js?1660819953"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1660537531" defer></script>
+    <script src="/js/jquery.min.js?1660819953" defer></script>
   </head>
   <body class="mobile-support print" data-url="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
     <div id="body" class="default-animation">
@@ -153,6 +153,15 @@
           <article class="default">
 <h1>redis</h1>
 
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+          <article class="default">
+<h1>redis基础知识</h1>
+
 <p>官网命令介绍
 <a href="https://redis.io/commands/">https://redis.io/commands/</a></p>
 <h1 id="数据结构">数据结构</h1>
@@ -255,6 +264,74 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
             </footer>
           </article>
 
+          <article class="default">
+<h1>布隆过滤器</h1>
+
+<h1 id="场景">场景：</h1>
+<p>库里有10亿手机号，如何快速判断一个手机号是否在数据库中。
+首先对这些数据进行缓存是肯定的，有没有什么更经济的方式缓存呢，这时候布隆举着盾牌就出现了。</p>
+<h1 id="布隆过滤器">布隆过滤器</h1>
+<p>布隆过滤器（Bloom Filter）是由布隆在<code>1970</code>年提出的。它实际上是一个很长的二进制向量（位图）和一系列随机映射函数（哈希函数）。<br>
+布隆过滤器可以用于检索一个元素是否在一个集合中。
+优点：空间效率和查询时间都比一般的算法要好的多。<br>
+缺点有2个：</p>
+<ol>
+<li>在判断元素在集合中有误差，只有判断元素不在集合中是准确的</li>
+<li>删除比较困难</li>
+</ol>
+<h2 id="位图bitmap">位图（Bitmap）</h2>
+<p><code>Redis</code>当中有一种数据结构就是位图，布隆过滤器其中重要的实现就是位图的实现，也就是位数组，并且在这个数组中每一个位置只有<code>0</code>和<code>1</code>两种状态，每个位置只占用<code>1</code>个 bit，其中<code>0</code>表示没有元素存在，<code>1</code>表示有元素存在。</p>
+<p>如下图所示就是一个简单的布隆过滤器示例（<strong>一个<code>key</code>值经过哈希运算和位运算就可以得出应该落在哪个位置</strong>）：</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220818183544.png" alt=""></p>
+<h2 id="哈希">哈希</h2>
+<p>上面我们发现，<code>lonely</code>和<code>wolf</code>落在了同一个位置，这种不同的<code>key</code>值经过哈希运算后得到相同值的现象就称之为<strong>哈希碰撞</strong>。发生哈希碰撞之后再经过位运算，那么最后肯定会落在同一个位置。</p>
+<p>如果发生过多的哈希碰撞，就会影响到判断的准确性，所以为了减少哈希碰撞，我们一般会综合考虑以下<code>2</code>个因素：</p>
+<ul>
+<li>增大位图数组的大小（位图数组越大，占用的内存越大）。</li>
+<li>增加哈希函数的次数（同一个<code>key</code>值经过<code>1</code>个函数相等了，那么经过<code>2</code>个或者更多个哈希函数的计算，都得到相等结果的概率就自然会降低了）。</li>
+</ul>
+<p>上面两个方法我们需要综合考虑：比如增大位数组，那么就需要消耗更多的空间，而经过越多的哈希计算也会消耗<code>cpu</code>影响到最终的计算时间，所以位数组到底多大，哈希函数次数又到底需要计算多少次合适需要具体情况具体分析。</p>
+<h2 id="删除元素">删除元素</h2>
+<p>布隆过滤器判断一个元素存在就是判断对应位置是否为<code>1</code>来确定的，但是如果要删除掉一个元素是不能直接把<code>1</code>改成<code>0</code>的，因为这个位置可能存在其它元素，所以如果要支持删除，那我们应该怎么做呢？</p>
+<p>最简单的做法就是加一个计数器，就是说位数组的每个位如果不存在就是<code>0</code>，存在几个元素就存具体的数字，而不仅仅只是存<code>1</code>。那么这就有一个问题，本来存<code>1</code>就是一位就可以满足了，但是如果要存具体的数字比如说<code>2</code>，那就需要<code>2</code>位了，所以<strong>带有计数器的布隆过滤器会占用更大的空间</strong>。</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>缓存雪崩、缓存击穿、缓存穿透</h1>
+
+<h2 id="缓存雪崩">缓存雪崩</h2>
+<p>原因：<br>
+大量缓存数据同时失效，导致某一瞬间之后，相当于没有缓存。
+解决：</p>
+<ol>
+<li>缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。</li>
+<li>设置热点数据永远不过期。</li>
+</ol>
+<h2 id="缓存击穿">缓存击穿</h2>
+<p>原因：
+从击穿这个字眼上来看，是有瞬间大量的请求过来，访问同一资源。这时候会有大量请求直接访问db。
+解决：</p>
+<ol>
+<li>设置热点数据永远不过期。</li>
+<li>加互斥锁。</li>
+</ol>
+<h2 id="缓存穿透">缓存穿透</h2>
+<p>原因：
+大量请求绕过缓存访问db里面不存在的数据，例如访问id=-1的数据，这时候也会给db造成较大压力。
+解决：</p>
+<ol>
+<li>接口对参数进行基本的校验id&gt;0</li>
+<li>短时间缓存null值数据</li>
+</ol>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
           <article class="default">
 <h1>中间件的定义</h1>
 
@@ -372,17 +449,18 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1660537531" defer></script>
-        <script src="/js/lunr.min.js?1660537531" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1660537531" defer></script>
-        <script src="/js/lunr.multi.min.js?1660537531" defer></script>
-        <script src="/js/lunr.en.min.js?1660537531" defer></script>
-        <script src="/js/search.js?1660537531" defer></script>
+        <script src="/js/auto-complete.js?1660819953" defer></script>
+        <script src="/js/lunr.min.js?1660819953" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1660819953" defer></script>
+        <script src="/js/lunr.multi.min.js?1660819953" defer></script>
+        <script src="/js/lunr.en.min.js?1660819953" defer></script>
+        <script src="/js/search.js?1660819953" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
           <li data-nav-id="/dockerk8s/" title="docker&amp;k8s" class="dd-item"><input type="checkbox" id="section-9e6e410ba0e302767b2ea4fda732470d" class="toggle"/><label for="section-9e6e410ba0e302767b2ea4fda732470d" ></label><a href="/dockerk8s/">docker&amp;k8s<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/dockerk8s/docker-compose/" title="docker compose" class="dd-item"><a href="/dockerk8s/docker-compose/">docker compose<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/golang/" title="golang" class="dd-item"><a href="/golang/">golang<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/" title="java" class="dd-item"><input type="checkbox" id="section-518f725d76ef42edca45fe01865b4d20" class="toggle"/><label for="section-518f725d76ef42edca45fe01865b4d20" ></label><a href="/java/">java<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/cglib/" title="cglib" class="dd-item"><a href="/java/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="java的引用类型" class="dd-item"><a href="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">java的引用类型<i class="fas fa-check read-icon"></i></a></li>
@@ -394,6 +472,8 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/office/" title="office" class="dd-item"><input type="checkbox" id="section-98530a8654fbed228aee60cd5d89d452" class="toggle"/><label for="section-98530a8654fbed228aee60cd5d89d452" ></label><a href="/office/">office<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/office/excel%E5%85%AC%E5%BC%8F/" title="excel公式" class="dd-item"><a href="/office/excel%E5%85%AC%E5%BC%8F/">excel公式<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/python/" title="python" class="dd-item"><input type="checkbox" id="section-c8861a2651b27ee3930a98ce392020d1" class="toggle"/><label for="section-c8861a2651b27ee3930a98ce392020d1" ></label><a href="/python/">python<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python 语法知识" class="dd-item"><a href="/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python 语法知识<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/" title="spring" class="dd-item"><input type="checkbox" id="section-6be3a103036efc21a988ae839ac63e32" class="toggle"/><label for="section-6be3a103036efc21a988ae839ac63e32" ></label><a href="/spring/">spring<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/spring/configuration/" title="@Configuration" class="dd-item"><a href="/spring/configuration/">@Configuration<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/mvc/" title="mvc" class="dd-item alwaysopen"><input type="checkbox" id="section-f7eab8a11f97ffd0873d29e8e6991aa8" class="toggle" checked/><label for="section-f7eab8a11f97ffd0873d29e8e6991aa8" ></label><a href="/spring/mvc/">mvc<i class="fas fa-check read-icon"></i></a><ul>
@@ -403,7 +483,10 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件" class="dd-item active parent"><input type="checkbox" id="section-cb147f28999e2af77c3c46e5203c4ebe" class="toggle" checked/><label for="section-cb147f28999e2af77c3c46e5203c4ebe" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/">kafka<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/" title="mysql" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/">mysql<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" title="redis" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/">redis<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" title="redis" class="dd-item alwaysopen"><input type="checkbox" id="section-74f1b75570b4ee251a87b9e00cbf3144" class="toggle" checked/><label for="section-74f1b75570b4ee251a87b9e00cbf3144" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/">redis<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="redis基础知识" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">redis基础知识<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/" title="布隆过滤器" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/">布隆过滤器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/" title="缓存雪崩、缓存击穿、缓存穿透" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/">缓存雪崩、缓存击穿、缓存穿透<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/" title="中间件的定义" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/">中间件的定义<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/" title="工具" class="dd-item"><input type="checkbox" id="section-70bdf8d87af46a79686d31378c1d7d85" class="toggle"/><label for="section-70bdf8d87af46a79686d31378c1d7d85" ></label><a href="/%E5%B7%A5%E5%85%B7/">工具<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/arthas/" title="arthas" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/arthas/">arthas<i class="fas fa-check read-icon"></i></a></li>
@@ -415,6 +498,7 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/" title="snetinel" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/">snetinel<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/" title="zookeeper" class="dd-item"><a href="/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/">zookeeper<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle"/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/" title="linux 工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/">linux 工具<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/" title="linux命令" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/">linux命令<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E7%9B%AE%E5%BD%95/" title="linux目录" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E7%9B%AE%E5%BD%95/">linux目录<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a></li></ul></li>
@@ -506,13 +590,13 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1660537531"></script>
+          <script async src="/js/buttons.js?1660819953"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1660537531" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1660537531" defer></script>
-    <script src="/js/featherlight.min.js?1660537531" defer></script>
-    <script src="/js/theme.js?1660537531" defer></script>
+    <script src="/js/clipboard.min.js?1660819953" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1660819953" defer></script>
+    <script src="/js/featherlight.min.js?1660819953" defer></script>
+    <script src="/js/theme.js?1660819953" defer></script>
   </body>
 </html>

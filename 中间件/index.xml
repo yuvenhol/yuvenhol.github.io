@@ -7,6 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>redis</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>kafka</title>
       <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,16 +41,6 @@ kafka在redis中存的内容 </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/</guid>
       <description>mysql 逻辑框架图 </description>
-    </item>
-    <item>
-      <title>redis</title>
-      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/</guid>
-      <description>官网命令介绍 https://redis.io/commands/
-数据结构 字符串 常用命令： SET GET MSET（json的key） MGET SETNX（分布式锁） INCR（原子操作） INCRYBY （批量） GET
-hash结构 Hash常用操作 HSET key field value //存储一个哈希表key的键值 HSETNX key field value //存储一个不存在的哈希表key的键值 HMSET key field value [field value &amp;hellip;] //在一个哈希表key中存储多个键值对 HGET key field //获取哈希表key对应的field键值 HMGET key field [field &amp;hellip;] //批量获取哈希表key中多个field键值 HDEL key field [field &amp;hellip;] //删除哈希表key中的field键值 HLEN key //返回哈希表key中field的数量 HGETALL key //返回哈希表key中所有的键值 HINCRBY key field increment //为哈希表key中field键的值加上增量increment
-相比较String 优点 同类数据归类整合储存，方便数据管理 相比string操作消耗内存与cpu更小 相比string储存更节省空间 缺点 过期功能不能使用在field上，只能用在key上 Redis集群架构下不适合大规模使用。大key容易造成数据分布不均匀 List结构 队列结构，最大2^32-1个元素，主要用于头尾添加访问元素。 LPUSH RPUSH LPOP RPOP LRANGE 返回获取 BLPOP Block LPOP，会阻塞 BRPOP</description>
     </item>
     <item>
       <title>中间件的定义</title>

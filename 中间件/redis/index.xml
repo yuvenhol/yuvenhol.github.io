@@ -6,5 +6,43 @@
     <description>Recent content in redis on yuvenhol的技术苦旅</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>redis基础知识</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>官网命令介绍 https://redis.io/commands/
+数据结构 字符串 常用命令： SET GET MSET（json的key） MGET SETNX（分布式锁） INCR（原子操作） INCRYBY （批量） GET
+hash结构 Hash常用操作 HSET key field value //存储一个哈希表key的键值 HSETNX key field value //存储一个不存在的哈希表key的键值 HMSET key field value [field value &amp;hellip;] //在一个哈希表key中存储多个键值对 HGET key field //获取哈希表key对应的field键值 HMGET key field [field &amp;hellip;] //批量获取哈希表key中多个field键值 HDEL key field [field &amp;hellip;] //删除哈希表key中的field键值 HLEN key //返回哈希表key中field的数量 HGETALL key //返回哈希表key中所有的键值 HINCRBY key field increment //为哈希表key中field键的值加上增量increment
+相比较String 优点 同类数据归类整合储存，方便数据管理 相比string操作消耗内存与cpu更小 相比string储存更节省空间 缺点 过期功能不能使用在field上，只能用在key上 Redis集群架构下不适合大规模使用。大key容易造成数据分布不均匀 List结构 队列结构，最大2^32-1个元素，主要用于头尾添加访问元素。 LPUSH RPUSH LPOP RPOP LRANGE 返回获取 BLPOP Block LPOP，会阻塞 BRPOP</description>
+    </item>
+    <item>
+      <title>布隆过滤器</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</guid>
+      <description>场景： 库里有10亿手机号，如何快速判断一个手机号是否在数据库中。 首先对这些数据进行缓存是肯定的，有没有什么更经济的方式缓存呢，这时候布隆举着盾牌就出现了。
+布隆过滤器 布隆过滤器（Bloom Filter）是由布隆在1970年提出的。它实际上是一个很长的二进制向量（位图）和一系列随机映射函数（哈希函数）。
+布隆过滤器可以用于检索一个元素是否在一个集合中。 优点：空间效率和查询时间都比一般的算法要好的多。
+缺点有2个：
+在判断元素在集合中有误差，只有判断元素不在集合中是准确的 删除比较困难 位图（Bitmap） Redis当中有一种数据结构就是位图，布隆过滤器其中重要的实现就是位图的实现，也就是位数组，并且在这个数组中每一个位置只有0和1两种状态，每个位置只占用1个 bit，其中0表示没有元素存在，1表示有元素存在。
+如下图所示就是一个简单的布隆过滤器示例（一个key值经过哈希运算和位运算就可以得出应该落在哪个位置）：
+哈希 上面我们发现，lonely和wolf落在了同一个位置，这种不同的key值经过哈希运算后得到相同值的现象就称之为哈希碰撞。发生哈希碰撞之后再经过位运算，那么最后肯定会落在同一个位置。
+如果发生过多的哈希碰撞，就会影响到判断的准确性，所以为了减少哈希碰撞，我们一般会综合考虑以下2个因素：
+增大位图数组的大小（位图数组越大，占用的内存越大）。 增加哈希函数的次数（同一个key值经过1个函数相等了，那么经过2个或者更多个哈希函数的计算，都得到相等结果的概率就自然会降低了）。 上面两个方法我们需要综合考虑：比如增大位数组，那么就需要消耗更多的空间，而经过越多的哈希计算也会消耗cpu影响到最终的计算时间，所以位数组到底多大，哈希函数次数又到底需要计算多少次合适需要具体情况具体分析。
+删除元素 布隆过滤器判断一个元素存在就是判断对应位置是否为1来确定的，但是如果要删除掉一个元素是不能直接把1改成0的，因为这个位置可能存在其它元素，所以如果要支持删除，那我们应该怎么做呢？
+最简单的做法就是加一个计数器，就是说位数组的每个位如果不存在就是0，存在几个元素就存具体的数字，而不仅仅只是存1。那么这就有一个问题，本来存1就是一位就可以满足了，但是如果要存具体的数字比如说2，那就需要2位了，所以带有计数器的布隆过滤器会占用更大的空间。</description>
+    </item>
+    <item>
+      <title>缓存雪崩、缓存击穿、缓存穿透</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/</guid>
+      <description>缓存雪崩 原因：
+大量缓存数据同时失效，导致某一瞬间之后，相当于没有缓存。 解决：
+缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。 设置热点数据永远不过期。 缓存击穿 原因： 从击穿这个字眼上来看，是有瞬间大量的请求过来，访问同一资源。这时候会有大量请求直接访问db。 解决：
+设置热点数据永远不过期。 加互斥锁。 缓存穿透 原因： 大量请求绕过缓存访问db里面不存在的数据，例如访问id=-1的数据，这时候也会给db造成较大压力。 解决：
+接口对参数进行基本的校验id&amp;gt;0 短时间缓存null值数据 </description>
+    </item>
   </channel>
 </rss>

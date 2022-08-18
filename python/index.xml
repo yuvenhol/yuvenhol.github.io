@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/python/</link>
+    <description>Recent content in python on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python 语法知识</title>
+      <link>https://yuvenhol.github.io/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/</guid>
+      <description>类型 标准数据类型 Python3 中有六个标准的数据类型：
+Number（数字）
+int、float、bool、complex。其中bool是int的子类。False == 0 String（字符串）
+List（列表）
+Tuple（元组）
+Set（集合）
+Dictionary（字典） Python3 的六个标准数据类型中：
+**不可变数据（3 个）：**Number（数字）、String（字符串）、Tuple（元组）；
+**可变数据（3 个）：**List（列表）、Dictionary（字典）、Set（集合）。
+对象 python对象三要素 id（对象地址）、type、value
+l1=[1,2,3] l2=[1,2,3] # 调用对象__eq__() l1==l2 &amp;gt;&amp;gt;&amp;gt; true # 对比内存地址 l1 is l2 &amp;gt;&amp;gt;&amp;gt; false 赋值(=)、浅拷贝(copy())、深拷贝(deepcopy() #赋值 a=[1,2,[4,5]] #浅拷贝 b=copy(a) #深拷贝 c=deepcopy(b) </description>
+    </item>
+  </channel>
+</rss>

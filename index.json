@@ -21,7 +21,7 @@
     "uri": "/java/cglib/"
   },
   {
-    "content": "领域驱动设计 概念 DP：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。 Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化） DomainService:封装多对象的有状态逻辑。 Repository:抽象封装外部数据访问逻辑。 UL：统一语言，意识拉齐\n流程： 1.首先对需要处理的业务问题进行总览。 2.然后领域对象(Entity)进行划分，明确每个领域对象的包含的信息和职责边界。 并进行跨对象，多对象的逻辑组织(Domain Service) 3.接着在上层应用中根据业务描述去编排Entity和Domain Service。 4.最后再做一些下水道工作，去对下层的数据访问，RPC调用去做一些具体实现。\nDP/VO DP(Domain Primitive) 定义：在DDD里，DP是一切模型、方法、结构的基础。 它是特定领域、拥有精准定义、可以自我验证、拥有行为的对象。可以认为是领域内最小的组成部分。\nDP的三条原则： 让隐性的概念显性化（手机号的运营商） 让隐性的上下文显性化（手机号的区号编码） 封装多对象行为\n",
+    "content": "领域驱动设计 概念 DP：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。 Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化） DomainService:封装多对象的有状态逻辑。 Repository:抽象封装外部数据访问逻辑。 UL：统一语言，意识拉齐\n流程： 1.首先对需要处理的业务问题进行总览。 2.然后领域对象(Entity)进行划分，明确每个领域对象的包含的信息和职责边界。 并进行跨对象，多对象的逻辑组织(Domain Service) 3.接着在上层应用中根据业务描述去编排Entity和Domain Service。 4.最后再做一些下水道工作，去对下层的数据访问，RPC调用去做一些具体实现。\nDP/VO DP(Domain Primitive) 定义：在DDD里，DP是一切模型、方法、结构的基础。 它是特定领域、拥有精准定义、可以自我验证、拥有行为的对象。可以认为是领域内最小的组成部分。\nDP的三条原则： 让隐性的概念显性化（手机号的运营商） 让隐性的上下文显性化（手机号的区号编码） 封装多对象行为\n一个很好的例子 https://juejin.cn/post/7131186996277411876\n",
     "description": "",
     "tags": null,
     "title": "DDD Domain-Driven Design",
@@ -119,6 +119,13 @@
     "uri": "/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/"
   },
   {
+    "content": "figlet 字符画制作工具 figlet -w yuvenhol~\n__ __ __ __ _ _ /\\/| \\ \\ / / _ _ \\ \\ / / ___ _ __ | |__ ___ | | |/\\/ \\ V / | | | | \\ \\ / / / _ \\ | '_ \\ | '_ \\ / _ \\ | | | | | |_| | \\ V / | __/ | | | | | | | | | (_) | | | |_| \\__,_| \\_/ \\___| |_| |_| |_| |_| \\___/ |_| ",
+    "description": "",
+    "tags": null,
+    "title": "linux 工具",
+    "uri": "/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/"
+  },
+  {
     "content": "top 定义：display sorted information about processes\n展示项目 描述 CPU Percentage of processor usage, broken into user, system, and idle components. The time period for which these percentages are calculated depends on the event counting mode. Disks Number and total size of disk reads and writes. LoadAvg Load average over 1, 5, and 15 minutes. The load average is the average number of jobs in the run queue. MemRegions Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components. Networks Number and total size of input and output network packets PhysMem Physical memory usage, broken into wired, active, inactive, used, and free components. Procs Total number of processes and number of processes in each process state. SharedLibs Resident sizes of code and data segments, and link editor memory usage. Threads Number of threads. iotop 磁盘情况查看 lsof lsof - list open files 在linux下一切皆文件，一个网络连接也是一个文件。 lsof -i 查看网络连接的文件 在mac系统下netstat是简化版的，用lsof 替代\nnetstat netstat -an\nexport 环境变量相关操作 Linux export 命令用于设置或显示环境变量。\n在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作，如果在配置文件中添加可以持续有效。 export [-fnp][变量名称]=[变量设置值]\n-f 代表[变量名称]中为函数名称。 -n 删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。 -p 列出所有的shell赋予程序的环境变量。 例子 在.zprofile 里面 export WS=/Users/yuwenhao/Programs/work-space\ntouch 修改文件的创建和修改时间，现在常用于创建一个文件。\nfind find path -name “支持 * ？” [-delete]\ngrep alias alias[别名]=[指令名称] 删除unlias 别名\nln ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。\n",
     "description": "",
     "tags": null,
@@ -140,7 +147,7 @@
     "uri": "/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/"
   },
   {
-    "content": "资料 官网 ：https://maven.apache.org/ 官方仓库浏览：https://mvnrepository.com/\n功能 编译、打包、测试、依赖管理等\n仓库 通常情况下企业内仓储依赖是\ngraph LR 本地仓库A \u0026 本地仓库B \u0026 本地仓库C --\u003e 企业私服Nexus--\u003e阿里云Nexus--\u003e中央仓库 其中repository Manager 企业内会用nexus等\n文件规范 java 源文件：src/main/java\n测试用例目录：src/test/java\n输出文件： target/\n配置文件： src/main/resources/\nweb：src/main/webapp\n包含/WEB-INF/web.xml\npom 增加\n\u003cpackaging\u003ewar\u003c/packaging\u003e settings文件 settings文件有两处配置，总配置和用户\nThe Maven install: ${maven.home}/conf/settings.xml A user’s install: ${user.home}/.m2/settings.xml Servers 配置账号密码 sshkey等\n1. `\u003cservers\u003e` 2. `\u003cserver\u003e` 3. `\u003cid\u003eserver001\u003c/id\u003e` 4. `\u003cusername\u003emy_login\u003c/username\u003e` 5. `\u003cpassword\u003emy_password\u003c/password\u003e` 6. `\u003cprivateKey\u003e${user.home}/.ssh/id_dsa\u003c/privateKey\u003e` 7. `\u003cpassphrase\u003esome_passphrase\u003c/passphrase\u003e` 8. `\u003cfilePermissions\u003e664\u003c/filePermissions\u003e` 9. `\u003cdirectoryPermissions\u003e775\u003c/directoryPermissions\u003e` 10. `\u003cconfiguration\u003e\u003c/configuration\u003e` 11. `\u003c/server\u003e` 12. `\u003c/servers\u003e` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。\n虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.jar在第一个 mirror 中不存在的时候，maven会去第二个 mirror 中查询下载，但是maven不会这样做！\n1. `\u003cmirrors\u003e` 2. `\u003cmirror\u003e` 3. `\u003cid\u003eplanetmirror.com\u003c/id\u003e` 4. `\u003cname\u003ePlanetMirror Australia\u003c/name\u003e` 5. `\u003curl\u003ehttp://downloads.planetmirror.com/pub/maven2\u003c/url\u003e` 6. `\u003cmirrorOf\u003ecentral\u003c/mirrorOf\u003e` 7. `\u003c/mirror\u003e` 8. `\u003c/mirrors\u003e` POM文件 POM介绍 pom project object model 完整官方文档：https://maven.apache.org/pom.html\n基础例子 \u003cproject xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\u003e \u003c!-- maven 模型版本--\u003e \u003cmodelVersion\u003e4.0.0\u003c/modelVersion\u003e \u003c!-- 分组编号一般是公司域名--\u003e \u003cgroupId\u003eorg.codehaus.mojo\u003c/groupId\u003e \u003c!-- 工件编号一般是项目模块--\u003e \u003cartifactId\u003emy-project.xxx\u003c/artifactId\u003e \u003cversion\u003e1.0\u003c/version\u003e \u003c/project\u003e maven 约定大于配置 好处：\n省去配置 规范开发规范 package: package同时会执行compile\ntest Test开头的类名和test开头的方法名才会被执行\n如果引入junit 包，上一条就失效\n项目依赖 项目依赖是指maven通过以来传播、依赖优先、可选依赖、排除依赖、依赖范围等特性来管理项目ClassPath。 依赖传播 我们的项目通常会依赖第三方组件，第三方组建又会依赖其他组件遇到这种情况Maven会将依赖网络中的所有节点都会加入ClassPath。\n依赖优先 就近原则,链路短的优先 相同路径下配置在前的优先\n但是一个pom文件下，后门的优先（并不规范，一个pom文件里不应该写两个一样的依赖） 可选依赖 如果不希望依赖的包传递引用包，可以打断依赖传递\n\u003coptional\u003etrue\u003c/optional\u003e 排除依赖 \u003cexclusions\u003e \u003cexclusion\u003e \u003c!-- 排除依赖 --\u003e \u003c/exclusion\u003e \u003c/exclustions\u003e 依赖范围 \u003cscope\u003e\u003c/scope\u003e 可选的范围\ncomplie（默认），编译和打包都会依赖 provided：编译时依赖，打包不会依赖。ex: servlet-api.jar(tomcat 存在),lombok runtime:运行时范围，打包时依赖，编译时不依赖。mysql-connector-java.jar\n官方解释：this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath. test:测试类依赖 system:类似provided，可指定本地位置 ",
+    "content": "资料 官网 ：https://maven.apache.org/ 官方仓库浏览：https://mvnrepository.com/\n功能 编译、打包、测试、依赖管理等\n仓库 通常情况下企业内仓储依赖是\ngraph LR 本地仓库A \u0026 本地仓库B \u0026 本地仓库C --\u003e 企业私服Nexus--\u003e阿里云Nexus--\u003e中央仓库 其中repository Manager 企业内会用nexus等\n文件规范 java 源文件：src/main/java\n测试用例目录：src/test/java\n输出文件： target/\n配置文件： src/main/resources/\nweb：src/main/webapp\n包含/WEB-INF/web.xml\npom 增加\n\u003cpackaging\u003ewar\u003c/packaging\u003e settings文件 settings文件有两处配置，总配置和用户\nThe Maven install: ${maven.home}/conf/settings.xml A user’s install: ${user.home}/.m2/settings.xml Servers 配置账号密码 sshkey等\n1. `\u003cservers\u003e` 2. `\u003cserver\u003e` 3. `\u003cid\u003eserver001\u003c/id\u003e` 4. `\u003cusername\u003emy_login\u003c/username\u003e` 5. `\u003cpassword\u003emy_password\u003c/password\u003e` 6. `\u003cprivateKey\u003e${user.home}/.ssh/id_dsa\u003c/privateKey\u003e` 7. `\u003cpassphrase\u003esome_passphrase\u003c/passphrase\u003e` 8. `\u003cfilePermissions\u003e664\u003c/filePermissions\u003e` 9. `\u003cdirectoryPermissions\u003e775\u003c/directoryPermissions\u003e` 10. `\u003cconfiguration\u003e\u003c/configuration\u003e` 11. `\u003c/server\u003e` 12. `\u003c/servers\u003e` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。\n虽然 mirrors 可以配置多个子节点，但是它只会使用其中的一个节点，即 默认情况下配置多个 mirror 的情况下，只有第一个生效，只有当前一个 mirror 无法连接的时候，才会去找后一个；而我们想要的效果是：当a.jar在第一个 mirror 中不存在的时候，maven会去第二个 mirror 中查询下载，但是maven不会这样做！\n1. `\u003cmirrors\u003e` 2. `\u003cmirror\u003e` 3. `\u003cid\u003eplanetmirror.com\u003c/id\u003e` 4. `\u003cname\u003ePlanetMirror Australia\u003c/name\u003e` 5. `\u003curl\u003ehttp://downloads.planetmirror.com/pub/maven2\u003c/url\u003e` 6. `\u003cmirrorOf\u003ecentral\u003c/mirrorOf\u003e` 7. `\u003c/mirror\u003e` 8. `\u003c/mirrors\u003e` POM文件 POM介绍 pom project object model 完整官方文档：https://maven.apache.org/pom.html\n基础例子 \u003cproject xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\u003e \u003c!-- maven 模型版本--\u003e \u003cmodelVersion\u003e4.0.0\u003c/modelVersion\u003e \u003c!-- 分组编号一般是公司域名--\u003e \u003cgroupId\u003eorg.codehaus.mojo\u003c/groupId\u003e \u003c!-- 工件编号一般是项目模块--\u003e \u003cartifactId\u003emy-project.xxx\u003c/artifactId\u003e \u003cversion\u003e1.0\u003c/version\u003e \u003c/project\u003e maven 约定大于配置 好处：\n省去配置 规范开发规范 package: package同时会执行compile\ntest Test开头的类名和test开头的方法名才会被执行\n如果引入junit 包，上一条就失效\n项目依赖 项目依赖是指maven通过以来传播、依赖优先、可选依赖、排除依赖、依赖范围等特性来管理项目ClassPath。 依赖传播 我们的项目通常会依赖第三方组件，第三方组建又会依赖其他组件遇到这种情况Maven会将依赖网络中的所有节点都会加入ClassPath。\n依赖优先 就近原则,链路短的优先 相同路径下配置在前的优先\n但是一个pom文件下，后面的优先（并不规范，一个pom文件里不应该写两个一样的依赖） 可选依赖 如果不希望依赖的包传递引用包，可以打断依赖传递\n\u003coptional\u003etrue\u003c/optional\u003e 排除依赖 \u003cexclusions\u003e \u003cexclusion\u003e \u003c!-- 排除依赖 --\u003e \u003c/exclusion\u003e \u003c/exclustions\u003e 依赖范围 \u003cscope\u003e\u003c/scope\u003e 可选的范围\ncomplie（默认），编译和打包都会依赖 provided：编译时依赖，打包不会依赖。ex: servlet-api.jar(tomcat 存在),lombok runtime:运行时范围，打包时依赖，编译时不依赖。mysql-connector-java.jar\n官方解释：this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath. test:测试类依赖 system:类似provided，可指定本地位置 ",
     "description": "",
     "tags": null,
     "title": "maven",
@@ -161,11 +168,18 @@
     "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/"
   },
   {
+    "content": "类型 标准数据类型 Python3 中有六个标准的数据类型：\nNumber（数字）\nint、float、bool、complex。其中bool是int的子类。False == 0 String（字符串）\nList（列表）\nTuple（元组）\nSet（集合）\nDictionary（字典） Python3 的六个标准数据类型中：\n**不可变数据（3 个）：**Number（数字）、String（字符串）、Tuple（元组）；\n**可变数据（3 个）：**List（列表）、Dictionary（字典）、Set（集合）。\n对象 python对象三要素 id（对象地址）、type、value\nl1=[1,2,3] l2=[1,2,3] # 调用对象__eq__() l1==l2 \u003e\u003e\u003e true # 对比内存地址 l1 is l2 \u003e\u003e\u003e false 赋值(=)、浅拷贝(copy())、深拷贝(deepcopy() #赋值 a=[1,2,[4,5]] #浅拷贝 b=copy(a) #深拷贝 c=deepcopy(b) ",
+    "description": "",
+    "tags": null,
+    "title": "python 语法知识",
+    "uri": "/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/"
+  },
+  {
     "content": "官网命令介绍 https://redis.io/commands/\n数据结构 字符串 常用命令： SET GET MSET（json的key） MGET SETNX（分布式锁） INCR（原子操作） INCRYBY （批量） GET\nhash结构 Hash常用操作 HSET key field value //存储一个哈希表key的键值 HSETNX key field value //存储一个不存在的哈希表key的键值 HMSET key field value [field value …] //在一个哈希表key中存储多个键值对 HGET key field //获取哈希表key对应的field键值 HMGET key field [field …] //批量获取哈希表key中多个field键值 HDEL key field [field …] //删除哈希表key中的field键值 HLEN key //返回哈希表key中field的数量 HGETALL key //返回哈希表key中所有的键值 HINCRBY key field increment //为哈希表key中field键的值加上增量increment\n相比较String 优点 同类数据归类整合储存，方便数据管理 相比string操作消耗内存与cpu更小 相比string储存更节省空间 缺点 过期功能不能使用在field上，只能用在key上 Redis集群架构下不适合大规模使用。大key容易造成数据分布不均匀 List结构 队列结构，最大2^32-1个元素，主要用于头尾添加访问元素。 LPUSH RPUSH LPOP RPOP LRANGE 返回获取 BLPOP Block LPOP，会阻塞 BRPOP\n应用 stack=LPUSH+LPOP queue=LPUSH+RPOP blocking queue=LPUSH+BRPOP\nSET结构 基础命令 SADD SREM 删除元素 SMEMBERS 查看全部元素 SRANDMEMBER key count 随机从key中抽取count个元素 SPOP 随机从key中抽取count个元素，并排除 pop·· SISMEMBER 是否包含 SCARD获取总数\n集合命令 SINTER 求交集 SUNION 并集 SDIFF 查集（第一个集合，在后续集合中不存在的元素）\n应用 抽奖 关注模型\n共同关注的人 SINTER 我关注的人也关注了他 SISMEMBER 可能喜欢 SDIFF ZSET 有序集合 常用操作： ZADD key score ZRANGE key start stop 排序 ZREVRANGE 倒序 ZUNIONSTORE 并集并放入一个key\n应用： 排行榜\nredis注意事项 redis最应该避免大key，不要一个key里面存太多数据。\n常见面试问题 Redis的单线程和高性能 Redis是单线程吗? Redis 的单线程主要是指 Redis 的网络 IO 和键值对读写是由一个线程来完成的，这也是 Redis 对外 提供键值存储服务的主要流程。但 Redis 的其他功能，比如持久化、异步删除、集群数据同步等，其实是由额外的线程执行的。\nRedis 单线程为什么还能这么快? 因为它所有的数据都在内存中，所有的运算都是内存级别的运算，而且单线程避免了多线程的切换性 能损耗问题。正因为 Redis 是单线程，所以要小心使用 Redis 指令，对于那些耗时的指令(比如 keys)，一定要谨慎使用，一不小心就可能会导致 Redis 卡顿。\nRedis 单线程如何处理那么多的并发客户端连接? Redis的IO多路复用:redis利用epoll来实现IO多路复用，将连接信息和事件放到队列中，依次放到 文件事件分派器，事件分派器将事件分发给事件处理器。 redis 一个命令过来大体分四步 1、建立连接 2、读取数据 3、执行命令 4、应答 连接建立优化先入队列，数据接收完成以后，传给事件处理器，不过需要注意命令的执行仍然会按照入队的顺序执行，只不过优化减少了IO时间。\n",
     "description": "",
     "tags": null,
-    "title": "redis",
-    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/"
+    "title": "redis基础知识",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
   },
   {
     "content": "bash有几种不同的运行模式，login shell与non-login shell,.interactive shell.与non-interactive shell(比如执行shel脚本)。这两种 分类方法是交叉的，也就是说一个login shell7可能是一个interactive shell,也可能是个non-interactive shell。. 在下列情况下，我们可以获得一个login shell: 1.登录系统时获得的J顶层shell,无论是通过本地终端登录，还是通过网络ssh登录。这种情况下获得的login shell是一个交互式shell。. 2.在终端下使用-login选项调用bash,可以获得一个交互式login shell。. 3.在脚本中使用-login选项调用bash(比如在shell脚本第一行做如下指定：#！/bin/bash–login),此时得到一个非交互式的login shell。 4.使用\"su-“切换到指定用户时，获得此用户的login shell。如果不使用”.\"，则获得non-login shell。 login shell与non-login shell的主要区别在于它们启动时会读取不同的配置文件，从而导致环境不一样。 login shell的行为： login shell,启动时首先读取/etc/profile:全局配置，然后依次查找~/.bash_profile、~/.bash_login、~/.profile三个配置文件，并且 读取第一个找到的并且可读的文件。login shell退出时读取并执行~/.bash_logout中的命令。 non-login shell的行为： 交互式的non-login shell)启动时读取~.bashrc资源文件。非交互式的non–login shell不读取上述所有配置文件，而是查找环境变量 BASH ENV,读取并执行BASH ENV指向的文件中的命令。 如果使用命令\"sh\"调用bash,bash会尽可能保持向后兼容。作为login shellF启动时，bash依次读取/etc/profile和~l.profile配置文件。作为 non-login shell/启动时，bash读取环境变量ENV指向的文件。 通常我们要定制一些配置时，将配置写在.bashrc中，然后在/.bash_profile中读取~/.bashrc,这样可以保证login shell和交互式non-login shell得到相同的配置。至于/etc/profile就不要轻易去改啦，毕竟会影响系统全局的配置。\n",
@@ -252,6 +266,13 @@
     "uri": "/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/"
   },
   {
+    "content": "场景： 库里有10亿手机号，如何快速判断一个手机号是否在数据库中。 首先对这些数据进行缓存是肯定的，有没有什么更经济的方式缓存呢，这时候布隆举着盾牌就出现了。\n布隆过滤器 布隆过滤器（Bloom Filter）是由布隆在1970年提出的。它实际上是一个很长的二进制向量（位图）和一系列随机映射函数（哈希函数）。\n布隆过滤器可以用于检索一个元素是否在一个集合中。 优点：空间效率和查询时间都比一般的算法要好的多。\n缺点有2个：\n在判断元素在集合中有误差，只有判断元素不在集合中是准确的 删除比较困难 位图（Bitmap） Redis当中有一种数据结构就是位图，布隆过滤器其中重要的实现就是位图的实现，也就是位数组，并且在这个数组中每一个位置只有0和1两种状态，每个位置只占用1个 bit，其中0表示没有元素存在，1表示有元素存在。\n如下图所示就是一个简单的布隆过滤器示例（一个key值经过哈希运算和位运算就可以得出应该落在哪个位置）：\n哈希 上面我们发现，lonely和wolf落在了同一个位置，这种不同的key值经过哈希运算后得到相同值的现象就称之为哈希碰撞。发生哈希碰撞之后再经过位运算，那么最后肯定会落在同一个位置。\n如果发生过多的哈希碰撞，就会影响到判断的准确性，所以为了减少哈希碰撞，我们一般会综合考虑以下2个因素：\n增大位图数组的大小（位图数组越大，占用的内存越大）。 增加哈希函数的次数（同一个key值经过1个函数相等了，那么经过2个或者更多个哈希函数的计算，都得到相等结果的概率就自然会降低了）。 上面两个方法我们需要综合考虑：比如增大位数组，那么就需要消耗更多的空间，而经过越多的哈希计算也会消耗cpu影响到最终的计算时间，所以位数组到底多大，哈希函数次数又到底需要计算多少次合适需要具体情况具体分析。\n删除元素 布隆过滤器判断一个元素存在就是判断对应位置是否为1来确定的，但是如果要删除掉一个元素是不能直接把1改成0的，因为这个位置可能存在其它元素，所以如果要支持删除，那我们应该怎么做呢？\n最简单的做法就是加一个计数器，就是说位数组的每个位如果不存在就是0，存在几个元素就存具体的数字，而不仅仅只是存1。那么这就有一个问题，本来存1就是一位就可以满足了，但是如果要存具体的数字比如说2，那就需要2位了，所以带有计数器的布隆过滤器会占用更大的空间。\n",
+    "description": "",
+    "tags": null,
+    "title": "布隆过滤器",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/"
+  },
+  {
     "content": "\n",
     "description": "",
     "tags": null,
@@ -285,6 +306,13 @@
     "tags": null,
     "title": "类微博feed流",
     "uri": "/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/"
+  },
+  {
+    "content": "缓存雪崩 原因：\n大量缓存数据同时失效，导致某一瞬间之后，相当于没有缓存。 解决：\n缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。 设置热点数据永远不过期。 缓存击穿 原因： 从击穿这个字眼上来看，是有瞬间大量的请求过来，访问同一资源。这时候会有大量请求直接访问db。 解决：\n设置热点数据永远不过期。 加互斥锁。 缓存穿透 原因： 大量请求绕过缓存访问db里面不存在的数据，例如访问id=-1的数据，这时候也会给db造成较大压力。 解决：\n接口对参数进行基本的校验id\u003e0 短时间缓存null值数据 ",
+    "description": "",
+    "tags": null,
+    "title": "缓存雪崩、缓存击穿、缓存穿透",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/"
   },
   {
     "content": "",
@@ -325,6 +353,13 @@
     "content": "",
     "description": "",
     "tags": null,
+    "title": "golang",
+    "uri": "/golang/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
     "title": "java",
     "uri": "/java/"
   },
@@ -348,6 +383,20 @@
     "tags": null,
     "title": "office",
     "uri": "/office/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "python",
+    "uri": "/python/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "redis",
+    "uri": "/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/"
   },
   {
     "content": "",

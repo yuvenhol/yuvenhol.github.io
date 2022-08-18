@@ -7,6 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>linux 工具</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/</guid>
+      <description>figlet 字符画制作工具 figlet -w yuvenhol~
+__ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | | | \ \ / / / _ \ | &amp;#39;_ \ | &amp;#39;_ \ / _ \ | | | | | |_| | \ V / | __/ | | | | | | | | | (_) | | | |_| \__,_| \_/ \___| |_| |_| |_| |_| \___/ |_| </description>
+    </item>
+    <item>
       <title>linux命令</title>
       <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
