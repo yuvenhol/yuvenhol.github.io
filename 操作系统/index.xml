@@ -7,27 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>linux 工具</title>
-      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/</link>
+      <title>linux</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/</guid>
-      <description>figlet 字符画制作工具 figlet -w yuvenhol~
-__ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | | | \ \ / / / _ \ | &amp;#39;_ \ | &amp;#39;_ \ / _ \ | | | | | |_| | \ V / | __/ | | | | | | | | | (_) | | | |_| \__,_| \_/ \___| |_| |_| |_| |_| \___/ |_| </description>
-    </item>
-    <item>
-      <title>linux命令</title>
-      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/</guid>
-      <description>top 定义：display sorted information about processes
-展示项目 描述 CPU Percentage of processor usage, broken into user, system, and idle components. The time period for which these percentages are calculated depends on the event counting mode. Disks Number and total size of disk reads and writes. LoadAvg Load average over 1, 5, and 15 minutes. The load average is the average number of jobs in the run queue. MemRegions Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components.</description>
-    </item>
-    <item>
-      <title>linux目录</title>
-      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E7%9B%AE%E5%BD%95/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E7%9B%AE%E5%BD%95/</guid>
-      <description> 目录 解释 /bin bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。 /sbin s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。 /etc 存放系统管理和配置文件 /opt 额外安装的可选应用程序包所放置的位置。 /proc 虚拟文件系统目录，是系统内存的映射，可以查看正在运行程序的状态。 /boot 这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。 /root 该目录为系统管理员，也称作超级权限者的用户主目录。 /dev dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。 /lost+found 这个目录平时是空的，系统非正常关机而留下“无家可归”的文件（windows下叫什么.chk）就在这里 /var 用于存放运行时需要改变数据的文件，也是某些大文件的溢出区 /tmp 用于存放各种临时文件，是公用的临时文件存储点。 /mnt 临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。 /media linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。 /home 存放所有用户文件的根目录，是用户主目录的基点 /usr 用于存放系统应用程序，比较重要的目录。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。 /usr/local 本地系统管理员软件安装目录（安装系统级的应用） /usr/doc linux文档 /usr/man 帮助文档 /usr/lib 常用的动态链接库和软件包的配置文件 /usr/sbin 超级用户的一些管理程序 /usr/include linux下开发和编译应用程序所需要的头文件 /usr/src 源代码，linux内核的源代码就放在/usr/src/linux里 usr/local/bin 本地增加的命令 /usr/local/lib 本地增加的库 </description>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/</guid>
+      <description></description>
     </item>
     <item>
       <title>操作系统</title>

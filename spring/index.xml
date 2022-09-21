@@ -29,11 +29,37 @@
 @Configuration public class AppConfig{ @Bean public JDBCTempalte t1(){ } @Bean public TranslationManager transactionManager(){ } @Bean public DataSource dataSource(){ xxx } } @Bean 修饰方法后，方法名作为beanname 加入叫spring容器 被Configuration修饰以后，该对象将变成代理对象，在获取bean修饰的方法时，如果spring容器有bean则会直接返回，没有会执行并生成bean</description>
     </item>
     <item>
+      <title>spring bean</title>
+      <link>https://yuvenhol.github.io/spring/spring-bean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/spring-bean/</guid>
+      <description>生命周期 补充： @PostConstruct 代表bean构建完成后置处理，在属性注入之后，基于初始化前实现 beanPostProcessor .beforeInitlazation。
+循环依赖 三级缓存 singletonObjects：依赖注入完成的bean earlySingletionObjects：早期bean，未完成依赖注入，但是 singletonFactories：对象工厂，表示用来创建早期bean对象的工厂 存放顺序: singletonFactories&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;singletonObjects 读取顺序：singletonObjects&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;存放顺序</description>
+    </item>
+    <item>
+      <title>spring Context</title>
+      <link>https://yuvenhol.github.io/spring/spring-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/spring-context/</guid>
+      <description>BeanFactory ApplicationContext ApplicationContext 也实现了beanFactory，实际上具体实现依靠获取Context内的BeanFacoty实例DefaultListableBeanFactory 来实现功能的。
+graph TD 10[ContextLoaderListener.contextInitialized] --创建WebApplicationContext--&gt;15[ContextLoader.initWebApplicationContext] --&gt; 18[configureAndRefreshWebApplicationContext] --初始化context--&gt;20 subgraph refresh 20[ConfigurableApplicationContext.refresh] --prepareRefresh--&gt;21[准备刷新:包括spring环境等] -- obtainFreshBeanFactory--&gt;22[创建bean工程] -- prepareBeanFactory--&gt;23[bean工程初始化配置] -- postProcessBeanFactory --&gt;24[添加beanFactory的后置护理器] -- invokeBeanFactoryPostProcessors --&gt;25[调用beanFactory后置处理器.bean扫描是在这一步操作的] -- registerBeanPostProcessors --&gt;26[注册bean后置处理器] -- initMessageSource --&gt;27[国际化等] -- initApplicationEventMulticaster--&gt;28[创基一个事件广播器来处理事件] -- onRefresh --&gt;29[初始化前添加特殊bean 默认啥都不干] -- registerListeners --&gt; 30[注册event listener] -- finishBeanFactoryInitialization --&gt;31[实例化剩余的bean] -- finishRefresh--&gt;32[主要是发送ContextRefreshedEvent 通知完成refresh] end</description>
+    </item>
+    <item>
       <title>spring mvc</title>
       <link>https://yuvenhol.github.io/spring/spring-mvc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/spring-mvc/</guid>
-      <description>spring mvc原理</description>
+      <description>传统Servlet 1.xml下配置servlet的映射非常麻烦 开发效率低
+2.必须要继承父类、重写方法 侵入性强
+2.如果想在一个Servlet中处理同一业务模块的的功能分发给不同方法进行处理非常麻烦
+3.参数解析麻烦:单个参数（转换类型）&amp;mdash;&amp;gt;pojo对象 Json文本&amp;mdash;&amp;gt;pojo对象
+4.数据响应麻烦:pojo对象&amp;mdash;&amp;gt;json &amp;hellip; Content-type
+5.跳转页面麻烦, 对path的控制、 如果使用其他模板也很麻烦 、设置编码麻烦&amp;hellip;等等&amp;hellip;
+所以SpringMVC 就是在Servlet的基础上进行了封装，帮我把这些麻烦事都给我们做了。 dispatcherServlet是核心分分发器，其核心方法时doDispatch()。 根据请求路径
+Handler（具体的Controller 方法） HandlerMapping（根据request定为到对应的HandlerExecutionChain） HandlerExecutionChain（handler的执行链，包含了拦截器和HandlerMethod） HandlerMethod(包装了Handler) HandlerAdapter()
+HandlerMethodReturnValueHandlerComposite HandlerMethodReturnValueHandler
+HandlerMethodArgumentResolverComposite HandlerMethodArgumentResolver
+messageConverter （依赖 HandlerMethodReturnValueHandler和HandlerMethodArgumentResolver 处理请求前后 ）</description>
     </item>
   </channel>
 </rss>

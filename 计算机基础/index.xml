@@ -19,7 +19,14 @@
       <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/</guid>
-      <description>linux IO TCP网络通信整体流程 服务端准备连接流程 SOCKET函数 为了执行网络I/O，我们要做的第一件事情就是调用socket函数，指定期望的协议类型。该函数会创建一个通信的端点，并返回引用该端点的文件描述符，该文件描述符也称为套接字描述符(socket descriptor)，简称sockfd。
+      <description>TCP 建立连接 断开连接 报文内容 SYN(synchronous建立联机)
+ACK(acknowledgement 确认)
+PSH(push传送)
+FIN(finish结束)
+RST(reset重置)
+URG(urgent紧急)
+每个请求都有一个顺序号 Sequence number(顺序号码)
+linux IO TCP网络通信整体流程 服务端准备连接流程 SOCKET函数 为了执行网络I/O，我们要做的第一件事情就是调用socket函数，指定期望的协议类型。该函数会创建一个通信的端点，并返回引用该端点的文件描述符，该文件描述符也称为套接字描述符(socket descriptor)，简称sockfd。
 BIND()函数 bind()函数把一个本地协议地址赋予一个套接字。
 如果一个TCP客户端或者服务器没有调用bind绑定端口，或者指定IP地址，那么内核就会为该套接字选择一个临时端口号。
 LISTEN()函数 通过socket()函数创建了套接字之后，再执行listen()函数，会把套接字转换为一个被动套接字，指示内核应该接收指向该套接字的连接请求，并导致套接字从CLOSED状态转换到LISTEN状态。
@@ -61,6 +68,15 @@ IP地址和MAC地址的区别
 IP地址可以变动、mac地址是不变的，相同子网内寻址使用MAC地址，不同网络使用IP地址
 SYN(synchronous建立联机) ACK(acknowledgement 确认) PSH(push传送) FIN(finish结束) RST(reset重置) URG(urgent紧急)
 Sequence number(顺序号码)</description>
+    </item>
+    <item>
+      <title>时间</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%97%B6%E9%97%B4/</guid>
+      <description>GMT时间： 格林威治时间，以本初子午线为0时区，每个时区调整时区显示。
+UTC时间： utc格式：UTC本地时间 = UTC标准时间 拼上 时间偏移量。 ex:若现在UTC时间是 10:30z（z表示偏移量=0，不可省略），则北京时间为 10:30 +0800、纽约时间为 10:30 -0500，分别表示同日下午6点半、同日上午五点半。
+ISO8601标准时间格式： 基于utc时间，前端时间为时区时间方便使用，后段时间为时区偏移量，方便辨别。 ex:2021-03-01T18:03:24.208+08:00 java中的时间 可以用Instant代替 Date，LocalDateTime代替 Calendar，DateTimeFormatter 代替 SimpleDateFormat。</description>
     </item>
   </channel>
 </rss>

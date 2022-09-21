@@ -23,5 +23,25 @@ Dictionary（字典） Python3 的六个标准数据类型中：
 对象 python对象三要素 id（对象地址）、type、value
 l1=[1,2,3] l2=[1,2,3] # 调用对象__eq__() l1==l2 &amp;gt;&amp;gt;&amp;gt; true # 对比内存地址 l1 is l2 &amp;gt;&amp;gt;&amp;gt; false 赋值(=)、浅拷贝(copy())、深拷贝(deepcopy() #赋值 a=[1,2,[4,5]] #浅拷贝 b=copy(a) #深拷贝 c=deepcopy(b) </description>
     </item>
+    <item>
+      <title>时间处理</title>
+      <link>https://yuvenhol.github.io/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/</guid>
+      <description>datetime 包 datetime类 根据String 生成datetime datetime.datetime.strptime(&amp;#39;2017-3-22 15:25&amp;#39;,&amp;#39;%Y-%m-%d %H:%M&amp;#39;) https://docs.python.org/3/library/datetime.html#examples-of-usage-datetime</description>
+    </item>
+    <item>
+      <title>绘图库 matplotlib</title>
+      <link>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/</guid>
+      <description>基础信息 名字解释 mat = matrix (矩阵) 制图时常常需要使用到运算，同理matlab中的mat也是这个意思。 plot= 绘制
+官方网站： https://matplotlib.org/stable/index.html
+概念： import matplotlib as mpl import matplotlib.pyplot as plt import numpy as np figure 画板，包含多个axes和artists
+fig = plt.figure() # an empty figure with no Axes
+fig, ax = plt.subplots() # a figure with a single Axes fig, axs = plt.subplots(2, 2) # a figure with a 2x2 grid of Axes axes 轴集合, 可以是x轴y轴，3d的会有z轴。
+axis 轴
+artist everything visible on the Figure is an Artist</description>
+    </item>
   </channel>
 </rss>

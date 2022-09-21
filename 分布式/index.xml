@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分布式 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+    <description>Recent content in 分布式 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dubbo</title>
+      <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>snetinel</title>
+      <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/snetinel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/snetinel/</guid>
+      <description>Sentinel 是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。
+Sentinel 的坑 dashboard 没有持久化，需要自己改造</description>
+    </item>
+    <item>
+      <title>zookeeper</title>
+      <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/zookeeper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/zookeeper/</guid>
+      <description>zookeeper 什么是zookeeper 它是一个分布式协调框架，是Apache Hadoop 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如:统一命名服务、状态同 步服务、集群管理、分布式应用配置项的管理等。
+核心概念 简单的理解Zookeeper 是一个用于存储少量数据的基于内存 的数据库，主要有如下两个核心的概念:
+文件系统数据结构 监听通知机制。 文件系统数据结构 Zookeeper维护一个类似文件系统的数据结构: 每个子目录项都被称作为 znode(目录节点)，和文件系统类似，我们能够自由的增加、删除 znode，在一个znode下增加、删除子znode。
+有四种类型的znode:
+PERSISTENT­持久化目录节点 客户端与zookeeper断开连接后，该节点依旧存在，只要不手动删除该节点，他将永远存在
+PERSISTENT_SEQUENTIAL­持久化顺序编号目录节点 客户端与zookeeper断开连接后，该节点依旧存在，只是Zookeeper给该节点名称进行顺序编号
+EPHEMERAL­临时目录节点 客户端与zookeeper断开连接后，该节点被删除(和sessionId绑定的，session断开或者超时会被删除)
+EPHEMERAL_SEQUENTIAL­临时顺序编号目录节点 客户端与zookeeper断开连接后，该节点被删除，只是Zookeeper给该节点名称进行顺序编号
+Container 节点(3.5.3 版本新增，如果Container节点下面没有子节点，则Container节点 在未来会被Zookeeper自动清除,定时任务默认60s 检查一次)
+TTL 节点( Time To Live 默认禁用，只能通过系统配置 zookeeper.extendedTypesEnabled=true 开启，不稳定)
+监听通知机制 客户端注册监听它关心的任意节点，或者目录节点及递归子目录节点
+如果注册的是对某个节点的监听，则当这个节点被删除，或者被修改时，对应的客户端将被通知 如果注册的是对某个目录的监听，则当这个目录有子节点被创建，或者有子节点被删除，对应的客户端将被通知 如果注册的是对某个目录的递归子节点进行监听，则当这个目录下面的任意子节点有目录结构 的变化(有子节点被创建，或被删除)或者根节点有数据变化时，对应的客户端将被通知。 get -w /xxx 监听只会监听当前节点，子节点修改不会被监听 注意:所有的通知都是一次性的，及无论是对节点还是对目录进行的监听，一旦触发，对应的监 听即被移除。递归子节点，监听是对所有子节点的，所以，每个子节点下面的事件同样只会被触发一次。
+应用场景 分布式配置中心 分布式注册中心 分布式锁 分布式队列 集群选举 分布式屏障 发布/订阅 节点元数据 可以通过stat命令，或者get -s cZxid:创建znode的事务ID(Zxid的值)。 mZxid:最后修改znode的事务ID。 pZxid:最后添加或删除子节点的事务ID(子节点列表发生变化才会发生改变)。 ctime:znode创建时间。 mtime:znode最近修改时间。
+dataVersion:znode的当前数据版本。 cversion:znode的子节点结果集版本(一个节点的子节点增加、删除都会影响这个版本）。 aclVersion：znode的acl版本 ephemeralOwner:znode是临时znode时，表示znode所有者的 session ID。 如果 znode不是临时znode，则该字段设置为零。 dataLength:znode数据字段的长度。 numChildren:znode的子znode的数量。</description>
+    </item>
+    <item>
+      <title>分布式事务</title>
+      <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
+      <description>事务基本概念[[事务]]
+分布式事务 在分布式服务环境下的事务处理机制。
+CAP理论 分布式计算领域所公认的著名定理。这个定理里描述了一个分布式的系统中，涉及共享数据问题时，以下三个特性最多只能同时满足其中两个：
+一致性（Consistency）：代表数据在任何时刻、任何分布式节点中所看到的都是符合预期的。一致性在分布式研究中是有严肃定义、有多种细分类型的概念，以后讨论分布式共识算法时，我们还会再提到一致性，那种面向副本复制的一致性与这里面向数据库状态的一致性严格来说并不完全等同，具体差别我们将在后续分布式共识算法中再作探讨。 可用性（Availability）：代表系统不间断地提供服务的能力，理解可用性要先理解与其密切相关两个指标：可靠性（Reliability）和可维护性（Serviceability）。可靠性使用平均无故障时间（Mean Time Between Failure，MTBF）来度量；可维护性使用平均可修复时间（Mean Time To Repair，MTTR）来度量。可用性衡量系统可以正常使用的时间与总时间之比，其表征为：A=MTBF/（MTBF+MTTR），即可用性是由可靠性和可维护性计算得出的比例值，譬如 99.9999%可用，即代表平均年故障修复时间为 32 秒。 分区容忍性（Partition Tolerance）：代表分布式环境中部分节点因网络原因而彼此失联后，即与其他节点形成“网络分区”时，系统仍能正确地提供服务的能力。 对C、A、P三者的取舍，会产生不同取向的。
+如果放弃分区容忍性（CA without P），意味着我们将假设节点之间通信永远是可靠的。永远可靠的通信在分布式系统中必定不成立的，这不是你想不想的问题，而是只要用到网络来共享数据，分区现象就会始终存在。在现实中，最容易找到放弃分区容忍性的例子便是传统的关系数据库集群，这样的集群虽然依然采用由网络连接的多个节点来协同工作，但数据却不是通过网络来实现共享的。以 Oracle 的 RAC 集群为例，它的每一个节点均有自己独立的 SGA、重做日志、回滚日志等部件，但各个节点是通过共享存储中的同一份数据文件和控制文件来获取数据的，通过共享磁盘的方式来避免出现网络分区。因而 Oracle RAC 虽然也是由多个实例组成的数据库，但它并不能称作是分布式数据库。 如果放弃可用性（CP without A），意味着我们将假设一旦网络发生分区，节点之间的信息同步时间可以无限制地延长，此时，问题相当于退化到前面“全局事务”中讨论的一个系统使用多个数据源的场景之中，我们可以通过 2PC/3PC 等手段，同时获得分区容忍性和一致性。在现实中，选择放弃可用性的 CP 系统情况一般用于对数据质量要求很高的场合中，除了 DTP 模型的分布式数据库事务外，著名的 HBase 也是属于 CP 系统，以 HBase 集群为例，假如某个 RegionServer 宕机了，这个 RegionServer 持有的所有键值范围都将离线，直到数据恢复过程完成为止，这个过程要消耗的时间是无法预先估计的。 如果放弃一致性（AP without C），意味着我们将假设一旦发生分区，节点之间所提供的数据可能不一致。选择放弃一致性的 AP 系统目前是设计分布式系统的主流选择，因为 P 是分布式网络的天然属性，你再不想要也无法丢弃；而 A 通常是建设分布式的目的，如果可用性随着节点数量增加反而降低的话，很多分布式系统可能就失去了存在的价值，除非银行、证券这些涉及金钱交易的服务，宁可中断也不能出错，否则多数系统是不能容忍节点越多可用性反而越低的。目前大多数 NoSQL 库和支持分布式的缓存框架都是 AP 系统，以 Redis 集群为例，如果某个 Redis 节点出现网络分区，那仍不妨碍各个节点以自己本地存储的数据对外提供缓存服务，但这时有可能出现请求分配到不同节点时返回给客户端的是不一致的数据。 “选择放弃一致性的 AP 系统目前是设计分布式系统的主流选择”，“事务”原本的目的就是获得“一致性”，而在分布式环境中，“一致性”却不得不成为通常被牺牲、被放弃的那一项属性。但无论如何，我们建设信息系统，终究还是要确保操作结果至少在最终交付的时候是正确的，这句话的意思是允许数据在中间过程出错（不一致），但应该在输出时被修正过来。为此，人们又重新给一致性下了定义，将前面我们在 CAP、ACID 中讨论的一致性称为“强一致性”（Strong Consistency），有时也称为“线性一致性”（Linearizability，通常是在讨论共识算法的场景中），而把牺牲了 C 的 AP 系统又要尽可能获得正确的结果的行为称为追求“弱一致性”。不过，如果单纯只说“弱一致性”那其实就是“不保证一致性”的意思……人类语言这东西真的是博大精深。在弱一致性里，人们又总结出了一种稍微强一点的特例，被称为“最终一致性”（Eventual Consistency），它是指：如果数据在一段时间之内没有被另外的操作所更改，那它最终将会达到与强一致性过程相同的结果，有时候面向最终一致性的算法也被称为“乐观复制算法”。</description>
+    </item>
+    <item>
+      <title>分布式算法</title>
+      <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95/</guid>
+      <description>选举算法： paxos: 角色
+Paxos将系统中的角色分为提议者 (Proposer)，决策者 (Acceptor)，和最终决策学习者 (Learner):
+• Proposer: 提出提案 (Proposal)。Proposal信息包括提案编号 (Proposal ID) 和提议的值 (Value)。
+• Acceptor: 参与决策，回应Proposers的提案。收到Proposal后可以接受提案，若Proposal获得多数Acceptors的接受，则称该Proposal被批准。
+• Learner: 不参与决策，从Proposers/Acceptors学习最新达成一致的提案(Value)。
+在多副本状态机中，每个副本同时具有Proposer、Acceptor、Learner三种角色。
+三只蓝军攻打一只强大的红军
+第一阶段: Prepare阶段
+Proposer向Acceptors发出Prepare请求，Acceptors针对收到的Prepare请求进行Promise承诺。
+• Prepare: Proposer生成全局唯一且递增的Proposal ID (可使用时间戳加Server ID)，向所有Acceptors发送Prepare请求，这里无需携带提案内容，只携带Proposal ID即可。
+• Promise: Acceptors收到Prepare请求后，做出“两个承诺，一个应答”。
+○ 承诺1: 不再接受Proposal ID小于等于(注意: 这里是&amp;lt;= )当前请求的Prepare请求;
+○ 承诺2: 不再接受Proposal ID小于(注意: 这里是&amp;lt; )当前请求的Propose请求;
+○ 应答: 不违背以前作出的承诺下，回复已经Accept过的提案中Proposal ID最大的那个提案的Value和Proposal ID，没有则返回空值。
+¶ 第二阶段: Accept阶段
+Proposer收到多数Acceptors承诺的Promise后，向Acceptors发出Propose请求，Acceptors针对收到的Propose请求进行Accept处理。
+• Propose: Proposer 收到多数Acceptors的Promise应答后，从应答中选择Proposal ID最大的提案的Value，作为本次要发起的提案。如果所有应答的提案Value均为空值，则可以自己随意决定提案Value。然后携带当前Proposal ID，向所有Acceptors发送Propose请求。
+• Accept: Acceptor收到Propose请求后，在不违背自己之前作出的承诺下，接受并持久化当前Proposal ID和提案Value。
+¶ 第三阶段: Learn阶段</description>
+    </item>
+  </channel>
+</rss>

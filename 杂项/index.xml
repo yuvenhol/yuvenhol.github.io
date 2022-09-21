@@ -55,6 +55,18 @@ ${jndi:ldap://127.0.0.1/exploit}
 java日志体系</description>
     </item>
     <item>
+      <title>大概念</title>
+      <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/</guid>
+      <description>机械同感 (mechanical sympathy)来自于赛车比赛，它反映了车手对赛车有一种内在的感觉，所以他们能够赛车达到最佳状态。然而多数程序员缺少这种对编程与硬件交互的感同身受的情感。要么是没有，要么就是以为自己有，实际上却是基于很久以前硬件工作方式而建立的概念。这说得实在是太多，作为一个程序员，在写程序时是否考虑过自己的代码能否正确地运行在底层硬件上，又是否考虑过怎样榨干硬件性能让自己的代码跑得飞快，又是否考虑过自己的代码能否被人钻了空子发生安全问题。我想这三方面也许是学习硬件工作原理的最主要因素，即让自己的代码：正确、高效、安全地在硬件上跑。简单来说就是
+快准稳！
+5Why分析法 &amp;mdash; 分析事故根本原因 角度一 “制造”，为什么会发生？
+问题 1：为什么数据库的线程数会增加？ 答：正在执行的SQL执行时间长。 问题 2：为什么正在执行的SQL执行时间长？ 答：因为正在执行的SQL发生了死锁。 问题 3：为什么SQL会发生死锁？ 答：同时删除相同的一批数据，而删除时出现乱序。 问题 4：为什么删除相同的一批数据？ 答：代码逻辑问题，不需要重复删除。 解决方案：更改代码逻辑，避免重复删除。
+角度二 “检验”，为什么没有发现？
+问题 1：为什么代码上线几个月都没有发现？ 答：未出现大量的死锁情况。 问题 2：为什么没有出现大量的死锁情况？ 答：未出现这种造成大量并发的数据，测试用例也未覆盖。 问题 3：在小量并发数据的情况也可能发生死锁，为什么没有发现该逻辑会产生死锁？ 答：未能及时从错误日志中发现问题。 问题 4：为什么未能及时从错误日志中发现问题？ 答：错误日志中有较多无用的日志，扰乱了日志分析。 解决方案：清理代码中无用的错误日志打印，及时检查错误日志，并解决问题。</description>
+    </item>
+    <item>
       <title>奇怪的小知识</title>
       <link>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -70,7 +82,8 @@ VMware NAT模式 NAT，是Network Address Translation的缩写，意即网络地
       <guid>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</guid>
       <description>在线流程图 https://mermaid.live/
 正则可视化 https://tooltt.com/regulex/
-python官方学习文档 docs.python.org</description>
+python官方学习文档 docs.python.org
+朗文词典 https://www.ldoceonline.com/</description>
     </item>
     <item>
       <title>微信授权登录</title>

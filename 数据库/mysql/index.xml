@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/</link>
+    <description>Recent content in mysql on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>三大范式</title>
+      <link>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F/</guid>
+      <description>1、字段意义不可分割，不能是数组等集合或者表达多个意义。 2、每个字段都依赖主键 3、依赖不可传递，比如 A-&amp;gt;B-&amp;gt;C 不行的，必须A-&amp;gt;C,B-&amp;gt;C。</description>
+    </item>
+  </channel>
+</rss>

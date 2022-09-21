@@ -19,5 +19,18 @@
 方式1： 使用临时变量保存Last和Next
 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reverseList(head *ListNode) *ListNode { var lastNode,nextNode *ListNode for(head!=nil){ nextNode=head.Next head.Next=lastNode lastNode=head head=nextNode } //注意这里是返回前一个节点，因为head最后指向了nextNode是空的 return lastNode } 方式2：递归 从最末尾开始递归交换 3-4-&amp;gt;4-3，1，2，(4，3)-&amp;gt;1,(4,3),2</description>
     </item>
+    <item>
+      <title>基本概念</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description>RAM（random-access machine）随机访问机
+假定了一种通用的单处理器处理模型，认为底层执行一条指令时间都是常量。
+指令不能太复杂（比如一条排序的指令），可以是场景的 算术指令、数据移动指令、控制指令。
+分治法：
+将原问题分解橙几个规模较小但类似的子问题，递归求解这些子问题，然后再合并这些子问题的解来建立原来的问题的解。
+三步走：分解-&amp;gt;解决-&amp;gt;合并
+分治可以降低时间复杂度，把大的问题化小可以使时间从，n^2 降低到nlogn，因为不在需要遍历全体数据求解。</description>
+    </item>
   </channel>
 </rss>

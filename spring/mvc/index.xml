@@ -7,13 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/spring/mvc/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>未命名</title>
-      <link>https://yuvenhol.github.io/spring/mvc/%E6%9C%AA%E5%91%BD%E5%90%8D/</link>
+      <title>mvc</title>
+      <link>https://yuvenhol.github.io/spring/mvc/mvc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/spring/mvc/%E6%9C%AA%E5%91%BD%E5%90%8D/</guid>
-      <description>RequestContextListener
-RequestContextListener监听器用于监听http请求，每当web应用接收到Http请求，该监听器就会调用初始化方法，将该请求保存在当前线程的ThreadLocalMap容器中。
-AbstractAnnotationConfigDispatcherServletInitializer 初始化器 会</description>
+      <guid>https://yuvenhol.github.io/spring/mvc/mvc/</guid>
+      <description>Spring Web MVC是基于Servlet API构建的原始Web框架，从一开始就已包含在Spring框架中。正式名 称“ Spring Web MVC”来自其源模块的名称(spring-webmvc)，但它通常被称为“ Spring MVC”。 </description>
+    </item>
+    <item>
+      <title>异步模式</title>
+      <link>https://yuvenhol.github.io/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <description>https://blog.51cto.com/u_3631118/3121421</description>
     </item>
   </channel>
 </rss>

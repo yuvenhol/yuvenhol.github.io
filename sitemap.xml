@@ -16,7 +16,7 @@
     <loc>https://yuvenhol.github.io/dockerk8s/docker-compose/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/dubbo/</loc>
+    <loc>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/office/excel%E5%85%AC%E5%BC%8F/</loc>
@@ -52,13 +52,13 @@
     <loc>https://yuvenhol.github.io/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux-%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux%E7%9B%AE%E5%BD%95/</loc>
+    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/</loc>
@@ -68,6 +68,9 @@
   </url>
   <url>
     <loc>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/spring/mvc/mvc/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/</loc>
@@ -85,10 +88,19 @@
     <loc>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/slf4j/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/snetinel/</loc>
+    <loc>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/snetinel/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/spring/spring-bean/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/spring/spring-context/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/spring/spring-mvc/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/tcp-ip%E5%8D%8F%E8%AE%AE/</loc>
@@ -97,16 +109,37 @@
     <loc>https://yuvenhol.github.io/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/zookeeper/</loc>
+    <loc>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/zookeeper/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/</loc>
   </url>
   <url>
+    <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%BA%8B%E5%8A%A1/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%A8%E5%B1%80%E4%BA%8B%E5%8A%A1/</loc>
+  </url>
+  <url>
     <loc>https://yuvenhol.github.io/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</loc>
   </url>
   <url>
+    <loc>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95/</loc>
+  </url>
+  <url>
     <loc>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/</loc>
@@ -118,19 +151,31 @@
     <loc>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</loc>
   </url>
   <url>
+    <loc>https://yuvenhol.github.io/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/</loc>
+  </url>
+  <url>
     <loc>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/spring/mvc/%E6%9C%AA%E5%91%BD%E5%90%8D/</loc>
+    <loc>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%97%B6%E9%97%B4/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%9C%AC%E5%9C%B0%E4%BA%8B%E5%8A%A1/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E9%9D%A2%E8%AF%95/%E7%AE%80%E5%8E%86/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/</loc>
@@ -160,7 +205,13 @@
     <loc>https://yuvenhol.github.io/java/jvm/</loc>
   </url>
   <url>
+    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/</loc>
+  </url>
+  <url>
     <loc>https://yuvenhol.github.io/spring/mvc/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/office/</loc>
@@ -184,13 +235,16 @@
     <loc>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/</loc>
   </url>
   <url>
+    <loc>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
+  </url>
+  <url>
     <loc>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E6%9D%82%E9%A1%B9/</loc>
