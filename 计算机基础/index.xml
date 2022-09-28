@@ -15,6 +15,27 @@
 删除cookie 把cookie的过期时间设为0或者过去</description>
     </item>
     <item>
+      <title>HTTPS</title>
+      <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/https/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/https/</guid>
+      <description>X.509 是证书的标准格式。 x509是一个证书格式，证书的版本信息包含有：
+证书的序列号，每个证书都有一个唯一的证书序列号；
+证书所使用的签名算法；
+证书的发行机构名称，命名规则一般采用X.500格式；
+证书的有效期，现在通用的证书一般采用UTC时间格式，它的计时范围为1950-2049;
+证书所有人的名称，命名规则一般采用X.500格式；
+证书所有人的公开密钥；
+证书发行者对证书的签名。
+X.509文件格式
+Cer/crt用于保存证书，并以没有私钥的二进制数存储。
+pem和cer/crt区别是它以Ascii来表示，可以用于存放证书或者私钥。
+pfx/p12用于存放个人证书/私钥。通常包含保护密码，2进制方式。
+p10是证书请求。
+p7r是CA对证书请求的回复，只用于导入。
+p7b以树状展示证书链，同时支持单个证书，不含私钥。</description>
+    </item>
+    <item>
       <title>IO相关</title>
       <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

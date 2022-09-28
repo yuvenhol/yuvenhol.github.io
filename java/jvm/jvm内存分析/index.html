@@ -10,20 +10,20 @@
     <title>jvm内存分析： - yuvenhol的技术苦旅</title>
     <link href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
     <link href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/index.print.html" rel="alternate" type="text/html" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1663736267" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1664330893" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1663736267" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1663736267" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1663736267" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1663736267" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1663736267" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1663736267" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1663736267" rel="stylesheet">
-    <link href="/css/nucleus.css?1663736267" rel="stylesheet">
-    <link href="/css/fonts.css?1663736267" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1663736267" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1663736267" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1663736267" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1663736267" rel="stylesheet">
-    <link href="/css/variant.css?1663736267" rel="stylesheet">
-    <link href="/css/print.css?1663736267" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1663736267"></script>
+    <link href="/css/fontawesome-all.min.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1664330893" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1664330893" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1664330893" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1664330893" rel="stylesheet">
+    <link href="/css/nucleus.css?1664330893" rel="stylesheet">
+    <link href="/css/fonts.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1664330893" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1664330893" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1664330893" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1664330893" rel="stylesheet">
+    <link href="/css/variant.css?1664330893" rel="stylesheet">
+    <link href="/css/print.css?1664330893" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1664330893"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1663736267" defer></script>
+    <script src="/js/jquery.min.js?1664330893" defer></script>
   </head>
   <body class="mobile-support html" data-url="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">
     <div id="body" class="default-animation">
@@ -51,7 +51,7 @@
              <a class="nav nav-next" href="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB &amp; 栈上分配 (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
-             <a class="nav nav-prev" href="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/" title="gc日志分析 (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+             <a class="nav nav-prev" href="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/" title="java程序的启动 (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
           </div>
           <div id="top-print-link">
             <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/index.print.html">
@@ -174,12 +174,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1663736267" defer></script>
-        <script src="/js/lunr.min.js?1663736267" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1663736267" defer></script>
-        <script src="/js/lunr.multi.min.js?1663736267" defer></script>
-        <script src="/js/lunr.en.min.js?1663736267" defer></script>
-        <script src="/js/search.js?1663736267" defer></script>
+        <script src="/js/auto-complete.js?1664330893" defer></script>
+        <script src="/js/lunr.min.js?1664330893" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1664330893" defer></script>
+        <script src="/js/lunr.multi.min.js?1664330893" defer></script>
+        <script src="/js/lunr.en.min.js?1664330893" defer></script>
+        <script src="/js/search.js?1664330893" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -191,6 +191,8 @@
           <li data-nav-id="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="java的引用类型" class="dd-item"><a href="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">java的引用类型<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/" title="jvm" class="dd-item parent alwaysopen"><input type="checkbox" id="section-8bb18590038df95f5ce669688bf7139d" class="toggle" checked/><label for="section-8bb18590038df95f5ce669688bf7139d" ></label><a href="/java/jvm/">jvm<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/" title="gc日志分析" class="dd-item"><a href="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">gc日志分析<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/" title="java启动参数" class="dd-item"><a href="/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/">java启动参数<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/" title="java程序的启动" class="dd-item"><a href="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/">java程序的启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" title="jvm内存分析：" class="dd-item active"><a href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">jvm内存分析：<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB &amp; 栈上分配" class="dd-item"><a href="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/">TLAB &amp; 栈上分配<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/meta-inf%E5%92%8Cweb-info/" title="META-INF和WEB-INFO" class="dd-item"><a href="/java/meta-inf%E5%92%8Cweb-info/">META-INF和WEB-INFO<i class="fas fa-check read-icon"></i></a></li>
@@ -255,12 +257,17 @@
           <li data-nav-id="/%E7%AE%97%E6%B3%95/" title="算法" class="dd-item"><input type="checkbox" id="section-c90ef08f853c7724a78dceb5b6349ce4" class="toggle"/><label for="section-c90ef08f853c7724a78dceb5b6349ce4" ></label><a href="/%E7%AE%97%E6%B3%95/">算法<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="基本概念" class="dd-item"><a href="/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">基本概念<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/" title="胡诌八扯大道理" class="dd-item"><input type="checkbox" id="section-ffb623bb597c059aaedef526016a8213" class="toggle"/><label for="section-ffb623bb597c059aaedef526016a8213" ></label><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/">胡诌八扯大道理<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E4%BA%BA%E7%94%9F%E5%9B%9B%E9%97%AE/" title="人生四问" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E4%BA%BA%E7%94%9F%E5%9B%9B%E9%97%AE/">人生四问<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%87%8D%E5%A4%A7%E9%81%93%E7%90%86/" title="重大道理" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%87%8D%E5%A4%A7%E9%81%93%E7%90%86/">重大道理<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/" title="高效人生" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/">高效人生<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="解决方案" class="dd-item"><input type="checkbox" id="section-a17bc74d6fddbc1ede8fbe5263306182" class="toggle"/><label for="section-a17bc74d6fddbc1ede8fbe5263306182" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/" title="DDD Domain-Driven Design" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/">DDD Domain-Driven Design<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/" title="类微博feed流" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/">类微博feed流<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/" title="限流" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/">限流<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" title="计算机基础" class="dd-item"><input type="checkbox" id="section-66587d924bf701bc016810d7143bf85d" class="toggle"/><label for="section-66587d924bf701bc016810d7143bf85d" ></label><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/" title="HTTP" class="dd-item"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/">HTTP<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/https/" title="HTTPS" class="dd-item"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/https/">HTTPS<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/" title="IO相关" class="dd-item"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/io%E7%9B%B8%E5%85%B3/">IO相关<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/shell-%E7%9A%84login-shell%E4%B8%8Enon-login-shell/" title="shell 的login shell与non-login shell" class="dd-item"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/shell-%E7%9A%84login-shell%E4%B8%8Enon-login-shell/">shell 的login shell与non-login shell<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/tcp-ip%E5%8D%8F%E8%AE%AE/" title="TCP IP协议" class="dd-item"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/tcp-ip%E5%8D%8F%E8%AE%AE/">TCP IP协议<i class="fas fa-check read-icon"></i></a></li>
@@ -333,13 +340,13 @@
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1663736267"></script>
+          <script async src="/js/buttons.js?1664330893"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1663736267" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1663736267" defer></script>
-    <script src="/js/featherlight.min.js?1663736267" defer></script>
-    <script src="/js/theme.js?1663736267" defer></script>
+    <script src="/js/clipboard.min.js?1664330893" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1664330893" defer></script>
+    <script src="/js/featherlight.min.js?1664330893" defer></script>
+    <script src="/js/theme.js?1664330893" defer></script>
   </body>
 </html>

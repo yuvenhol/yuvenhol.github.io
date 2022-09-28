@@ -11,11 +11,19 @@
       <link>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/</guid>
-      <description>领域驱动设计 概念 DP：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。 Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化） DomainService:封装多对象的有状态逻辑。 Repository:抽象封装外部数据访问逻辑。 UL：统一语言，意识拉齐
+      <description>领域驱动设计 概念 系统老化 软件总是从简单发展到复杂，老化的原因主要是，真实世界和软件世界存在差异，并随着需求变更逐渐拉大。
+数据驱动和领域驱动 Data Driven Design &amp;ndash;&amp;gt; Domain Driven Design 数据驱动的方式的缺点：随着业务越来越多，变化越来越，事务脚本会越来越复杂，可能一个类里面有大量的逻辑。
+大泥球：
+valueObject：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。 Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化） DomainService:封装多对象的有状态逻辑。 Repository:抽象封装外部数据访问逻辑。 UL：统一语言，意识拉齐
 流程： 1.首先对需要处理的业务问题进行总览。 2.然后领域对象(Entity)进行划分，明确每个领域对象的包含的信息和职责边界。 并进行跨对象，多对象的逻辑组织(Domain Service) 3.接着在上层应用中根据业务描述去编排Entity和Domain Service。 4.最后再做一些下水道工作，去对下层的数据访问，RPC调用去做一些具体实现。
 DP/VO DP(Domain Primitive) 定义：在DDD里，DP是一切模型、方法、结构的基础。 它是特定领域、拥有精准定义、可以自我验证、拥有行为的对象。可以认为是领域内最小的组成部分。
 DP的三条原则： 让隐性的概念显性化（手机号的运营商） 让隐性的上下文显性化（手机号的区号编码） 封装多对象行为
-一个很好的例子 https://juejin.cn/post/7131186996277411876</description>
+一个很好的例子 https://juejin.cn/post/7131186996277411876
+实战 step1:抽象数据存储层
+1、实体、值对象
+实体封装动作 2、贫血模型 3、仓库与工厂 仓库 使用 entity与外界交互，内部处理DO
+step2:抽象第三方服务 增加防腐 隔离接口变化、防腐层也可有降低缓存等操作。 step3:抽象中间件 对MQ等中间价隔离。 step4:领域服务封装多实体逻辑
+最底层依赖的不是数据库了，而是领域实体</description>
     </item>
     <item>
       <title>类微博feed流</title>

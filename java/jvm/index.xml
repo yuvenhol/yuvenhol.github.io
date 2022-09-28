@@ -16,6 +16,20 @@
 gc日志头 解释 GC (Allocation Failure) Allocation Failure表示向young generation(eden)给新对象申请空间，但是young generation(eden)剩余的合适空间不够所需的大小导致的minor gc。 Full GC (Ergonomics) 默认使用 UseParallelGC 垃圾回收器，该垃圾回收器默认启动了 AdaptiveSizePolicy。 </description>
     </item>
     <item>
+      <title>java启动参数</title>
+      <link>https://yuvenhol.github.io/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>java程序的启动</title>
+      <link>https://yuvenhol.github.io/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/</guid>
+      <description>G1 GC收集器 -XX:MaxGCPauseMillis 期望的最大GC暂停时间，默认为：200ms。 -XX:ParallelGCThreads 默认根据运行JVM计算机的可用线程数决定 -XX:G1NewSizePercent 新生代初大小，默认为：5%。 -XX:G1MaxNewSizePercent 新生代最大大小，默认为：60%。</description>
+    </item>
+    <item>
       <title>jvm内存分析：</title>
       <link>https://yuvenhol.github.io/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
