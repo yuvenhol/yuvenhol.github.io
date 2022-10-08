@@ -37,6 +37,16 @@
 循环依赖 三级缓存 singletonObjects：依赖注入完成的bean earlySingletionObjects：早期bean，未完成依赖注入，但是 singletonFactories：对象工厂，表示用来创建早期bean对象的工厂 存放顺序: singletonFactories&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;singletonObjects 读取顺序：singletonObjects&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;存放顺序</description>
     </item>
     <item>
+      <title>Spring cache</title>
+      <link>https://yuvenhol.github.io/spring/spring-cache/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/spring-cache/</guid>
+      <description>spring cache是spring对各种cache的一种抽象管理，可以使用redis、caffeine等。
+&amp;lt;-- 必要 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-cache&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;-- 缓存中一种 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.github.ben-manes.caffeine&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;caffeine&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.9.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 在使用缓存之前，需要创建一个CacheManager
+@Bean public CacheManager cacheManager() { CaffeineCacheManager caffeineCacheManager = new CaffeineCacheManager(); caffeineCacheManager.setCaffeine( Caffeine.newBuilder() .expireAfterWrite(10, TimeUnit.MINUTES) .maximumSize(10_000)); return caffeineCacheManager; } http://t.zoukankan.com/hager-p-13197673.html
+https://www.freesion.com/article/401730391/</description>
+    </item>
+    <item>
       <title>spring Context</title>
       <link>https://yuvenhol.github.io/spring/spring-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -60,6 +70,16 @@ Handler（具体的Controller 方法） HandlerMapping（根据request定为到�
 HandlerMethodReturnValueHandlerComposite HandlerMethodReturnValueHandler
 HandlerMethodArgumentResolverComposite HandlerMethodArgumentResolver
 messageConverter （依赖 HandlerMethodReturnValueHandler和HandlerMethodArgumentResolver 处理请求前后 ）</description>
+    </item>
+    <item>
+      <title>单元测试</title>
+      <link>https://yuvenhol.github.io/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>MVC 1、使用ContextConfiguration 指定spring 配置文件 2、在spring配置文件内配置自己需要加载的bean
+@RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(locations = {&amp;#34;classpath:spring-test-config.xml&amp;#34;}) public class DrugGuidelineRepositoryTest { } &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&amp;#34;&amp;gt; &amp;lt;import resource=&amp;#34;classpath*:spring-datasource.xml&amp;#34;/&amp;gt; &amp;lt;import resource=&amp;#34;classpath*:spring-bean.xml&amp;#34;/&amp;gt; &amp;lt;/beans&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;com.benmu.mts.baseinfo.domain.drugguideline&amp;#34;&amp;gt; &amp;lt;/context:component-scan&amp;gt; &amp;lt;/beans&amp;gt; Spring boot @RunWith(SpringRunner.class) @ActiveProfiles(&amp;ldquo;justdb&amp;rdquo;)
+@SpringBootTest(classes = DrugTestApp.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
+SpringRunner is alias for the SpringJUnit4ClassRunner.</description>
     </item>
   </channel>
 </rss>

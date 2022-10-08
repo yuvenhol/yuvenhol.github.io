@@ -10,21 +10,21 @@
     <title>content - yuvenhol的技术苦旅</title>
     <link href="/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1664330893" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1665199852" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1664330893" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1664330893" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1664330893" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1664330893" rel="stylesheet">
-    <link href="/css/nucleus.css?1664330893" rel="stylesheet">
-    <link href="/css/fonts.css?1664330893" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1664330893" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1664330893" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1664330893" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1664330893" rel="stylesheet">
-    <link href="/css/variant.css?1664330893" rel="stylesheet">
-    <link href="/css/print.css?1664330893" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1664330893" rel="stylesheet">
-    <script src="/js/variant.js?1664330893"></script>
+    <link href="/css/fontawesome-all.min.css?1665199852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1665199852" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1665199852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1665199852" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1665199852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1665199852" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1665199852" rel="stylesheet">
+    <link href="/css/nucleus.css?1665199852" rel="stylesheet">
+    <link href="/css/fonts.css?1665199852" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1665199852" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1665199852" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1665199852" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1665199852" rel="stylesheet">
+    <link href="/css/variant.css?1665199852" rel="stylesheet">
+    <link href="/css/print.css?1665199852" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1665199852" rel="stylesheet">
+    <script src="/js/variant.js?1665199852"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1664330893" defer></script>
+    <script src="/js/jquery.min.js?1665199852" defer></script>
   </head>
   <body class="mobile-support print" data-url="/">
     <div id="body" class="default-animation">
@@ -138,6 +138,15 @@ super.test()
 }
 //切面逻辑
 }</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>hibernate-validator 校验器</h1>
+
+<p><a href="https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-gettingstarted">https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-gettingstarted</a></p>
 
             <footer class="footline">
             </footer>
@@ -306,6 +315,155 @@ TLAB	加速堆上对象分配速度	2</p>
           </article>
 
           </section>
+          <article class="default">
+<h1>MapStruct-类型安全的bean转换工具</h1>
+
+<h1 id="简介">简介</h1>
+<p>mapStruct 是一个java注解处理器，基于 <a href="http://www.jcp.org/en/jsr/detail?id=269">JSR 269</a> ，也同样可以使用命令行构建。</p>
+<blockquote>
+<p>详细文档：https://mapstruct.org/documentation/stable/reference/html/#customizing-mappings-with-before-and-after</p>
+</blockquote>
+<h1 id="依赖引入">依赖引入</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;org.mapstruct.version&gt;</span>1.5.2.Final<span class="nt">&lt;/org.mapstruct.version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>org.mapstruct<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>mapstruct<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>${org.mapstruct.version}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 如果和lombok 结合可能有贬义冲突，需要配置如下 --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>3.8.1<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;source&gt;</span>1.8<span class="nt">&lt;/source&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;target&gt;</span>1.8<span class="nt">&lt;/target&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;annotationProcessorPaths&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;path&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;groupId&gt;</span>org.mapstruct<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;artifactId&gt;</span>mapstruct-processor<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;version&gt;</span>${org.mapstruct.version}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/path&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/annotationProcessorPaths&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span>
+</span></span></code></pre></div><h1 id="使用">使用</h1>
+<h2 id="基础">基础</h2>
+<h3 id="定义一个基础mapping">定义一个基础mapping</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;manufacturer&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;make&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;seatCount&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;numberOfSeats&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CarDto</span> <span class="nf">carToCarDto</span><span class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;fullName&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">PersonDto</span> <span class="nf">personToPersonDto</span><span class="o">(</span><span class="n">Person</span> <span class="n">person</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>mapStruct会再在编译期生成对应的映射方法，依赖于get set方法，所以需要提前写好get&amp;set方法。</p>
+<h3 id="映射编排-mapping-composition">映射编排 Mapping Composition</h3>
+<p>可以定义一个注解，组合编排mapping</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">CLASS</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="n">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;creationDate&#34;</span><span class="o">,</span> <span class="n">expression</span> <span class="o">=</span> <span class="s">&#34;java(new java.util.Date())&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;groupName&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="nd">@interface</span> <span class="n">ToEntity</span> <span class="o">{</span> <span class="o">}</span>
+</span></span></code></pre></div><h3 id="自定义方法">自定义方法</h3>
+<p>如果有一些需要手写的方法，可以自定义一个方法，再Mapping方法中如果用到了类型转转，会自动使用我们自定义的方法。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(...)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CarDto</span> <span class="nf">carToCarDto</span><span class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">default</span> <span class="n">PersonDto</span> <span class="nf">personToPersonDto</span><span class="o">(</span><span class="n">Person</span> <span class="n">person</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//hand-written mapping logic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h3 id="使用sourcetarget参数">使用source&amp;target参数</h3>
+<p>如果source和target不能通过变量名自动转化，那么可以使用注解手动映射。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AddressMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;description&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;person.description&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;houseNumber&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;address.houseNo&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DeliveryAddressDto</span> <span class="nf">personAndAddressToDeliveryAddressDto</span><span class="o">(</span><span class="n">Person</span> <span class="n">person</span><span class="o">,</span> <span class="n">Address</span> <span class="n">address</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h3 id="嵌套nestedbean映射">嵌套（nested）bean映射</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CustomerMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="nd">@Mapping</span><span class="o">(</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;record.name&#34;</span> <span class="o">)</span>
+</span></span><span class="line"><span class="cl">     <span class="nd">@Mapping</span><span class="o">(</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;.&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;record&#34;</span> <span class="o">)</span>
+</span></span><span class="line"><span class="cl">     <span class="nd">@Mapping</span><span class="o">(</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;.&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;account&#34;</span> <span class="o">)</span>
+</span></span><span class="line"><span class="cl">     <span class="n">Customer</span> <span class="nf">customerDtoToCustomer</span><span class="o">(</span><span class="n">CustomerDto</span> <span class="n">customerDto</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span></code></pre></div><p>其中 <mark>&quot;.&quot;</mark> 代表this对象</p>
+<h3 id="更新已经创建的bean">更新已经创建的bean</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">updateCarFromDto</span><span class="o">(</span><span class="n">CarDto</span> <span class="n">carDto</span><span class="o">,</span> <span class="nd">@MappingTarget</span> <span class="n">Car</span> <span class="n">car</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h3 id="没有getset-但是是public修饰时">没有get/set 但是是public修饰时</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Customer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//getters and setter omitted for brevity
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CustomerDto</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="n">customerName</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CustomerMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">CustomerMapper</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="n">Mappers</span><span class="o">.</span><span class="na">getMapper</span><span class="o">(</span> <span class="n">CustomerMapper</span><span class="o">.</span><span class="na">class</span> <span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;customerName&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Customer</span> <span class="nf">toCustomer</span><span class="o">(</span><span class="n">CustomerDto</span> <span class="n">customerDto</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@InheritInverseConfiguration</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CustomerDto</span> <span class="nf">fromCustomer</span><span class="o">(</span><span class="n">Customer</span> <span class="n">customer</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h3 id="支持builderconstructor创建影射对象">支持builder&amp;constructor创建影射对象</h3>
+<h3 id="支持map结构映射">支持map结构映射</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Customer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//getters and setter omitted for brevity
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Mapper</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CustomerMapper</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;customerName&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Customer</span> <span class="nf">toCustomer</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1>META-INF和WEB-INFO</h1>
 
@@ -575,6 +733,42 @@ fig, axs = plt.subplots(2, 2)  # a figure with a 2x2 grid of Axes
           </article>
 
           <article class="default">
+<h1>Spring cache</h1>
+
+<p>spring cache是spring对各种cache的一种抽象管理，可以使用redis、caffeine等。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;--</span> <span class="err">必要</span> <span class="err">--</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-cache<span class="nt">&lt;/artifactId&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.2.5.RELEASE<span class="nt">&lt;/version&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;--</span> <span class="err">缓存中一种</span> <span class="err">--</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.github.ben-manes.caffeine<span class="nt">&lt;/groupId&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>caffeine<span class="nt">&lt;/artifactId&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.9.2<span class="nt">&lt;/version&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>  
+</span></span></code></pre></div><p>在使用缓存之前，需要创建一个CacheManager</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="nd">@Bean</span>  
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">CacheManager</span> <span class="nf">cacheManager</span><span class="o">()</span> <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">CaffeineCacheManager</span> <span class="n">caffeineCacheManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaffeineCacheManager</span><span class="o">();</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">caffeineCacheManager</span><span class="o">.</span><span class="na">setCaffeine</span><span class="o">(</span>  
+</span></span><span class="line"><span class="cl">            <span class="n">Caffeine</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">()</span>  
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">expireAfterWrite</span><span class="o">(</span><span class="n">10</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MINUTES</span><span class="o">)</span>  
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">maximumSize</span><span class="o">(</span><span class="n">10_000</span><span class="o">));</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">caffeineCacheManager</span><span class="o">;</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p><a href="http://t.zoukankan.com/hager-p-13197673.html">http://t.zoukankan.com/hager-p-13197673.html</a></p>
+<p><a href="https://www.freesion.com/article/401730391/">https://www.freesion.com/article/401730391/</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
 <h1>spring Context</h1>
 
 <p>BeanFactory
@@ -666,6 +860,69 @@ HandlerMethodArgumentResolver</p>
             </footer>
           </article>
 
+          <section>
+          <article class="default">
+<h1>未命名</h1>
+
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>自动配置</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006174107.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
+          <article class="default">
+<h1>单元测试</h1>
+
+<h1 id="mvc">MVC</h1>
+<p>1、使用ContextConfiguration 指定spring 配置文件
+2、在spring配置文件内配置自己需要加载的bean</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@RunWith</span><span class="o">(</span><span class="n">SpringJUnit4ClassRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nd">@ContextConfiguration</span><span class="o">(</span><span class="n">locations</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;classpath:spring-test-config.xml&#34;</span><span class="o">})</span>  
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DrugGuidelineRepositoryTest</span> <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;beans</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  
+</span></span><span class="line"><span class="cl">       <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>  
+</span></span><span class="line"><span class="cl">       <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans  
+</span></span></span><span class="line"><span class="cl"><span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span class="nt">&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&#34;classpath*:spring-datasource.xml&#34;</span><span class="nt">/&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&#34;classpath*:spring-bean.xml&#34;</span><span class="nt">/&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/beans&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>  
+</span></span><span class="line"><span class="cl">       <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  
+</span></span><span class="line"><span class="cl">       <span class="na">xmlns:context=</span><span class="s">&#34;http://www.springframework.org/schema/context&#34;</span>  
+</span></span><span class="line"><span class="cl">       <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans  
+</span></span></span><span class="line"><span class="cl"><span class="s">       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd       http://www.springframework.org/schema/context        http://www.springframework.org/schema/context/spring-context.xsd&#34;</span><span class="nt">&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&#34;com.benmu.mts.baseinfo.domain.drugguideline&#34;</span><span class="nt">&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/context:component-scan&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/beans&gt;</span>
+</span></span></code></pre></div><h1 id="spring-boot">Spring boot</h1>
+<p>@RunWith(SpringRunner.class)
+@ActiveProfiles(&ldquo;justdb&rdquo;)<br>
+@SpringBootTest(classes = DrugTestApp.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)</p>
+<p>SpringRunner is alias  for the SpringJUnit4ClassRunner.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           </section>
           <article class="default">
 <h1>中间件</h1>
@@ -750,9 +1007,12 @@ HandlerMethodArgumentResolver</p>
 <h1>redis基础知识</h1>
 
 <p>官网命令介绍
-<a href="https://redis.io/commands/">https://redis.io/commands/</a></p>
+<a href="https://redis.io/commands/">https://redis.io/commands/</a>
+<a href="https://pdai.tech/md/db/nosql-redis/db-redis-x-redis-ds.html">https://pdai.tech/md/db/nosql-redis/db-redis-x-redis-ds.html</a></p>
 <h1 id="数据结构">数据结构</h1>
-<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220908103730.png" alt=""></p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220908103730.png" alt="">
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006174307.png" alt="">
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006174325.png" alt=""></p>
 <h2 id="字符串">字符串</h2>
 <p>常用命令：
 SET
@@ -1272,7 +1532,7 @@ rebase相当于在fetch之后，重新提交数据。
 
 <h2 id="资料">资料</h2>
 <p>官网 ：https://maven.apache.org/
-官方仓库浏览：https://mvnrepository.com/</p>
+官方仓库浏览：https://mvnrepository.com/、https://search.maven.org/</p>
 <h2 id="功能">功能</h2>
 <p>编译、打包、测试、依赖管理等</p>
 <h2 id="仓库">仓库</h2>
@@ -2155,7 +2415,7 @@ docs.python.org</p>
 
           </section>
           <article class="default">
-<h1>算法</h1>
+<h1>算法&amp;数据结构</h1>
 
 
             <footer class="footline">
@@ -2163,6 +2423,39 @@ docs.python.org</p>
           </article>
 
           <section>
+          <article class="default">
+<h1>LRU</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006134854.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>动态规划</h1>
+
+<p>动态规划问题的一般形式就是求最值。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。</p>
+<p>既然是要求最值，核心问题是什么呢？求解动态规划的核心问题是穷举。因为要求最值，肯定要把所有可行的答案穷举出来，然后在其中找最值呗。</p>
+<p>动态规划这么简单，就是穷举就完事了？我看到的动态规划问题都很难啊！</p>
+<p>首先，动态规划的穷举有点特别，因为这类问题存在「重叠子问题」，如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免不必要的计算。</p>
+<p>而且，动态规划问题一定会具备「最优子结构」，才能通过子问题的最值得到原问题的最值。</p>
+<p>另外，虽然动态规划的核心思想就是穷举求最值，但是问题可以千变万化，穷举所有可行解其实并不是一件容易的事，只有列出正确的「状态转移方程」，才能正确地穷举。</p>
+<p>以上提到的重叠子问题、最优子结构、状态转移方程就是动态规划三要素。具体什么意思等会会举例详解，但是在实际的算法问题中，写出状态转移方程是最困难的，这也就是为什么很多朋友觉得动态规划问题困难的原因，我来提供我研究出来的一个思维框架，辅助你思考状态转移方程：</p>
+<p>明确 base case -&gt; 明确「状态」-&gt; 明确「选择」 -&gt; 定义 dp 数组/函数的含义。</p>
+<p>按上面的套路走，最后的结果就可以套这个框架：</p>
+<h1 id="初始化-base-case">初始化 base case</h1>
+<p>dp[0][0][&hellip;] = base</p>
+<h1 id="进行状态转移">进行状态转移</h1>
+<p>for 状态1 in 状态1的所有取值：</p>
+<p>for 状态2 in 状态2的所有取值：</p>
+<p>for &hellip;</p>
+<p>dp[状态1][状态2][&hellip;] = 求最值(选择1，选择2&hellip;)</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1>双向链表</h1>
 
@@ -2199,6 +2492,24 @@ draft: false</h2>
           </article>
 
           <article class="default">
+<h1>双指针</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006135109.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>回溯（DFS）</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006134756.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
 <h1>基本概念</h1>
 
 <p>RAM（random-access machine）随机访问机</p>
@@ -2209,6 +2520,44 @@ draft: false</h2>
 <p>三步走：分解-&gt;解决-&gt;合并</p>
 <p>分治可以降低时间复杂度，把大的问题化小可以使时间从，n^2 降低到nlogn，因为不在需要遍历全体数据求解。</p>
 <p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220824155439.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>广度优先（BFS）</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006135938.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>排序</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006135848.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>数据结构</h1>
+
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006135542.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>素数计算</h1>
+
+<p>埃筛法
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006135345.png" alt="">
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006135438.png" alt=""></p>
 
             <footer class="footline">
             </footer>
@@ -2244,6 +2593,9 @@ draft: false</h2>
 
 <blockquote>
 <p>迟来的深情不如狗叫 —— jukie</p>
+</blockquote>
+<blockquote>
+<p>断臂求生——jukie</p>
 </blockquote>
 
             <footer class="footline">
@@ -2287,18 +2639,46 @@ draft: false</h2>
 <h1>DDD Domain-Driven Design</h1>
 
 <h1 id="领域驱动设计">领域驱动设计</h1>
-<h2 id="概念">概念</h2>
-<h3 id="系统老化">系统老化</h3>
+<blockquote>
+<p><strong>Domain-driven design</strong> (<strong>DDD</strong>) is a major <a href="https://en.wikipedia.org/wiki/Software_design" title="Software design">software design</a> approach, focusing on modelling software to match a <a href="https://en.wikipedia.org/wiki/Domain_(software_engineering)" title="Domain (software engineering)">domain</a> according to input from that domain&rsquo;s experts. &mdash;wikipedia
+领域驱动是一种软件设计方式，聚焦于软件模型和领域专家（十分了解具体业务的人）的输出相匹配。</p>
+</blockquote>
+<h2 id="解决的问题-系统老化">解决的问题-系统老化</h2>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/uTools_1665071852424.png" alt=""></p>
 <p>软件总是从简单发展到复杂，老化的原因主要是，真实世界和软件世界存在差异，并随着需求变更逐渐拉大。</p>
+<h3 id="传统数据驱动设计存在的问题">传统数据驱动设计存在的问题</h3>
+<p>传统MVC架构倾向于从数据库ER图开始进行设计。随着业务越来越多，变化越来越，事务脚本会越来越复杂，可能一个类里面有大量的逻辑。这时候系统将逐渐老化。
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221007134158.png" alt=""></p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221007134237.png" alt=""></p>
 <h3 id="数据驱动和领域驱动">数据驱动和领域驱动</h3>
 <p>Data Driven Design &ndash;&gt; Domain Driven Design
-数据驱动的方式的缺点：随着业务越来越多，变化越来越，事务脚本会越来越复杂，可能一个类里面有大量的逻辑。</p>
-<p>大泥球：</p>
-<p>valueObject：抽象并封装自检和一些隐性的计算逻辑，属性都是无状态的。
-Entity:封装单对象有状态的逻辑。（程序需要追踪其状态的变化）
-DomainService:封装多对象的有状态逻辑。
-Repository:抽象封装外部数据访问逻辑。
-UL：统一语言，意识拉齐</p>
+领域驱动设计是一种面向变化的一种设计，设计的核心模型从数据驱动的数据库表转移到领域模型。领域模型将由开发人员和领域专家共同设计，这样实际的模型将更贴近真实世界。</p>
+<h2 id="优点">优点</h2>
+<ul>
+<li>逻辑更内聚，代码复用度更高，也更易于测试</li>
+<li>业务逻辑不再需要背负技术债，根据业务场景变化开发即可</li>
+</ul>
+<h2 id="缺点">缺点</h2>
+<p>DDD并非饮弹</p>
+<ol>
+<li>概念多，学习成本高，难上手，新手往往不知所措。如果不熟悉DDD的思想，生硬地照搬ddd的规范，写出来的代码可能比传统的三层架构还糟糕，得不偿失。</li>
+<li>实现一个功能写的代码量比传统的三层架构多</li>
+<li>模型之间转换操作比较多，编码繁琐</li>
+</ol>
+<h2 id="概念">概念</h2>
+<p>UL：统一语言，意识拉齐
+<strong>实体（Entity）</strong>：具有唯一标识，有状态（程序需要追踪其状态的变化），具有生命周期、mutable的领域对象<br>
+<strong>值对象（valueObject）</strong>：没有唯一标识、无状态、无生命周期、可复用、immutable的领域对象，类似基本类型int、long、String<br>
+<strong>聚合</strong>：一组具有关联关系领域对象，可包含实体和值对象<br>
+<strong>聚合根</strong>：聚合的根，可以理解为可以代表整体概念的实体，操作子实体和值对象需要通过聚合根遍历，类似树形数据结构的根节点，这样可以保证数据的完整性<br>
+<strong>领域事件</strong>：某个操作触发的事件，领域事件可以跟踪领域对象生命周期的状态变化过程。例如一个实体经过多次修改，每次产生一个实体修改事件，把所有实体修改事件按发生的顺序可以重建某个时间点的快照对象。领域事件也是同一个用例操作多个聚合的实现方式<br>
+<strong>领域服务</strong>：同一个操作中需要操作到多个聚合根对象的逻辑需要抽到领域服务，或者同一个聚合中可以被多个用例复用的公共逻辑<br>
+<strong>限界上下文</strong>：可以理解为一个独立的服务<br>
+<strong>领域</strong>：某一类业务相关知识的集合，一个领域可以包含多个限界上下文，也即是一个领域可以有多个服务组成<br>
+<strong>子域</strong>：一个子域是领域的一部分<br>
+<strong>统一语言</strong>：从业务中提炼出来的概念术语，领域专家、产品、开发可以互相理解的沟通语言</p>
+<p>实体和值对象如何区别：
+主要是通过有没有唯一标识确定，相同的对象在不同场景可能表现不同，比如用户的收货地址和订单的收货地址，用户的收货地址是实体，而订单的收货地址可能就是值对象，如果用户的收货地址改变，订单的收货地址是不会变的。</p>
 <p>流程：
 1.首先对需要处理的业务问题进行总览。
 2.然后领域对象(Entity)进行划分，明确每个领域对象的包含的信息和职责边界。
@@ -2314,7 +2694,9 @@ UL：统一语言，意识拉齐</p>
 让隐性的上下文显性化（手机号的区号编码）
 封装多对象行为</p>
 <h1 id="一个很好的例子">一个很好的例子</h1>
-<p><a href="https://juejin.cn/post/7131186996277411876">https://juejin.cn/post/7131186996277411876</a></p>
+<p><a href="https://juejin.cn/post/7131186996277411876">https://juejin.cn/post/7131186996277411876</a>
+好文章：https://developer.aliyun.com/article/719251
+CQRS：https://zhuanlan.zhihu.com/p/505023604</p>
 <h2 id="实战">实战</h2>
 <p>step1:抽象数据存储层</p>
 <p>1、实体、值对象</p>
@@ -2771,6 +3153,18 @@ ex:2021-03-01T18:03:24.208+08:00
 <p>基于乐观锁来控制版本</p>
 <h2 id="分布式事务">分布式事务</h2>
 <p>1、2pc</p>
+<h1 id="死锁">死锁</h1>
+<p>如果在一个系统中以下四个条件同时成立，那么就能引起死锁：</p>
+<ol>
+<li>互斥：至少有一个资源必须处于非共享模式，即一次只有一个进程可使用。如果另一进程申请该资源，那么申请进程应等到该资源释放为止。</li>
+<li>占有并等待：—个进程应占有至少一个资源，并等待另一个资源，而该资源为其他进程所占有。</li>
+<li>非抢占：资源不能被抢占，即资源只能被进程在完成任务后自愿释放。</li>
+<li>循环等待：有一组等待进程 {P0，P1，…，Pn}，P0 等待的资源为 P1 占有，P1 等待的资源为 P2 占有，……，Pn-1 等待的资源为 Pn 占有，Pn 等待的资源为 P0 占有。</li>
+</ol>
+<p>解决死锁：
+1、打破四个必要条件之一即可，比如检测是否会产生循环，长时间获取不到资源就失败等等
+2、在产生死锁后，检测然后回复。</p>
+<p>大多数程序都不会考虑死锁问题</p>
 
             <footer class="footline">
             </footer>
@@ -2851,12 +3245,12 @@ ex:2021-03-01T18:03:24.208+08:00
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1664330893" defer></script>
-        <script src="/js/lunr.min.js?1664330893" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1664330893" defer></script>
-        <script src="/js/lunr.multi.min.js?1664330893" defer></script>
-        <script src="/js/lunr.en.min.js?1664330893" defer></script>
-        <script src="/js/search.js?1664330893" defer></script>
+        <script src="/js/auto-complete.js?1665199852" defer></script>
+        <script src="/js/lunr.min.js?1665199852" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1665199852" defer></script>
+        <script src="/js/lunr.multi.min.js?1665199852" defer></script>
+        <script src="/js/lunr.en.min.js?1665199852" defer></script>
+        <script src="/js/search.js?1665199852" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -2865,6 +3259,7 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/golang/" title="golang" class="dd-item"><a href="/golang/">golang<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/" title="java" class="dd-item"><input type="checkbox" id="section-518f725d76ef42edca45fe01865b4d20" class="toggle"/><label for="section-518f725d76ef42edca45fe01865b4d20" ></label><a href="/java/">java<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/cglib/" title="cglib" class="dd-item"><a href="/java/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="java的引用类型" class="dd-item"><a href="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">java的引用类型<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/" title="jvm" class="dd-item alwaysopen"><input type="checkbox" id="section-8bb18590038df95f5ce669688bf7139d" class="toggle" checked/><label for="section-8bb18590038df95f5ce669688bf7139d" ></label><a href="/java/jvm/">jvm<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/" title="gc日志分析" class="dd-item"><a href="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">gc日志分析<i class="fas fa-check read-icon"></i></a></li>
@@ -2872,6 +3267,7 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/" title="java程序的启动" class="dd-item"><a href="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/">java程序的启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" title="jvm内存分析：" class="dd-item"><a href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">jvm内存分析：<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB &amp; 栈上分配" class="dd-item"><a href="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/">TLAB &amp; 栈上分配<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/meta-inf%E5%92%8Cweb-info/" title="META-INF和WEB-INFO" class="dd-item"><a href="/java/meta-inf%E5%92%8Cweb-info/">META-INF和WEB-INFO<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/office/" title="office" class="dd-item"><input type="checkbox" id="section-98530a8654fbed228aee60cd5d89d452" class="toggle"/><label for="section-98530a8654fbed228aee60cd5d89d452" ></label><a href="/office/">office<i class="fas fa-check read-icon"></i></a><ul>
@@ -2886,9 +3282,13 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/spring/mvc/mvc/" title="mvc" class="dd-item"><a href="/spring/mvc/mvc/">mvc<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/" title="异步模式" class="dd-item"><a href="/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/">异步模式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/spring-bean/" title="spring bean" class="dd-item"><a href="/spring/spring-bean/">spring bean<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/spring-cache/" title="Spring cache" class="dd-item"><a href="/spring/spring-cache/">Spring cache<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/spring-context/" title="spring Context" class="dd-item"><a href="/spring/spring-context/">spring Context<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/spring-mvc/" title="spring mvc" class="dd-item"><a href="/spring/spring-mvc/">spring mvc<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/spring/springboot/" title="springboot" class="dd-item"><a href="/spring/springboot/">springboot<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/spring/springboot/" title="springboot" class="dd-item alwaysopen"><input type="checkbox" id="section-d2c9d1492d2be5f58a95b0e575fe9ac4" class="toggle" checked/><label for="section-d2c9d1492d2be5f58a95b0e575fe9ac4" ></label><a href="/spring/springboot/">springboot<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/spring/springboot/%E6%9C%AA%E5%91%BD%E5%90%8D/" title="未命名" class="dd-item"><a href="/spring/springboot/%E6%9C%AA%E5%91%BD%E5%90%8D/">未命名<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" title="自动配置" class="dd-item"><a href="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/">自动配置<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件" class="dd-item"><input type="checkbox" id="section-cb147f28999e2af77c3c46e5203c4ebe" class="toggle"/><label for="section-cb147f28999e2af77c3c46e5203c4ebe" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/">kafka<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/" title="mysql" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/">mysql<i class="fas fa-check read-icon"></i></a></li>
@@ -2931,9 +3331,17 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/" title="微信授权登录" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/">微信授权登录<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="权限控制" class="dd-item"><input type="checkbox" id="section-bd5b7a2308163b66e3867a62067e36bb" class="toggle"/><label for="section-bd5b7a2308163b66e3867a62067e36bb" ></label><a href="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">权限控制<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/" title="ldap-轻量目录访问协议" class="dd-item"><a href="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/">ldap-轻量目录访问协议<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/%E7%AE%97%E6%B3%95/" title="算法" class="dd-item"><input type="checkbox" id="section-c90ef08f853c7724a78dceb5b6349ce4" class="toggle"/><label for="section-c90ef08f853c7724a78dceb5b6349ce4" ></label><a href="/%E7%AE%97%E6%B3%95/">算法<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="基本概念" class="dd-item"><a href="/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">基本概念<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="算法&amp;数据结构" class="dd-item"><input type="checkbox" id="section-ea3f888852a9a69494bd4d6a8264138b" class="toggle"/><label for="section-ea3f888852a9a69494bd4d6a8264138b" ></label><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法&amp;数据结构<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/" title="LRU" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/">LRU<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/" title="双指针" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%9E%E6%BA%AFdfs/" title="回溯（DFS）" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%9E%E6%BA%AFdfs/">回溯（DFS）<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="基本概念" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">基本概念<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88bfs/" title="广度优先（BFS）" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88bfs/">广度优先（BFS）<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" title="排序" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/">排序<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%B4%A0%E6%95%B0%E8%AE%A1%E7%AE%97/" title="素数计算" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%B4%A0%E6%95%B0%E8%AE%A1%E7%AE%97/">素数计算<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/" title="胡诌八扯大道理" class="dd-item"><input type="checkbox" id="section-ffb623bb597c059aaedef526016a8213" class="toggle"/><label for="section-ffb623bb597c059aaedef526016a8213" ></label><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/">胡诌八扯大道理<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E4%BA%BA%E7%94%9F%E5%9B%9B%E9%97%AE/" title="人生四问" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E4%BA%BA%E7%94%9F%E5%9B%9B%E9%97%AE/">人生四问<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%87%8D%E5%A4%A7%E9%81%93%E7%90%86/" title="重大道理" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%87%8D%E5%A4%A7%E9%81%93%E7%90%86/">重大道理<i class="fas fa-check read-icon"></i></a></li>
@@ -3017,18 +3425,18 @@ ex:2021-03-01T18:03:24.208+08:00
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1664330893"></script>
+          <script async src="/js/buttons.js?1665199852"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1664330893" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1664330893" defer></script>
-    <script src="/js/featherlight.min.js?1664330893" defer></script>
-    <script src="/js/jquery.svg.pan.zoom.js?1664330893" defer></script>
-    <script src="/js/mermaid.min.js?1664330893" defer></script>
+    <script src="/js/clipboard.min.js?1665199852" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1665199852" defer></script>
+    <script src="/js/featherlight.min.js?1665199852" defer></script>
+    <script src="/js/jquery.svg.pan.zoom.js?1665199852" defer></script>
+    <script src="/js/mermaid.min.js?1665199852" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"securityLevel\": \"loose\" }");
     </script>
-    <script src="/js/theme.js?1664330893" defer></script>
+    <script src="/js/theme.js?1665199852" defer></script>
   </body>
 </html>

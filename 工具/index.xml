@@ -35,7 +35,7 @@ git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、s
       <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</guid>
-      <description>资料 官网 ：https://maven.apache.org/ 官方仓库浏览：https://mvnrepository.com/
+      <description>资料 官网 ：https://maven.apache.org/ 官方仓库浏览：https://mvnrepository.com/、https://search.maven.org/
 功能 编译、打包、测试、依赖管理等
 仓库 通常情况下企业内仓储依赖是
 graph LR 本地仓库A &amp; 本地仓库B &amp; 本地仓库C --&gt; 企业私服Nexus--&gt;阿里云Nexus--&gt;中央仓库 其中repository Manager 企业内会用nexus等

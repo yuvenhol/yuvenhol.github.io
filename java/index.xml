@@ -22,11 +22,27 @@
 Class UserServiceProxy extends UserService{ public void test(){ //切面逻辑 super.test() } //切面逻辑 }</description>
     </item>
     <item>
+      <title>hibernate-validator 校验器</title>
+      <link>https://yuvenhol.github.io/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/</guid>
+      <description>https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-gettingstarted</description>
+    </item>
+    <item>
       <title>java的引用类型</title>
       <link>https://yuvenhol.github.io/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</guid>
       <description>强引用(FinalReference)： 普通引用 JVM停止运行时终止 软引用(SoftReference)： 在类似于浏览器访问页面缓存的场景，比如点击回退，如果缓存了页面就直接展示，缓存被清除了再加载也没事。 内存不足时终止 弱引用(WeakReference)： gc运行后终止 ThreadLocalMap的key，为了减少内存泄漏，在对象只有虚引用的时候，gc了就被清除了。 虚引用(PhantomReference)： 任何时候都可能</description>
+    </item>
+    <item>
+      <title>MapStruct-类型安全的bean转换工具</title>
+      <link>https://yuvenhol.github.io/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</guid>
+      <description>简介 mapStruct 是一个java注解处理器，基于 JSR 269 ，也同样可以使用命令行构建。
+详细文档：https://mapstruct.org/documentation/stable/reference/html/#customizing-mappings-with-before-and-after
+依赖引入 &amp;lt;properties&amp;gt; &amp;lt;org.mapstruct.version&amp;gt;1.5.2.Final&amp;lt;/org.mapstruct.version&amp;gt; &amp;lt;/properties&amp;gt; ... &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mapstruct&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mapstruct&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${org.mapstruct.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;!-- 如果和lombok 结合可能有贬义冲突，需要配置如下 --&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.8.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;annotationProcessorPaths&amp;gt; &amp;lt;path&amp;gt; &amp;lt;groupId&amp;gt;org.mapstruct&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mapstruct-processor&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${org.mapstruct.version}&amp;lt;/version&amp;gt; &amp;lt;/path&amp;gt; &amp;lt;/annotationProcessorPaths&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 使用 基础 定义一个基础mapping @Mapper public interface CarMapper { @Mapping(target = &amp;#34;manufacturer&amp;#34;, source = &amp;#34;make&amp;#34;) @Mapping(target = &amp;#34;seatCount&amp;#34;, source = &amp;#34;numberOfSeats&amp;#34;) CarDto carToCarDto(Car car); @Mapping(target = &amp;#34;fullName&amp;#34;, source = &amp;#34;name&amp;#34;) PersonDto personToPersonDto(Person person); } mapStruct会再在编译期生成对应的映射方法，依赖于get set方法，所以需要提前写好get&amp;amp;set方法。</description>
     </item>
     <item>
       <title>META-INF和WEB-INFO</title>
