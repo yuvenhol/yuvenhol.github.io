@@ -13,5 +13,26 @@
       <guid>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F/</guid>
       <description>1、字段意义不可分割，不能是数组等集合或者表达多个意义。 2、每个字段都依赖主键 3、依赖不可传递，比如 A-&amp;gt;B-&amp;gt;C 不行的，必须A-&amp;gt;C,B-&amp;gt;C。</description>
     </item>
+    <item>
+      <title>预处理</title>
+      <link>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E9%A2%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E9%A2%84%E5%A4%84%E7%90%86/</guid>
+      <description>MySQL PREPARE 语句简介 在MySQL 4.1版之前，查询以文本格式发送到MySQL服务器。反过来，MySQL使用文本协议将数据返回给客户端。MySQL必须 完全 解析查询并将结果集转换为字符串，然后再将其返回给客户端。
+文本协议具有严重的性能影响。为了解决这个问题，MySQL从4.1版开始添加了一个名为prepared的新功能。
+准备好的语句利用客户端/服务器二进制协议。它将包含占位符（？）的查询传递给MySQL服务器，如下例所示：
+SELECT * FROM products WHERE productCode = ?;
+当MySQL使用不同的productcode值执行此查询时，它不必完全解析查询。因此，这有助于MySQL更快地执行查询，尤其是当MySQL多次执行查询时。因为预准备语句使用占位符（？），这有助于避免SQL注入的许多变体，从而使您的应用程序更安全。
+MySQL PREPARE 语句用法 为了使用MySQL预处理语句，您需要使用其他三个MySQL语句，如下所示：
+PREPARE - 准备要执行的语句。 EXECUTE - 执行由PREPARE语句准备的预准备语句。 DEALLOCATE PREPARE - 发布准备好的声明。 下图说明了如何使用预准备语句：
+MySQL编写了语句实例 让我们看一下使用MySQL预处理语句的示例。
+PREPARE stmt1 FROM &amp;lsquo;SELECT productCode, productName FROM products WHERE productCode = ?&amp;rsquo;;
+SET @pc = &amp;lsquo;S10_1678&amp;rsquo;; EXECUTE stmt1 USING @pc;
+DEALLOCATE PREPARE stmt1;
+首先，我们使用PREPARE语句准备执行语句。我们使用 SELECT语句根据指定的产品代码查询products表中的产品数据 。我们使用问号（？）作为产品代码的占位符。
+接下来，我们声明了一个产品代码变量 @pc并将其值设置为S10_1678。
+然后，我们使用EXECUTE语句用产品代码变量执行预准备语句@pc。
+最后，我们用它 DEALLOCATE PREPARE来发布准备好的声明。</description>
+    </item>
   </channel>
 </rss>

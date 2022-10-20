@@ -14,14 +14,6 @@
       <description></description>
     </item>
     <item>
-      <title>snetinel</title>
-      <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/snetinel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/snetinel/</guid>
-      <description>Sentinel 是什么 Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。
-Sentinel 的坑 dashboard 没有持久化，需要自己改造</description>
-    </item>
-    <item>
       <title>zookeeper</title>
       <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/zookeeper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

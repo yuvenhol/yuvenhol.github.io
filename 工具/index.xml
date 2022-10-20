@@ -18,10 +18,15 @@
       <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/git/</guid>
-      <description>命令 checkout 快速切换上一个分支（两个分支来回切换） git checkout -
-branch -m 重命名 git branch -m 原始名称 新名称
-rebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing
-git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?”：匹配除 ‘/’外的任意一个字符； 方括号“[xxxx]”：匹配多个列表中的字符； </description>
+      <description>命令 命令 参数 描述 示例 checkout -b 检出一个新分支 checkout - 切换到上一个分支 branch -m 重命名分支 git branch -m 原始名称 新名称 branch -u &amp;ndash;set-upstream 设置当前分支对应的远程分支 git branch -u origin/dev branch &amp;ndash;unset-upstream 反向操作 git branch &amp;ndash;unset-upstream push -f 强制本地分支推送远程分支 push -u &amp;ndash;set-upstream push 并且 设置当前分支对应的远程分支 git branch &amp;ndash;unset-upstream origin [分支名] rebase 把一个分支整合到另一个分支的办法有两种：merge（合并） 和 rebase（衍合）。 rebase相当于在fetch之后，重新提交数据。 千万不要在在public分支操作rebase，例如develop，不要用rebase合并自己的feature分支。 有一篇很好的文章讲merge和rebase https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing
+git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、src/folder 文件、src/utils/folder 文件都会被忽略，即：不会被提交到远程仓库中。 folder/ 只忽略文件夹 ! 表示取反，不忽略xxx 通配符 星号“*” ：匹配多个字符； 双星号“**” ：匹配多个字符； 问号“?</description>
+    </item>
+    <item>
+      <title>idea</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/idea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/idea/</guid>
+      <description>编译大项目gc over limit 调整堆大小 </description>
     </item>
     <item>
       <title>iredis</title>
@@ -29,6 +34,13 @@ git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/iredis/</guid>
       <description>redis 命令行客户端 https://gitee.com/mirrors/iredis#using-dsn</description>
+    </item>
+    <item>
+      <title>jmeter</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/jmeter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/jmeter/</guid>
+      <description>bean shell </description>
     </item>
     <item>
       <title>maven</title>

@@ -59,13 +59,11 @@ graph TD 10[ContextLoaderListener.contextInitialized] --创建WebApplicationCont
       <link>https://yuvenhol.github.io/spring/spring-mvc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/spring-mvc/</guid>
-      <description>传统Servlet 1.xml下配置servlet的映射非常麻烦 开发效率低
-2.必须要继承父类、重写方法 侵入性强
-2.如果想在一个Servlet中处理同一业务模块的的功能分发给不同方法进行处理非常麻烦
-3.参数解析麻烦:单个参数（转换类型）&amp;mdash;&amp;gt;pojo对象 Json文本&amp;mdash;&amp;gt;pojo对象
-4.数据响应麻烦:pojo对象&amp;mdash;&amp;gt;json &amp;hellip; Content-type
-5.跳转页面麻烦, 对path的控制、 如果使用其他模板也很麻烦 、设置编码麻烦&amp;hellip;等等&amp;hellip;
-所以SpringMVC 就是在Servlet的基础上进行了封装，帮我把这些麻烦事都给我们做了。 dispatcherServlet是核心分分发器，其核心方法时doDispatch()。 根据请求路径
+      <description>Spring Web MVC是基于Servlet API构建的原始Web框架，从一开始就已包含在Spring框架中。正式名 称“ Spring Web MVC”来自其源模块的名称(spring-webmvc)，但它通常被称为“ Spring MVC”。 xml下配置servlet的映射非常麻烦 开发效率低 必须要继承父类、重写方法 侵入性强 如果想在一个Servlet中处理同一业务模块的的功能分发给不同方法进行处理非常麻烦 参数解析麻烦:单个参数（转换类型）&amp;mdash;&amp;gt;pojo对象 Json文本&amp;mdash;&amp;gt;pojo对象 数据响应麻烦:pojo对象&amp;mdash;&amp;gt;json &amp;hellip; Content-type 跳转页面麻烦, 对path的控制、 如果使用其他模板也很麻烦 、设置编码麻烦&amp;hellip;等等&amp;hellip; 所以SpringMVC 就是在Servlet的基础上进行了封装，帮我把这些麻烦事都给我们做了。
+核心方法在 DispatcherServlet::doDispatch
+需要了解的类和方法 RequestMappingHandler 请求映射处理器，用于将一个request和一个handler给映射起来。有好多种形式进行映射，常见的是BeanNameUrlHandlerMapping（bean name和url映射）和DefaultAnnotationHandlerMapping（RequestMapping等注解映射），一般都用DefaultAnnotationHandlerMapping,mvc使用mvc:annotation-driven开启。
+RequestMappingHandlerMapping ,
+dispatcherServlet是核心分分发器，其核心方法时doDispatch()。 根据请求路径
 Handler（具体的Controller 方法） HandlerMapping（根据request定为到对应的HandlerExecutionChain） HandlerExecutionChain（handler的执行链，包含了拦截器和HandlerMethod） HandlerMethod(包装了Handler) HandlerAdapter()
 HandlerMethodReturnValueHandlerComposite HandlerMethodReturnValueHandler
 HandlerMethodArgumentResolverComposite HandlerMethodArgumentResolver
@@ -76,7 +74,8 @@ messageConverter （依赖 HandlerMethodReturnValueHandler和HandlerMethodArgume
       <link>https://yuvenhol.github.io/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
-      <description>MVC 1、使用ContextConfiguration 指定spring 配置文件 2、在spring配置文件内配置自己需要加载的bean
+      <description>保证测试用例顺序 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+MVC 1、使用ContextConfiguration 指定spring 配置文件 2、在spring配置文件内配置自己需要加载的bean
 @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(locations = {&amp;#34;classpath:spring-test-config.xml&amp;#34;}) public class DrugGuidelineRepositoryTest { } &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&amp;#34;&amp;gt; &amp;lt;import resource=&amp;#34;classpath*:spring-datasource.xml&amp;#34;/&amp;gt; &amp;lt;import resource=&amp;#34;classpath*:spring-bean.xml&amp;#34;/&amp;gt; &amp;lt;/beans&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;com.benmu.mts.baseinfo.domain.drugguideline&amp;#34;&amp;gt; &amp;lt;/context:component-scan&amp;gt; &amp;lt;/beans&amp;gt; Spring boot @RunWith(SpringRunner.class) @ActiveProfiles(&amp;ldquo;justdb&amp;rdquo;)
 @SpringBootTest(classes = DrugTestApp.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 SpringRunner is alias for the SpringJUnit4ClassRunner.</description>
