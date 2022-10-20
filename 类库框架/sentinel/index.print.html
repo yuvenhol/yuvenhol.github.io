@@ -10,21 +10,21 @@
     <title>sentinel - yuvenhol的技术苦旅</title>
     <link href="/%E7%B1%BB%E5%BA%93%E6%A1%86%E6%9E%B6/sentinel/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/%E7%B1%BB%E5%BA%93%E6%A1%86%E6%9E%B6/sentinel/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1666234952" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1666236718" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1666234952" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1666234952" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1666234952" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1666234952" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1666234952" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1666234952" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1666234952" rel="stylesheet">
-    <link href="/css/nucleus.css?1666234952" rel="stylesheet">
-    <link href="/css/fonts.css?1666234952" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1666234952" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1666234952" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1666234952" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1666234952" rel="stylesheet">
-    <link href="/css/variant.css?1666234952" rel="stylesheet">
-    <link href="/css/print.css?1666234952" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1666234952" rel="stylesheet">
-    <script src="/js/variant.js?1666234952"></script>
+    <link href="/css/fontawesome-all.min.css?1666236718" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1666236718" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1666236718" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1666236718" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1666236718" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1666236718" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1666236718" rel="stylesheet">
+    <link href="/css/nucleus.css?1666236718" rel="stylesheet">
+    <link href="/css/fonts.css?1666236718" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1666236718" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1666236718" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1666236718" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1666236718" rel="stylesheet">
+    <link href="/css/variant.css?1666236718" rel="stylesheet">
+    <link href="/css/print.css?1666236718" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1666236718" rel="stylesheet">
+    <script src="/js/variant.js?1666236718"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1666234952" defer></script>
+    <script src="/js/jquery.min.js?1666236718" defer></script>
   </head>
   <body class="mobile-support print" data-url="/%E7%B1%BB%E5%BA%93%E6%A1%86%E6%9E%B6/sentinel/">
     <div id="body" class="default-animation">
@@ -293,6 +293,16 @@
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>  
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><h2 id="核心源码">核心源码</h2>
+<p>在 Sentinel 里面，所有的资源都对应一个资源名称以及一个 Entry。Entry 可以通过对主流框架的适配自动创建，也可以通过注解的方式或调用 API 显式创建；每一个 Entry 创建的时候，同时也会创建一系列功能插槽（slot chain）。这些插槽有不同的职责，例如:</p>
+<ul>
+<li><code>NodeSelectorSlot</code> 1.负责收集资源的路径，并将这些资源的调用路径，以树状结构存储起来，用于根据调用路径来限流降级2.构造一个Node用于存储当前请求的统计数据；</li>
+<li><code>ClusterBuilderSlot</code> 为了获得同一资源在不同上下文中的总统计信息，同一资源全局共享同一个ClusterNode。ClusterBuilderSlot主要负责构建这个ClusterNode；</li>
+<li><code>StatisticSlot</code> 则用于记录、统计不同纬度的 runtime 指标监控信息；</li>
+<li><code>FlowSlot</code> 则用于根据预设的限流规则以及前面 slot 统计的状态，来进行流量控制；</li>
+<li><code>AuthoritySlot</code> 则根据配置的黑白名单和调用来源信息，来做黑白名单控制；</li>
+<li><code>DegradeSlot</code> 则通过统计信息以及预设的规则，来做熔断降级；</li>
+<li><code>SystemSlot</code> 则通过系统的状态，例如 load1 等，来控制总的入口流量；</li>
+</ul>
 <p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221020095300.png" alt=""></p>
 <p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/Sentinel%E9%99%90%E6%B5%81%E7%86%94%E6%96%AD%E9%99%8D%E7%BA%A7%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90.jpg" alt=""></p>
 
@@ -373,12 +383,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1666234952" defer></script>
-        <script src="/js/lunr.min.js?1666234952" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1666234952" defer></script>
-        <script src="/js/lunr.multi.min.js?1666234952" defer></script>
-        <script src="/js/lunr.en.min.js?1666234952" defer></script>
-        <script src="/js/search.js?1666234952" defer></script>
+        <script src="/js/auto-complete.js?1666236718" defer></script>
+        <script src="/js/lunr.min.js?1666236718" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1666236718" defer></script>
+        <script src="/js/lunr.multi.min.js?1666236718" defer></script>
+        <script src="/js/lunr.en.min.js?1666236718" defer></script>
+        <script src="/js/search.js?1666236718" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -559,13 +569,13 @@
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1666234952"></script>
+          <script async src="/js/buttons.js?1666236718"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1666234952" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1666234952" defer></script>
-    <script src="/js/featherlight.min.js?1666234952" defer></script>
-    <script src="/js/theme.js?1666234952" defer></script>
+    <script src="/js/clipboard.min.js?1666236718" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1666236718" defer></script>
+    <script src="/js/featherlight.min.js?1666236718" defer></script>
+    <script src="/js/theme.js?1666236718" defer></script>
   </body>
 </html>
