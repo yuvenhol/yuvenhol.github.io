@@ -10,21 +10,21 @@
     <title>解决方案 - yuvenhol的技术苦旅</title>
     <link href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1666244511" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1666254992" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1666244511" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1666244511" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1666244511" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1666244511" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1666244511" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1666244511" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1666244511" rel="stylesheet">
-    <link href="/css/nucleus.css?1666244511" rel="stylesheet">
-    <link href="/css/fonts.css?1666244511" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1666244511" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1666244511" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1666244511" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1666244511" rel="stylesheet">
-    <link href="/css/variant.css?1666244511" rel="stylesheet">
-    <link href="/css/print.css?1666244511" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1666244511" rel="stylesheet">
-    <script src="/js/variant.js?1666244511"></script>
+    <link href="/css/fontawesome-all.min.css?1666254992" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1666254992" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1666254992" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1666254992" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1666254992" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1666254992" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1666254992" rel="stylesheet">
+    <link href="/css/nucleus.css?1666254992" rel="stylesheet">
+    <link href="/css/fonts.css?1666254992" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1666254992" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1666254992" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1666254992" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1666254992" rel="stylesheet">
+    <link href="/css/variant.css?1666254992" rel="stylesheet">
+    <link href="/css/print.css?1666254992" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1666254992" rel="stylesheet">
+    <script src="/js/variant.js?1666254992"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1666244511" defer></script>
+    <script src="/js/jquery.min.js?1666254992" defer></script>
   </head>
   <body class="mobile-support print" data-url="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
     <div id="body" class="default-animation">
@@ -163,6 +163,102 @@ CQRS：https://zhuanlan.zhihu.com/p/505023604
           </article>
 
           <article class="default">
+<h1>权限控制</h1>
+
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+          <article class="default">
+<h1>ldap-轻量目录访问协议</h1>
+
+<p>LDAP是轻量目录访问协议,英文全称是Lightweight Directory Access Protocol,一般都简称为LDAP.</p>
+<p>现在市场上有关LDAP的产品已有很多,各大软件公司都在他们的产品中集成了LDAP服务,如Microsoft的<code>ActiveDirectory</code>、Lotus的<code>Domino Directory</code>、IBM的<code>WebSphere</code>中也集成了LDAP服务.LDAP的开源实现是<code>OpenLDAP</code>,它比商业产品一点也不差,而且源码开放.</p>
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.openldap.org%2F">OpenLDAP</a>是最常用的目录服务之一,它是一个由开源社区及志愿者开发和管理的一个开源项目,提供了目录服务的所有功能,包括目录搜索、身份认证、安全通道、过滤器等等.大多数的Linux发行版里面都带有OpenLDAP的安装包.<code>OpenLDAP</code>服务默认使用非加密的<code>TCP/IP</code>协议来接收服务的请求,并将查询结果传回到客户端.由于大多数目录服务都是用于系统的安全认证部分比如:用户登录和身份验证,所以它也支持使用基于 SSL/TLS 的加密协议来保证数据传送的保密性和完整性.<code>OpenLDAP</code>是使用<code>OpenSSL</code>来实现<code>SSL/TLS</code>加密通信的.</p>
+<p>LDAP的信息模型是建立在”条目”(entries)的基础上.一个条目是一些属性的集合,并且具有一个全局唯一的”可区分名称”DN,一个条目可以通过DN来引用.每一个条目的属性具有一个类型和一个或者多个值.类型通常是容易记忆的名称,比如”cn”是通用名称(common name),或者”mail”是电子邮件地址.条目的值的语法取决于属性类型.比如,cn属性可能具有一个值”Babs Jensen” .一个mail属性可能包含”<a href="https://links.jianshu.com/go?to=mailto%3Abbs%40example.com">bbs@example.com</a>” .一个jpegphoto属性可能包含一幅JPEG(二进制)格式的图片.</p>
+<p>LDAP常用关键字列表 LDAP通过属性objectClass来控制哪一个属性必须出现或允许出现在一个条目中,它的值决定了该条目必须遵守的模式规则.</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220608193750.png" alt=""></p>
+<h3 id="entry">Entry</h3>
+<p>条目,也叫记录项,是LDAP中最基本的颗粒,就像字典中的词条,或者是数据库中的记录.通常对LDAP的添加、删除、更改、检索都是以条目为基本对象的.</p>
+<ul>
+<li>dn:每一个条目都有一个唯一的标识名(distinguished Name,DN),如上述中一个 dn:”uid=mac,ou=People,dc=example,dc=cn”.通过DN的层次型语法结构,可以方便地表示出条目在LDAP树中的位置,通常用于检索.</li>
+<li>rdn:一般指dn逗号最左边的部分,如cn=baby.它与RootDN不同,RootDN通常与RootPW同时出现,特指管理LDAP中信息的最高权限用户.</li>
+<li>Base DN:LDAP目录树的最顶部就是根,也就是所谓的“Base DN”,如”dc=example,dc=com”.</li>
+</ul>
+<h3 id="schema">schema</h3>
+<p>对象类(ObjectClass)、属性类型(AttributeType)、语法(Syntax)分别约定了条目、属性、值,他们之间的关系如下图所示.所以这些构成了模式(Schema)——对象类的集合.条目数据在导入时通常需要接受模式检查,它确保了目录中所有的条目数据结构都是一致的.</p>
+<p>schema(一般在<code>/etc/ldap/schema/</code>目录)在导入时要注意前后顺序.</p>
+<p>对于LDAP目录中保存的信息,可以使用<code>LDIF</code>(LDAP Interchange Format)格式来保存.这是一种标准文本文件格式,使用这种格式保存得的LDAP服务器数据库中的数据可方便读取和修改,这也是其他大多数服务配置文件所采取的格式.</p>
+<h3 id="attribute">Attribute</h3>
+<p>属性(Attribute)类似于程序设计中的变量,可以被赋值.在OpenLDAP中声明了许多常用的Attribute(用户也可自己定义Attribute).</p>
+<p>每个条目都可以有很多属性(Attribute),比如常见的人都有姓名、地址、电话等属性.每个属性都有名称及对应的值,属性值可以有单个、多个,比如你有多个邮箱.</p>
+<p>属性不是随便定义的,需要符合一定的规则,而这个规则可以通过schema制定.比如,如果一个entry没有包含在 inetorgperson 这个 schema 中的objectClass: inetOrgPerson,那么就不能为它指定employeeNumber属性,因为employeeNumber是在inetOrgPerson中定义的.</p>
+<p>LDAP为人员组织机构中常见的对象都设计了属性(比如commonName,surname).下面有一些常用的别名:</p>
+<p>属性</p>
+<p>别名</p>
+<p>语法</p>
+<p>描述</p>
+<p>值（举例）</p>
+<p>commonName</p>
+<p>cn</p>
+<p>Directory String</p>
+<p>姓名</p>
+<p>sean</p>
+<p>surname</p>
+<p>sn</p>
+<p>Directory String</p>
+<p>姓</p>
+<p>Chow</p>
+<p>organizationalUnitName</p>
+<p>ou</p>
+<p>Directory String</p>
+<p>单位（部门）名称</p>
+<p>IT</p>
+<p>organization</p>
+<p>o</p>
+<p>Directory String</p>
+<p>组织（公司）名称</p>
+<p>example</p>
+<p>telephoneNumber</p>
+<p>Telephone Number</p>
+<p>电话号码</p>
+<p>110</p>
+<p>objectClass</p>
+<p>内置熟悉</p>
+<p>top</p>
+<p>常见的Attribute含义如下:</p>
+<ul>
+<li>c:国家.</li>
+<li>cn:common name,指一个对象的名字.如果指人,需要使用其全名.</li>
+<li>dc:domain Component,常用来指一个域名的一部分.</li>
+<li>givenName:指一个人的名字,不能用来指姓.</li>
+<li>l:指一个地名,如一个城市或者其他地理区域的名字.</li>
+<li>mail:电子信箱地址.</li>
+<li>o:organizationName,指一个组织的名字.</li>
+<li>ou:organizationalUnitName,指一个组织单元的名字.</li>
+<li>sn:surname,指一个人的姓.</li>
+<li>telephoneNumber:电话号码,应该带有所在的国家的代码.</li>
+<li>uid:userid,通常指某个用户的登录名,与Linux系统中用户的uid不同.</li>
+</ul>
+<p>作者：华阳_3bcf<br>
+链接：https://www.jianshu.com/p/3716b84c4c1d<br>
+来源：简书<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20220608193204.png" alt=""></p>
+<p><a href="https://zhuanlan.zhihu.com/p/74512921">https://zhuanlan.zhihu.com/p/74512921</a></p>
+<p><img src="https://pic1.zhimg.com/80/v2-a6a1e82cc41a9ca7bef54e49268f98c4_1440w.jpg" alt=""></p>
+<p>在 LDAP 里， 一切都是<strong>等级化</strong>的，或者称之为<strong>层级化</strong>（hiearchical）。</p>
+<p>一棵树有树干，树枝和树叶；树叶长在树枝上，树枝依附于树干。这就是一个简单的层级结构。LDAP 的结构同一棵树类似。假设 LDAP 里存储的是公司的信息，那么可以把<strong>公司</strong>（company）本身理解为树干，公司里面的各个部门，比如<strong>组</strong>（group），理解为树干，把<strong>用户</strong>（user）理解为树叶。这样的结构称之为<strong>目录信息树</strong>（DIrectory Information Tree，DIT）。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-6ab04198f971a70cd53100f17a6282e4_1440w.jpg" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
+          <article class="default">
 <h1>类微博feed流</h1>
 
 <h1 id="push模式">PUSH模式</h1>
@@ -258,12 +354,12 @@ CQRS：https://zhuanlan.zhihu.com/p/505023604
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1666244511" defer></script>
-        <script src="/js/lunr.min.js?1666244511" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1666244511" defer></script>
-        <script src="/js/lunr.multi.min.js?1666244511" defer></script>
-        <script src="/js/lunr.en.min.js?1666244511" defer></script>
-        <script src="/js/search.js?1666244511" defer></script>
+        <script src="/js/auto-complete.js?1666254992" defer></script>
+        <script src="/js/lunr.min.js?1666254992" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1666254992" defer></script>
+        <script src="/js/lunr.multi.min.js?1666254992" defer></script>
+        <script src="/js/lunr.en.min.js?1666254992" defer></script>
+        <script src="/js/search.js?1666254992" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -348,8 +444,6 @@ CQRS：https://zhuanlan.zhihu.com/p/505023604
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="好用的网站" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/">好用的网站<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/" title="微信授权登录" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/">微信授权登录<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/" title="高效开发" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/">高效开发<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="权限控制" class="dd-item"><input type="checkbox" id="section-bd5b7a2308163b66e3867a62067e36bb" class="toggle"/><label for="section-bd5b7a2308163b66e3867a62067e36bb" ></label><a href="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">权限控制<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/" title="ldap-轻量目录访问协议" class="dd-item"><a href="/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/">ldap-轻量目录访问协议<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="算法&amp;数据结构" class="dd-item"><input type="checkbox" id="section-ea3f888852a9a69494bd4d6a8264138b" class="toggle"/><label for="section-ea3f888852a9a69494bd4d6a8264138b" ></label><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法&amp;数据结构<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/" title="LRU" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/">LRU<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<i class="fas fa-check read-icon"></i></a></li>
@@ -357,6 +451,7 @@ CQRS：https://zhuanlan.zhihu.com/p/505023604
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/" title="双指针" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%9E%E6%BA%AFdfs/" title="回溯（DFS）" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%9E%E6%BA%AFdfs/">回溯（DFS）<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="基本概念" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">基本概念<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E8%A7%81%E9%99%90%E6%B5%81%E7%AE%97%E6%B3%95/" title="常见限流算法" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B8%B8%E8%A7%81%E9%99%90%E6%B5%81%E7%AE%97%E6%B3%95/">常见限流算法<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88bfs/" title="广度优先（BFS）" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88bfs/">广度优先（BFS）<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" title="排序" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/">排序<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<i class="fas fa-check read-icon"></i></a></li>
@@ -370,6 +465,8 @@ CQRS：https://zhuanlan.zhihu.com/p/505023604
           <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/" title="高效人生" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/">高效人生<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="解决方案" class="dd-item active parent"><input type="checkbox" id="section-a17bc74d6fddbc1ede8fbe5263306182" class="toggle" checked/><label for="section-a17bc74d6fddbc1ede8fbe5263306182" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/" title="DDD Domain-Driven Design" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/">DDD Domain-Driven Design<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="权限控制" class="dd-item alwaysopen"><input type="checkbox" id="section-70e62bcc9295a91257e2a24216fda309" class="toggle" checked/><label for="section-70e62bcc9295a91257e2a24216fda309" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">权限控制<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/" title="ldap-轻量目录访问协议" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/">ldap-轻量目录访问协议<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/" title="类微博feed流" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/">类微博feed流<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/" title="限流" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/">限流<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" title="计算机基础" class="dd-item"><input type="checkbox" id="section-66587d924bf701bc016810d7143bf85d" class="toggle"/><label for="section-66587d924bf701bc016810d7143bf85d" ></label><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础<i class="fas fa-check read-icon"></i></a><ul>
@@ -444,13 +541,13 @@ CQRS：https://zhuanlan.zhihu.com/p/505023604
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1666244511"></script>
+          <script async src="/js/buttons.js?1666254992"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1666244511" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1666244511" defer></script>
-    <script src="/js/featherlight.min.js?1666244511" defer></script>
-    <script src="/js/theme.js?1666244511" defer></script>
+    <script src="/js/clipboard.min.js?1666254992" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1666254992" defer></script>
+    <script src="/js/featherlight.min.js?1666254992" defer></script>
+    <script src="/js/theme.js?1666254992" defer></script>
   </body>
 </html>
