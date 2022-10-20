@@ -229,7 +229,7 @@
     <loc>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E9%9D%A2%E8%AF%95/%E7%AE%80%E5%8E%86/</loc>
+    <loc>https://yuvenhol.github.io/interview/%E7%AE%80%E5%8E%86/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/</loc>
@@ -250,7 +250,7 @@
     <loc>https://yuvenhol.github.io/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E9%99%90%E6%B5%81/</loc>
   </url>
   <url>
-    <loc>https://yuvenhol.github.io/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</loc>
+    <loc>https://yuvenhol.github.io/interview/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
@@ -272,6 +272,9 @@
   </url>
   <url>
     <loc>https://yuvenhol.github.io/golang/</loc>
+  </url>
+  <url>
+    <loc>https://yuvenhol.github.io/interview/</loc>
   </url>
   <url>
     <loc>https://yuvenhol.github.io/java/</loc>
@@ -341,8 +344,5 @@
   </url>
   <url>
     <loc>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</loc>
-  </url>
-  <url>
-    <loc>https://yuvenhol.github.io/%E9%9D%A2%E8%AF%95/</loc>
   </url>
 </urlset>

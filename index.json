@@ -536,7 +536,7 @@
     "description": "",
     "tags": null,
     "title": "简历",
-    "uri": "/%E9%9D%A2%E8%AF%95/%E7%AE%80%E5%8E%86/"
+    "uri": "/interview/%E7%AE%80%E5%8E%86/"
   },
   {
     "content": "PUSH模式 为每个订阅的用户推消息 缺点：大V推送的用户太多\nPULL模式 用户上线以后去拉去新消息 缺点：比较复杂，而且要多次查询再排序\n",
@@ -585,7 +585,7 @@
     "description": "",
     "tags": null,
     "title": "面试题整理",
-    "uri": "/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"
+    "uri": "/interview/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"
   },
   {
     "content": "MySQL PREPARE 语句简介 在MySQL 4.1版之前，查询以文本格式发送到MySQL服务器。反过来，MySQL使用文本协议将数据返回给客户端。MySQL必须 完全 解析查询并将结果集转换为字符串，然后再将其返回给客户端。\n文本协议具有严重的性能影响。为了解决这个问题，MySQL从4.1版开始添加了一个名为prepared的新功能。\n准备好的语句利用客户端/服务器二进制协议。它将包含占位符（？）的查询传递给MySQL服务器，如下例所示：\nSELECT * FROM products WHERE productCode = ?;\n当MySQL使用不同的productcode值执行此查询时，它不必完全解析查询。因此，这有助于MySQL更快地执行查询，尤其是当MySQL多次执行查询时。因为预准备语句使用占位符（？），这有助于避免SQL注入的许多变体，从而使您的应用程序更安全。\nMySQL PREPARE 语句用法 为了使用MySQL预处理语句，您需要使用其他三个MySQL语句，如下所示：\nPREPARE - 准备要执行的语句。 EXECUTE - 执行由PREPARE语句准备的预准备语句。 DEALLOCATE PREPARE - 发布准备好的声明。 下图说明了如何使用预准备语句：\nMySQL编写了语句实例 让我们看一下使用MySQL预处理语句的示例。\nPREPARE stmt1 FROM ‘SELECT productCode, productName FROM products WHERE productCode = ?’;\nSET @pc = ‘S10_1678’; EXECUTE stmt1 USING @pc;\nDEALLOCATE PREPARE stmt1;\n首先，我们使用PREPARE语句准备执行语句。我们使用 SELECT语句根据指定的产品代码查询products表中的产品数据 。我们使用问号（？）作为产品代码的占位符。\n接下来，我们声明了一个产品代码变量 @pc并将其值设置为S10_1678。\n然后，我们使用EXECUTE语句用产品代码变量执行预准备语句@pc。\n最后，我们用它 DEALLOCATE PREPARE来发布准备好的声明。\n",
@@ -635,6 +635,13 @@
     "tags": null,
     "title": "golang",
     "uri": "/golang/"
+  },
+  {
+    "content": "",
+    "description": "",
+    "tags": null,
+    "title": "interview",
+    "uri": "/interview/"
   },
   {
     "content": "",
@@ -796,12 +803,5 @@
     "tags": null,
     "title": "计算机基础",
     "uri": "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"
-  },
-  {
-    "content": "",
-    "description": "",
-    "tags": null,
-    "title": "面试",
-    "uri": "/%E9%9D%A2%E8%AF%95/"
   }
 ]
