@@ -18,7 +18,7 @@
       <link>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/zookeeper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%88%86%E5%B8%83%E5%BC%8F/zookeeper/</guid>
-      <description>zookeeper 什么是zookeeper 它是一个分布式协调框架，是Apache Hadoop 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如:统一命名服务、状态同 步服务、集群管理、分布式应用配置项的管理等。
+      <description>什么是zookeeper 它是一个分布式协调框架，是Apache Hadoop 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如:统一命名服务、状态同 步服务、集群管理、分布式应用配置项的管理等。
 核心概念 简单的理解Zookeeper 是一个用于存储少量数据的基于内存 的数据库，主要有如下两个核心的概念:
 文件系统数据结构 监听通知机制。 文件系统数据结构 Zookeeper维护一个类似文件系统的数据结构: 每个子目录项都被称作为 znode(目录节点)，和文件系统类似，我们能够自由的增加、删除 znode，在一个znode下增加、删除子znode。
 有四种类型的znode:

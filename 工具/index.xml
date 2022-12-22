@@ -43,6 +43,13 @@ git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、s
       <description>bean shell </description>
     </item>
     <item>
+      <title>markdown</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/markdown/</guid>
+      <description>绘图mermaid 时序图 sequenceDiagram participant mobile participant ucenter participant mysql loop mobile -&gt;&gt;+ ucenter:userCardRemote.queryCardByNo end</description>
+    </item>
+    <item>
       <title>maven</title>
       <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/maven/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

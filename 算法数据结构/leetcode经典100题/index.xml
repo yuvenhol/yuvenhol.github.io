@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leetcode经典100题 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/</link>
+    <description>Recent content in leetcode经典100题 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.两数之和</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>题目 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+你可以按任意顺序返回答案。
+示例 1：
+输入：nums = [2,7,11,15], target = 9 输出：[0,1] 解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。 示例 2：
+输入：nums = [3,2,4], target = 6 输出：[1,2] 示例 3：
+输入：nums = [3,3], target = 6 输出：[0,1] 提示：
+2 &amp;lt;= nums.length &amp;lt;= 104 -109 &amp;lt;= nums[i] &amp;lt;= 109 -109 &amp;lt;= target &amp;lt;= 109 只会存在一个有效答案 题解 </description>
+    </item>
+    <item>
+      <title>136.只出现一次的数字</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/136.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/136.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+      <description>#bit-manipulation
+题目 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例 1:
+输入: [2,2,1] 输出: 1 示例 2:
+输入: [4,1,2,1,2] 输出: 4 题解 这道题有很多解法，暴力双循环、hashmap、但是要实现时间O(n) 空间O(1)，还得是位运算，这里用的是异或。 class Solution: def singleNumber(self, nums: List[int]) -&amp;gt; int: result=0 for num in nums: result=num^result return result </description>
+    </item>
+    <item>
+      <title>20.有效的括号</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/</guid>
+      <description>题目 给定一个只包括 &#39;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&#39; 的字符串 s ，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。 每个右括号都有一个对应的相同类型的左括号。 示例 1：
+输入：s = &amp;#34;()&amp;#34; 输出：true 示例 2：
+输入：s = &amp;#34;()[]{}&amp;#34; 输出：true 示例 3：
+输入：s = &amp;#34;(]&amp;#34; 输出：false 提示：
+1 &amp;lt;= s.length &amp;lt;= 104 s 仅由括号 &#39;()[]{}&#39; 组成 题解 class Solution: def isValid(self, s: str) -&amp;gt; bool: if len(s) % 2 != 0: return False # 首先括号以键值对的形式存在，想到用dict存储，简化判断 dic = {&amp;#34;{&amp;#34;: &amp;#34;}&amp;#34;, &amp;#34;[&amp;#34;: &amp;#34;]&amp;#34;, &amp;#34;(&amp;#34;: &amp;#34;)&amp;#34;} # 这里用一个栈的思想，保存成对括号bracket的入和出 # 这里数组里放一个字符 stack = [&amp;#34;?</description>
+    </item>
+    <item>
+      <title>21.合并两个有序链表</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/21.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/21.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</guid>
+      <description>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 示例 1： 输入： l1 = [1,2,4], l2 = [1,3,4] 输出： [1,1,2,3,4,4]
+示例 2：
+输入： l1 = [], l2 = [] 输出：[]
+示例 3：
+**输入：**l1 = [], l2 = [0] 输出：[0]
+提示：
+两个链表的节点数目范围是 [0, 50] -100 &amp;lt;= Node.val &amp;lt;= 100 l1 和 l2 均按 非递减顺序 排列 class Solution: def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: pre_header=ListNode(-1) pre = pre_header while list1 and list2: if list1.val &amp;lt;= list2.val: pre.</description>
+    </item>
+    <item>
+      <title>22.括号生成</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</guid>
+      <description>#backtrack [[回溯（DFS）]]
+题目 数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+示例 1：
+输入：n = 3 输出：[&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;] 示例 2：
+输入：n = 1 输出：[&amp;quot;()&amp;quot;]
+提示：
+1 &amp;lt;= n &amp;lt;= 8
+题解 回溯法 class Solution: def generateParenthesis(self, n: int) -&amp;gt; List[str]: result = [] def backtrack(path, left: int, right: int): # 退出条件 if len(path) == n*2: result.append(&amp;#39;&amp;#39;.join(path)) return # 条件选择 if left&amp;lt;n: path.append(&amp;#34;(&amp;#34;) backtrack(path,left+1,right) #恢复 path.pop() if right&amp;lt;left: path.append(&amp;#34;)&amp;#34;) backtrack(path,left,right+1) path.pop() backtrack([], 0, 0) return result </description>
+    </item>
+    <item>
+      <title>26.删除有序数组中的重复项</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/26.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/26.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</guid>
+      <description>#双指针
+题目： 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。
+由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。
+将最终结果插入 nums 的前 k 个位置后返回 k 。
+不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+示例 2：
+输入：nums = [0,0,1,1,1,2,2,3,3,4] 输出：5, nums = [0,1,2,3,4] 解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。 题解： # # @lc app=leetcode.cn id=26 lang=python3 # # [26] 删除有序数组中的重复项 # # @lc code=start class Solution: def removeDuplicates(self, nums: List[int]) -&amp;gt; int: ol=len(nums) # 快慢指针 s,i=0,0; l=1; while(i&amp;lt;ol-1): i+=1 if nums[s]==nums[i]: continue s+=1 temp=nums[s] nums[s]=nums[i] nums[i]=temp l+=1 return l </description>
+    </item>
+    <item>
+      <title>300. 最长递增子序列</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/</guid>
+      <description>#动态规划
+题目 给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+示例 1：
+输入：nums = [10,9,2,5,3,7,101,18] 输出：4 解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。 示例 2：
+输入：nums = [0,1,0,3,2,3] 输出：4 示例 3：
+输入：nums = [7,7,7,7,7,7,7] 输出：1
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 2500 -104 &amp;lt;= nums[i] &amp;lt;= 104
+题解 自己的第一反应是错误的 我第一反应最长的增长应该是连续的ex:[3,1,2,5]。 实际上可能中间会穿插ex:[1,5,2,3]。
+class Solution: max=0; def setMax(self,max): if self.max&amp;lt;max: self.max=max; def lengthOfLIS(self, nums: List[int]) -&amp;gt; int: for i in range(len(nums)): max_value=-1 max_length=0 for j in range(i,len(nums)): if nums[j]&amp;gt;max_value: max_value=nums[j] max_length+=1 self.</description>
+    </item>
+    <item>
+      <title>70.爬楼梯</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/</guid>
+      <description>#动态规划
+题目 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+示例 1：
+输入：n = 2 输出：2 解释：有两种方法可以爬到楼顶。 1. 1 阶 + 1 阶 2. 2 阶 示例 2：
+输入：n = 3 输出：3 解释：有三种方法可以爬到楼顶。 1. 1 阶 + 1 阶 + 1 阶 2. 1 阶 + 2 阶 3. 2 阶 + 1 阶 提示：
+1 &amp;lt;= n &amp;lt;= 45 题解 f(n)=f(n-1)+f(n-2)
+class Solution: def climbStairs(self, n: int) -&amp;gt; int: # 这道题使用递归会超过最大调用深度，所以比dp数组的形式解决 dp = [1, 2] if n &amp;lt;= 2: return dp[n-1] # 数组下标 for i in range(2, n): dp.</description>
+    </item>
+    <item>
+      <title>经典算法目录</title>
+      <link>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

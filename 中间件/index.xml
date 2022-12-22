@@ -14,6 +14,13 @@
       <description></description>
     </item>
     <item>
+      <title>rocketmq</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>kafka</title>
       <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,6 +48,13 @@ kafka在redis中存的内容 </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/</guid>
       <description>mysql 逻辑框架图 </description>
+    </item>
+    <item>
+      <title>RocketMQ</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/</guid>
+      <description>参考资料 RocketMQ 消息积压了，增 加消费者有用吗？：https://www.pudn.com/news/62f766f45425817ffc3eae52.html</description>
     </item>
     <item>
       <title>中间件的定义</title>

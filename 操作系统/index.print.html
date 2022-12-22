@@ -10,21 +10,21 @@
     <title>操作系统 - yuvenhol的技术苦旅</title>
     <link href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1666255106" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1671727473" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1666255106" rel="stylesheet">
-    <link href="/css/nucleus.css?1666255106" rel="stylesheet">
-    <link href="/css/fonts.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1666255106" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1666255106" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1666255106" rel="stylesheet">
-    <link href="/css/variant.css?1666255106" rel="stylesheet">
-    <link href="/css/print.css?1666255106" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1666255106" rel="stylesheet">
-    <script src="/js/variant.js?1666255106"></script>
+    <link href="/css/fontawesome-all.min.css?1671727473" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1671727473" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1671727473" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1671727473" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1671727473" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1671727473" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1671727473" rel="stylesheet">
+    <link href="/css/nucleus.css?1671727473" rel="stylesheet">
+    <link href="/css/fonts.css?1671727473" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1671727473" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1671727473" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1671727473" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1671727473" rel="stylesheet">
+    <link href="/css/variant.css?1671727473" rel="stylesheet">
+    <link href="/css/print.css?1671727473" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1671727473" rel="stylesheet">
+    <script src="/js/variant.js?1671727473"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1666255106" defer></script>
+    <script src="/js/jquery.min.js?1671727473" defer></script>
   </head>
   <body class="mobile-support print" data-url="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
     <div id="body" class="default-animation">
@@ -99,7 +99,7 @@
 
           <section>
           <article class="default">
-<h1>linux 工具</h1>
+<h1>linux工具</h1>
 
 <h2 id="figlet-字符画制作工具">figlet 字符画制作工具</h2>
 <p>figlet -w yuvenhol~</p>
@@ -109,7 +109,13 @@
    | |   | |_| |   \ V /   |  __/ | | | | | | | | | (_) | | |      
    |_|    \__,_|    \_/     \___| |_| |_| |_| |_|  \___/  |_|      
                                                                    
-</code></pre>
+</code></pre><h2 id="alias">alias</h2>
+<p>alias[别名]=[指令名称]
+删除unalias 别名</p>
+<h2 id="nohup">nohup</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nohup <span class="nb">command</span> &gt; myout.file 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</span></span></code></pre></div><p>2表示异常输出 1表示标准输出 2&gt;&amp;1 异常输出打到标准输出里。</p>
+
             <footer class="footline">
             </footer>
           </article>
@@ -237,8 +243,185 @@
           </article>
 
           <article class="default">
-<h1>linux系统监控命令</h1>
+<h1>shell</h1>
 
+<p>-c 表示后面的参数将会作为字符串读入作为执行的命令。
+ex：</p>
+<ul>
+<li><code>/bin/bash -c ls</code></li>
+<li><code>/bin/bash ls</code></li>
+</ul>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221115135920.png" alt=""></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>SSH</h1>
+
+<h1 id="不同host指定使用不同密钥">不同host指定使用不同密钥</h1>
+<p>在.ssh/下创建一个config文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Host hostA
+</span></span><span class="line"><span class="cl">    HostName www.abc.com
+</span></span><span class="line"><span class="cl">    Port 1234
+</span></span><span class="line"><span class="cl">    User test
+</span></span><span class="line"><span class="cl">    IdentityFile ~\.ssh\id_rsa
+</span></span><span class="line"><span class="cl">Host hostB
+</span></span><span class="line"><span class="cl">    HostName 123.456.789.000
+</span></span><span class="line"><span class="cl">    Port 5678
+</span></span><span class="line"><span class="cl">    User root
+</span></span><span class="line"><span class="cl">    IdentityFile ~\.ssh\id_rsa
+</span></span></code></pre></div><h1 id="给linux实例添加新增ssh公钥">给linux实例添加新增SSH公钥</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ssh public key to be added.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">sshPublicKey</span><span class="o">=</span><span class="s2">&#34;{{sshPublicKey}}&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir -p ~/.ssh <span class="o">&amp;&amp;</span> chmod <span class="m">700</span> ~/.ssh 
+</span></span><span class="line"><span class="cl">touch ~/.ssh/authorized_keys
+</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> ~/.ssh/authorized_keys
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$sshPublicKey</span> &gt;&gt; ~/.ssh/authorized_keys
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;operation success!&#34;</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>启动执行脚本</h1>
+
+<p>/etc/</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>命令组合</h1>
+
+<h3 id="统计某个目录下所有文件的字符数">统计某个目录下所有文件的字符数</h3>
+<p>find . -type f|grep .md |tr \n \0|xargs -0 cat|wc -m</p>
+<h3 id="统计日志中某个数值次数">统计日志中某个数值次数</h3>
+<p>zcat request.log.2022-10-28.gz |grep uri=/mobile/wx/card/select |awk &lsquo;BEGIN{FS=&quot; &ldquo;} {print $2,$5}&rsquo;|awk -F &rsquo;time=&rsquo; &lsquo;{if($2 &gt; 500) print $1,$2}&rsquo;</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>如何区分terminal、tty、console、shell</h1>
+
+<p>从词源上来说：
+terminal是电线的末端、
+shell是乌龟的壳
+tty是teletype远程打字机的缩写
+console是一种家具</p>
+<p>简单来说在unix环境下：</p>
+<ul>
+<li>terminal = tty = 文本输入/输出环境</li>
+<li>console = 物理终端</li>
+<li>shell = 命令行解释器</li>
+</ul>
+<p>tty是一种特殊的设备文件，多数情况下tty和terminal是同义词，一些tty由内核代表硬件设备提供，ex：键盘输入。另一些的tty被称为伪tty，由终端仿真器提供。</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>文件相关</h1>
+
+<h2 id="touch">touch</h2>
+<p>修改文件的创建和修改时间，现在常用于创建一个文件。</p>
+<h2 id="find">find</h2>
+<p>find path -name &ldquo;支持 * ？&rdquo; [-delete]</p>
+<h2 id="grep">grep</h2>
+<h2 id="ln">ln</h2>
+<p>ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>文本相关</h1>
+
+<blockquote>
+<p>cat: 直接把文件一次性输出</p>
+<p>more：在打开一个很大的文件的时，vim等工具会把整个文件加载到内存，但是有时我们只是简单的查看一下，此时可以用到more</p>
+</blockquote>
+<p>less：less是more是一个升级版，正所谓 <strong>less is more</strong></p>
+<h1 id="less">less</h1>
+<table>
+<thead>
+<tr>
+<th>常用参数</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-N</td>
+<td>展示行号</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>space</td>
+<td>下一页</td>
+</tr>
+<tr>
+<td>b</td>
+<td>上半页</td>
+</tr>
+<tr>
+<td>u</td>
+<td>上半页</td>
+</tr>
+<tr>
+<td>d</td>
+<td>下半页</td>
+</tr>
+</tbody>
+</table>
+<h1 id="tr">tr</h1>
+<p>文本替换工具
+ex：把换行符替换为null值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tr <span class="se">\\</span>n <span class="se">\\</span><span class="m">0</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>用户相关</h1>
+
+<h1 id="删除用户">删除用户</h1>
+<ol>
+<li>先用命令 cat /etc/passwd 查看一下所有的用户 可以看到你需要删除的用户名</li>
+<li>用命令 who 查询当前登录的用户</li>
+<li>用命令 ps -u 用户名 查看该用户的pid</li>
+<li>用命令 kill pid 杀掉他的sshd或者是shell进程</li>
+<li>再用命令 userdel -r 用户名 删除用户</li>
+</ol>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>系统监控命令</h1>
+
+<h1 id="系统资源">系统资源</h1>
 <h2 id="top">top</h2>
 <p>定义：display sorted information about processes</p>
 <table>
@@ -288,13 +471,71 @@
 </tbody>
 </table>
 <h2 id="iotop-磁盘情况查看">iotop 磁盘情况查看</h2>
+<h2 id="ulimit-查看系统资源限制">ulimit 查看系统资源限制</h2>
+<p>-a 列出所有当前资源极限</p>
+<p>-c 设置core文件的最大值.单位:blocks</p>
+<p>-d 设置一个进程的数据段的最大值.单位:kbytes</p>
+<p>-f Shell 创建文件的文件大小的最大值，单位：blocks</p>
+<p>-h 指定设置某个给定资源的硬极限。如果用户拥有 root 用户权限，可以增大硬极限。任何用户均可减少硬极限</p>
+<p>-l 可以锁住的物理内存的最大值</p>
+<p>-m 可以使用的常驻内存的最大值,单位：kbytes</p>
+<p>-n 每个进程可以同时打开的最大文件数</p>
+<p>-p 设置管道的最大值，单位为block，1block=512bytes</p>
+<p>-s 指定堆栈的最大值：单位：kbytes</p>
+<p>-S 指定为给定的资源设置软极限。软极限可增大到硬极限的值。如果 -H 和 -S 标志均未指定，极限适用于以上二者</p>
+<p>-t 指定每个进程所使用的秒数,单位：seconds</p>
+<p>-u 可以运行的最大并发进程数</p>
+<p>-v Shell可使用的最大的虚拟内存，单位：kbytes</p>
+<h1 id="网络相关">网络相关</h1>
+<h2 id="netstat">netstat</h2>
+<p>netstat -atl</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>列出所有</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>只查看listen端口</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>增加详细程度，特别是通过添加一列来显示与每个打开的端口关联的进程ID(pid)</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>Show the PID and name of the program to which each socket belongs.</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>udp</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>tcp</td>
+</tr>
+<tr>
+<td>-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="lsof">lsof</h2>
-<p>lsof - list open files
+<p>mac下查看网络端口查看
+lsof - list open files
 在linux下一切皆文件，一个网络连接也是一个文件。
 lsof -i 查看网络连接的文件
 在mac系统下netstat是简化版的，用lsof 替代</p>
-<h2 id="netstat">netstat</h2>
-<p>netstat -an</p>
+<h2 id="ifconfig">ifconfig</h2>
+<p>lo0 :localhost
+eth0:eth0是光纤以太网接口卡。学名FiberEthernetAdapter0</p>
 <h2 id="export-环境变量相关操作">export 环境变量相关操作</h2>
 <p>Linux export 命令用于设置或显示环境变量。</p>
 <p>在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。export 的效力仅限于该次登陆操作，如果在配置文件中添加可以持续有效。
@@ -307,64 +548,190 @@ export [-fnp][变量名称]=[变量设置值]</p>
 <h3 id="例子">例子</h3>
 <p>在.zprofile 里面
 export WS=/Users/yuwenhao/Programs/work-space</p>
-<h2 id="touch">touch</h2>
-<p>修改文件的创建和修改时间，现在常用于创建一个文件。</p>
-<h2 id="find">find</h2>
-<p>find path -name &ldquo;支持 * ？&rdquo; [-delete]</p>
-<h2 id="grep">grep</h2>
-<h2 id="alias">alias</h2>
-<p>alias[别名]=[指令名称]
-删除unlias 别名</p>
-<h2 id="ln">ln</h2>
-<p>ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。</p>
-<h1 id="nohup">nohup</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nohup <span class="nb">command</span> &gt; myout.file 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-</span></span></code></pre></div><p>2表示异常输出 1表示标准输出 2&gt;&amp;1 异常输出打到标准输出里。</p>
 
             <footer class="footline">
             </footer>
           </article>
 
           <article class="default">
-<h1>SSH</h1>
+<h1>零拷贝</h1>
 
-<h1 id="给linux实例添加新增ssh公钥">给linux实例添加新增SSH公钥</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ssh public key to be added.</span>
-</span></span><span class="line"><span class="cl"><span class="nv">sshPublicKey</span><span class="o">=</span><span class="s2">&#34;{{sshPublicKey}}&#34;</span>
+<h1 id="什么是零拷贝">什么是零拷贝</h1>
+<p>“零”：表示次数是0，它表示拷贝数据的次数是0</p>
+<p>“拷贝”：指数据从一个存储区域转移到另一个存储区域</p>
+<p>合起来，那零拷贝就是不需要将数据从一个存储区域复制到另一个存储区域。</p>
+<blockquote>
+<p>零拷贝是指计算机执行IO操作时，CPU不需要将数据从一个存储区域复制到另一个存储区域，进而减少上下文切换以及CPU的拷贝时间。它是一种IO操作优化技术。</p>
+</blockquote>
+<h1 id="传统io的执行流程">传统IO的执行流程</h1>
+<p>比如想实现一个下载功能，服务端的任务就是：将服务器主机磁盘中的文件从已连接的socket中发出去，关键代码如下</p>
+<p>while((n = read(diskfd, buf, BUF_SIZE)) &gt; 0)</p>
+<p>write(sockfd, buf , n);</p>
+<p>传统的IO流程包括read以及write的过程</p>
+<p>read:将数据从磁盘读取到内核缓存区中，在拷贝到用户缓冲区</p>
+<p>write:先将数据写入到socket缓冲区中，最后写入网卡设备</p>
+<p>流程图如下
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211748331" alt="">
+1.应用程序调用read函数，向操作系统发起IO调用，<em>上下文从用户态切换至内核态</em></p>
+<p>2.DMA控制器把数据从磁盘中读取到内核缓冲区</p>
+<p>3.CPU把内核缓冲区数据拷贝到用户应用缓冲区，<em>上下文从内核态切换至用户态</em>，此时read函数返回</p>
+<p>4.用户应用进程通过write函数，发起IO调用，<em>上下文从用户态切换至内核态</em></p>
+<p>5.CPU将缓冲区的数据拷贝到socket缓冲区</p>
+<p>6.DMA控制器将数据从socket缓冲区拷贝到网卡设备，<em>上下文从内核态切换至用户态</em>，此时write函数返回</p>
+<p>从流程图中可以看出传统的IO流程包括<em><strong>4次上下文的切换</strong></em>，<em>4次拷贝数据</em>(两次CPU拷贝以及两次DMA拷贝)</p>
+<h1 id="前置知识">前置知识</h1>
+<h2 id="内核空间和用户空间">内核空间和用户空间</h2>
+<p>我们电脑上跑着的应用程序，其实是需要经过操作系统，才能做一些特殊操作，如磁盘文件读写、内存的读写等等。因为这些都是比较危险的操作，不可以由应用程序乱来，只能交给底层操作系统来。</p>
+<p>因此，操作系统为每个进程都分配了内存空间，一部分是用户空间，一部分是内核空间。内核空间是操作系统内核访问的区域，是受保护的内存空间，而用户空间是用户应用程序访问的内存区域。 以32位操作系统为例，它会为每一个进程都分配了4G(2的32次方)的内存空间。</p>
+<p>内核空间：主要提供进程调度、内存分配、连接硬件资源等功能</p>
+<p>用户空间：提供给各个程序进程的空间，它不具有访问内核空间资源的权限，如果应用程序需要使用到内核空间的资源，则需要通过系统调用来完成。进程从用户空间切换到内核空间，完成相关操作后，再从内核空间切换回用户空间。</p>
+<h2 id="用户态和内核态">用户态和内核态</h2>
+<p>如果进程运行于内核空间，被称为进程的内核态。</p>
+<p>如果进程运行于用户空间，被称为进程的用户态。</p>
+<h2 id="什么是上下文切换">什么是上下文切换</h2>
+<p>什么是上下文</p>
+<blockquote>
+<p>CPU 寄存器，是CPU内置的容量小、但速度极快的内存。而程序计数器，则是用来存储 CPU 正在执行的指令位置、或者即将执行的下一条指令位置。它们都是 CPU 在运行任何任务前，必须的依赖环境，因此叫做CPU上下文。</p>
+</blockquote>
+<p>什么是上下文切换</p>
+<blockquote>
+<p>它是指，先把前一个任务的CPU上下文（也就是CPU寄存器和程序计数器）保存起来，然后加载新任务的上下文到这些寄存器和程序计数器，最后再跳转到程序计数器所指的新位置，运行新任务。</p>
+</blockquote>
+<p>一般我们说的上下文切换，就是指内核（操作系统的核心）在CPU上对进程或者线程进行切换。进程从用户态到内核态的转变，需要通过系统调用来完成。系统调用的过程，会发生CPU上下文的切换。
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211749748" alt=""></p>
+<h2 id="虚拟内存">虚拟内存</h2>
+<p>现代操作系统使用虚拟内存，即虚拟地址取代物理地址，使用虚拟内存可以有2个好处：</p>
+<p>1.虚拟内存空间可以远远大于物理内存空间</p>
+<p>2.多个虚拟内存可以指向同一个物理地址</p>
+<p>正是多个虚拟内存可以指向同一个物理地址，可以把内核空间和用户空间的虚拟地址映射到同一个物理地址，这样的话，就可以减少IO的数据拷贝次数，示意图如下
+<img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211747896" alt=""></p>
+<h2 id="dma技术">DMA技术</h2>
+<p>DMA，英文全称是Direct Memory Access，即直接内存访问。DMA本质上是一块主板上独立的芯片，允许外设设备和内存存储器之间直接进行IO数据传输，其过程不需要CPU的参与。</p>
+<p>简单的说它就是帮住CPU转发一下IO请求以及拷贝数据，那为什么需要它呢？其实主要是效率问题。它帮忙CPU做事情，这时候，CPU就可以闲下来去做别的事情，提高了CPU的利用效率。大白话解释就是，CPU老哥太忙太累啦，所以他找了个小弟（名叫DMA） ，替他完成一部分的拷贝工作，这样CPU老哥就能着手去做其他事情。</p>
+<p>下面看下DMA具体是做了哪些工作</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211750952" alt="">
+1.用户应用程序调read函数，向操作系统发起IO调用，进入阻塞状态等待数据返回</p>
+<p>2.CPU接到指令后，对DMA控制器发起指令调度</p>
+<p>3.DMA收到请求后，将请求发送给磁盘</p>
+<p>4.磁盘将数据放入磁盘控制缓冲区并通知DMA</p>
+<p>5.DMA将数据从磁盘控制器缓冲区拷贝到内核缓冲区</p>
+<p>6.DMA向CPU发送数据读完的信号，CPU负责将数据从内核缓冲区拷贝到用户缓冲区</p>
+<p>7.用户应用进程由内核态切回用户态，解除阻塞状态</p>
+<h1 id="如何实现零拷贝">如何实现零拷贝</h1>
+<p>零拷贝并不是没有拷贝数据，而是减少用户态、内核态的切换次数以及CPU拷贝次数；实现零拷贝主要有三种方式分别是</p>
+<p>1.mmap + write</p>
+<p>2.sendfile</p>
+<p>3.带有DMA收集拷贝功能的sendfile</p>
+<h2 id="mmap">mmap</h2>
+<p>mmap的函数原型如下</p>
+<p>void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);</p>
+<p>addr:指定映射的虚拟内存地址</p>
+<p>length:映射的长度</p>
+<p>prot:映射内存的保护模式</p>
+<p>flags:指定映射的类型</p>
+<p>fd:进行映射的文件句柄</p>
+<p>offset:文件偏移量</p>
+<p>前面一小节，我们介绍了虚拟内存，可以把内核空间和用户空间的虚拟地址映射到同一个物理地址，从而减少数据拷贝次数！mmap就是用了虚拟内存这个特点，它将内核中的读缓冲区与用户空间的缓冲区进行映射，所有的IO都在内核中完成。mmap+write实现的零拷贝流程如下：</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211757594" alt=""></p>
+<p>1.用户进程通过调用mmap方法向操作系统内核发起IO调用，<em>上下文从用户态切换至内核态</em></p>
+<p>2.CPU利用DMA控制器，将数据从硬盘拷贝到内核缓冲区</p>
+<p>3.<em>上下文从内核态切换回用户态</em>，mmap方法返回</p>
+<p>4.用户进程通过调用write方法向操作系统内核再次发起IO调用，<em>上下文从用户态切换至内核态</em></p>
+<p>5.CPU将内核缓冲区的数据拷贝到socket缓冲区</p>
+<p>6.CPU利用DMA控制器，将数据从socket缓冲器拷贝到网卡，<em>上下文从内核态切换至用户态</em>，write方法返回</p>
+<p>可以发现，mmap+write实现的零拷贝其中发生了4次上线文切换以及3次拷贝(2次DMA拷贝+1次cpu拷贝)</p>
+<h2 id="sendfile">sendfile</h2>
+<p>sendfile是Linux2.1版本后内核引入 的一个系统调用函数，原型如下</p>
+<p>ssize_t sendfile(int out_fd, int in_fd, off_t *offset, size_t count);</p>
+<p>out_fd:为待写入内容的文件描述符</p>
+<p>in_fd:为待读出内容的文件描述符</p>
+<p>offset:文件偏移量</p>
+<p>count:指定在fdout和fdin之间传输的字节数</p>
+<p>sendfile表示在两个文件描述符之间传输数据，它是在操作系统内核中操作的，避免了数据从内核缓冲区和用户缓冲区之间的拷贝操作，因此可以使用它来实现零拷贝。sendfile实现的零拷贝流程如下：</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211759899" alt="">
+1.用户进程发起sendfile系统调用，<em>上下文从用户态切换至内核态</em></p>
+<p>2.DMA控制器将数据从硬盘拷贝到内核缓冲区</p>
+<p>3.CPU将读缓冲区中的数据拷贝到socket缓冲区</p>
+<p>4.DMA控制器异步把数据从socket缓冲器拷贝到网卡</p>
+<p>5.<em>上下文从内核态切换至用户态</em>，sendfile函数返回</p>
+<p>可以发现，sendfile实现的零拷贝仅仅发生了2次上下文切换以及3次拷贝(2次DMA拷贝+1次CPU拷贝)</p>
+<p><em>sendfile +DMA scatter/gather实现的零拷贝</em></p>
+<p>linux2.4版本后，对sendfile做了优化升级，引入SG-DMA技术，其实就是对DMA拷贝加入了scatter/gather操作，它可以直接从内核空间缓冲区中将数据读取到网卡，这样的话还可以省去CPU拷贝。</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212211759197" alt="">
+1.用户进程发起sendfile系统调用，<em>上下文从用户态切换至内核态</em></p>
+<p>2.DMA控制器将数据从磁盘拷贝到内核缓冲器</p>
+<p>3.CPU把内核缓冲区中的文件描述符信息（包括内核缓冲区的内存地址和偏移量）直接发送到socket缓冲区</p>
+<p>4.DMA控制器根据文件描述符信息直接把数据从内核缓冲区拷贝到网卡</p>
+<p>5.<em>上下文切换至用户态</em>，sendfile返回</p>
+<p>可以发现sendfile + DMA scatter/gather实现的零拷贝发生了2次上下文切换以及2次数据拷贝，这就是真正的零拷贝技术，全程没有通过CPU来搬运数据，所有的数据都是通过DMA进行传输的。</p>
+<h1 id="java提供的零拷贝方式">java提供的零拷贝方式</h1>
+<h2 id="mmap-1">mmap</h2>
+<p>Java NIO有一个MappedByteBuffer的类可以用来实现内存映射。它的底层是调用的linux内核的mmap的API</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MmapTest</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">mkdir -p ~/.ssh <span class="o">&amp;&amp;</span> chmod <span class="m">700</span> ~/.ssh 
-</span></span><span class="line"><span class="cl">touch ~/.ssh/authorized_keys
-</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> ~/.ssh/authorized_keys
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$sshPublicKey</span> &gt;&gt; ~/.ssh/authorized_keys
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;operation success!&#34;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">FileChannel</span> <span class="n">readChannel</span> <span class="o">=</span> <span class="n">FileChannel</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;./jay.txt&#34;</span><span class="o">),</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">READ</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">MappedByteBuffer</span> <span class="n">data</span> <span class="o">=</span> <span class="n">readChannel</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">FileChannel</span><span class="o">.</span><span class="na">MapMode</span><span class="o">.</span><span class="na">READ_ONLY</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1024</span> <span class="o">*</span> <span class="n">1024</span> <span class="o">*</span> <span class="n">40</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">FileChannel</span> <span class="n">writeChannel</span> <span class="o">=</span> <span class="n">FileChannel</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;./siting.txt&#34;</span><span class="o">),</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">WRITE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//数据传输
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">writeChannel</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">readChannel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">writeChannel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h2 id="sendfile-1">sendfile</h2>
+<p>FileChannel的transferTo()/transferFrom()，底层就是sendfile() 系统调用函数。<a href="https://so.csdn.net/so/search?q=Kafka&amp;spm=1001.2101.3001.7020">Kafka</a> 这个开源项目就用到它，平时面试的时候，回答面试官为什么这么快，就可以提到零拷贝sendfile这个点</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SendFileTest</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">FileChannel</span> <span class="n">readChannel</span> <span class="o">=</span> <span class="n">FileChannel</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;./jay.txt&#34;</span><span class="o">),</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">READ</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">len</span> <span class="o">=</span> <span class="n">readChannel</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">position</span> <span class="o">=</span> <span class="n">readChannel</span><span class="o">.</span><span class="na">position</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">FileChannel</span> <span class="n">writeChannel</span> <span class="o">=</span> <span class="n">FileChannel</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;./siting.txt&#34;</span><span class="o">),</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">WRITE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//数据传输
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">readChannel</span><span class="o">.</span><span class="na">transferTo</span><span class="o">(</span><span class="n">position</span><span class="o">,</span> <span class="n">len</span><span class="o">,</span> <span class="n">writeChannel</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">readChannel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">writeChannel</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div>
-            <footer class="footline">
-            </footer>
-          </article>
-
-          <article class="default">
-<h1>启动执行脚本</h1>
-
-<p>/etc/</p>
-
-            <footer class="footline">
-            </footer>
-          </article>
-
-          <article class="default">
-<h1>用户</h1>
-
-<h1 id="删除用户">删除用户</h1>
-<ol>
-<li>先用命令 cat /etc/passwd 查看一下所有的用户 可以看到你需要删除的用户名</li>
-<li>用命令 who 查询当前登录的用户</li>
-<li>用命令 ps -u 用户名 查看该用户的pid</li>
-<li>用命令 kill pid 杀掉他的sshd或者是shell进程</li>
-<li>再用命令 userdel -r 用户名 删除用户</li>
-</ol>
-
             <footer class="footline">
             </footer>
           </article>
@@ -459,42 +826,54 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1666255106" defer></script>
-        <script src="/js/lunr.min.js?1666255106" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1666255106" defer></script>
-        <script src="/js/lunr.multi.min.js?1666255106" defer></script>
-        <script src="/js/lunr.en.min.js?1666255106" defer></script>
-        <script src="/js/search.js?1666255106" defer></script>
+        <script src="/js/auto-complete.js?1671727473" defer></script>
+        <script src="/js/lunr.min.js?1671727473" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1671727473" defer></script>
+        <script src="/js/lunr.multi.min.js?1671727473" defer></script>
+        <script src="/js/lunr.en.min.js?1671727473" defer></script>
+        <script src="/js/search.js?1671727473" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
           <li data-nav-id="/dockerk8s/" title="docker&amp;k8s" class="dd-item"><input type="checkbox" id="section-9e6e410ba0e302767b2ea4fda732470d" class="toggle"/><label for="section-9e6e410ba0e302767b2ea4fda732470d" ></label><a href="/dockerk8s/">docker&amp;k8s<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/dockerk8s/docker-compose/" title="docker compose" class="dd-item"><a href="/dockerk8s/docker-compose/">docker compose<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/dockerk8s/docker-compose/" title="docker compose" class="dd-item"><a href="/dockerk8s/docker-compose/">docker compose<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/dockerk8s/docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="docker基础知识" class="dd-item"><a href="/dockerk8s/docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">docker基础知识<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/dockerk8s/docker%E8%AE%BE%E7%BD%AE/" title="docker设置" class="dd-item"><a href="/dockerk8s/docker%E8%AE%BE%E7%BD%AE/">docker设置<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/excalidraw/" title="Excalidraw" class="dd-item"><a href="/excalidraw/">Excalidraw<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/golang/" title="golang" class="dd-item"><a href="/golang/">golang<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/interview/" title="interview" class="dd-item"><input type="checkbox" id="section-a64fd7a039e11bfc320164f9c76fa09b" class="toggle"/><label for="section-a64fd7a039e11bfc320164f9c76fa09b" ></label><a href="/interview/">interview<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/interview/%E7%AE%80%E5%8E%86/" title="简历" class="dd-item"><a href="/interview/%E7%AE%80%E5%8E%86/">简历<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/interview/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" title="面试题整理" class="dd-item"><a href="/interview/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">面试题整理<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/" title="java" class="dd-item"><input type="checkbox" id="section-518f725d76ef42edca45fe01865b4d20" class="toggle"/><label for="section-518f725d76ef42edca45fe01865b4d20" ></label><a href="/java/">java<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/java/cglib/" title="cglib" class="dd-item"><a href="/java/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/classpath/" title="classpath" class="dd-item"><a href="/java/classpath/">classpath<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="java的引用类型" class="dd-item"><a href="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">java的引用类型<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jsr/" title="JSR" class="dd-item"><a href="/java/jsr/">JSR<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/" title="jvm" class="dd-item alwaysopen"><input type="checkbox" id="section-8bb18590038df95f5ce669688bf7139d" class="toggle" checked/><label for="section-8bb18590038df95f5ce669688bf7139d" ></label><a href="/java/jvm/">jvm<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/" title="gc日志分析" class="dd-item"><a href="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">gc日志分析<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/" title="java启动参数" class="dd-item"><a href="/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/">java启动参数<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/" title="java程序的启动" class="dd-item"><a href="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/">java程序的启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" title="jvm内存分析：" class="dd-item"><a href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">jvm内存分析：<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB &amp; 栈上分配" class="dd-item"><a href="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/">TLAB &amp; 栈上分配<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB&amp;栈上分配" class="dd-item"><a href="/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/">TLAB&amp;栈上分配<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" title="类加载" class="dd-item"><a href="/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD/">类加载<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/lib/" title="lib" class="dd-item alwaysopen"><input type="checkbox" id="section-3d385f71e2cc44b77d754be95cf76a3f" class="toggle" checked/><label for="section-3d385f71e2cc44b77d754be95cf76a3f" ></label><a href="/java/lib/">lib<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/java/lib/cglib/" title="cglib" class="dd-item"><a href="/java/lib/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/meta-inf%E5%92%8Cweb-info/" title="META-INF和WEB-INFO" class="dd-item"><a href="/java/meta-inf%E5%92%8Cweb-info/">META-INF和WEB-INFO<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="并发编程" class="dd-item alwaysopen"><input type="checkbox" id="section-2b723ede4bb374cbc0cbba9e311b6f2f" class="toggle" checked/><label for="section-2b723ede4bb374cbc0cbba9e311b6f2f" ></label><a href="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/" title="Future、CompletableFuture" class="dd-item"><a href="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/">Future、CompletableFuture<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/%E6%B3%A8%E9%87%8A/" title="注释" class="dd-item"><a href="/java/%E6%B3%A8%E9%87%8A/">注释<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/office/" title="office" class="dd-item"><input type="checkbox" id="section-98530a8654fbed228aee60cd5d89d452" class="toggle"/><label for="section-98530a8654fbed228aee60cd5d89d452" ></label><a href="/office/">office<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/office/excel%E5%85%AC%E5%BC%8F/" title="excel公式" class="dd-item"><a href="/office/excel%E5%85%AC%E5%BC%8F/">excel公式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/python/" title="python" class="dd-item"><input type="checkbox" id="section-c8861a2651b27ee3930a98ce392020d1" class="toggle"/><label for="section-c8861a2651b27ee3930a98ce392020d1" ></label><a href="/python/">python<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python 语法知识" class="dd-item"><a href="/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python 语法知识<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python语法知识" class="dd-item"><a href="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python语法知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/" title="时间处理" class="dd-item"><a href="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/">时间处理<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/" title="绘图库 matplotlib" class="dd-item"><a href="/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/">绘图库 matplotlib<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/" title="绘图库matplotlib" class="dd-item"><a href="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/">绘图库matplotlib<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/" title="spring" class="dd-item"><input type="checkbox" id="section-6be3a103036efc21a988ae839ac63e32" class="toggle"/><label for="section-6be3a103036efc21a988ae839ac63e32" ></label><a href="/spring/">spring<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/spring/configuration/" title="@Configuration" class="dd-item"><a href="/spring/configuration/">@Configuration<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/aop/" title="aop" class="dd-item alwaysopen"><input type="checkbox" id="section-3f940e089bb0d22138400443ef5737ed" class="toggle" checked/><label for="section-3f940e089bb0d22138400443ef5737ed" ></label><a href="/spring/aop/">aop<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/spring/aop/aop%E4%BD%BF%E7%94%A8/" title="AOP使用" class="dd-item"><a href="/spring/aop/aop%E4%BD%BF%E7%94%A8/">AOP使用<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/mvc/" title="mvc" class="dd-item alwaysopen"><input type="checkbox" id="section-f7eab8a11f97ffd0873d29e8e6991aa8" class="toggle" checked/><label for="section-f7eab8a11f97ffd0873d29e8e6991aa8" ></label><a href="/spring/mvc/">mvc<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/" title="异步模式" class="dd-item"><a href="/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/">异步模式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/spring-bean/" title="spring bean" class="dd-item"><a href="/spring/spring-bean/">spring bean<i class="fas fa-check read-icon"></i></a></li>
@@ -502,8 +881,11 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <li data-nav-id="/spring/spring-context/" title="spring Context" class="dd-item"><a href="/spring/spring-context/">spring Context<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/spring-mvc/" title="spring mvc" class="dd-item"><a href="/spring/spring-mvc/">spring mvc<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/" title="springboot" class="dd-item alwaysopen"><input type="checkbox" id="section-d2c9d1492d2be5f58a95b0e575fe9ac4" class="toggle" checked/><label for="section-d2c9d1492d2be5f58a95b0e575fe9ac4" ></label><a href="/spring/springboot/">springboot<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/" title="为什么SpringBoot可以直接运行 jar 包？" class="dd-item"><a href="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/">为什么SpringBoot可以直接运行 jar 包？<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/springboot/%E5%90%AF%E5%8A%A8/" title="启动" class="dd-item"><a href="/spring/springboot/%E5%90%AF%E5%8A%A8/">启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" title="自动配置" class="dd-item"><a href="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/">自动配置<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/" title="条件加载" class="dd-item"><a href="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/">条件加载<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件" class="dd-item"><input type="checkbox" id="section-cb147f28999e2af77c3c46e5203c4ebe" class="toggle"/><label for="section-cb147f28999e2af77c3c46e5203c4ebe" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/">kafka<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/" title="mysql" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/">mysql<i class="fas fa-check read-icon"></i></a></li>
@@ -511,6 +893,9 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="redis基础知识" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">redis基础知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/" title="布隆过滤器" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/">布隆过滤器<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/" title="缓存雪崩、缓存击穿、缓存穿透" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/">缓存雪崩、缓存击穿、缓存穿透<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/" title="rocketmq" class="dd-item alwaysopen"><input type="checkbox" id="section-ce3034db624a906c4bed91371ab24f78" class="toggle" checked/><label for="section-ce3034db624a906c4bed91371ab24f78" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/">rocketmq<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/rocketmq%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="rocketmq基本概念" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/rocketmq%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">rocketmq基本概念<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/" title="RocketMQ" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/">RocketMQ<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/" title="中间件的定义" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/">中间件的定义<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E5%88%86%E5%B8%83%E5%BC%8F/" title="分布式" class="dd-item"><input type="checkbox" id="section-4c00b6b934bcc78dd785b986be43672c" class="toggle"/><label for="section-4c00b6b934bcc78dd785b986be43672c" ></label><a href="/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/" title="dubbo" class="dd-item"><a href="/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/">dubbo<i class="fas fa-check read-icon"></i></a></li>
@@ -523,15 +908,22 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/idea/" title="idea" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/idea/">idea<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/jmeter/" title="jmeter" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/jmeter/">jmeter<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E5%B7%A5%E5%85%B7/markdown/" title="markdown" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/markdown/">markdown<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item active parent"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle" checked/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/" title="linux" class="dd-item alwaysopen"><input type="checkbox" id="section-2b529531ed5b88a2a39fe109a71784e2" class="toggle" checked/><label for="section-2b529531ed5b88a2a39fe109a71784e2" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/">linux<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/" title="linux 工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/">linux 工具<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/" title="linux工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/">linux工具<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/" title="linux目录" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/">linux目录<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/" title="linux系统监控命令" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/">linux系统监控命令<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/" title="shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/">shell<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/" title="SSH" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/">SSH<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/" title="启动执行脚本" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/">启动执行脚本<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/" title="用户" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/">用户<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/" title="命令组合" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/">命令组合<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/" title="如何区分terminal、tty、console、shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/">如何区分terminal、tty、console、shell<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" title="文件相关" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/">文件相关<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E6%9C%AC%E7%9B%B8%E5%85%B3/" title="文本相关" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E6%9C%AC%E7%9B%B8%E5%85%B3/">文本相关<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3/" title="用户相关" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3/">用户相关<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/" title="系统监控命令" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/">系统监控命令<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E9%9B%B6%E6%8B%B7%E8%B4%9D/" title="零拷贝" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E9%9B%B6%E6%8B%B7%E8%B4%9D/">零拷贝<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库" class="dd-item"><input type="checkbox" id="section-53a8c433a58ab5235aeb30d0814c96c0" class="toggle"/><label for="section-53a8c433a58ab5235aeb30d0814c96c0" ></label><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" title="mysql" class="dd-item alwaysopen"><input type="checkbox" id="section-a2fa9ec52e816aafa503e80add11c1d3" class="toggle" checked/><label for="section-a2fa9ec52e816aafa503e80add11c1d3" ></label><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/">mysql<i class="fas fa-check read-icon"></i></a><ul>
@@ -544,12 +936,29 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/" title="java日志" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/">java日志<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/" title="log4j漏洞" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/">log4j漏洞<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/slf4j/" title="slf4j" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/slf4j/">slf4j<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%9D%82%E9%A1%B9/url%E5%92%8Curi/" title="URL和URI" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/url%E5%92%8Curi/">URL和URI<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%9D%82%E9%A1%B9/xss%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/" title="XSS跨站脚本攻击" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/xss%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">XSS跨站脚本攻击<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%9D%82%E9%A1%B9/yaml/" title="yaml" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/yaml/">yaml<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/" title="大概念" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/">大概念<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="奇怪的小知识" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/">奇怪的小知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="好用的网站" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/">好用的网站<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/" title="微信授权登录" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/">微信授权登录<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/" title="高效开发" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/">高效开发<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/" title="硬件" class="dd-item"><input type="checkbox" id="section-b8b348e07d2dcb672567e1108b1397e0" class="toggle"/><label for="section-b8b348e07d2dcb672567e1108b1397e0" ></label><a href="/%E7%A1%AC%E4%BB%B6/">硬件<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/dma/" title="DMA" class="dd-item"><a href="/%E7%A1%AC%E4%BB%B6/dma/">DMA<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/%E5%8D%95%E5%B7%A5%E5%8D%8A%E5%8F%8C%E5%B7%A5%E5%85%A8%E5%8F%8C%E5%B7%A5/" title="单工、半双工、全双工" class="dd-item"><a href="/%E7%A1%AC%E4%BB%B6/%E5%8D%95%E5%B7%A5%E5%8D%8A%E5%8F%8C%E5%B7%A5%E5%85%A8%E5%8F%8C%E5%B7%A5/">单工、半双工、全双工<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/%E5%8D%97%E5%8C%97%E6%A1%A5/" title="南北桥" class="dd-item"><a href="/%E7%A1%AC%E4%BB%B6/%E5%8D%97%E5%8C%97%E6%A1%A5/">南北桥<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="算法&amp;数据结构" class="dd-item"><input type="checkbox" id="section-ea3f888852a9a69494bd4d6a8264138b" class="toggle"/><label for="section-ea3f888852a9a69494bd4d6a8264138b" ></label><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法&amp;数据结构<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/" title="leetcode经典100题" class="dd-item alwaysopen"><input type="checkbox" id="section-ec1de6d2a483991439da6caecd8592bc" class="toggle" checked/><label for="section-ec1de6d2a483991439da6caecd8592bc" ></label><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/">leetcode经典100题<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="1.两数之和" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">1.两数之和<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/136.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/" title="136.只出现一次的数字" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/136.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/">136.只出现一次的数字<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" title="20.有效的括号" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">20.有效的括号<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/21.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="21.合并两个有序链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/21.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">21.合并两个有序链表<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" title="22.括号生成" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">22.括号生成<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/26.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" title="26.删除有序数组中的重复项" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/26.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">26.删除有序数组中的重复项<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" title="300. 最长递增子序列" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">300. 最长递增子序列<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="70.爬楼梯" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/">70.爬楼梯<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/" title="经典算法目录" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/">经典算法目录<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/" title="LRU" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/">LRU<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
@@ -570,6 +979,7 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/" title="高效人生" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/">高效人生<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="解决方案" class="dd-item"><input type="checkbox" id="section-a17bc74d6fddbc1ede8fbe5263306182" class="toggle"/><label for="section-a17bc74d6fddbc1ede8fbe5263306182" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/" title="DDD Domain-Driven Design" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/">DDD Domain-Driven Design<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E5%88%86%E9%A1%B5%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E6%88%96%E8%80%85%E9%87%8D%E5%A4%8D%E9%97%AE%E9%A2%98/" title="分页数据丢失或者重复问题" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E5%88%86%E9%A1%B5%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E6%88%96%E8%80%85%E9%87%8D%E5%A4%8D%E9%97%AE%E9%A2%98/">分页数据丢失或者重复问题<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="权限控制" class="dd-item alwaysopen"><input type="checkbox" id="section-70e62bcc9295a91257e2a24216fda309" class="toggle" checked/><label for="section-70e62bcc9295a91257e2a24216fda309" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">权限控制<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/" title="ldap-轻量目录访问协议" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/">ldap-轻量目录访问协议<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/" title="类微博feed流" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/">类微博feed流<i class="fas fa-check read-icon"></i></a></li>
@@ -646,13 +1056,13 @@ export WS=/Users/yuwenhao/Programs/work-space</p>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1666255106"></script>
+          <script async src="/js/buttons.js?1671727473"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1666255106" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1666255106" defer></script>
-    <script src="/js/featherlight.min.js?1666255106" defer></script>
-    <script src="/js/theme.js?1666255106" defer></script>
+    <script src="/js/clipboard.min.js?1671727473" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1671727473" defer></script>
+    <script src="/js/featherlight.min.js?1671727473" defer></script>
+    <script src="/js/theme.js?1671727473" defer></script>
   </body>
 </html>

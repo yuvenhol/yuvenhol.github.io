@@ -10,21 +10,21 @@
     <title>jvm内存分析： - yuvenhol的技术苦旅</title>
     <link href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1666255106" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1671727472" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1666255106" rel="stylesheet">
-    <link href="/css/nucleus.css?1666255106" rel="stylesheet">
-    <link href="/css/fonts.css?1666255106" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1666255106" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1666255106" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1666255106" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1666255106" rel="stylesheet">
-    <link href="/css/variant.css?1666255106" rel="stylesheet">
-    <link href="/css/print.css?1666255106" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1666255106" rel="stylesheet">
-    <script src="/js/variant.js?1666255106"></script>
+    <link href="/css/fontawesome-all.min.css?1671727472" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1671727472" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1671727472" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1671727472" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1671727472" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1671727472" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1671727472" rel="stylesheet">
+    <link href="/css/nucleus.css?1671727472" rel="stylesheet">
+    <link href="/css/fonts.css?1671727472" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1671727472" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1671727472" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1671727472" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1671727472" rel="stylesheet">
+    <link href="/css/variant.css?1671727472" rel="stylesheet">
+    <link href="/css/print.css?1671727472" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1671727472" rel="stylesheet">
+    <script src="/js/variant.js?1671727472"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1666255106" defer></script>
+    <script src="/js/jquery.min.js?1671727472" defer></script>
   </head>
   <body class="mobile-support print" data-url="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">
     <div id="body" class="default-animation">
@@ -49,7 +49,7 @@
       <nav id="topbar" class="highlightable">
         <div>
           <div class="navigation">
-             <a class="nav nav-next" href="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB &amp; 栈上分配 (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+             <a class="nav nav-next" href="/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB&amp;栈上分配 (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
              <a class="nav nav-prev" href="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/" title="java程序的启动 (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
@@ -175,42 +175,54 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1666255106" defer></script>
-        <script src="/js/lunr.min.js?1666255106" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1666255106" defer></script>
-        <script src="/js/lunr.multi.min.js?1666255106" defer></script>
-        <script src="/js/lunr.en.min.js?1666255106" defer></script>
-        <script src="/js/search.js?1666255106" defer></script>
+        <script src="/js/auto-complete.js?1671727472" defer></script>
+        <script src="/js/lunr.min.js?1671727472" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1671727472" defer></script>
+        <script src="/js/lunr.multi.min.js?1671727472" defer></script>
+        <script src="/js/lunr.en.min.js?1671727472" defer></script>
+        <script src="/js/search.js?1671727472" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
           <li data-nav-id="/dockerk8s/" title="docker&amp;k8s" class="dd-item"><input type="checkbox" id="section-9e6e410ba0e302767b2ea4fda732470d" class="toggle"/><label for="section-9e6e410ba0e302767b2ea4fda732470d" ></label><a href="/dockerk8s/">docker&amp;k8s<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/dockerk8s/docker-compose/" title="docker compose" class="dd-item"><a href="/dockerk8s/docker-compose/">docker compose<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/dockerk8s/docker-compose/" title="docker compose" class="dd-item"><a href="/dockerk8s/docker-compose/">docker compose<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/dockerk8s/docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="docker基础知识" class="dd-item"><a href="/dockerk8s/docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">docker基础知识<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/dockerk8s/docker%E8%AE%BE%E7%BD%AE/" title="docker设置" class="dd-item"><a href="/dockerk8s/docker%E8%AE%BE%E7%BD%AE/">docker设置<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/excalidraw/" title="Excalidraw" class="dd-item"><a href="/excalidraw/">Excalidraw<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/golang/" title="golang" class="dd-item"><a href="/golang/">golang<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/interview/" title="interview" class="dd-item"><input type="checkbox" id="section-a64fd7a039e11bfc320164f9c76fa09b" class="toggle"/><label for="section-a64fd7a039e11bfc320164f9c76fa09b" ></label><a href="/interview/">interview<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/interview/%E7%AE%80%E5%8E%86/" title="简历" class="dd-item"><a href="/interview/%E7%AE%80%E5%8E%86/">简历<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/interview/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" title="面试题整理" class="dd-item"><a href="/interview/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">面试题整理<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/" title="java" class="dd-item parent"><input type="checkbox" id="section-518f725d76ef42edca45fe01865b4d20" class="toggle" checked/><label for="section-518f725d76ef42edca45fe01865b4d20" ></label><a href="/java/">java<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/java/cglib/" title="cglib" class="dd-item"><a href="/java/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/classpath/" title="classpath" class="dd-item"><a href="/java/classpath/">classpath<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="java的引用类型" class="dd-item"><a href="/java/java%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/">java的引用类型<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jsr/" title="JSR" class="dd-item"><a href="/java/jsr/">JSR<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/" title="jvm" class="dd-item parent alwaysopen"><input type="checkbox" id="section-8bb18590038df95f5ce669688bf7139d" class="toggle" checked/><label for="section-8bb18590038df95f5ce669688bf7139d" ></label><a href="/java/jvm/">jvm<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/" title="gc日志分析" class="dd-item"><a href="/java/jvm/gc%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">gc日志分析<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/" title="java启动参数" class="dd-item"><a href="/java/jvm/java%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0/">java启动参数<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/" title="java程序的启动" class="dd-item"><a href="/java/jvm/java%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%AF%E5%8A%A8/">java程序的启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" title="jvm内存分析：" class="dd-item active"><a href="/java/jvm/jvm%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">jvm内存分析：<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB &amp; 栈上分配" class="dd-item"><a href="/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/">TLAB &amp; 栈上分配<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/" title="TLAB&amp;栈上分配" class="dd-item"><a href="/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/">TLAB&amp;栈上分配<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" title="类加载" class="dd-item"><a href="/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD/">类加载<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/lib/" title="lib" class="dd-item alwaysopen"><input type="checkbox" id="section-3d385f71e2cc44b77d754be95cf76a3f" class="toggle" checked/><label for="section-3d385f71e2cc44b77d754be95cf76a3f" ></label><a href="/java/lib/">lib<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/java/lib/cglib/" title="cglib" class="dd-item"><a href="/java/lib/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/meta-inf%E5%92%8Cweb-info/" title="META-INF和WEB-INFO" class="dd-item"><a href="/java/meta-inf%E5%92%8Cweb-info/">META-INF和WEB-INFO<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="并发编程" class="dd-item alwaysopen"><input type="checkbox" id="section-2b723ede4bb374cbc0cbba9e311b6f2f" class="toggle" checked/><label for="section-2b723ede4bb374cbc0cbba9e311b6f2f" ></label><a href="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/" title="Future、CompletableFuture" class="dd-item"><a href="/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/">Future、CompletableFuture<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/java/%E6%B3%A8%E9%87%8A/" title="注释" class="dd-item"><a href="/java/%E6%B3%A8%E9%87%8A/">注释<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/office/" title="office" class="dd-item"><input type="checkbox" id="section-98530a8654fbed228aee60cd5d89d452" class="toggle"/><label for="section-98530a8654fbed228aee60cd5d89d452" ></label><a href="/office/">office<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/office/excel%E5%85%AC%E5%BC%8F/" title="excel公式" class="dd-item"><a href="/office/excel%E5%85%AC%E5%BC%8F/">excel公式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/python/" title="python" class="dd-item"><input type="checkbox" id="section-c8861a2651b27ee3930a98ce392020d1" class="toggle"/><label for="section-c8861a2651b27ee3930a98ce392020d1" ></label><a href="/python/">python<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python 语法知识" class="dd-item"><a href="/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python 语法知识<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python语法知识" class="dd-item"><a href="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python语法知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/" title="时间处理" class="dd-item"><a href="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/">时间处理<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/" title="绘图库 matplotlib" class="dd-item"><a href="/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/">绘图库 matplotlib<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/" title="绘图库matplotlib" class="dd-item"><a href="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/">绘图库matplotlib<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/" title="spring" class="dd-item"><input type="checkbox" id="section-6be3a103036efc21a988ae839ac63e32" class="toggle"/><label for="section-6be3a103036efc21a988ae839ac63e32" ></label><a href="/spring/">spring<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/spring/configuration/" title="@Configuration" class="dd-item"><a href="/spring/configuration/">@Configuration<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/aop/" title="aop" class="dd-item alwaysopen"><input type="checkbox" id="section-3f940e089bb0d22138400443ef5737ed" class="toggle" checked/><label for="section-3f940e089bb0d22138400443ef5737ed" ></label><a href="/spring/aop/">aop<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/spring/aop/aop%E4%BD%BF%E7%94%A8/" title="AOP使用" class="dd-item"><a href="/spring/aop/aop%E4%BD%BF%E7%94%A8/">AOP使用<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/mvc/" title="mvc" class="dd-item alwaysopen"><input type="checkbox" id="section-f7eab8a11f97ffd0873d29e8e6991aa8" class="toggle" checked/><label for="section-f7eab8a11f97ffd0873d29e8e6991aa8" ></label><a href="/spring/mvc/">mvc<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/" title="异步模式" class="dd-item"><a href="/spring/mvc/%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%BC%8F/">异步模式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/spring/spring-bean/" title="spring bean" class="dd-item"><a href="/spring/spring-bean/">spring bean<i class="fas fa-check read-icon"></i></a></li>
@@ -218,8 +230,11 @@
           <li data-nav-id="/spring/spring-context/" title="spring Context" class="dd-item"><a href="/spring/spring-context/">spring Context<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/spring-mvc/" title="spring mvc" class="dd-item"><a href="/spring/spring-mvc/">spring mvc<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/" title="springboot" class="dd-item alwaysopen"><input type="checkbox" id="section-d2c9d1492d2be5f58a95b0e575fe9ac4" class="toggle" checked/><label for="section-d2c9d1492d2be5f58a95b0e575fe9ac4" ></label><a href="/spring/springboot/">springboot<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/" title="为什么SpringBoot可以直接运行 jar 包？" class="dd-item"><a href="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/">为什么SpringBoot可以直接运行 jar 包？<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/springboot/%E5%90%AF%E5%8A%A8/" title="启动" class="dd-item"><a href="/spring/springboot/%E5%90%AF%E5%8A%A8/">启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" title="自动配置" class="dd-item"><a href="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/">自动配置<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/" title="条件加载" class="dd-item"><a href="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/">条件加载<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件" class="dd-item"><input type="checkbox" id="section-cb147f28999e2af77c3c46e5203c4ebe" class="toggle"/><label for="section-cb147f28999e2af77c3c46e5203c4ebe" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/">kafka<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/" title="mysql" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/">mysql<i class="fas fa-check read-icon"></i></a></li>
@@ -227,6 +242,9 @@
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="redis基础知识" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">redis基础知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/" title="布隆过滤器" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/">布隆过滤器<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/" title="缓存雪崩、缓存击穿、缓存穿透" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F/">缓存雪崩、缓存击穿、缓存穿透<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/" title="rocketmq" class="dd-item alwaysopen"><input type="checkbox" id="section-ce3034db624a906c4bed91371ab24f78" class="toggle" checked/><label for="section-ce3034db624a906c4bed91371ab24f78" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/">rocketmq<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/rocketmq%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="rocketmq基本概念" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/rocketmq%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">rocketmq基本概念<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/" title="RocketMQ" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/">RocketMQ<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/" title="中间件的定义" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%AE%9A%E4%B9%89/">中间件的定义<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E5%88%86%E5%B8%83%E5%BC%8F/" title="分布式" class="dd-item"><input type="checkbox" id="section-4c00b6b934bcc78dd785b986be43672c" class="toggle"/><label for="section-4c00b6b934bcc78dd785b986be43672c" ></label><a href="/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/" title="dubbo" class="dd-item"><a href="/%E5%88%86%E5%B8%83%E5%BC%8F/dubbo/">dubbo<i class="fas fa-check read-icon"></i></a></li>
@@ -239,15 +257,22 @@
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/idea/" title="idea" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/idea/">idea<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/jmeter/" title="jmeter" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/jmeter/">jmeter<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E5%B7%A5%E5%85%B7/markdown/" title="markdown" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/markdown/">markdown<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle"/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/" title="linux" class="dd-item alwaysopen"><input type="checkbox" id="section-2b529531ed5b88a2a39fe109a71784e2" class="toggle" checked/><label for="section-2b529531ed5b88a2a39fe109a71784e2" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/">linux<i class="fas fa-check read-icon"></i></a><ul>
-          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/" title="linux 工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/">linux 工具<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/" title="linux工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/">linux工具<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/" title="linux目录" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/">linux目录<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/" title="linux系统监控命令" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/">linux系统监控命令<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/" title="shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/">shell<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/" title="SSH" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/">SSH<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/" title="启动执行脚本" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/">启动执行脚本<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/" title="用户" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/">用户<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/" title="命令组合" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/">命令组合<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/" title="如何区分terminal、tty、console、shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/">如何区分terminal、tty、console、shell<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" title="文件相关" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/">文件相关<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E6%9C%AC%E7%9B%B8%E5%85%B3/" title="文本相关" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E6%9C%AC%E7%9B%B8%E5%85%B3/">文本相关<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3/" title="用户相关" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3/">用户相关<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/" title="系统监控命令" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/">系统监控命令<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E9%9B%B6%E6%8B%B7%E8%B4%9D/" title="零拷贝" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E9%9B%B6%E6%8B%B7%E8%B4%9D/">零拷贝<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库" class="dd-item"><input type="checkbox" id="section-53a8c433a58ab5235aeb30d0814c96c0" class="toggle"/><label for="section-53a8c433a58ab5235aeb30d0814c96c0" ></label><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" title="mysql" class="dd-item alwaysopen"><input type="checkbox" id="section-a2fa9ec52e816aafa503e80add11c1d3" class="toggle" checked/><label for="section-a2fa9ec52e816aafa503e80add11c1d3" ></label><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/">mysql<i class="fas fa-check read-icon"></i></a><ul>
@@ -260,12 +285,29 @@
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/" title="java日志" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/java%E6%97%A5%E5%BF%97/">java日志<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/" title="log4j漏洞" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/log4j%E6%BC%8F%E6%B4%9E/">log4j漏洞<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/slf4j/" title="slf4j" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/slf4j/">slf4j<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%9D%82%E9%A1%B9/url%E5%92%8Curi/" title="URL和URI" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/url%E5%92%8Curi/">URL和URI<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%9D%82%E9%A1%B9/xss%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/" title="XSS跨站脚本攻击" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/xss%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">XSS跨站脚本攻击<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%9D%82%E9%A1%B9/yaml/" title="yaml" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/yaml/">yaml<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/" title="大概念" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A4%A7%E6%A6%82%E5%BF%B5/">大概念<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="奇怪的小知识" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A5%87%E6%80%AA%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/">奇怪的小知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="好用的网站" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/">好用的网站<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/" title="微信授权登录" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E5%BE%AE%E4%BF%A1%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/">微信授权登录<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/" title="高效开发" class="dd-item"><a href="/%E6%9D%82%E9%A1%B9/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/">高效开发<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/" title="硬件" class="dd-item"><input type="checkbox" id="section-b8b348e07d2dcb672567e1108b1397e0" class="toggle"/><label for="section-b8b348e07d2dcb672567e1108b1397e0" ></label><a href="/%E7%A1%AC%E4%BB%B6/">硬件<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/dma/" title="DMA" class="dd-item"><a href="/%E7%A1%AC%E4%BB%B6/dma/">DMA<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/%E5%8D%95%E5%B7%A5%E5%8D%8A%E5%8F%8C%E5%B7%A5%E5%85%A8%E5%8F%8C%E5%B7%A5/" title="单工、半双工、全双工" class="dd-item"><a href="/%E7%A1%AC%E4%BB%B6/%E5%8D%95%E5%B7%A5%E5%8D%8A%E5%8F%8C%E5%B7%A5%E5%85%A8%E5%8F%8C%E5%B7%A5/">单工、半双工、全双工<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%A1%AC%E4%BB%B6/%E5%8D%97%E5%8C%97%E6%A1%A5/" title="南北桥" class="dd-item"><a href="/%E7%A1%AC%E4%BB%B6/%E5%8D%97%E5%8C%97%E6%A1%A5/">南北桥<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="算法&amp;数据结构" class="dd-item"><input type="checkbox" id="section-ea3f888852a9a69494bd4d6a8264138b" class="toggle"/><label for="section-ea3f888852a9a69494bd4d6a8264138b" ></label><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法&amp;数据结构<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/" title="leetcode经典100题" class="dd-item alwaysopen"><input type="checkbox" id="section-ec1de6d2a483991439da6caecd8592bc" class="toggle" checked/><label for="section-ec1de6d2a483991439da6caecd8592bc" ></label><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/">leetcode经典100题<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="1.两数之和" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">1.两数之和<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/136.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/" title="136.只出现一次的数字" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/136.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/">136.只出现一次的数字<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" title="20.有效的括号" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">20.有效的括号<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/21.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="21.合并两个有序链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/21.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">21.合并两个有序链表<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" title="22.括号生成" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">22.括号生成<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/26.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" title="26.删除有序数组中的重复项" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/26.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">26.删除有序数组中的重复项<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" title="300. 最长递增子序列" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">300. 最长递增子序列<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="70.爬楼梯" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/">70.爬楼梯<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/" title="经典算法目录" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/">经典算法目录<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/" title="LRU" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/">LRU<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
@@ -286,6 +328,7 @@
           <li data-nav-id="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/" title="高效人生" class="dd-item"><a href="/%E8%83%A1%E8%AF%8C%E5%85%AB%E6%89%AF%E5%A4%A7%E9%81%93%E7%90%86/%E9%AB%98%E6%95%88%E4%BA%BA%E7%94%9F/">高效人生<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="解决方案" class="dd-item"><input type="checkbox" id="section-a17bc74d6fddbc1ede8fbe5263306182" class="toggle"/><label for="section-a17bc74d6fddbc1ede8fbe5263306182" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/" title="DDD Domain-Driven Design" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/ddd-domain-driven-design/">DDD Domain-Driven Design<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E5%88%86%E9%A1%B5%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E6%88%96%E8%80%85%E9%87%8D%E5%A4%8D%E9%97%AE%E9%A2%98/" title="分页数据丢失或者重复问题" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E5%88%86%E9%A1%B5%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E6%88%96%E8%80%85%E9%87%8D%E5%A4%8D%E9%97%AE%E9%A2%98/">分页数据丢失或者重复问题<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="权限控制" class="dd-item alwaysopen"><input type="checkbox" id="section-70e62bcc9295a91257e2a24216fda309" class="toggle" checked/><label for="section-70e62bcc9295a91257e2a24216fda309" ></label><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">权限控制<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/" title="ldap-轻量目录访问协议" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/ldap-%E8%BD%BB%E9%87%8F%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE/">ldap-轻量目录访问协议<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/" title="类微博feed流" class="dd-item"><a href="/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E7%B1%BB%E5%BE%AE%E5%8D%9Afeed%E6%B5%81/">类微博feed流<i class="fas fa-check read-icon"></i></a></li>
@@ -362,13 +405,13 @@
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1666255106"></script>
+          <script async src="/js/buttons.js?1671727472"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1666255106" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1666255106" defer></script>
-    <script src="/js/featherlight.min.js?1666255106" defer></script>
-    <script src="/js/theme.js?1666255106" defer></script>
+    <script src="/js/clipboard.min.js?1671727472" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1671727472" defer></script>
+    <script src="/js/featherlight.min.js?1671727472" defer></script>
+    <script src="/js/theme.js?1671727472" defer></script>
   </body>
 </html>

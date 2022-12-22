@@ -11,7 +11,7 @@
       <link>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/http/</guid>
-      <description>Cookie &amp;amp; Session cookie的属性 HttpOnly: 如果您在cookie中设置了HttpOnly属性，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击 path：对应url的作用域，默认是当前路径 ex：/a/b 默认是/a max-age：指定的是从文档被访问后的存活时间，这个时间是个相对值(比如:3600s),相对的是文档第一次被请求时服务器记录的Request_time(请求时间) Expires：指定的时间可以是相对文件的最后访问时间(Atime)或者修改时间(MTime),而max-age相对对的是文档的请求时间(Atime)
+      <description>Cookie &amp;amp; Session cookie的属性 HttpOnly: 如果您在cookie中设置了HttpOnly属性，那么通过js脚本将无法读取到cookie信息，这样能有效的防止[[XSS跨站脚本攻击]] path：对应url的作用域，默认是当前路径 ex：/a/b 默认是/a max-age：指定的是从文档被访问后的存活时间，这个时间是个相对值(比如:3600s),相对的是文档第一次被请求时服务器记录的Request_time(请求时间) Expires：指定的时间可以是相对文件的最后访问时间(Atime)或者修改时间(MTime),而max-age相对对的是文档的请求时间(Atime)
 删除cookie 把cookie的过期时间设为0或者过去</description>
     </item>
     <item>

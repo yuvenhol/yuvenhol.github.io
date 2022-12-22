@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Future、CompletableFuture on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/</link>
+    <description>Recent content in Future、CompletableFuture on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rocketmq on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/</link>
+    <description>Recent content in rocketmq on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rocketmq基本概念</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/rocketmq%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/rocketmq/rocketmq%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description>https://www.cnblogs.com/ciel717/p/16180055.html
+produceGroup: 用于事物消息，在一个producerGroup内的节点中，如果某个producer down了，那么会找另一个producer重新发送。
+面试常问的问题： 使用RocketMQ如何保证消息不丢失？ 这个是在面试时，关于MQ，面试官最喜欢问的问题。这个问题是所有MQ都需要面 对的一个共性问题。大致的解决思路都是一致的，但是针对不同的MQ产品又有不同 的解决方案。分析这个问题要从以下几个角度入手：
+1、哪些环节会有丢消息的可能？ 我们考虑一个通用的MQ场景： 其中，1，2，4三个场景都是跨网络的，而跨网络就肯定会有丢消息的可能。 然后关于3这个环节，通常MQ存盘时都会先写入操作系统的缓存page cache中，然 后再由操作系统异步的将消息写入硬盘。这个中间有个时间差，就可能会造成消息 丢失。如果服务挂了，缓存中还没有来得及写入硬盘的消息就会丢失。 这个是MQ场景都会面对的通用的丢消息问题。那我们看看用RocketMQ时要如何 解决这个问题
+topicQueue 数量过多会有性能问题
+集群消费由brocker管理 广播消费由consumer管理</description>
+    </item>
+  </channel>
+</rss>

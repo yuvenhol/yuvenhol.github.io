@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并发编程 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 并发编程 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Future、CompletableFuture</title>
+      <link>https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/futurecompletablefuture/</guid>
+      <description>Future模式和Callable模式 创建线程的方式只有两种：继承Thread或者实现Runnable接口。 但是这两种方法都存在一个缺陷，没有返回值，也就是说我们无法得知线程执行结果。虽然简单场景下已经满足，但是当我们需要返回值的时候怎么办呢？ Java 1.5 以后的Callable和Future接口就解决了这个问题，我们可以通过向线程池提交一个Callable来获取一个包含返回值的Future对象，从此，我们的程序逻辑就不再是同步顺序。
+上图中，A为Callable模式、B为Future模式。当然他们并不是互斥的，Future通常使用的时候要配置Callable。
+Future相关 Future接口： cancel（boolean） 暂停任务，参数为true则如果任务已经拿到线程开始执行了，仍然可以中断Interrupt任务。 isCanncelled()配合cancel（boolean） isDone() 任务是否已经结束，如果被cancel 则返回True。 get() throws InterruptedException, ExecutionException;同步等待获取任务结果 get(long,TimeUinit) throws InterruptedException, ExecutionException, TimeoutException;设置同步等待时间，如果超时返回TimeoutException。 Future的实现类之一 ：FutureTask 类图：
+简单使用一下：
+FutureTask&amp;lt;String&amp;gt; future = new FutureTask&amp;lt;&amp;gt;(() -&amp;gt; &amp;#34;run a task&amp;#34;); Executors.newSingleThreadExecutor().execute(future); System.out.println(&amp;#34;futureResult: &amp;#34; + future.get()); Future的局限性 从本质上说，Future表示一个异步计算的结果。它提供了isDone()来检测计算是否已经完成， 并且在计算结束后，可以通过get()方法来获取计算结果。在异步计算中，Future确实是个非常 优秀的接口。但是，它的本身也确实存在着许多限制：
+并发执行多任务：Future只提供了get()方法来获取结果，并且是阻塞的。所以，除 了等待你别无他法； 无法对多个任务进行链式调用：如果你希望在计算任务完成后执行特定动作，比如 发邮件，但Future却没有提供这样的能力； 无法组合多个任务：如果你运行了10个任务，并期望在它们全部执行结束后执行特 定动作，那么在Future中这是无能为力的； 没有异常处理：Future接口中没有关于异常处理的方法； CompletableFuture 完善的Future Future并不完善，所以在后续版本中又推出了CompletableFuture，客服了Future的局限。
+常用API 来个例子 著名数学家华罗庚先生在《统筹方法》这篇文章里介绍了一个烧水泡茶的例子，文中提到最优的工序应该是下面这样：
+对于烧水泡茶这个程序，一种最优的分工方案：用两个线程 T1 和 T2 来完成烧水泡茶程序，T1 负责洗水壶、烧开水、泡茶这三道工序，T2 负责洗茶壶、洗茶杯、拿茶叶三道工序，其中 T1 在执行泡茶这道工序时需要等待 T2 完成拿茶叶的工序。</description>
+    </item>
+  </channel>
+</rss>

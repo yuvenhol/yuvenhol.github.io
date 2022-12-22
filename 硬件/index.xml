@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>硬件 on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/</link>
+    <description>Recent content in 硬件 on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DMA</title>
+      <link>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/dma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/dma/</guid>
+      <description>直接内存访问（Direct Memory Access，DMA）是计算机科学中的一种内存访问技术。它允许某些电脑内部的硬件子系统（电脑外设），可以独立地直接读写系统内存，而不需中央处理器（CPU）介入处理 。在同等程度的处理器负担下，DMA是一种快速的数据传送方式。很多硬件的系统会使用DMA，包含硬盘控制器、绘图显卡、网卡和声卡。</description>
+    </item>
+    <item>
+      <title>单工、半双工、全双工</title>
+      <link>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/%E5%8D%95%E5%B7%A5%E5%8D%8A%E5%8F%8C%E5%B7%A5%E5%85%A8%E5%8F%8C%E5%B7%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/%E5%8D%95%E5%B7%A5%E5%8D%8A%E5%8F%8C%E5%B7%A5%E5%85%A8%E5%8F%8C%E5%B7%A5/</guid>
+      <description>描述的是数据流、信息流方向
+单工： 只支持数据在一个方向上传输，只有一方能接受或者发送。（广播模式） 半双工： 可以双向通讯，但是不能同时传输。（对讲机模式） 全双工（双工）duplex： 可以同时双方都接受和发送消息。（电话模式）</description>
+    </item>
+    <item>
+      <title>南北桥</title>
+      <link>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/%E5%8D%97%E5%8C%97%E6%A1%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E7%A1%AC%E4%BB%B6/%E5%8D%97%E5%8C%97%E6%A1%A5/</guid>
+      <description>曾经，北桥芯片和南桥芯片都是主板芯片组中最重要的组成部分。传统来说，靠上方的叫北桥，靠下方的叫南桥。北桥负责与CPU通信，并且连接高速设备（内存/显卡），并且与南桥通信；南桥负责与低速设备（硬盘/USB）通信，时钟/BIOS/系统管理/旧式设备控制，并且与北桥通信。
+“桥”的意思是指通信，桥两边匹配的是不同的速度。
+连接关系如下：
+CPU——北桥——内存
+CPU——北桥——显卡
+CPU——北桥——南桥——硬盘
+CPU——北桥——南桥——网卡
+CPU——北桥——南桥——PS/2键鼠
+CPU——北桥——南桥——USB设备
+如今北桥被集成到CPU内，io控制模块，南桥成为了PCIE-hub</description>
+    </item>
+  </channel>
+</rss>

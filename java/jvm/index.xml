@@ -37,10 +37,10 @@ gc日志头 解释 GC (Allocation Failure) Allocation Failure表示向young gene
       <description>查看程序中对象数量 jmap -histo pid |head -20</description>
     </item>
     <item>
-      <title>TLAB &amp; 栈上分配</title>
-      <link>https://yuvenhol.github.io/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</link>
+      <title>TLAB&amp;栈上分配</title>
+      <link>https://yuvenhol.github.io/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/java/jvm/tlab-%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</guid>
+      <guid>https://yuvenhol.github.io/java/jvm/tlab%E6%A0%88%E4%B8%8A%E5%88%86%E9%85%8D/</guid>
       <description>栈上分配 为什么需要栈上分配
 在我们的应用程序中，其实有很多的对象的作用域都不会逃逸出方法外，也就是说该对象的生命周期会随着方法的调用开始而开始，方法的调用结束而结束，对于这种对象，是不是该考虑将对象不在分配在堆空间中呢？ 我们通过JVM内存分配可以知道JAVA中的对象都是在堆上进行分配，当对象没有被引用的时候，需要依靠GC进行回收内存，如果对象数量较多的时候，会给GC带来较大压力，也间接影响了应用的性能。
 什么是栈上分配
@@ -71,6 +71,21 @@ TLAB的缺点:
 如下图:对象分配流程图
 最后栈上分配和TLAB的对比
 名称	针对点	处于对象分配流程的位置 栈上分配	减少GC的负担	1 TLAB	加速堆上对象分配速度	2</description>
+    </item>
+    <item>
+      <title>类加载</title>
+      <link>https://yuvenhol.github.io/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/jvm/%E7%B1%BB%E5%8A%A0%E8%BD%BD/</guid>
+      <description>java类加载过程 其中loadClass的类加载过程有如下几步:
+加载 &amp;raquo; 验证 &amp;raquo; 准备 &amp;raquo; 解析 &amp;raquo; 初始化 &amp;raquo; 使用 &amp;raquo; 卸载
+加载:在硬盘上查找并通过IO读入字节码文件，使用到类时才会加载，例如调用类的 main()方法，new对象等等，在加载阶段会在内存中生成一个代表这个类的 java.lang.Class对象，作为方法区这个类的各种数据的访问入口
+验证:校验字节码文件的正确性 准备:给类的静态变量分配内存，并赋予默认值
+解析:将符号引用替换为直接引用，该阶段会把一些静态方法(符号引用，比如main()方法)替换为指向数据所存内存的指针或句柄等(直接引用)，这是所谓的静态链接过 程(类加载期间完成)，动态链接是在程序运行期间完成的将符号引用替换为直接引用
+初始化:对类的静态变量初始化为指定的值，执行静态代码块
+类被加载到方法区中后主要包含 运行时常量池、类型信息、字段信息、方法信息、类加载器的 引用、对应class实例的引用等信息。
+ClassLoader 所有类加载器的基类，它是抽象的，定义了类加载最核心的操作。所有继承与classloader的加载器，都会优先判断是否被父类加载器加载过，防止多次加载，防止加载冲突。看一下核心代码loadClass
+protected Class&amp;lt;?&amp;gt; loadClass(String name, boolean resolve) throws ClassNotFoundException { // 加锁防止重复加载 synchronized (getClassLoadingLock(name)) { // First, check if the class has already been loaded Class&amp;lt;?&amp;gt; c = findLoadedClass(name); if (c == null) { long t0 = System.nanoTime(); try { if (parent != null) { c = parent.</description>
     </item>
   </channel>
 </rss>

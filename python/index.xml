@@ -7,21 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>python 语法知识</title>
-      <link>https://yuvenhol.github.io/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/</link>
+      <title>python语法知识</title>
+      <link>https://yuvenhol.github.io/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/python/python-%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/</guid>
+      <guid>https://yuvenhol.github.io/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/</guid>
       <description>类型 标准数据类型 Python3 中有六个标准的数据类型：
-Number（数字）
-int、float、bool、complex。其中bool是int的子类。False == 0 String（字符串）
-List（列表）
-Tuple（元组）
-Set（集合）
-Dictionary（字典） Python3 的六个标准数据类型中：
-**不可变数据（3 个）：**Number（数字）、String（字符串）、Tuple（元组）；
-**可变数据（3 个）：**List（列表）、Dictionary（字典）、Set（集合）。
-对象 python对象三要素 id（对象地址）、type、value
-l1=[1,2,3] l2=[1,2,3] # 调用对象__eq__() l1==l2 &amp;gt;&amp;gt;&amp;gt; true # 对比内存地址 l1 is l2 &amp;gt;&amp;gt;&amp;gt; false 赋值(=)、浅拷贝(copy())、深拷贝(deepcopy() #赋值 a=[1,2,[4,5]] #浅拷贝 b=copy(a) #深拷贝 c=deepcopy(b) </description>
+**不可变数据（3 个）
+Number（数字） int、float、bool、complex。其中bool是int的子类。False == 0 String（字符串） Tuple（元组） **可变数据（3 个）
+List（列表） Set（集合） Dictionary（字典） Python3 的六个标准数据类型中： 列表 # 简单浅拷贝 squares[:] # 合并 squares1+squares2 列表推导 &amp;gt;&amp;gt;&amp;gt; char_list=[ x.upper() for x in &amp;#39;ABC&amp;#39;] [&amp;#39;A&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;C&amp;#39;] 生成器表达式 虽然也可以用列表推导来初始化元组、数组或其他序列类型，但是生成器表达式是更好的选择。这是因为生成器表达式背后遵守了迭代器协议，可以逐个地产出元素，而不是先建立一个完整的列表，然后再把这个列表传递到某个构造函数里。
+&amp;gt;&amp;gt;&amp;gt; colors = [&amp;#39;black&amp;#39;, &amp;#39;white&amp;#39;] &amp;gt;&amp;gt;&amp;gt; sizes = [&amp;#39;S&amp;#39;, &amp;#39;M&amp;#39;, &amp;#39;L&amp;#39;] &amp;gt;&amp;gt;&amp;gt; for tshirt in (&amp;#39;%s%s&amp;#39;%(c, s) for c in colors for s in sizes): ... print(tshirt) ... black S black M black L white S white M white L 元组 元组和记录元组其实是对数据的记录：元组中的每个元素都存放了记录中一个字段的数据，外加这个字段的位置。正是这个位置信息给数据赋予了意义。</description>
     </item>
     <item>
       <title>时间处理</title>
@@ -31,10 +25,10 @@ l1=[1,2,3] l2=[1,2,3] # 调用对象__eq__() l1==l2 &amp;gt;&amp;gt;&amp;gt; tru
       <description>datetime 包 datetime类 根据String 生成datetime datetime.datetime.strptime(&amp;#39;2017-3-22 15:25&amp;#39;,&amp;#39;%Y-%m-%d %H:%M&amp;#39;) https://docs.python.org/3/library/datetime.html#examples-of-usage-datetime</description>
     </item>
     <item>
-      <title>绘图库 matplotlib</title>
-      <link>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/</link>
+      <title>绘图库matplotlib</title>
+      <link>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93-matplotlib/</guid>
+      <guid>https://yuvenhol.github.io/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/</guid>
       <description>基础信息 名字解释 mat = matrix (矩阵) 制图时常常需要使用到运算，同理matlab中的mat也是这个意思。 plot= 绘制
 官方网站： https://matplotlib.org/stable/index.html
 概念： import matplotlib as mpl import matplotlib.pyplot as plt import numpy as np figure 画板，包含多个axes和artists

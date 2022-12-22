@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>linux 工具</title>
-      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/</link>
+      <title>linux工具</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/</guid>
       <description>figlet 字符画制作工具 figlet -w yuvenhol~
-__ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | | | \ \ / / / _ \ | &amp;#39;_ \ | &amp;#39;_ \ / _ \ | | | | | |_| | \ V / | __/ | | | | | | | | | (_) | | | |_| \__,_| \_/ \___| |_| |_| |_| |_| \___/ |_| </description>
+__ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | | | \ \ / / / _ \ | &amp;#39;_ \ | &amp;#39;_ \ / _ \ | | | | | |_| | \ V / | __/ | | | | | | | | | (_) | | | |_| \__,_| \_/ \___| |_| |_| |_| |_| \___/ |_| alias alias[别名]=[指令名称] 删除unalias 别名</description>
     </item>
     <item>
       <title>linux目录</title>
@@ -22,19 +22,20 @@ __ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | |
       <description> 目录 解释 /bin bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。 /sbin s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。 /etc 存放系统管理和配置文件 /opt 额外安装的可选应用程序包所放置的位置。 /proc 虚拟文件系统目录，是系统内存的映射，可以查看正在运行程序的状态。 /boot 这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。 /root 该目录为系统管理员，也称作超级权限者的用户主目录。 /dev dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。 /lost+found 这个目录平时是空的，系统非正常关机而留下“无家可归”的文件（windows下叫什么.chk）就在这里 /var 用于存放运行时需要改变数据的文件，也是某些大文件的溢出区 /tmp 用于存放各种临时文件，是公用的临时文件存储点。 /mnt 临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。 /media linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。 /home 存放所有用户文件的根目录，是用户主目录的基点 /usr 用于存放系统应用程序，比较重要的目录。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。 /usr/local 本地系统管理员软件安装目录（安装系统级的应用） /usr/doc linux文档 /usr/man 帮助文档 /usr/lib 常用的动态链接库和软件包的配置文件 /usr/sbin 超级用户的一些管理程序 /usr/include linux下开发和编译应用程序所需要的头文件 /usr/src 源代码，linux内核的源代码就放在/usr/src/linux里 usr/local/bin 本地增加的命令 /usr/local/lib 本地增加的库 </description>
     </item>
     <item>
-      <title>linux系统监控命令</title>
-      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/</link>
+      <title>shell</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/</guid>
-      <description>top 定义：display sorted information about processes
-展示项目 描述 CPU Percentage of processor usage, broken into user, system, and idle components. The time period for which these percentages are calculated depends on the event counting mode. Disks Number and total size of disk reads and writes. LoadAvg Load average over 1, 5, and 15 minutes. The load average is the average number of jobs in the run queue. MemRegions Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components.</description>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/</guid>
+      <description>-c 表示后面的参数将会作为字符串读入作为执行的命令。 ex：
+/bin/bash -c ls /bin/bash ls </description>
     </item>
     <item>
       <title>SSH</title>
       <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/</guid>
-      <description>给linux实例添加新增SSH公钥 #!/bin/bash # ssh public key to be added. sshPublicKey=&amp;#34;{{sshPublicKey}}&amp;#34; mkdir -p ~/.ssh &amp;amp;&amp;amp; chmod 700 ~/.ssh touch ~/.ssh/authorized_keys chmod 600 ~/.ssh/authorized_keys echo $sshPublicKey &amp;gt;&amp;gt; ~/.ssh/authorized_keys echo &amp;#34;operation success!&amp;#34; </description>
+      <description>不同host指定使用不同密钥 在.ssh/下创建一个config文件
+Host hostA HostName www.abc.com Port 1234 User test IdentityFile ~\.ssh\id_rsa Host hostB HostName 123.456.789.000 Port 5678 User root IdentityFile ~\.ssh\id_rsa 给linux实例添加新增SSH公钥 #!/bin/bash # ssh public key to be added. sshPublicKey=&amp;#34;{{sshPublicKey}}&amp;#34; mkdir -p ~/.ssh &amp;amp;&amp;amp; chmod 700 ~/.ssh touch ~/.ssh/authorized_keys chmod 600 ~/.ssh/authorized_keys echo $sshPublicKey &amp;gt;&amp;gt; ~/.ssh/authorized_keys echo &amp;#34;operation success!&amp;#34; </description>
     </item>
     <item>
       <title>启动执行脚本</title>
@@ -44,11 +45,103 @@ __ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | |
       <description>/etc/</description>
     </item>
     <item>
-      <title>用户</title>
-      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/</link>
+      <title>命令组合</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7/</guid>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/</guid>
+      <description>统计某个目录下所有文件的字符数 find . -type f|grep .md |tr \n \0|xargs -0 cat|wc -m
+统计日志中某个数值次数 zcat request.log.2022-10-28.gz |grep uri=/mobile/wx/card/select |awk &amp;lsquo;BEGIN{FS=&amp;quot; &amp;ldquo;} {print $2,$5}&amp;rsquo;|awk -F &amp;rsquo;time=&amp;rsquo; &amp;lsquo;{if($2 &amp;gt; 500) print $1,$2}&amp;rsquo;</description>
+    </item>
+    <item>
+      <title>如何区分terminal、tty、console、shell</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/</guid>
+      <description>从词源上来说： terminal是电线的末端、 shell是乌龟的壳 tty是teletype远程打字机的缩写 console是一种家具
+简单来说在unix环境下：
+terminal = tty = 文本输入/输出环境 console = 物理终端 shell = 命令行解释器 tty是一种特殊的设备文件，多数情况下tty和terminal是同义词，一些tty由内核代表硬件设备提供，ex：键盘输入。另一些的tty被称为伪tty，由终端仿真器提供。</description>
+    </item>
+    <item>
+      <title>文件相关</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/</guid>
+      <description>touch 修改文件的创建和修改时间，现在常用于创建一个文件。
+find find path -name &amp;ldquo;支持 * ？&amp;rdquo; [-delete]
+grep ln ln -s 软连接 ln 硬连接，软连接更常用，不存在文件时也可以创建软连接，类似于快捷方式。硬连接是指向一个文件实体的指针，文件夹不创建硬连接，不同文件系统或者硬件不能创建硬连接，硬连接可以多人共享文件，防止误删。</description>
+    </item>
+    <item>
+      <title>文本相关</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E6%9C%AC%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E6%96%87%E6%9C%AC%E7%9B%B8%E5%85%B3/</guid>
+      <description> cat: 直接把文件一次性输出
+more：在打开一个很大的文件的时，vim等工具会把整个文件加载到内存，但是有时我们只是简单的查看一下，此时可以用到more
+less：less是more是一个升级版，正所谓 less is more
+less 常用参数 意义 -N 展示行号 命令 意义 space 下一页 b 上半页 u 上半页 d 下半页 tr 文本替换工具 ex：把换行符替换为null值
+tr \\n \\0 </description>
+    </item>
+    <item>
+      <title>用户相关</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3/</guid>
       <description>删除用户 先用命令 cat /etc/passwd 查看一下所有的用户 可以看到你需要删除的用户名 用命令 who 查询当前登录的用户 用命令 ps -u 用户名 查看该用户的pid 用命令 kill pid 杀掉他的sshd或者是shell进程 再用命令 userdel -r 用户名 删除用户 </description>
+    </item>
+    <item>
+      <title>系统监控命令</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4/</guid>
+      <description>系统资源 top 定义：display sorted information about processes
+展示项目 描述 CPU Percentage of processor usage, broken into user, system, and idle components. The time period for which these percentages are calculated depends on the event counting mode. Disks Number and total size of disk reads and writes. LoadAvg Load average over 1, 5, and 15 minutes. The load average is the average number of jobs in the run queue. MemRegions Number and total size of memory regions, and total size of memory regions broken into private (broken into non-library and library) and shared components.</description>
+    </item>
+    <item>
+      <title>零拷贝</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E9%9B%B6%E6%8B%B7%E8%B4%9D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E9%9B%B6%E6%8B%B7%E8%B4%9D/</guid>
+      <description>什么是零拷贝 “零”：表示次数是0，它表示拷贝数据的次数是0
+“拷贝”：指数据从一个存储区域转移到另一个存储区域
+合起来，那零拷贝就是不需要将数据从一个存储区域复制到另一个存储区域。
+零拷贝是指计算机执行IO操作时，CPU不需要将数据从一个存储区域复制到另一个存储区域，进而减少上下文切换以及CPU的拷贝时间。它是一种IO操作优化技术。
+传统IO的执行流程 比如想实现一个下载功能，服务端的任务就是：将服务器主机磁盘中的文件从已连接的socket中发出去，关键代码如下
+while((n = read(diskfd, buf, BUF_SIZE)) &amp;gt; 0)
+write(sockfd, buf , n);
+传统的IO流程包括read以及write的过程
+read:将数据从磁盘读取到内核缓存区中，在拷贝到用户缓冲区
+write:先将数据写入到socket缓冲区中，最后写入网卡设备
+流程图如下 1.应用程序调用read函数，向操作系统发起IO调用，上下文从用户态切换至内核态
+2.DMA控制器把数据从磁盘中读取到内核缓冲区
+3.CPU把内核缓冲区数据拷贝到用户应用缓冲区，上下文从内核态切换至用户态，此时read函数返回
+4.用户应用进程通过write函数，发起IO调用，上下文从用户态切换至内核态
+5.CPU将缓冲区的数据拷贝到socket缓冲区
+6.DMA控制器将数据从socket缓冲区拷贝到网卡设备，上下文从内核态切换至用户态，此时write函数返回
+从流程图中可以看出传统的IO流程包括4次上下文的切换，4次拷贝数据(两次CPU拷贝以及两次DMA拷贝)
+前置知识 内核空间和用户空间 我们电脑上跑着的应用程序，其实是需要经过操作系统，才能做一些特殊操作，如磁盘文件读写、内存的读写等等。因为这些都是比较危险的操作，不可以由应用程序乱来，只能交给底层操作系统来。
+因此，操作系统为每个进程都分配了内存空间，一部分是用户空间，一部分是内核空间。内核空间是操作系统内核访问的区域，是受保护的内存空间，而用户空间是用户应用程序访问的内存区域。 以32位操作系统为例，它会为每一个进程都分配了4G(2的32次方)的内存空间。
+内核空间：主要提供进程调度、内存分配、连接硬件资源等功能
+用户空间：提供给各个程序进程的空间，它不具有访问内核空间资源的权限，如果应用程序需要使用到内核空间的资源，则需要通过系统调用来完成。进程从用户空间切换到内核空间，完成相关操作后，再从内核空间切换回用户空间。
+用户态和内核态 如果进程运行于内核空间，被称为进程的内核态。
+如果进程运行于用户空间，被称为进程的用户态。
+什么是上下文切换 什么是上下文
+CPU 寄存器，是CPU内置的容量小、但速度极快的内存。而程序计数器，则是用来存储 CPU 正在执行的指令位置、或者即将执行的下一条指令位置。它们都是 CPU 在运行任何任务前，必须的依赖环境，因此叫做CPU上下文。
+什么是上下文切换
+它是指，先把前一个任务的CPU上下文（也就是CPU寄存器和程序计数器）保存起来，然后加载新任务的上下文到这些寄存器和程序计数器，最后再跳转到程序计数器所指的新位置，运行新任务。
+一般我们说的上下文切换，就是指内核（操作系统的核心）在CPU上对进程或者线程进行切换。进程从用户态到内核态的转变，需要通过系统调用来完成。系统调用的过程，会发生CPU上下文的切换。 虚拟内存 现代操作系统使用虚拟内存，即虚拟地址取代物理地址，使用虚拟内存可以有2个好处：
+1.虚拟内存空间可以远远大于物理内存空间
+2.多个虚拟内存可以指向同一个物理地址
+正是多个虚拟内存可以指向同一个物理地址，可以把内核空间和用户空间的虚拟地址映射到同一个物理地址，这样的话，就可以减少IO的数据拷贝次数，示意图如下 DMA技术 DMA，英文全称是Direct Memory Access，即直接内存访问。DMA本质上是一块主板上独立的芯片，允许外设设备和内存存储器之间直接进行IO数据传输，其过程不需要CPU的参与。
+简单的说它就是帮住CPU转发一下IO请求以及拷贝数据，那为什么需要它呢？其实主要是效率问题。它帮忙CPU做事情，这时候，CPU就可以闲下来去做别的事情，提高了CPU的利用效率。大白话解释就是，CPU老哥太忙太累啦，所以他找了个小弟（名叫DMA） ，替他完成一部分的拷贝工作，这样CPU老哥就能着手去做其他事情。
+下面看下DMA具体是做了哪些工作
+1.用户应用程序调read函数，向操作系统发起IO调用，进入阻塞状态等待数据返回
+2.CPU接到指令后，对DMA控制器发起指令调度
+3.DMA收到请求后，将请求发送给磁盘
+4.磁盘将数据放入磁盘控制缓冲区并通知DMA
+5.DMA将数据从磁盘控制器缓冲区拷贝到内核缓冲区
+6.DMA向CPU发送数据读完的信号，CPU负责将数据从内核缓冲区拷贝到用户缓冲区
+7.用户应用进程由内核态切回用户态，解除阻塞状态
+如何实现零拷贝 零拷贝并不是没有拷贝数据，而是减少用户态、内核态的切换次数以及CPU拷贝次数；实现零拷贝主要有三种方式分别是</description>
     </item>
   </channel>
 </rss>

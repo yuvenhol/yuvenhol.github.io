@@ -7,6 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yuvenhol.github.io/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>aop</title>
+      <link>https://yuvenhol.github.io/spring/aop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/aop/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>mvc</title>
       <link>https://yuvenhol.github.io/spring/mvc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,7 +41,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/spring-bean/</guid>
       <description>生命周期 补充： @PostConstruct 代表bean构建完成后置处理，在属性注入之后，基于初始化前实现 beanPostProcessor .beforeInitlazation。
-循环依赖 三级缓存 singletonObjects：依赖注入完成的bean earlySingletionObjects：早期bean，未完成依赖注入，但是 singletonFactories：对象工厂，表示用来创建早期bean对象的工厂 存放顺序: singletonFactories&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;singletonObjects 读取顺序：singletonObjects&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;存放顺序</description>
+循环依赖 三级缓存 singletonFactories 对象工厂，表示用来创建早期bean对象的工厂,存放的就是个Function.
+addSingletonFactory(beanName, () -&amp;gt; getEarlyBeanReference(beanName, mbd, bean)); getEarlyBeanReference 默认不会做任何处理，如果需要aop会生成代理类。
+earlySingletonObjects 早期bean，未完成依赖注入，但是已经经过AOP。
+singletonObjects 依赖注入完成的bean
+存放顺序 singletonFactories&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;singletonObjects
+读取顺序 singletonObjects&amp;ndash;&amp;gt;earlySingletionObjects&amp;ndash;&amp;gt;singletonFactories</description>
     </item>
     <item>
       <title>Spring cache</title>
@@ -52,7 +64,7 @@ https://www.freesion.com/article/401730391/</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/spring-context/</guid>
       <description>BeanFactory ApplicationContext ApplicationContext 也实现了beanFactory，实际上具体实现依靠获取Context内的BeanFacoty实例DefaultListableBeanFactory 来实现功能的。
-graph TD 10[ContextLoaderListener.contextInitialized] --创建WebApplicationContext--&gt;15[ContextLoader.initWebApplicationContext] --&gt; 18[configureAndRefreshWebApplicationContext] --初始化context--&gt;20 subgraph refresh 20[ConfigurableApplicationContext.refresh] --prepareRefresh--&gt;21[准备刷新:包括spring环境等] -- obtainFreshBeanFactory--&gt;22[创建bean工程] -- prepareBeanFactory--&gt;23[bean工程初始化配置] -- postProcessBeanFactory --&gt;24[添加beanFactory的后置护理器] -- invokeBeanFactoryPostProcessors --&gt;25[调用beanFactory后置处理器.bean扫描是在这一步操作的] -- registerBeanPostProcessors --&gt;26[注册bean后置处理器] -- initMessageSource --&gt;27[国际化等] -- initApplicationEventMulticaster--&gt;28[创基一个事件广播器来处理事件] -- onRefresh --&gt;29[初始化前添加特殊bean 默认啥都不干] -- registerListeners --&gt; 30[注册event listener] -- finishBeanFactoryInitialization --&gt;31[实例化剩余的bean] -- finishRefresh--&gt;32[主要是发送ContextRefreshedEvent 通知完成refresh] end</description>
+graph TD 10[ContextLoaderListener.contextInitialized] --创建WebApplicationContext--&gt;15[ContextLoader.initWebApplicationContext] --&gt; 18[configureAndRefreshWebApplicationContext] --初始化context--&gt;20 subgraph refresh 20[ConfigurableApplicationContext.refresh] --prepareRefresh--&gt;21[准备刷新:包括spring环境等] -- obtainFreshBeanFactory--&gt;22[创建bean工厂] -- prepareBeanFactory--&gt;23[bean工厂初始化配置] -- postProcessBeanFactory --&gt;24[添加beanFactory的后置护理器] -- invokeBeanFactoryPostProcessors --&gt;25[调用beanFactory后置处理器.bean扫描是在这一步操作的] -- registerBeanPostProcessors --&gt;26[注册bean后置处理器,这里添加autowired等后置处理器] -- initMessageSource --&gt;27[国际化等] -- initApplicationEventMulticaster--&gt;28[创基一个事件广播器来处理事件] -- onRefresh --&gt;29[初始化前添加特殊bean 默认啥都不干] -- registerListeners --&gt; 30[注册event listener] -- finishBeanFactoryInitialization --&gt;31[初始化剩余的bean,普通的bean会在这一部进行createBean操作] -- finishRefresh--&gt;32[主要是发送ContextRefreshedEvent 通知完成refresh] end</description>
     </item>
     <item>
       <title>spring mvc</title>
@@ -79,6 +91,16 @@ MVC 1、使用ContextConfiguration 指定spring 配置文件 2、在spring配置
 @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(locations = {&amp;#34;classpath:spring-test-config.xml&amp;#34;}) public class DrugGuidelineRepositoryTest { } &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&amp;#34;&amp;gt; &amp;lt;import resource=&amp;#34;classpath*:spring-datasource.xml&amp;#34;/&amp;gt; &amp;lt;import resource=&amp;#34;classpath*:spring-bean.xml&amp;#34;/&amp;gt; &amp;lt;/beans&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;com.benmu.mts.baseinfo.domain.drugguideline&amp;#34;&amp;gt; &amp;lt;/context:component-scan&amp;gt; &amp;lt;/beans&amp;gt; Spring boot @RunWith(SpringRunner.class) @ActiveProfiles(&amp;ldquo;justdb&amp;rdquo;)
 @SpringBootTest(classes = DrugTestApp.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 SpringRunner is alias for the SpringJUnit4ClassRunner.</description>
+    </item>
+    <item>
+      <title>条件加载</title>
+      <link>https://yuvenhol.github.io/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/</guid>
+      <description>@Conditional &amp;amp; Condition @Conditional是Spring4新提供的注解，它的作用是按照一定的条件进行判断，满足条件给容器注册bean。 @Conditional 注解允许引入多个Condition
+@Retention(RetentionPolicy.RUNTIME) @Target({ElementType.TYPE, ElementType.METHOD}) public @interface Conditional { /** * All {@link Condition}s that must {@linkplain Condition#matches match} * in order for the component to be registered. */ Class&amp;lt;? extends Condition&amp;gt;[] value(); } 我们可以根据自己的需求实现Condition，满足条件时bean才会被加载，同时如果bean上添加了@Import和@ComponentScan时，在满足条件后才会加载
+public interface Condition { boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata); } spring boot时代 spring boot 时代，扩展了@Conditional的功能，并在springboot内部大力使用。 @ConditionalOnMissingClass &amp;amp; @ConditionalOnClass 就拿比常用的@ConditionalOnMissingClass举例子
+@Target({ ElementType.TYPE, ElementType.METHOD }) @Retention(RetentionPolicy.RUNTIME) @Documented @Conditional(OnClassCondition.class) public @interface ConditionalOnMissingClass { /** * The names of the classes that must not be present.</description>
     </item>
   </channel>
 </rss>

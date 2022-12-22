@@ -13,7 +13,52 @@
       <guid>https://yuvenhol.github.io/dockerk8s/docker-compose/</guid>
       <description>简介 docker compose用于更加方便的管理docker容器，采用yml文件配置的方式代替，敲入docker命令，配置时更加清晰，也更适合多个节点配置。
 hub.docker.com
-配置文件编写 docker compose 详解</description>
+配置文件编写 stdin_open 保持标准输入，如果容器没有启动
+网络配置 四类网络模式 Docker网络模式
+配置
+说明
+host模式
+–net=host
+容器和宿主机共享Network namespace。
+container模式
+–net=container:NAME_or_ID
+容器和另外一个容器共享Network namespace。 kubernetes中的pod就是多个容器共享一个Network namespace。
+none模式
+–net=none
+容器有独立的Network namespace，但并没有对其进行任何网络设置，如分配veth pair 和网桥连接，配置IP等。
+bridge模式
+–net=bridge
+（默认为该模式）
+host模式 如果启动容器的时候使用host模式，那么这个容器将不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。但是，容器的其他方面，如文件系统、进程列表等还是和宿主机隔离的。
+使用host模式的容器可以直接使用宿主机的IP地址与外界通信，容器内部的服务端口也可以使用宿主机的端口，不需要进行NAT，host最大的优势就是网络性能比较好，但是docker host上已经使用的端口就不能再用了，网络的隔离性不好。
+Host模式如下图所示：
+container模式 这个模式指定新创建的容器和已经存在的一个容器共享一个 Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的 IP，而是和一个指定的容器共享 IP、端口范围等。同样，两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。两个容器的进程可以通过 lo 网卡设备通信。
+Container模式示意图：
+none模式 使用none模式，Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。也就是说，这个Docker容器没有网卡、IP、路由等信息。需要我们自己为Docker容器添加网卡、配置IP等。
+这种网络模式下容器只有lo回环网络，没有其他网卡。none模式可以在容器创建时通过&amp;ndash;network=none来指定。这种类型的网络没有办法联网，封闭的网络能很好的保证容器的安全性。
+None模式示意图:
+bridge模式 当Docker进程启动时，会在主机上创建一个名为docker0的虚拟网桥，此主机上启动的Docker容器会连接到这个虚拟网桥上。虚拟网桥的工作方式和物理交换机类似，这样主机上的所有容器就通过交换机连在了一个二层网络中。
+从docker0子网中分配一个IP给容器使用，并设置docker0的IP地址为容器的默认网关。在主机上创建一对虚拟网卡veth pair设备，Docker将veth pair设备的一端放在新创建的容器中，并命名为eth0（容器的网卡），另一端放在主机中，以vethxxx这样类似的名字命名，并将这个网络设备加入到docker0网桥中。可以通过brctl show命令查看。
+bridge模式是docker的默认网络模式，不写&amp;ndash;net参数，就是bridge模式。使用docker run -p时，docker实际是在iptables做了DNAT规则，实现端口转发功能。可以使用iptables -t nat -vnL查看。
+bridge模式如下图所示：
+示例 rocketmq cluster 注意docker要容器直接访问端口必须加ports，可以不指定宿主机端口，但是必须指定容器
+version: &amp;#39;3.</description>
+    </item>
+    <item>
+      <title>docker基础知识</title>
+      <link>https://yuvenhol.github.io/dockerk8s/docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/dockerk8s/docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>Docker 官方文档地址:https://www.docker.com/get-started
+中文参考手册:https://docker_practice.gitee.io/zh-cn/
+1.什么是 Docker 1.1 官方定义 最新官网首页 # 1.官方介绍 - We have a complete container solution for you - no matter who you are and where you are on your containerization journey. - 翻译: 我们为你提供了一个完整的容器解决方案,不管你是谁,不管你在哪,你都可以开始容器的的旅程。 - 官方定义: docker是一个容器技术。 1.2 Docker的起源 Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，它是基于 dotCloud 公司多年云服务技术的一次革新，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 GitHub 上进行维护。Docker 项目后来还加入了 Linux 基金会，并成立推动 开放容器联盟（OCI）。 Docker 自开源后受到广泛的关注和讨论，至今其 GitHub 项目 已经超过 5 万 7 千个星标和一万多个 fork。甚至由于 Docker 项目的火爆，在 2013 年底，dotCloud 公司决定改名为 Docker。Docker 最初是在 Ubuntu 12.</description>
+    </item>
+    <item>
+      <title>docker设置</title>
+      <link>https://yuvenhol.github.io/dockerk8s/docker%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/dockerk8s/docker%E8%AE%BE%E7%BD%AE/</guid>
+      <description>镜像加速： 我自己的阿里云镜像仓库：</description>
     </item>
   </channel>
 </rss>

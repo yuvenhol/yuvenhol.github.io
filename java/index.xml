@@ -14,19 +14,34 @@
       <description></description>
     </item>
     <item>
-      <title>cglib</title>
-      <link>https://yuvenhol.github.io/java/cglib/</link>
+      <title>lib</title>
+      <link>https://yuvenhol.github.io/java/lib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/java/cglib/</guid>
-      <description>操作字节码生成代理类
-Class UserServiceProxy extends UserService{ public void test(){ //切面逻辑 super.test() } //切面逻辑 }</description>
+      <guid>https://yuvenhol.github.io/java/lib/</guid>
+      <description></description>
     </item>
     <item>
-      <title>hibernate-validator 校验器</title>
-      <link>https://yuvenhol.github.io/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/</link>
+      <title>并发编程</title>
+      <link>https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/java/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/</guid>
-      <description>https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/html_single/#validator-gettingstarted</description>
+      <guid>https://yuvenhol.github.io/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>classpath</title>
+      <link>https://yuvenhol.github.io/java/classpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/classpath/</guid>
+      <description>#classpath #java基础 搬运：https://stackoverflow.com/questions/2396493/what-is-a-classpath-and-how-do-i-set-it/2396759#2396759
+什么是classpath 当我们在写java程序的时候，常常会引用其他的class文件，ex：
+import org.javaguy.coolframework.MyClass; 当解析到，使用到饮用的class时，JVM将会根据import找到你编译以后的class文件。
+MyClass mine = new MyClass(); 当然VM不可能搜索所有你电脑上的文件，所以你需要提供一个路径的列表给VM去搜索。classpath就是提供一个jar file或者文件夹列表。
+如何设置classpath 假设目前我们要引入一个==lib/CoolFramework.jar==的jar包，我们可以怎么做呢。
+我们可以通过环境变量，像这样来搞定。
+export CLASSPATH=/home/myaccount/myproject/lib/CoolFramework.jar 但是环境变量是全局的，经常会引起冲突等等问题，所以这并不是一个好的方案。
+我们也可以在command内指定引入的包。ex：
+java -cp &amp;#34;/home/myaccount/myproject/lib/CoolFramework.jar:/home/myaccount/myproject/output/&amp;#34; MyMainClass 当然这样也很麻烦，我们在使用spring boot时，打成一个jar包，而jar包内则描述好了，classpath。
+Manifest-Version: 1.0 Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx Built-By: sczyh30 Spring-Boot-Layers-Index: BOOT-INF/layers.idx Start-Class: com.alibaba.csp.sentinel.dashboard.DashboardApplication Spring-Boot-Classes: BOOT-INF/classes/ Spring-Boot-Lib: BOOT-INF/lib/ Spring-Boot-Version: 2.5.12 Created-By: Apache Maven 3.8.1 Build-Jdk: 1.8.0_152 Main-Class: org.springframework.boot.loader.JarLauncher </description>
     </item>
     <item>
       <title>java的引用类型</title>
@@ -36,20 +51,20 @@ Class UserServiceProxy extends UserService{ public void test(){ //切面逻辑 s
       <description>强引用(FinalReference)： 普通引用 JVM停止运行时终止 软引用(SoftReference)： 在类似于浏览器访问页面缓存的场景，比如点击回退，如果缓存了页面就直接展示，缓存被清除了再加载也没事。 内存不足时终止 弱引用(WeakReference)： gc运行后终止 ThreadLocalMap的key，为了减少内存泄漏，在对象只有虚引用的时候，gc了就被清除了。 虚引用(PhantomReference)： 任何时候都可能</description>
     </item>
     <item>
-      <title>MapStruct-类型安全的bean转换工具</title>
-      <link>https://yuvenhol.github.io/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</link>
+      <title>JSR</title>
+      <link>https://yuvenhol.github.io/java/jsr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuvenhol.github.io/java/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/</guid>
-      <description>简介 mapStruct 是一个类型安全的bean转换工具，基于 JSR 269 ，也同样可以使用命令行构建。
-详细文档：https://mapstruct.org/documentation/stable/reference/html/#customizing-mappings-with-before-and-after
-依赖引入 &amp;lt;properties&amp;gt; &amp;lt;org.mapstruct.version&amp;gt;1.5.2.Final&amp;lt;/org.mapstruct.version&amp;gt; &amp;lt;/properties&amp;gt; ... &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mapstruct&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mapstruct&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${org.mapstruct.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;!-- 如果和lombok 结合可能有贬义冲突，需要配置如下 --&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.8.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;annotationProcessorPaths&amp;gt; &amp;lt;path&amp;gt; &amp;lt;groupId&amp;gt;org.mapstruct&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mapstruct-processor&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${org.mapstruct.version}&amp;lt;/version&amp;gt; &amp;lt;/path&amp;gt; &amp;lt;/annotationProcessorPaths&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 使用 基础 定义一个基础mapping @Mapper public interface CarMapper { @Mapping(target = &amp;#34;manufacturer&amp;#34;, source = &amp;#34;make&amp;#34;) @Mapping(target = &amp;#34;seatCount&amp;#34;, source = &amp;#34;numberOfSeats&amp;#34;) CarDto carToCarDto(Car car); @Mapping(target = &amp;#34;fullName&amp;#34;, source = &amp;#34;name&amp;#34;) PersonDto personToPersonDto(Person person); } mapStruct会再在编译期生成对应的映射方法，依赖于get set方法，所以需要提前写好get&amp;amp;set方法。</description>
+      <guid>https://yuvenhol.github.io/java/jsr/</guid>
+      <description>Java Specification Requests Pluggable Annotation Processing API</description>
     </item>
     <item>
       <title>META-INF和WEB-INFO</title>
       <link>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/java/meta-inf%E5%92%8Cweb-info/</guid>
-      <description>META-INFO WEB-INFO </description>
+      <description>META-INF The META-INF directory The following files/directories in the META-INF directory are recognized and interpreted by the Java 2 Platform to configure applications, extensions, class loaders and services:
+MANIFEST.MF The manifest file that is used to define extension and package related data. 主要的清单文件，包括版本等信息 比如下面这个asm的MF文件
+Manifest-Version: 1.0 Ant-Version: Apache Ant 1.6.5 Created-By: 1.6.0_02-b05 (Sun Microsystems Inc.) Implementation-Title: ASM Implementation-Version: 3.1 Implementation-Vendor: France Telecom R&amp;amp;D INDEX.LIST This file is generated by the new &amp;ldquo;-i&amp;rdquo; option of the jar tool, which contains location information for packages defined in an application or extension.</description>
     </item>
     <item>
       <title>内存结构</title>
@@ -70,6 +85,14 @@ Hot spot 实现
 Java程序要运行时，需要编译器先将源代码文件编译成字节码（.class)文件，然后在由JVM解释执行。
 class文件中除了有类的版本、字段、方法、接口等描述信息外,还有一项信息是常量池(Constant pool table)，用于存放编译期生成的各种字面量和符号引用，这部分内容将在类加载后进入运行时常量池中存放。
 静态常量池就是上面说的class文件中的常量池。class常量池是在编译时每个class文件中都存在。不同的符号信息放置在不同标志的常量表中。</description>
+    </item>
+    <item>
+      <title>注释</title>
+      <link>https://yuvenhol.github.io/java/%E6%B3%A8%E9%87%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/java/%E6%B3%A8%E9%87%8A/</guid>
+      <description>学习一手spring的注视，不再抓瞎。
+/** * Return the auto-configuration class names that should be considered. By default * this method will load candidates using {@link SpringFactoriesLoader} with * {@link #getSpringFactoriesLoaderFactoryClass()}. * @param metadata the source metadata * @param attributes the {@link #getAttributes(AnnotationMetadata) annotation * attributes} * @return a list of candidate configurations */ </description>
     </item>
   </channel>
 </rss>
