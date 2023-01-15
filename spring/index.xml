@@ -82,6 +82,13 @@ HandlerMethodArgumentResolverComposite HandlerMethodArgumentResolver
 messageConverter （依赖 HandlerMethodReturnValueHandler和HandlerMethodArgumentResolver 处理请求前后 ）</description>
     </item>
     <item>
+      <title>transcational</title>
+      <link>https://yuvenhol.github.io/spring/transcational/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/spring/transcational/</guid>
+      <description>@Transactional 注解属性 rollbackFor 设置错误 rollbackFor 可以指定能够触发事务回滚的异常类型。Spring默认抛出了未检查unchecked异常（继承自 RuntimeException 的异常）或者 Error才回滚事务；其他异常不会触发回滚事务。如果在事务中抛出其他类型的异常，但却期望 Spring 能够回滚事务，就需要指定rollbackFor属性。</description>
+    </item>
+    <item>
       <title>单元测试</title>
       <link>https://yuvenhol.github.io/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -18,8 +18,7 @@
       <link>https://yuvenhol.github.io/spring/springboot/%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/spring/springboot/%E5%90%AF%E5%8A%A8/</guid>
-      <description>https://zhuanlan.zhihu.com/p/476222316
-嵌套jar包:Nested JARs java 没有提供给任何标准方式加载嵌套的jar文件（嵌套jar文件，就是跟jar包里面还有jar包，spring boot项目常常打成一个jar包就能启动，这是spring为我们提供给的便利），如果需要命令行运行一个不需要解包就可以运行的自包含应用程序会遇到麻烦。 为了解决这个问题，许多开发者使用“影子”jar。影子jar包包含了所有jar包的所有classes，是一个超级就jar包（uber jar）。但是使用影子 jar将会很难分别哪个jar包实际在使用。并且如果不同jar包有相同文件名的文件，也会有问题。springboot 使用了不同的放解决嵌套jar包的问题。
+      <description>https://zhuanlan.zhihu.com/p/476222316 嵌套jar包:Nested JARs java 没有提供给任何标准方式加载嵌套的jar文件（嵌套jar文件，就是跟jar包里面还有jar包，spring boot项目常常打成一个jar包就能启动，这是spring为我们提供给的便利），如果需要命令行运行一个不需要解包就可以运行的自包含应用程序会遇到麻烦。 为了解决这个问题，许多开发者使用“影子”jar。影子jar包包含了所有jar包的所有classes，是一个超级就jar包（uber jar）。但是使用影子 jar将会很难分别哪个jar包实际在使用。并且如果不同jar包有相同文件名的文件，也会有问题。springboot 使用了不同的放解决嵌套jar包的问题。
 jar文件结构 example.jar | +-META-INF | +-MANIFEST.MF +-org | +-springframework | +-boot | +-loader | +-&amp;lt;spring boot loader classes&amp;gt; +-BOOT-INF +-classpath.idx +-layers.idx +-classes 项目的class文件 | +-mycompany | +-project | +-YourClasses.class +-lib 依赖的jar包 +-dependency1.jar +-dependency2.jar 索引文件 classpath.idx 提供了jar添加到classpath的顺序，对jar和war包都支持 layer.idx jar包内的文件清单，只对jar包支持
 Spring Boot’s “JarFile” Class 支持加载嵌套jar的核心类是org.springframework.boot.loader.jar.JarFile，他让你可以从标准的jar文件和子jar文件加载数据。当第一次加载时，会形成一个带offset物理映射，就像下面这样。
 myapp.jar +-------------------+-------------------------+ | /BOOT-INF/classes | /BOOT-INF/lib/mylib.jar | |+-----------------+||+-----------+----------+| || A.class ||| B.class | C.class || |+-----------------+||+-----------+----------+| +-------------------+-------------------------+ ^ ^ ^ 0063 3452 3980 通过这种方式我们可以不必解开归档的文件加载嵌套实体，我们也不必把所有数据加载到内存里。</description>

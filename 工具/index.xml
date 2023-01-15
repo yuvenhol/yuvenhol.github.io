@@ -26,7 +26,7 @@ git工作流程 git flow 配置 ignore 注视 folder 同名的 folder 目录、s
       <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/idea/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/idea/</guid>
-      <description>编译大项目gc over limit 调整堆大小 </description>
+      <description>编译大项目gc over limit 调整堆大小 keymap key note ctrl+space 代码补全 </description>
     </item>
     <item>
       <title>iredis</title>
@@ -68,6 +68,17 @@ pom 增加
 &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; settings文件 settings文件有两处配置，总配置和用户
 The Maven install: ${maven.home}/conf/settings.xml A user&amp;rsquo;s install: ${user.home}/.m2/settings.xml Servers 配置账号密码 sshkey等
 1. `&amp;lt;servers&amp;gt;` 2. `&amp;lt;server&amp;gt;` 3. `&amp;lt;id&amp;gt;server001&amp;lt;/id&amp;gt;` 4. `&amp;lt;username&amp;gt;my_login&amp;lt;/username&amp;gt;` 5. `&amp;lt;password&amp;gt;my_password&amp;lt;/password&amp;gt;` 6. `&amp;lt;privateKey&amp;gt;${user.home}/.ssh/id_dsa&amp;lt;/privateKey&amp;gt;` 7. `&amp;lt;passphrase&amp;gt;some_passphrase&amp;lt;/passphrase&amp;gt;` 8. `&amp;lt;filePermissions&amp;gt;664&amp;lt;/filePermissions&amp;gt;` 9. `&amp;lt;directoryPermissions&amp;gt;775&amp;lt;/directoryPermissions&amp;gt;` 10. `&amp;lt;configuration&amp;gt;&amp;lt;/configuration&amp;gt;` 11. `&amp;lt;/server&amp;gt;` 12. `&amp;lt;/servers&amp;gt;` Mirrors 镜像：对repository的代理，默认的repository的id:central，所以一般mirrorOf会配置central,也可以是*，会对所有的repository替换。</description>
+    </item>
+    <item>
+      <title>vim</title>
+      <link>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E5%B7%A5%E5%85%B7/vim/</guid>
+      <description>vim是一款无处不在、高可配置、编辑十分高效的文本编辑器。
+虽然vim学习曲线很陡峭，但是学会了真的会带来快乐，这种感觉就像你可以从找人装修你的家，也可以自己搞，买材料、买装备、学习如何装修。
+如果你并非整天与命令行打交道，那么学习vim给你带来的方便并不会太多，而且耗费的时间肯定是划不来的，但是学习的过程是快乐的！快乐就好。
+vim 键位图 基础命令 移动动图 类型 按键 描述 保存&amp;amp;退出 ctrl+z|:q! 强制退出 :wq|:x|ZZ 保存退出 :w !sudo tee % 打开只读文件时保存 折叠 zo 打开 zc 关闭 zM 关闭所有 zR 打开所有 动作 &amp;lt;C-u&amp;gt;/ &amp;lt;C-u&amp;gt; 上/下一页 运算符 = 格式化代码 gU upper gu lower &amp;lt; / &amp;gt; 缩紧调整indent 视图模式 &amp;lt;C-v&amp;gt; 列选择 V 行选择 &amp;lt;C-v&amp;gt;+I/&amp;lt;C-v&amp;gt;$A 在行首/行尾添加内容 文本对象 存储个性化配置的vimrc 在～/.vimrc
+插件 vim-camelsnek 驼峰和长蛇风格转换</description>
     </item>
   </channel>
 </rss>

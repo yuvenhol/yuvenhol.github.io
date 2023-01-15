@@ -38,6 +38,13 @@ __ __ __ __ _ _ /\/| \ \ / / _ _ \ \ / / ___ _ __ | |__ ___ | | |/\/ \ V / | | |
 Host hostA HostName www.abc.com Port 1234 User test IdentityFile ~\.ssh\id_rsa Host hostB HostName 123.456.789.000 Port 5678 User root IdentityFile ~\.ssh\id_rsa 给linux实例添加新增SSH公钥 #!/bin/bash # ssh public key to be added. sshPublicKey=&amp;#34;{{sshPublicKey}}&amp;#34; mkdir -p ~/.ssh &amp;amp;&amp;amp; chmod 700 ~/.ssh touch ~/.ssh/authorized_keys chmod 600 ~/.ssh/authorized_keys echo $sshPublicKey &amp;gt;&amp;gt; ~/.ssh/authorized_keys echo &amp;#34;operation success!&amp;#34; </description>
     </item>
     <item>
+      <title>冷知识</title>
+      <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%86%B7%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%86%B7%E7%9F%A5%E8%AF%86/</guid>
+      <description>rc file 在linux中我们在对命令设置持续保存时，常常会把设置添加到一个rc文件内，比如.zshrc、.vimrc 等等。那么rc是啥意思，时run command的简称，意思是运行命令，就是在一个命令运行时需要指定的配置，所以每次命令运行时会从rc文件获取配置然后作为参数添加到命令里。</description>
+    </item>
+    <item>
       <title>启动执行脚本</title>
       <link>https://yuvenhol.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

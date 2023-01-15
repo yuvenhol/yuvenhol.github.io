@@ -10,21 +10,21 @@
     <title>content - yuvenhol的技术苦旅</title>
     <link href="/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1671729343" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1673778085" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1671729343" rel="stylesheet">
-    <link href="/css/nucleus.css?1671729343" rel="stylesheet">
-    <link href="/css/fonts.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1671729343" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1671729343" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1671729343" rel="stylesheet">
-    <link href="/css/variant.css?1671729343" rel="stylesheet">
-    <link href="/css/print.css?1671729343" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1671729343" rel="stylesheet">
-    <script src="/js/variant.js?1671729343"></script>
+    <link href="/css/fontawesome-all.min.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1673778085" rel="stylesheet">
+    <link href="/css/nucleus.css?1673778085" rel="stylesheet">
+    <link href="/css/fonts.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1673778085" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1673778085" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1673778085" rel="stylesheet">
+    <link href="/css/variant.css?1673778085" rel="stylesheet">
+    <link href="/css/print.css?1673778085" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1673778085" rel="stylesheet">
+    <script src="/js/variant.js?1673778085"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1671729343" defer></script>
+    <script src="/js/jquery.min.js?1673778085" defer></script>
   </head>
   <body class="mobile-support print" data-url="/">
     <div id="body" class="default-animation">
@@ -1934,6 +1934,26 @@ super.test()
           </article>
 
           <article class="default">
+<h1>jackson</h1>
+
+<h2 id="反序列化范型无效问题和解决">反序列化范型无效问题和解决</h2>
+<p>像下面的代码，反序列化回报错，</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">json</span><span class="o">(){</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="n">json</span> <span class="o">=</span><span class="s">&#34;{\n&#34;</span> <span class="o">+</span>  
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;    \&#34;a\&#34;:{\n&#34;</span> <span class="o">+</span>  
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;        \&#34;a\&#34;:\&#34;b\&#34;\n&#34;</span> <span class="o">+</span>  
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;    }\n&#34;</span> <span class="o">+</span>  
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;}&#34;</span><span class="o">;</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">ClazzA</span><span class="o">&lt;</span><span class="n">HosMapPhoneVO</span><span class="o">&gt;</span> <span class="n">of</span> <span class="o">=</span> <span class="n">JsonUtil</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">json</span><span class="o">,</span><span class="n">ClazzA</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">of</span><span class="o">.</span><span class="na">getA</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">).</span><span class="na">getForward</span><span class="o">();</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">of</span><span class="o">);</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
 <h1>MapStruct-类型安全的bean转换工具</h1>
 
 <h1 id="简介">简介</h1>
@@ -1954,7 +1974,7 @@ super.test()
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>${org.mapstruct.version}<span class="nt">&lt;/version&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencies&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- 如果和lombok 结合可能有贬义冲突，需要配置如下 --&gt;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
@@ -1965,11 +1985,17 @@ super.test()
 </span></span><span class="line"><span class="cl">                <span class="nt">&lt;source&gt;</span>1.8<span class="nt">&lt;/source&gt;</span>
 </span></span><span class="line"><span class="cl">                <span class="nt">&lt;target&gt;</span>1.8<span class="nt">&lt;/target&gt;</span>
 </span></span><span class="line"><span class="cl">                <span class="nt">&lt;annotationProcessorPaths&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;path&gt;</span>
-</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;groupId&gt;</span>org.mapstruct<span class="nt">&lt;/groupId&gt;</span>
-</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;artifactId&gt;</span>mapstruct-processor<span class="nt">&lt;/artifactId&gt;</span>
-</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;version&gt;</span>${org.mapstruct.version}<span class="nt">&lt;/version&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/path&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="c">&lt;!-- 如果和lombok 结合可能有编译冲突，需要配置如下 --&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;path&gt;</span>  
+</span></span><span class="line"><span class="cl">				    <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>  
+</span></span><span class="line"><span class="cl">				    <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>  
+</span></span><span class="line"><span class="cl">				    <span class="nt">&lt;version&gt;</span>${lombok.version}<span class="nt">&lt;/version&gt;</span>  
+</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/path&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="nt">&lt;path&gt;</span>
+</span></span><span class="line"><span class="cl">					<span class="nt">&lt;groupId&gt;</span>org.mapstruct<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">					<span class="nt">&lt;artifactId&gt;</span>mapstruct-processor<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">					<span class="nt">&lt;version&gt;</span>${org.mapstruct.version}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="nt">&lt;/path&gt;</span>
 </span></span><span class="line"><span class="cl">                <span class="nt">&lt;/annotationProcessorPaths&gt;</span>
 </span></span><span class="line"><span class="cl">            <span class="nt">&lt;/configuration&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugin&gt;</span>
@@ -1992,7 +2018,8 @@ super.test()
 <h3 id="映射编排-mapping-composition">映射编排 Mapping Composition</h3>
 <p>可以定义一个注解，组合编排mapping</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">CLASS</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="n">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//忽略字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="n">ignore</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;creationDate&#34;</span><span class="o">,</span> <span class="n">expression</span> <span class="o">=</span> <span class="s">&#34;java(new java.util.Date())&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="nd">@Mapping</span><span class="o">(</span><span class="n">target</span> <span class="o">=</span> <span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;groupName&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="nd">@interface</span> <span class="n">ToEntity</span> <span class="o">{</span> <span class="o">}</span>
@@ -2077,7 +2104,8 @@ super.test()
 </span></span><span class="line"><span class="cl">    <span class="n">Customer</span> <span class="nf">toCustomer</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="aftermapping-beforemapping-映射前后执行代码">@AfterMapping @BeforeMapping 映射前后执行代码</h3>
+
             <footer class="footline">
             </footer>
           </article>
@@ -2334,6 +2362,59 @@ Implementation-Vendor: France Telecom R&amp;D
           </article>
 
           <section>
+          <article class="default">
+<h1>csv</h1>
+
+<p>官方文档：
+<a href="https://docs.python.org/zh-cn/3/library/csv.html">https://docs.python.org/zh-cn/3/library/csv.html</a></p>
+<p>读取 CSV 文件最简单的一个例子:</p>
+<p>import csv
+with open(&lsquo;some.csv&rsquo;, newline=&rsquo;&rsquo;) as f:
+reader = csv.reader(f)
+for row in reader:
+print(row)</p>
+<p>读取其他格式的文件:</p>
+<p>import csv
+with open(&lsquo;passwd&rsquo;, newline=&rsquo;&rsquo;) as f:
+reader = csv.reader(f, delimiter=&rsquo;:&rsquo;, quoting=csv.QUOTE_NONE)
+for row in reader:
+print(row)</p>
+<p>相应最简单的写入示例是:</p>
+<p>import csv
+with open(&lsquo;some.csv&rsquo;, &lsquo;w&rsquo;, newline=&rsquo;&rsquo;) as f:
+writer = csv.writer(f)
+writer.writerows(someiterable)</p>
+<p>Since <a href="https://docs.python.org/zh-cn/3/library/functions.html#open" title="open"><code>open()</code></a> is used to open a CSV file for reading, the file will by default be decoded into unicode using the system default encoding (see <a href="https://docs.python.org/zh-cn/3/library/locale.html#locale.getencoding" title="locale.getencoding"><code>locale.getencoding()</code></a>). To decode a file using a different encoding, use the <code>encoding</code> argument of open:</p>
+<p>import csv
+with open(&lsquo;some.csv&rsquo;, newline=&rsquo;&rsquo;, encoding=&lsquo;utf-8&rsquo;) as f:
+reader = csv.reader(f)
+for row in reader:
+print(row)</p>
+<p>这同样适用于写入非系统默认编码的内容：打开输出文件时，指定 encoding 参数。</p>
+<p>注册一个新的变种:</p>
+<p>import csv
+csv.register_dialect(&lsquo;unixpwd&rsquo;, delimiter=&rsquo;:&rsquo;, quoting=csv.QUOTE_NONE)
+with open(&lsquo;passwd&rsquo;, newline=&rsquo;&rsquo;) as f:
+reader = csv.reader(f, &lsquo;unixpwd&rsquo;)</p>
+<p>Reader 的更高级用法——捕获并报告错误:</p>
+<p>import csv, sys
+filename = &lsquo;some.csv&rsquo;
+with open(filename, newline=&rsquo;&rsquo;) as f:
+reader = csv.reader(f)
+try:
+for row in reader:
+print(row)
+except csv.Error as e:
+sys.exit(&lsquo;file {}, line {}: {}&rsquo;.format(filename, reader.line_num, e))</p>
+<p>尽管该模块不直接支持解析字符串，但仍可如下轻松完成:</p>
+<p>import csv
+for row in csv.reader([&lsquo;one,two,three&rsquo;]):
+print(row)</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1>python语法知识</h1>
 
@@ -2820,7 +2901,8 @@ HandlerMethodArgumentResolver</p>
           <article class="default">
 <h1>启动</h1>
 
-<p><a href="https://zhuanlan.zhihu.com/p/476222316">https://zhuanlan.zhihu.com/p/476222316</a></p>
+<pre><code>https://zhuanlan.zhihu.com/p/476222316
+</code></pre>
 <h2 id="嵌套jar包nested-jars">嵌套jar包:Nested JARs</h2>
 <p>java 没有提供给任何标准方式加载嵌套的jar文件（嵌套jar文件，就是跟jar包里面还有jar包，spring boot项目常常打成一个jar包就能启动，这是spring为我们提供给的便利），如果需要命令行运行一个不需要解包就可以运行的自包含应用程序会遇到麻烦。
 为了解决这个问题，许多开发者使用“影子”jar。影子jar包包含了所有jar包的所有classes，是一个超级就jar包（uber jar）。但是使用影子 jar将会很难分别哪个jar包实际在使用。并且如果不同jar包有相同文件名的文件，也会有问题。springboot 使用了不同的放解决嵌套jar包的问题。</p>
@@ -2884,6 +2966,17 @@ layer.idx jar包内的文件清单，只对jar包支持</p>
           </article>
 
           </section>
+          <article class="default">
+<h1>transcational</h1>
+
+<h1 id="transactional-注解属性-rollbackfor-设置错误">@Transactional 注解属性 rollbackFor 设置错误</h1>
+<p>rollbackFor 可以指定能够触发事务回滚的异常类型。Spring默认抛出了未检查unchecked异常（继承自 RuntimeException 的异常）或者 Error才回滚事务；其他异常不会触发回滚事务。如果在事务中抛出其他类型的异常，但却期望 Spring 能够回滚事务，就需要指定<strong>rollbackFor</strong>属性。</p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202301091703081.png" alt="image.png"></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
           <article class="default">
 <h1>单元测试</h1>
 
@@ -3058,6 +3151,272 @@ layer.idx jar包内的文件清单，只对jar包支持</p>
           </article>
 
           <section>
+          <article class="default">
+<h1>elasticsearch</h1>
+
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+          <article class="default">
+<h1>CAT API</h1>
+
+<blockquote>
+<p>cat 全称 Compact and aligned text ，紧凑&amp;对齐文本</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>json对计算机来说是方便。但是人类尝试找从数据中关联是不容易的，即使pretty-print。在看终端时，特别需要紧凑&amp;对齐的文本展示。</p>
+<p>所有的cat命令都是以<code>/_cat</code> 开头，如果什么都不输入那么将展示所有可用的命令。</p>
+<h2 id="通用命令">通用命令</h2>
+<h3 id="详细说明verbose">详细说明verbose</h3>
+<p>命令中如果加上v，那么将详细输出（verbose output），可以展示表头。</p>
+<p>ex：</p>
+<pre tabindex="0"><code>GET _cat/master?v=true
+</code></pre><p>respond with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">id                     host      ip        node
+</span></span><span class="line"><span class="cl">u_n93zwxThWHi1PDBJAGAg 127.0.0.1 127.0.0.1 u_n93zw
+</span></span></code></pre></div><h3 id="帮助文档">帮助文档</h3>
+<p>在命令后加入help则展示帮助
+<code>GET _cat/master?help</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">id   |   | node id
+</span></span><span class="line"><span class="cl">host | h | host name
+</span></span><span class="line"><span class="cl">ip   |   | ip address
+</span></span><span class="line"><span class="cl">node | n | node name
+</span></span></code></pre></div><h3 id="排序">排序</h3>
+<p><code>GET _cat/indices?s=store.size:desc</code></p>
+<h2 id="indices">indices</h2>
+<p>返回索引在集群内的高级信息
+主要展示信息</p>
+<ul>
+<li>Shard count</li>
+<li>Document count</li>
+<li>Deleted document count</li>
+<li>Primary store size</li>
+<li>Total store size of all shards, including shard replicas
+ex:</li>
+</ul>
+<pre tabindex="0"><code>GET _cat/indices/*kibana*?v=true
+</code></pre><p>详细输出，模糊匹配key中带有kibana的index信息</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>es介绍</h1>
+
+<blockquote>
+<p>官方使用文档：https://www.elastic.co/guide/en/elasticsearch/reference/7.17/cat-indices.html</p>
+</blockquote>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>Query DSL</h1>
+
+<h2 id="基本介绍">基本介绍</h2>
+<p>elasticSearch 提供了一种用于查询的基于json的全查询领域特定语言 Query DSL（Domain specific ）。</p>
+<p>可以把Query DSL看作是查询的抽象语法树，由两种从句组成。</p>
+<h3 id="leaf-query-clauses">leaf query clauses</h3>
+<p>叶子查询从句，就像字段的一部分一样，比如match、term、range。</p>
+<h3 id="compound-query-causes">compound query causes</h3>
+<p>复合查询子句，包装了叶子查询和复合查询，用于以逻辑的方式组合多个查询（比如bool or dis_max）</p>
+<h3 id="昂贵查询">昂贵查询</h3>
+<p>昂贵查询执行缓慢，会影响集群稳定性。分为以下几种</p>
+<ul>
+<li>需要连续扫描来匹配内容的
+<ul>
+<li>script</li>
+</ul>
+</li>
+<li>需要很高的预先准备成本
+<ul>
+<li>fuzzy</li>
+<li>regexp</li>
+<li>prefix</li>
+<li>wildcard</li>
+<li>range</li>
+</ul>
+</li>
+<li>joining queries</li>
+</ul>
+<h2 id="query-and-filter-context">query and filter context</h2>
+<h3 id="相关性分数">相关性分数</h3>
+<p>默认情况下，es排序按照相关性分数进行排序，它代表这文档与查询的匹配程度。
+相关性分数是一个正浮点数，对应_score 字段。</p>
+<h3 id="查询上下文">查询上下文</h3>
+<p>在查询上下文里，查询子句的回答是“此文档与此查询子句的匹配程度”，除了决定文档是否匹配，这个查询子句也计算匹配程度对应_score字段。</p>
+<h3 id="过滤上线文">过滤上线文</h3>
+<p>在filter context内，查询子句的回答是“此文档与查询子句是否匹配”，答案只有是否。</p>
+<p>经常使用的过滤器将被es缓存，以提高性能。</p>
+<p>过滤上下文并不影响score计算结果。</p>
+<h3 id="举个例子">举个例子</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;query&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//query查询
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;bool&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//bool内的两个查询子句使用query context
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;must&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;match&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;title&#34;</span><span class="p">:</span>   <span class="s2">&#34;Search&#34;</span>        <span class="p">}},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;match&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;Elasticsearch&#34;</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;filter&#34;</span><span class="p">:</span> <span class="p">[</span><span class="c1">//filter 过滤掉不匹配的文档
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span> <span class="nt">&#34;term&#34;</span><span class="p">:</span>  <span class="p">{</span> <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;published&#34;</span> <span class="p">}},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;range&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;publish_date&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;gte&#34;</span><span class="p">:</span> <span class="s2">&#34;2015-01-01&#34;</span> <span class="p">}}}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="官方建议">==官方建议==</h3>
+<p>在query 子句内写影响分数的条件（也就是文档匹配程度），其他子句都应该在filter内写</p>
+<h2 id="复合查询">复合查询</h2>
+<p>复合查询可以包含复合查询和叶子查询，互相结合影响查询分数或者切换filter Context</p>
+<h3 id="bool">bool</h3>
+<p>用于组合多个叶子或复合查询子句的默认查询，如must、should、must_not或筛选子句。</p>
+<ul>
+<li>must</li>
+<li>filter</li>
+<li>should</li>
+<li>must_not</li>
+</ul>
+<h3 id="boosting">boosting</h3>
+<p>对分数进行正向或者负向调整</p>
+<h3 id="constant_score">constant_score</h3>
+<p>查询指定分数的文档</p>
+<h3 id="dis_max">dis_max</h3>
+<p>返回一个最匹配的文档，同时用于单条查询</p>
+<h3 id="function_score">function_score</h3>
+<p>分数修改</p>
+<h2 id="全文查询-full-text-queries">全文查询 Full text queries</h2>
+<h3 id="intervals--间隙搜索">intervals  间隙搜索</h3>
+<p>查询间隔控制。
+下面的例子就是，会匹配到my favorite food is cold porridge，但是不会匹配到<code>when it's cold my favorite food is porridge</code>.  因为设置了max_gaps 为0.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;query&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;intervals&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;my_text&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;all_of&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;ordered&#34;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;intervals&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;match&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;query&#34;</span> <span class="p">:</span> <span class="s2">&#34;my favorite food&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;max_gaps&#34;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;ordered&#34;</span> <span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;any_of&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;intervals&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">{</span> <span class="nt">&#34;match&#34;</span> <span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;query&#34;</span> <span class="p">:</span> <span class="s2">&#34;hot water&#34;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">{</span> <span class="nt">&#34;match&#34;</span> <span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;query&#34;</span> <span class="p">:</span> <span class="s2">&#34;cold porridge&#34;</span> <span class="p">}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="match">match</h3>
+<p>match是full text query的标准查询语句。</p>
+<table>
+<thead>
+<tr>
+<th>顶级参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td></td>
+</tr>
+<tr>
+<td>operator</td>
+<td>分词之后的逻辑的查询逻辑，可以是and或者or</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>Search API</h1>
+
+<p>search API 用于搜索&amp;聚合es上的数据和数据流。</p>
+<p>大多数的searchAPI 都支持 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/multi-index.html" title="Multi-target syntax">multi-target syntax</a>（简单理解为可以跨索引搜索），可以通过呢explain API 来查询执行计划。</p>
+<h2 id="coresearch">CoreSearch</h2>
+<h3 id="请求方式">请求方式</h3>
+<pre tabindex="0"><code>GET /&lt;target&gt;/_search
+POST /&lt;target&gt;/_search
+{
+
+}
+</code></pre><p>路径变量<code>&lt;target&gt;</code>为索引名称，支持模糊匹配，可以使用get参数q or POST 的reuestBody传入查询参数,大多数命令q和requestBody都痛哟功能。</p>
+<h3 id="查询参数">查询参数</h3>
+<h4 id="query">query</h4>
+<h4 id="exlain-执行计划">exlain 执行计划</h4>
+<p>使用Query DSL 定义查询对象。</p>
+<h4 id="docvalue_fields">docvalue_fields</h4>
+<p>在fields（响应体会讲）里控制展示的_doc下的字段（注意与fields字段区分），同时可以对字段进行format</p>
+<h4 id="fields">fields</h4>
+<p>与<code>docvalue_fields</code>类似，只不过范围是_source内的字段，范围更小。</p>
+<h4 id="from">from</h4>
+<p>default 0</p>
+<h4 id="size">size</h4>
+<p>默认10，在默认设置下，你不可能通过from&amp;size参数对超过10000个命中数据进行分页。如果要用得是<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/paginate-search-results.html#search-after">search_after</a>参数。</p>
+<h4 id="sort">sort</h4>
+<h4 id="pit">pit</h4>
+<p>限制搜索内容在一个时间点内（point in time）。如果提供了pit则查询时不需要填写index</p>
+<h4 id="min_score">min_score</h4>
+<p>指定最小的分数</p>
+<h4 id="runtime_mappings">runtime_mappings</h4>
+<p>定义一些runtime fields 用于搜索，这些字段将优先覆盖相同名字的字段，注意只能用于查询，response不会展示。</p>
+<h3 id="响应体">响应体</h3>
+<h4 id="took">took</h4>
+<p>es 执行请求花费的时间，这个时间就是协调节点接受到请求和返回响应的时间差。</p>
+<h4 id="_shards">_shards</h4>
+<ul>
+<li>total:需要执行的shards</li>
+<li>successful：</li>
+<li>skipped: 轻量级检查意识到分片没有数据，就跳过</li>
+<li>failed</li>
+</ul>
+<h4 id="hits">hits</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;total&#34;</span> <span class="p">:</span> <span class="p">{</span> <span class="c1">//文档的元数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;value&#34;</span> <span class="p">:</span> <span class="mi">10000</span><span class="p">,</span><span class="c1">//返回的文档数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;relation&#34;</span> <span class="p">:</span> <span class="s2">&#34;gte&#34;</span><span class="c1">//如果是eq那么，就是文档总数。如果是gte那么value就是下限
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max_score&#34;</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span><span class="c1">//文档的最高分，如果为null表明文档不是以score排序的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;hits&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;_index&#34;</span> <span class="p">:</span> <span class="s2">&#34;kibana_sample_data_logs&#34;</span><span class="p">,</span><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_type&#34;</span> <span class="p">:</span> <span class="s2">&#34;_doc&#34;</span><span class="p">,</span><span class="c1">//Mapping type of the returned document.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_id&#34;</span> <span class="p">:</span> <span class="s2">&#34;DexbbYUBknarlexk7QjU&#34;</span><span class="p">,</span><span class="c1">//文档id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_score&#34;</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span><span class="c1">//分数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_source&#34;</span> <span class="p">:</span> <span class="p">{</span><span class="c1">//原始的json文档
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fields&#34;</span><span class="p">:{</span><span class="c1">//展示来自 docvalue_fields、script_fields、stored_fields的字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
           <article class="default">
 <h1>kafka</h1>
 
@@ -3744,6 +4103,21 @@ rebase相当于在fetch之后，重新提交数据。
 <p>编译大项目gc over limit
 调整堆大小
 <img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221009182507.png" alt=""></p>
+<h2 id="keymap">keymap</h2>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl+space</td>
+<td>代码补全</td>
+</tr>
+</tbody>
+</table>
 
             <footer class="footline">
             </footer>
@@ -3896,6 +4270,117 @@ pom 增加</p>
 <li>test:测试类依赖</li>
 <li>system:类似provided，可指定本地位置</li>
 </ol>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>vim</h1>
+
+<blockquote>
+<p>vim是一款无处不在、高可配置、编辑十分高效的文本编辑器。</p>
+<p>虽然vim学习曲线很陡峭，但是学会了真的会带来快乐，这种感觉就像你可以从找人装修你的家，也可以自己搞，买材料、买装备、学习如何装修。</p>
+<p>如果你并非整天与命令行打交道，那么学习vim给你带来的方便并不会太多，而且耗费的时间肯定是划不来的，但是学习的过程是快乐的！快乐就好。</p>
+</blockquote>
+<h2 id="vim-键位图">vim 键位图</h2>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212240007827.png" alt="vim_keymap.png"></p>
+<h2 id="基础命令">基础命令</h2>
+<h3 id="移动动图">移动动图</h3>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212252350111.png" alt="image.png"></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>按键</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保存&amp;退出</td>
+<td>ctrl+z|:q!</td>
+<td>强制退出</td>
+</tr>
+<tr>
+<td></td>
+<td>:wq|:x|ZZ</td>
+<td>保存退出</td>
+</tr>
+<tr>
+<td></td>
+<td>:w !sudo tee %</td>
+<td>打开只读文件时保存</td>
+</tr>
+<tr>
+<td>折叠</td>
+<td>zo</td>
+<td>打开</td>
+</tr>
+<tr>
+<td></td>
+<td>zc</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td></td>
+<td>zM</td>
+<td>关闭所有</td>
+</tr>
+<tr>
+<td></td>
+<td>zR</td>
+<td>打开所有</td>
+</tr>
+<tr>
+<td>动作</td>
+<td>&lt;C-u&gt;/ &lt;C-u&gt;</td>
+<td>上/下一页</td>
+</tr>
+<tr>
+<td>运算符</td>
+<td>=</td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td></td>
+<td>gU</td>
+<td>upper</td>
+</tr>
+<tr>
+<td></td>
+<td>gu</td>
+<td>lower</td>
+</tr>
+<tr>
+<td></td>
+<td>&lt; / &gt;</td>
+<td>缩紧调整indent</td>
+</tr>
+<tr>
+<td>视图模式</td>
+<td>&lt;C-v&gt;</td>
+<td>列选择</td>
+</tr>
+<tr>
+<td></td>
+<td>V</td>
+<td>行选择</td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;C-v&gt;+I/&lt;C-v&gt;$A</td>
+<td>在行首/行尾添加内容</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文本对象">文本对象</h2>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212260042800.png" alt="image.png"></p>
+<h2 id="存储个性化配置的vimrc">存储个性化配置的vimrc</h2>
+<p>在～/.vimrc</p>
+<h2 id="插件">插件</h2>
+<h3 id="vim-camelsnek">vim-camelsnek</h3>
+<p>驼峰和长蛇风格转换</p>
 
             <footer class="footline">
             </footer>
@@ -4106,6 +4591,16 @@ ex：</p>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$sshPublicKey</span> &gt;&gt; ~/.ssh/authorized_keys
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;operation success!&#34;</span>
 </span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>冷知识</h1>
+
+<h2 id="rc-file">rc file</h2>
+<p>在linux中我们在对命令设置持续保存时，常常会把设置添加到一个rc文件内，比如.zshrc、.vimrc 等等。那么rc是啥意思，时run command的简称，意思是运行命令，就是在一个命令运行时需要指定的配置，所以每次命令运行时会从rc文件获取配置然后作为参数添加到命令里。</p>
+
             <footer class="footline">
             </footer>
           </article>
@@ -5643,15 +6138,6 @@ docs.python.org</p>
 
           </section>
           <article class="default">
-<h1>LRU</h1>
-
-<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221006134854.png" alt=""></p>
-
-            <footer class="footline">
-            </footer>
-          </article>
-
-          <article class="default">
 <h1>动态规划</h1>
 
 <p>动态规划问题的一般形式就是求最值。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。</p>
@@ -5723,8 +6209,7 @@ draft: false</h2>
 <h1>回溯（DFS）</h1>
 
 <p>回溯法是求解某些问题的全部或部分解的通用算法，特别是带有限制条件的问题。它通过不断的产生问题的完整解的片段并不断增长完整解的片段来获取该问题的完整解。当发现某个完整解的片段不能生成最后的完整解时，就会丢弃所有以该片段解为基础的完整解。</p>
-<pre><code> 回溯法会首先列出完整解的片段的一个集合。这个集合原则上可以通过不同的方式最后给出给定的问题的所有解。这是通过不断地对该完整解的片段的集合中的片段解不断扩展而达到的。
-</code></pre>
+<p>回溯法会首先列出完整解的片段的一个集合。这个集合原则上可以通过不同的方式最后给出给定的问题的所有解。这是通过不断地对该完整解的片段的集合中的片段解不断扩展而达到的。</p>
 <p>回溯（backtrack），一般用于求所有可能解，需要遍历所有数据。
 解决一个回溯问题，实际上就是一个决策树的遍历过程。你只需要思考 3 个问题：
 1、路径：也就是已经做出的选择。
@@ -5748,11 +6233,11 @@ return</p>
 节点的右子树只包含 大于 当前节点的数。
 所有左子树和右子树自身必须也是二叉搜索树。</p>
 <p>示例 1：</p>
-<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221024141631.png" alt=""></p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212251657797.png" alt=""></p>
 <p>输入：root = [2,1,3]
 输出：true
 示例 2：</p>
-<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/20221024141755.png" alt=""></p>
+<p><img src="https://yuvenhol-1255563050.cos.ap-beijing.myqcloud.com/img/202212251657799.png" alt=""></p>
 <p>输入：root = [5,1,4,null,null,3,6]
 输出：false
 解释：根节点的值是 5 ，但是右子节点的值是 4 。</p>
@@ -5787,7 +6272,30 @@ return</p>
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nf">dst</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">,</span><span class="nx">floor</span><span class="p">,</span><span class="nx">root</span><span class="p">.</span><span class="nx">Val</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="nf">dst</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Right</span><span class="p">,</span><span class="nx">root</span><span class="p">.</span><span class="nx">Val</span><span class="p">,</span><span class="nx">ceil</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>给你一个 <strong>无重复元素</strong> 的整数数组 <code>candidates</code> 和一个目标整数 <code>target</code> ，找出 <code>candidates</code> 中可以使数字和为目标数 <code>target</code> 的 所有 <strong>不同组合</strong> ，并以列表形式返回。你可以按 <strong>任意顺序</strong> 返回这些组合。</p>
+<p><code>candidates</code> 中的 <strong>同一个</strong> 数字可以 <strong>无限制重复被选取</strong> 。如果至少一个数字的被选数量不同，则两种组合是不同的。 </p>
+<p>对于给定的输入，保证和为 <code>target</code> 的不同组合数少于 <code>150</code> 个。</p>
+<p><strong>示例 1：</strong></p>
+<p>**输入：**candidates = <code>[2,3,6,7],</code> target = <code>7</code>
+<strong>输出：</strong>[[2,2,3],[7]]
+<strong>解释：</strong>
+2 和 3 可以形成一组候选，2 + 2 + 3 = 7 。注意 2 可以使用多次。
+7 也是一个候选， 7 = 7 。
+仅有这两种组合。</p>
+<p><strong>示例 2：</strong></p>
+<p><strong>输入:</strong> candidates = [2,3,5]<code>,</code> target = 8
+<strong>输出:</strong> [[2,2,2,2],[2,3,3],[3,5]]</p>
+<p><strong>示例 3：</strong></p>
+<p><strong>输入:</strong> candidates = <code>[2],</code> target = 1
+<strong>输出:</strong> []</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candidates.length &lt;= 30</code></li>
+<li><code>2 &lt;= candidates[i] &lt;= 40</code></li>
+<li><code>candidates</code> 的所有元素 <strong>互不相同</strong></li>
+<li><code>1 &lt;= target &lt;= 40</code></li>
+</ul>
+
             <footer class="footline">
             </footer>
           </article>
@@ -6905,12 +7413,12 @@ ex:2021-03-01T18:03:24.208+08:00
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1671729343" defer></script>
-        <script src="/js/lunr.min.js?1671729343" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1671729343" defer></script>
-        <script src="/js/lunr.multi.min.js?1671729343" defer></script>
-        <script src="/js/lunr.en.min.js?1671729343" defer></script>
-        <script src="/js/search.js?1671729343" defer></script>
+        <script src="/js/auto-complete.js?1673778085" defer></script>
+        <script src="/js/lunr.min.js?1673778085" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1673778085" defer></script>
+        <script src="/js/lunr.multi.min.js?1673778085" defer></script>
+        <script src="/js/lunr.en.min.js?1673778085" defer></script>
+        <script src="/js/search.js?1673778085" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -6937,6 +7445,7 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/java/lib/" title="lib" class="dd-item alwaysopen"><input type="checkbox" id="section-3d385f71e2cc44b77d754be95cf76a3f" class="toggle" checked/><label for="section-3d385f71e2cc44b77d754be95cf76a3f" ></label><a href="/java/lib/">lib<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/lib/cglib/" title="cglib" class="dd-item"><a href="/java/lib/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/lib/jackson/" title="jackson" class="dd-item"><a href="/java/lib/jackson/">jackson<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/meta-inf%E5%92%8Cweb-info/" title="META-INF和WEB-INFO" class="dd-item"><a href="/java/meta-inf%E5%92%8Cweb-info/">META-INF和WEB-INFO<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li>
@@ -6946,6 +7455,7 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/office/" title="office" class="dd-item"><input type="checkbox" id="section-98530a8654fbed228aee60cd5d89d452" class="toggle"/><label for="section-98530a8654fbed228aee60cd5d89d452" ></label><a href="/office/">office<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/office/excel%E5%85%AC%E5%BC%8F/" title="excel公式" class="dd-item"><a href="/office/excel%E5%85%AC%E5%BC%8F/">excel公式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/python/" title="python" class="dd-item"><input type="checkbox" id="section-c8861a2651b27ee3930a98ce392020d1" class="toggle"/><label for="section-c8861a2651b27ee3930a98ce392020d1" ></label><a href="/python/">python<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/python/csv/" title="csv" class="dd-item"><a href="/python/csv/">csv<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python语法知识" class="dd-item"><a href="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python语法知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/" title="时间处理" class="dd-item"><a href="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/">时间处理<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/" title="绘图库matplotlib" class="dd-item"><a href="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/">绘图库matplotlib<i class="fas fa-check read-icon"></i></a></li></ul></li>
@@ -6963,9 +7473,15 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/" title="为什么SpringBoot可以直接运行 jar 包？" class="dd-item"><a href="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/">为什么SpringBoot可以直接运行 jar 包？<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/%E5%90%AF%E5%8A%A8/" title="启动" class="dd-item"><a href="/spring/springboot/%E5%90%AF%E5%8A%A8/">启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" title="自动配置" class="dd-item"><a href="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/">自动配置<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/spring/transcational/" title="transcational" class="dd-item"><a href="/spring/transcational/">transcational<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/" title="条件加载" class="dd-item"><a href="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/">条件加载<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件" class="dd-item"><input type="checkbox" id="section-cb147f28999e2af77c3c46e5203c4ebe" class="toggle"/><label for="section-cb147f28999e2af77c3c46e5203c4ebe" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/" title="elasticsearch" class="dd-item alwaysopen"><input type="checkbox" id="section-8d85ef773acaecba16eeaee474a8bd7d" class="toggle" checked/><label for="section-8d85ef773acaecba16eeaee474a8bd7d" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/">elasticsearch<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/cat-api/" title="CAT API" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/cat-api/">CAT API<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/es%E4%BB%8B%E7%BB%8D/" title="es介绍" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/es%E4%BB%8B%E7%BB%8D/">es介绍<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/query-dsl/" title="Query DSL" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/query-dsl/">Query DSL<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/search-api/" title="Search API" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/search-api/">Search API<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/">kafka<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/" title="mysql" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/">mysql<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" title="redis" class="dd-item alwaysopen"><input type="checkbox" id="section-74f1b75570b4ee251a87b9e00cbf3144" class="toggle" checked/><label for="section-74f1b75570b4ee251a87b9e00cbf3144" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/">redis<i class="fas fa-check read-icon"></i></a><ul>
@@ -6988,13 +7504,15 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/jmeter/" title="jmeter" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/jmeter/">jmeter<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/markdown/" title="markdown" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/markdown/">markdown<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E5%B7%A5%E5%85%B7/vim/" title="vim" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/vim/">vim<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle"/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/" title="linux" class="dd-item alwaysopen"><input type="checkbox" id="section-2b529531ed5b88a2a39fe109a71784e2" class="toggle" checked/><label for="section-2b529531ed5b88a2a39fe109a71784e2" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/">linux<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/" title="linux工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/">linux工具<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/" title="linux目录" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/">linux目录<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/" title="shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/">shell<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/" title="SSH" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/">SSH<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%86%B7%E7%9F%A5%E8%AF%86/" title="冷知识" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%86%B7%E7%9F%A5%E8%AF%86/">冷知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/" title="启动执行脚本" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/">启动执行脚本<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/" title="命令组合" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/">命令组合<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/" title="如何区分terminal、tty、console、shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/">如何区分terminal、tty、console、shell<i class="fas fa-check read-icon"></i></a></li>
@@ -7038,7 +7556,6 @@ ex:2021-03-01T18:03:24.208+08:00
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" title="300. 最长递增子序列" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">300. 最长递增子序列<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="70.爬楼梯" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/">70.爬楼梯<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/" title="经典算法目录" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/">经典算法目录<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/" title="LRU" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/">LRU<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/" title="双指针" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针<i class="fas fa-check read-icon"></i></a></li>
@@ -7135,18 +7652,18 @@ ex:2021-03-01T18:03:24.208+08:00
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1671729343"></script>
+          <script async src="/js/buttons.js?1673778085"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1671729343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1671729343" defer></script>
-    <script src="/js/featherlight.min.js?1671729343" defer></script>
-    <script src="/js/jquery.svg.pan.zoom.js?1671729343" defer></script>
-    <script src="/js/mermaid.min.js?1671729343" defer></script>
+    <script src="/js/clipboard.min.js?1673778085" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1673778085" defer></script>
+    <script src="/js/featherlight.min.js?1673778085" defer></script>
+    <script src="/js/jquery.svg.pan.zoom.js?1673778085" defer></script>
+    <script src="/js/mermaid.min.js?1673778085" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"securityLevel\": \"loose\" }");
     </script>
-    <script src="/js/theme.js?1671729343" defer></script>
+    <script src="/js/theme.js?1673778085" defer></script>
   </body>
 </html>

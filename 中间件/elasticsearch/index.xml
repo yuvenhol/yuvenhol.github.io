@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elasticsearch on yuvenhol的技术苦旅</title>
+    <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/</link>
+    <description>Recent content in elasticsearch on yuvenhol的技术苦旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAT API</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/cat-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/cat-api/</guid>
+      <description>cat 全称 Compact and aligned text ，紧凑&amp;amp;对齐文本
+Introduction json对计算机来说是方便。但是人类尝试找从数据中关联是不容易的，即使pretty-print。在看终端时，特别需要紧凑&amp;amp;对齐的文本展示。
+所有的cat命令都是以/_cat 开头，如果什么都不输入那么将展示所有可用的命令。
+通用命令 详细说明verbose 命令中如果加上v，那么将详细输出（verbose output），可以展示表头。
+ex：
+GET _cat/master?v=true respond with:
+id host ip node u_n93zwxThWHi1PDBJAGAg 127.0.0.1 127.0.0.1 u_n93zw 帮助文档 在命令后加入help则展示帮助 GET _cat/master?help
+id | | node id host | h | host name ip | | ip address node | n | node name 排序 GET _cat/indices?s=store.size:desc
+indices 返回索引在集群内的高级信息 主要展示信息
+Shard count Document count Deleted document count Primary store size Total store size of all shards, including shard replicas ex: GET _cat/indices/*kibana*?</description>
+    </item>
+    <item>
+      <title>es介绍</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/es%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/es%E4%BB%8B%E7%BB%8D/</guid>
+      <description>官方使用文档：https://www.elastic.co/guide/en/elasticsearch/reference/7.17/cat-indices.html</description>
+    </item>
+    <item>
+      <title>Query DSL</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/query-dsl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/query-dsl/</guid>
+      <description>基本介绍 elasticSearch 提供了一种用于查询的基于json的全查询领域特定语言 Query DSL（Domain specific ）。
+可以把Query DSL看作是查询的抽象语法树，由两种从句组成。
+leaf query clauses 叶子查询从句，就像字段的一部分一样，比如match、term、range。
+compound query causes 复合查询子句，包装了叶子查询和复合查询，用于以逻辑的方式组合多个查询（比如bool or dis_max）
+昂贵查询 昂贵查询执行缓慢，会影响集群稳定性。分为以下几种
+需要连续扫描来匹配内容的 script 需要很高的预先准备成本 fuzzy regexp prefix wildcard range joining queries query and filter context 相关性分数 默认情况下，es排序按照相关性分数进行排序，它代表这文档与查询的匹配程度。 相关性分数是一个正浮点数，对应_score 字段。
+查询上下文 在查询上下文里，查询子句的回答是“此文档与此查询子句的匹配程度”，除了决定文档是否匹配，这个查询子句也计算匹配程度对应_score字段。
+过滤上线文 在filter context内，查询子句的回答是“此文档与查询子句是否匹配”，答案只有是否。
+经常使用的过滤器将被es缓存，以提高性能。
+过滤上下文并不影响score计算结果。
+举个例子 { &amp;#34;query&amp;#34;: { //query查询 &amp;#34;bool&amp;#34;: { //bool内的两个查询子句使用query context &amp;#34;must&amp;#34;: [ { &amp;#34;match&amp;#34;: { &amp;#34;title&amp;#34;: &amp;#34;Search&amp;#34; }}, { &amp;#34;match&amp;#34;: { &amp;#34;content&amp;#34;: &amp;#34;Elasticsearch&amp;#34; }} ], &amp;#34;filter&amp;#34;: [//filter 过滤掉不匹配的文档 { &amp;#34;term&amp;#34;: { &amp;#34;status&amp;#34;: &amp;#34;published&amp;#34; }}, { &amp;#34;range&amp;#34;: { &amp;#34;publish_date&amp;#34;: { &amp;#34;gte&amp;#34;: &amp;#34;2015-01-01&amp;#34; }}} ] } } } ==官方建议== 在query 子句内写影响分数的条件（也就是文档匹配程度），其他子句都应该在filter内写</description>
+    </item>
+    <item>
+      <title>Search API</title>
+      <link>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/search-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yuvenhol.github.io/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/search-api/</guid>
+      <description>search API 用于搜索&amp;amp;聚合es上的数据和数据流。
+大多数的searchAPI 都支持 multi-target syntax（简单理解为可以跨索引搜索），可以通过呢explain API 来查询执行计划。
+CoreSearch 请求方式 GET /&amp;lt;target&amp;gt;/_search POST /&amp;lt;target&amp;gt;/_search { } 路径变量&amp;lt;target&amp;gt;为索引名称，支持模糊匹配，可以使用get参数q or POST 的reuestBody传入查询参数,大多数命令q和requestBody都痛哟功能。
+查询参数 query exlain 执行计划 使用Query DSL 定义查询对象。
+docvalue_fields 在fields（响应体会讲）里控制展示的_doc下的字段（注意与fields字段区分），同时可以对字段进行format
+fields 与docvalue_fields类似，只不过范围是_source内的字段，范围更小。
+from default 0
+size 默认10，在默认设置下，你不可能通过from&amp;amp;size参数对超过10000个命中数据进行分页。如果要用得是search_after参数。
+sort pit 限制搜索内容在一个时间点内（point in time）。如果提供了pit则查询时不需要填写index
+min_score 指定最小的分数
+runtime_mappings 定义一些runtime fields 用于搜索，这些字段将优先覆盖相同名字的字段，注意只能用于查询，response不会展示。
+响应体 took es 执行请求花费的时间，这个时间就是协调节点接受到请求和返回响应的时间差。
+_shards total:需要执行的shards successful： skipped: 轻量级检查意识到分片没有数据，就跳过 failed hits { &amp;#34;total&amp;#34; : { //文档的元数据 &amp;#34;value&amp;#34; : 10000,//返回的文档数量 &amp;#34;relation&amp;#34; : &amp;#34;gte&amp;#34;//如果是eq那么，就是文档总数。如果是gte那么value就是下限 }, &amp;#34;max_score&amp;#34; : 1.</description>
+    </item>
+  </channel>
+</rss>

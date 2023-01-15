@@ -10,21 +10,21 @@
     <title>中间件 - yuvenhol的技术苦旅</title>
     <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="canonical" type="text/html" title="yuvenhol的技术苦旅">
     <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/index.xml" rel="alternate" type="application/rss+xml" title="yuvenhol的技术苦旅">
-    <link href="/images/logo.svg?1671729343" rel="icon" type="image/svg+xml">
+    <link href="/images/logo.svg?1673778085" rel="icon" type="image/svg+xml">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/featherlight.min.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1671729343" rel="stylesheet">
-    <link href="/css/nucleus.css?1671729343" rel="stylesheet">
-    <link href="/css/fonts.css?1671729343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1671729343" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1671729343" rel="stylesheet">
-    <link href="/css/theme-relearn-light.css?1671729343" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1671729343" rel="stylesheet">
-    <link href="/css/variant.css?1671729343" rel="stylesheet">
-    <link href="/css/print.css?1671729343" rel="stylesheet" media="print">
-    <link href="/css/format-print.css?1671729343" rel="stylesheet">
-    <script src="/js/variant.js?1671729343"></script>
+    <link href="/css/fontawesome-all.min.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/featherlight.min.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/featherlight.min.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1673778085" rel="stylesheet">
+    <link href="/css/nucleus.css?1673778085" rel="stylesheet">
+    <link href="/css/fonts.css?1673778085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1673778085" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1673778085" rel="stylesheet">
+    <link href="/css/theme-relearn-light.css?1673778085" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1673778085" rel="stylesheet">
+    <link href="/css/variant.css?1673778085" rel="stylesheet">
+    <link href="/css/print.css?1673778085" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1673778085" rel="stylesheet">
+    <script src="/js/variant.js?1673778085"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -40,7 +40,7 @@
       var baseUriFull='https:\/\/yuvenhol.github.io/';
       window.variants && variants.init( [ 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
     </script>
-    <script src="/js/jquery.min.js?1671729343" defer></script>
+    <script src="/js/jquery.min.js?1673778085" defer></script>
   </head>
   <body class="mobile-support print" data-url="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
     <div id="body" class="default-animation">
@@ -49,7 +49,7 @@
       <nav id="topbar" class="highlightable">
         <div>
           <div class="navigation">
-             <a class="nav nav-next" href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+             <a class="nav nav-next" href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/" title="elasticsearch (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
              <a class="nav nav-prev" href="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/" title="条件加载 (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
@@ -89,6 +89,272 @@
           </article>
 
           <section>
+          <article class="default">
+<h1>elasticsearch</h1>
+
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+          <article class="default">
+<h1>CAT API</h1>
+
+<blockquote>
+<p>cat 全称 Compact and aligned text ，紧凑&amp;对齐文本</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>json对计算机来说是方便。但是人类尝试找从数据中关联是不容易的，即使pretty-print。在看终端时，特别需要紧凑&amp;对齐的文本展示。</p>
+<p>所有的cat命令都是以<code>/_cat</code> 开头，如果什么都不输入那么将展示所有可用的命令。</p>
+<h2 id="通用命令">通用命令</h2>
+<h3 id="详细说明verbose">详细说明verbose</h3>
+<p>命令中如果加上v，那么将详细输出（verbose output），可以展示表头。</p>
+<p>ex：</p>
+<pre tabindex="0"><code>GET _cat/master?v=true
+</code></pre><p>respond with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">id                     host      ip        node
+</span></span><span class="line"><span class="cl">u_n93zwxThWHi1PDBJAGAg 127.0.0.1 127.0.0.1 u_n93zw
+</span></span></code></pre></div><h3 id="帮助文档">帮助文档</h3>
+<p>在命令后加入help则展示帮助
+<code>GET _cat/master?help</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">id   |   | node id
+</span></span><span class="line"><span class="cl">host | h | host name
+</span></span><span class="line"><span class="cl">ip   |   | ip address
+</span></span><span class="line"><span class="cl">node | n | node name
+</span></span></code></pre></div><h3 id="排序">排序</h3>
+<p><code>GET _cat/indices?s=store.size:desc</code></p>
+<h2 id="indices">indices</h2>
+<p>返回索引在集群内的高级信息
+主要展示信息</p>
+<ul>
+<li>Shard count</li>
+<li>Document count</li>
+<li>Deleted document count</li>
+<li>Primary store size</li>
+<li>Total store size of all shards, including shard replicas
+ex:</li>
+</ul>
+<pre tabindex="0"><code>GET _cat/indices/*kibana*?v=true
+</code></pre><p>详细输出，模糊匹配key中带有kibana的index信息</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>es介绍</h1>
+
+<blockquote>
+<p>官方使用文档：https://www.elastic.co/guide/en/elasticsearch/reference/7.17/cat-indices.html</p>
+</blockquote>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>Query DSL</h1>
+
+<h2 id="基本介绍">基本介绍</h2>
+<p>elasticSearch 提供了一种用于查询的基于json的全查询领域特定语言 Query DSL（Domain specific ）。</p>
+<p>可以把Query DSL看作是查询的抽象语法树，由两种从句组成。</p>
+<h3 id="leaf-query-clauses">leaf query clauses</h3>
+<p>叶子查询从句，就像字段的一部分一样，比如match、term、range。</p>
+<h3 id="compound-query-causes">compound query causes</h3>
+<p>复合查询子句，包装了叶子查询和复合查询，用于以逻辑的方式组合多个查询（比如bool or dis_max）</p>
+<h3 id="昂贵查询">昂贵查询</h3>
+<p>昂贵查询执行缓慢，会影响集群稳定性。分为以下几种</p>
+<ul>
+<li>需要连续扫描来匹配内容的
+<ul>
+<li>script</li>
+</ul>
+</li>
+<li>需要很高的预先准备成本
+<ul>
+<li>fuzzy</li>
+<li>regexp</li>
+<li>prefix</li>
+<li>wildcard</li>
+<li>range</li>
+</ul>
+</li>
+<li>joining queries</li>
+</ul>
+<h2 id="query-and-filter-context">query and filter context</h2>
+<h3 id="相关性分数">相关性分数</h3>
+<p>默认情况下，es排序按照相关性分数进行排序，它代表这文档与查询的匹配程度。
+相关性分数是一个正浮点数，对应_score 字段。</p>
+<h3 id="查询上下文">查询上下文</h3>
+<p>在查询上下文里，查询子句的回答是“此文档与此查询子句的匹配程度”，除了决定文档是否匹配，这个查询子句也计算匹配程度对应_score字段。</p>
+<h3 id="过滤上线文">过滤上线文</h3>
+<p>在filter context内，查询子句的回答是“此文档与查询子句是否匹配”，答案只有是否。</p>
+<p>经常使用的过滤器将被es缓存，以提高性能。</p>
+<p>过滤上下文并不影响score计算结果。</p>
+<h3 id="举个例子">举个例子</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;query&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//query查询
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;bool&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//bool内的两个查询子句使用query context
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;must&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;match&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;title&#34;</span><span class="p">:</span>   <span class="s2">&#34;Search&#34;</span>        <span class="p">}},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;match&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;Elasticsearch&#34;</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;filter&#34;</span><span class="p">:</span> <span class="p">[</span><span class="c1">//filter 过滤掉不匹配的文档
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span> <span class="nt">&#34;term&#34;</span><span class="p">:</span>  <span class="p">{</span> <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;published&#34;</span> <span class="p">}},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;range&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;publish_date&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;gte&#34;</span><span class="p">:</span> <span class="s2">&#34;2015-01-01&#34;</span> <span class="p">}}}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="官方建议">==官方建议==</h3>
+<p>在query 子句内写影响分数的条件（也就是文档匹配程度），其他子句都应该在filter内写</p>
+<h2 id="复合查询">复合查询</h2>
+<p>复合查询可以包含复合查询和叶子查询，互相结合影响查询分数或者切换filter Context</p>
+<h3 id="bool">bool</h3>
+<p>用于组合多个叶子或复合查询子句的默认查询，如must、should、must_not或筛选子句。</p>
+<ul>
+<li>must</li>
+<li>filter</li>
+<li>should</li>
+<li>must_not</li>
+</ul>
+<h3 id="boosting">boosting</h3>
+<p>对分数进行正向或者负向调整</p>
+<h3 id="constant_score">constant_score</h3>
+<p>查询指定分数的文档</p>
+<h3 id="dis_max">dis_max</h3>
+<p>返回一个最匹配的文档，同时用于单条查询</p>
+<h3 id="function_score">function_score</h3>
+<p>分数修改</p>
+<h2 id="全文查询-full-text-queries">全文查询 Full text queries</h2>
+<h3 id="intervals--间隙搜索">intervals  间隙搜索</h3>
+<p>查询间隔控制。
+下面的例子就是，会匹配到my favorite food is cold porridge，但是不会匹配到<code>when it's cold my favorite food is porridge</code>.  因为设置了max_gaps 为0.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;query&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;intervals&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;my_text&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;all_of&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;ordered&#34;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;intervals&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;match&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;query&#34;</span> <span class="p">:</span> <span class="s2">&#34;my favorite food&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;max_gaps&#34;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;ordered&#34;</span> <span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&#34;any_of&#34;</span> <span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;intervals&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">{</span> <span class="nt">&#34;match&#34;</span> <span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;query&#34;</span> <span class="p">:</span> <span class="s2">&#34;hot water&#34;</span> <span class="p">}</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">{</span> <span class="nt">&#34;match&#34;</span> <span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;query&#34;</span> <span class="p">:</span> <span class="s2">&#34;cold porridge&#34;</span> <span class="p">}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="match">match</h3>
+<p>match是full text query的标准查询语句。</p>
+<table>
+<thead>
+<tr>
+<th>顶级参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td></td>
+</tr>
+<tr>
+<td>operator</td>
+<td>分词之后的逻辑的查询逻辑，可以是and或者or</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+<h1>Search API</h1>
+
+<p>search API 用于搜索&amp;聚合es上的数据和数据流。</p>
+<p>大多数的searchAPI 都支持 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/multi-index.html" title="Multi-target syntax">multi-target syntax</a>（简单理解为可以跨索引搜索），可以通过呢explain API 来查询执行计划。</p>
+<h2 id="coresearch">CoreSearch</h2>
+<h3 id="请求方式">请求方式</h3>
+<pre tabindex="0"><code>GET /&lt;target&gt;/_search
+POST /&lt;target&gt;/_search
+{
+
+}
+</code></pre><p>路径变量<code>&lt;target&gt;</code>为索引名称，支持模糊匹配，可以使用get参数q or POST 的reuestBody传入查询参数,大多数命令q和requestBody都痛哟功能。</p>
+<h3 id="查询参数">查询参数</h3>
+<h4 id="query">query</h4>
+<h4 id="exlain-执行计划">exlain 执行计划</h4>
+<p>使用Query DSL 定义查询对象。</p>
+<h4 id="docvalue_fields">docvalue_fields</h4>
+<p>在fields（响应体会讲）里控制展示的_doc下的字段（注意与fields字段区分），同时可以对字段进行format</p>
+<h4 id="fields">fields</h4>
+<p>与<code>docvalue_fields</code>类似，只不过范围是_source内的字段，范围更小。</p>
+<h4 id="from">from</h4>
+<p>default 0</p>
+<h4 id="size">size</h4>
+<p>默认10，在默认设置下，你不可能通过from&amp;size参数对超过10000个命中数据进行分页。如果要用得是<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/paginate-search-results.html#search-after">search_after</a>参数。</p>
+<h4 id="sort">sort</h4>
+<h4 id="pit">pit</h4>
+<p>限制搜索内容在一个时间点内（point in time）。如果提供了pit则查询时不需要填写index</p>
+<h4 id="min_score">min_score</h4>
+<p>指定最小的分数</p>
+<h4 id="runtime_mappings">runtime_mappings</h4>
+<p>定义一些runtime fields 用于搜索，这些字段将优先覆盖相同名字的字段，注意只能用于查询，response不会展示。</p>
+<h3 id="响应体">响应体</h3>
+<h4 id="took">took</h4>
+<p>es 执行请求花费的时间，这个时间就是协调节点接受到请求和返回响应的时间差。</p>
+<h4 id="_shards">_shards</h4>
+<ul>
+<li>total:需要执行的shards</li>
+<li>successful：</li>
+<li>skipped: 轻量级检查意识到分片没有数据，就跳过</li>
+<li>failed</li>
+</ul>
+<h4 id="hits">hits</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;total&#34;</span> <span class="p">:</span> <span class="p">{</span> <span class="c1">//文档的元数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;value&#34;</span> <span class="p">:</span> <span class="mi">10000</span><span class="p">,</span><span class="c1">//返回的文档数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;relation&#34;</span> <span class="p">:</span> <span class="s2">&#34;gte&#34;</span><span class="c1">//如果是eq那么，就是文档总数。如果是gte那么value就是下限
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max_score&#34;</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span><span class="c1">//文档的最高分，如果为null表明文档不是以score排序的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;hits&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;_index&#34;</span> <span class="p">:</span> <span class="s2">&#34;kibana_sample_data_logs&#34;</span><span class="p">,</span><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_type&#34;</span> <span class="p">:</span> <span class="s2">&#34;_doc&#34;</span><span class="p">,</span><span class="c1">//Mapping type of the returned document.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_id&#34;</span> <span class="p">:</span> <span class="s2">&#34;DexbbYUBknarlexk7QjU&#34;</span><span class="p">,</span><span class="c1">//文档id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_score&#34;</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span><span class="c1">//分数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;_source&#34;</span> <span class="p">:</span> <span class="p">{</span><span class="c1">//原始的json文档
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fields&#34;</span><span class="p">:{</span><span class="c1">//展示来自 docvalue_fields、script_fields、stored_fields的字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
           <article class="default">
 <h1>kafka</h1>
 
@@ -494,12 +760,12 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1671729343" defer></script>
-        <script src="/js/lunr.min.js?1671729343" defer></script>
-        <script src="/js/lunr.stemmer.support.min.js?1671729343" defer></script>
-        <script src="/js/lunr.multi.min.js?1671729343" defer></script>
-        <script src="/js/lunr.en.min.js?1671729343" defer></script>
-        <script src="/js/search.js?1671729343" defer></script>
+        <script src="/js/auto-complete.js?1673778085" defer></script>
+        <script src="/js/lunr.min.js?1673778085" defer></script>
+        <script src="/js/lunr.stemmer.support.min.js?1673778085" defer></script>
+        <script src="/js/lunr.multi.min.js?1673778085" defer></script>
+        <script src="/js/lunr.en.min.js?1673778085" defer></script>
+        <script src="/js/search.js?1673778085" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
@@ -526,6 +792,7 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/java/lib/" title="lib" class="dd-item alwaysopen"><input type="checkbox" id="section-3d385f71e2cc44b77d754be95cf76a3f" class="toggle" checked/><label for="section-3d385f71e2cc44b77d754be95cf76a3f" ></label><a href="/java/lib/">lib<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/java/lib/cglib/" title="cglib" class="dd-item"><a href="/java/lib/cglib/">cglib<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/" title="hibernate-validator 校验器" class="dd-item"><a href="/java/lib/hibernate-validator-%E6%A0%A1%E9%AA%8C%E5%99%A8/">hibernate-validator 校验器<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/java/lib/jackson/" title="jackson" class="dd-item"><a href="/java/lib/jackson/">jackson<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/" title="MapStruct-类型安全的bean转换工具" class="dd-item"><a href="/java/lib/mapstruct-%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84bean%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7/">MapStruct-类型安全的bean转换工具<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/java/meta-inf%E5%92%8Cweb-info/" title="META-INF和WEB-INFO" class="dd-item"><a href="/java/meta-inf%E5%92%8Cweb-info/">META-INF和WEB-INFO<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" title="内存结构" class="dd-item"><a href="/java/%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">内存结构<i class="fas fa-check read-icon"></i></a></li>
@@ -535,6 +802,7 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/office/" title="office" class="dd-item"><input type="checkbox" id="section-98530a8654fbed228aee60cd5d89d452" class="toggle"/><label for="section-98530a8654fbed228aee60cd5d89d452" ></label><a href="/office/">office<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/office/excel%E5%85%AC%E5%BC%8F/" title="excel公式" class="dd-item"><a href="/office/excel%E5%85%AC%E5%BC%8F/">excel公式<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/python/" title="python" class="dd-item"><input type="checkbox" id="section-c8861a2651b27ee3930a98ce392020d1" class="toggle"/><label for="section-c8861a2651b27ee3930a98ce392020d1" ></label><a href="/python/">python<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/python/csv/" title="csv" class="dd-item"><a href="/python/csv/">csv<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/" title="python语法知识" class="dd-item"><a href="/python/python%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/">python语法知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/" title="时间处理" class="dd-item"><a href="/python/%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/">时间处理<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/" title="绘图库matplotlib" class="dd-item"><a href="/python/%E7%BB%98%E5%9B%BE%E5%BA%93matplotlib/">绘图库matplotlib<i class="fas fa-check read-icon"></i></a></li></ul></li>
@@ -552,9 +820,15 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/" title="为什么SpringBoot可以直接运行 jar 包？" class="dd-item"><a href="/spring/springboot/%E4%B8%BA%E4%BB%80%E4%B9%88springboot%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C-jar-%E5%8C%85/">为什么SpringBoot可以直接运行 jar 包？<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/%E5%90%AF%E5%8A%A8/" title="启动" class="dd-item"><a href="/spring/springboot/%E5%90%AF%E5%8A%A8/">启动<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" title="自动配置" class="dd-item"><a href="/spring/springboot/%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/">自动配置<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/spring/transcational/" title="transcational" class="dd-item"><a href="/spring/transcational/">transcational<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" title="单元测试" class="dd-item"><a href="/spring/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/" title="条件加载" class="dd-item"><a href="/spring/%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD/">条件加载<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件" class="dd-item active parent"><input type="checkbox" id="section-cb147f28999e2af77c3c46e5203c4ebe" class="toggle" checked/><label for="section-cb147f28999e2af77c3c46e5203c4ebe" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/" title="elasticsearch" class="dd-item alwaysopen"><input type="checkbox" id="section-8d85ef773acaecba16eeaee474a8bd7d" class="toggle" checked/><label for="section-8d85ef773acaecba16eeaee474a8bd7d" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/">elasticsearch<i class="fas fa-check read-icon"></i></a><ul>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/cat-api/" title="CAT API" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/cat-api/">CAT API<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/es%E4%BB%8B%E7%BB%8D/" title="es介绍" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/es%E4%BB%8B%E7%BB%8D/">es介绍<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/query-dsl/" title="Query DSL" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/query-dsl/">Query DSL<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/search-api/" title="Search API" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/elasticsearch/search-api/">Search API<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/" title="kafka" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/kafka/">kafka<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/" title="mysql" class="dd-item"><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/mysql/">mysql<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" title="redis" class="dd-item alwaysopen"><input type="checkbox" id="section-74f1b75570b4ee251a87b9e00cbf3144" class="toggle" checked/><label for="section-74f1b75570b4ee251a87b9e00cbf3144" ></label><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/">redis<i class="fas fa-check read-icon"></i></a><ul>
@@ -577,13 +851,15 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/iredis/" title="iredis" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/iredis/">iredis<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/jmeter/" title="jmeter" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/jmeter/">jmeter<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E5%B7%A5%E5%85%B7/markdown/" title="markdown" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/markdown/">markdown<i class="fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/%E5%B7%A5%E5%85%B7/maven/" title="maven" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/maven/">maven<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E5%B7%A5%E5%85%B7/vim/" title="vim" class="dd-item"><a href="/%E5%B7%A5%E5%85%B7/vim/">vim<i class="fas fa-check read-icon"></i></a></li></ul></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统" class="dd-item"><input type="checkbox" id="section-be882d7838b29bb55035a73606bd5fad" class="toggle"/><label for="section-be882d7838b29bb55035a73606bd5fad" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/" title="linux" class="dd-item alwaysopen"><input type="checkbox" id="section-2b529531ed5b88a2a39fe109a71784e2" class="toggle" checked/><label for="section-2b529531ed5b88a2a39fe109a71784e2" ></label><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/">linux<i class="fas fa-check read-icon"></i></a><ul>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/" title="linux工具" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%B7%A5%E5%85%B7/">linux工具<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/" title="linux目录" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E7%9B%AE%E5%BD%95/">linux目录<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/" title="shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/shell/">shell<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/" title="SSH" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/ssh/">SSH<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%86%B7%E7%9F%A5%E8%AF%86/" title="冷知识" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%86%B7%E7%9F%A5%E8%AF%86/">冷知识<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/" title="启动执行脚本" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%90%AF%E5%8A%A8%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/">启动执行脚本<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/" title="命令组合" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88/">命令组合<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/" title="如何区分terminal、tty、console、shell" class="dd-item"><a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86terminalttyconsoleshell/">如何区分terminal、tty、console、shell<i class="fas fa-check read-icon"></i></a></li>
@@ -627,7 +903,6 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" title="300. 最长递增子序列" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/300.-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">300. 最长递增子序列<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/" title="70.爬楼梯" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/70.%E7%88%AC%E6%A5%BC%E6%A2%AF/">70.爬楼梯<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/" title="经典算法目录" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/leetcode%E7%BB%8F%E5%85%B8100%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E7%9B%AE%E5%BD%95/">经典算法目录<i class="fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/" title="LRU" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/lru/">LRU<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="双向链表" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">双向链表<i class="fas fa-check read-icon"></i></a></li>
           <li data-nav-id="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/" title="双指针" class="dd-item"><a href="/%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针<i class="fas fa-check read-icon"></i></a></li>
@@ -724,13 +999,13 @@ Redis 单线程如何处理那么多的并发客户端连接? Redis的IO多路�
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
           <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
           <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
-          <script async src="/js/buttons.js?1671729343"></script>
+          <script async src="/js/buttons.js?1673778085"></script>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1671729343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1671729343" defer></script>
-    <script src="/js/featherlight.min.js?1671729343" defer></script>
-    <script src="/js/theme.js?1671729343" defer></script>
+    <script src="/js/clipboard.min.js?1673778085" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1673778085" defer></script>
+    <script src="/js/featherlight.min.js?1673778085" defer></script>
+    <script src="/js/theme.js?1673778085" defer></script>
   </body>
 </html>
